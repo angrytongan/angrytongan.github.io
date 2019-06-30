@@ -27,6 +27,12 @@
         </style>
 
         <script>
+            function clearCheckboxes() {
+                let boxes = document.querySelectorAll('input[type=checkbox]');
+                boxes.forEach(function(b) {
+                    b.checked = false;
+                });
+            }
 
             /*
              * Clear existing elements.
@@ -35,6 +41,8 @@
                 t1.querySelector('ul').innerHTML = "";
                 t2.querySelector('ul').innerHTML = "";
                 t3.querySelector('ul').innerHTML = "";
+
+                clearCheckboxes();
             }
 
             function calcFill() {
@@ -101,14 +109,16 @@
             }
 
             document.addEventListener('DOMContentLoaded', function() {
-                console.log('loaded');
-
                 let elements = document.querySelectorAll('input[type=number]');
                 elements.forEach(function(e) {
                     e.addEventListener('change', function(e) {
                         calcClear();
                         calcFill();
                     });
+                });
+
+                document.querySelector('#clear').addEventListener('click', function() {
+                    clearCheckboxes();
                 });
 
                 calcClear();
@@ -126,6 +136,7 @@
                 T1: <input id="t1_sets" type="number" value="3"> sets of <input id="t1_reps" type="number" value="5"> reps<br />
                 T2: <input id="t2_sets" type="number" value="4"> sets of <input id="t2_reps" type="number" value="8"> reps<br />
                 T3: <input id="t3_sets" type="number" value="4"> sets of <input id="t3_reps" type="number" value="12"> reps<br />
+                <button id="clear">Clear checkboxes</button>
             </form>
             <div id="warmup">
                 <p>Warmup</p>
