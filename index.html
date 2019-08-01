@@ -22,13 +22,24 @@
             padding: 1em;
             background: rgba(0, 0, 0, 0.4);
             color: white;
+
             font-family: monospace;
+            font-size: 14px;
         }
         #notes a {
             color: white;
         }
+        #notes dt {
+            font-weight: bold;
+        }
         #notes dl {
             margin: 0;
+        }
+
+        @media (max-width: 500px) {
+            #notes {
+                font-size: 20px;
+            }
         }
         </style>
     </head>
@@ -38,12 +49,12 @@
         <div id="notes">
             <dl>
                 <dt>Personal</dt>
-                    <dd><a href="https://github.com/angrytongan">Github</a></dd>
-                    <dd><a href="https://instagram.com/angrytongan">Instagram</a></dd>
-                    <dd><a href="https://log.concept2.com/profile/1063564">Concept2 Log</a></dd>
+                    <dd><a href="https://github.com/angrytongan" target="_blank">Github</a></dd>
+                    <dd><a href="https://instagram.com/angrytongan" target="_blank">Instagram</a></dd>
+                    <dd><a href="https://log.concept2.com/profile/1063564" target="_blank">Concept2 Log</a></dd>
                 <dt>Prods</dt>
-                    <dd><a href="https://wodscrape.com.au">wodscrape</a></dd>
-                    <dd><a href="https://ergarcade.com">The Ergarcade</a></dd>
+                    <dd><a href="http://wodscrape.com.au" target="_blank">wodscrape</a></dd>
+                    <dd><a href="https://ergarcade.com" target="_blank">The Ergarcade</a></dd>
             </dl>
         </div>
 
