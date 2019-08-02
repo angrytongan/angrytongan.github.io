@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style>
+        body {
+        }
+        input[type=number] {
+            width: 3em;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #t1, #t2, #t3 {
+            width: 30%;
+            float: left;
+        }
+
+        @media (max-width: 500px) {
+        }
+        </style>
+
+        <script>
+            function clearCheckboxes() {
+                let boxes = document.querySelectorAll('input[type=checkbox]');
+                boxes.forEach(function(b) {
+                    b.checked = false;
+                });
+            }
+
+            /*
+             * Clear existing elements.
+             */
+            function calcClear() {
+                t1.querySelector('ul').innerHTML = "";
+                t2.querySelector('ul').innerHTML = "";
+                t3.querySelector('ul').innerHTML = "";
+
+                clearCheckboxes();
+            }
+
+            function calcFill() {
+                let load = document.querySelector('#load').value;
+
+                let t1_sets = document.querySelector('#t1_sets').value;
+                let t2_sets = document.querySelector('#t2_sets').value;
+                let t3_sets = document.querySelector('#t3_sets').value;
+                let t1_reps = document.querySelector('#t1_reps').value;
+                let t2_reps = document.querySelector('#t2_reps').value;
+                let t3_reps = document.querySelector('#t3_reps').value;
+
+                let t1_load = load * 1.0;
+                let t2_load = load * 0.85;
+                let t3_load = load * 0.65;
+
+                let start_weight = document.querySelector('#start_weight').value;
+                let inc = document.querySelector('#increment');
+                let inc_value = (load - start_weight) / 4;
+                inc.textContent = inc_value.toFixed(2);
+
+                document.querySelector('#warmup_1_load').textContent = parseInt(start_weight).toFixed(2);
+                document.querySelector('#warmup_2_load').textContent = parseInt(start_weight).toFixed(2);
+                document.querySelector('#warmup_3_load').textContent = (parseInt(start_weight) + (1 * inc_value)).toFixed(2);
+                document.querySelector('#warmup_4_load').textContent = (parseInt(start_weight) + (2 * inc_value)).toFixed(2);
+                document.querySelector('#warmup_5_load').textContent = (parseInt(start_weight) + (3 * inc_value)).toFixed(2);
+
+                let t1_list = document.querySelector('#t1 ul');
+                let t2_list = document.querySelector('#t2 ul');
+                let t3_list = document.querySelector('#t3 ul');
+
+                for (let i = 0; i < t1_sets; i++) {
+                    let li = document.createElement('li');
+                    let checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    let text = document.createTextNode(t1_reps + ' (' + t1_load.toFixed(2) + ')');
+
+                    li.appendChild(checkbox);
+                    li.appendChild(text);
+                    t1_list.appendChild(li);
+                }
+
+                for (let i = 0; i < t2_sets; i++) {
+                    let li = document.createElement('li');
+                    let checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    let text = document.createTextNode(t2_reps + ' (' + t2_load.toFixed(2) + ')');
+
+                    li.appendChild(checkbox);
+                    li.appendChild(text);
+                    t2_list.appendChild(li);
+                }
+
+                for (let i = 0; i < t3_sets; i++) {
+                    let li = document.createElement('li');
+                    let checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    let text = document.createTextNode(t3_reps + ' (' + t3_load.toFixed(2) + ')');
+
+                    li.appendChild(checkbox);
+                    li.appendChild(text);
+                    t3_list.appendChild(li);
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                let elements = document.querySelectorAll('input[type=number]');
+                elements.forEach(function(e) {
+                    e.addEventListener('change', function(e) {
+                        calcClear();
+                        calcFill();
+                    });
+                });
+
+                document.querySelector('#clear').addEventListener('click', function() {
+                    clearCheckboxes();
+                });
+
+                calcClear();
+                calcFill();
+            });
+        </script>
+    </head>
+
+    <body>
+        <fieldset>
+            <legend>Load calculator</legend>
+
+            <form action="#">
+                Load <input id="load" type="number" value="100" />&nbsp; Start <input id="start_weight" type="number" value="20" /> (inc <span id="increment"></span>)<br />
+                T1: <input id="t1_sets" type="number" value="3"> sets of <input id="t1_reps" type="number" value="5"> reps<br />
+                T2: <input id="t2_sets" type="number" value="4"> sets of <input id="t2_reps" type="number" value="8"> reps<br />
+                T3: <input id="t3_sets" type="number" value="4"> sets of <input id="t3_reps" type="number" value="12"> reps<br />
+                <button id="clear">Clear checkboxes</button>
+            </form>
+            <div id="warmup">
+                <p>Warmup</p>
+                <ul>
+                    <li><input type="checkbox">5 (<span id="warmup_1_load"></span>)</li>
+                    <li><input type="checkbox">5 (<span id="warmup_2_load"></span>)</li>
+                    <li><input type="checkbox">5 (<span id="warmup_3_load"></span>)</li>
+                    <li><input type="checkbox">3 (<span id="warmup_4_load"></span>)</li>
+                    <li><input type="checkbox">2 (<span id="warmup_5_load"></span>)</li>
+                </ul>
+            </div>
+
+            <div id="t1">
+                <p>T1</p>
+                <ul>
+                    <li><input type="checkbox"><span id="t1_1_reps"></span> (<span id="t1_1_load"></span>)</li>
+                </ul>
+            </div>
+
+            <div id="t2">
+                <p>T2</p>
+                <ul>
+                    <li><input type="checkbox"><span id="t2_1_reps"></span> (<span id="t2_1_load"></span>)</li>
+                </ul>
+            </div>
+
+            <div id="t3">
+                <p>T3</p>
+                <ul>
+                    <li><input type="checkbox"><span id="t3_1_reps"></span> (<span id="t3_1_load"></span>)</li>
+                </ul>
+            </div>
+
+        </fieldset>
+    </body>
+
+</html>
