@@ -6,6 +6,7 @@
 function main() {
     const canvas = document.querySelector('#c');
     const renderer = new THREE.WebGLRenderer({ canvas });
+    const centre = new THREE.Vector3(0, 0, 0);
 
     const fov = 75;
     const aspect = 2;
@@ -14,10 +15,7 @@ function main() {
     const camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
 
     camera.position.set(4, 8, 6);
-
-    const controls = new THREE.OrbitControls(camera, canvas);
-    controls.target.set(0, 0, 0);
-    controls.update();
+    camera.lookAt(centre);
 
     const scene = new THREE.Scene();
 
@@ -73,7 +71,6 @@ function main() {
             obj.rotation.y = rot * 0.15;
         });
 
-        controls.update();
         renderer.render(scene, camera);
         requestAnimationFrame(render);
     }
