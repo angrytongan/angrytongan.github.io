@@ -284,7 +284,7 @@
                 });
             }
 
-            function doCalculation() {
+            function doCalculation(e) {
                 const sel_lifts = document.querySelector('#sel_lifts');
                 const sel_lift = sel_lifts.options[sel_lifts.selectedIndex].value;
                 const load = document.querySelector('#one_rm').value;
@@ -302,6 +302,7 @@
                     document.querySelector('#' + label_result_high(l)).innerHTML = high;
                 });
 
+                e.preventDefault();
                 return false;
             }
 
