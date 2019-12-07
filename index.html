@@ -7,38 +7,80 @@
 
         <style>
         body {
-            background: #111;
+            width: 300px;
+            margin: 0 auto;
         }
-
-        a {
-            text-decoration: none;
+        .section h1 {
+            font-size: 1.5em;
+            background: #000;
+            color: #fff;
+            padding: 0.5em;
         }
-
-        #main {
-            position: absolute;
-            margin: auto;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            width: 140px;
-            height: 100px;
-            line-height: 100px;
-            border-radius: 3px;
-            background: #eee;
-            text-align: center;
+        dt {
+            font-weight: bold;
         }
-
-        @media (max-width: 500px) {
-            #main {
-                font-size: 20px;
-            }
+        dd {
+            margin-bottom: 0.5em;
         }
         </style>
+
     </head>
 
     <body>
-        <div id="main"><a href="mailto:dean@df.id.au">dean@df.id.au</a></div>
-    </body>
+        <div class="section">
+            <h1>df.id.au</h1>
+            <dl>
+                <dt>Home life</dt>
+                <dd>Husband, father. <a href=<https://goo.gl/maps/6B2pvNPX6ZnqvEd98">Brisbane, Queensland, Australia</a>.</dd>
 
+                <dt>Works with</dt>
+                <dd>SPAs. JavaScript. Databases. Embedded systems. Web stuff.</dd>
+
+                <dt>Likes to</dt>
+                <dd>Lift heavy things. Teach people to lift heavy things. Die on ergometers.</dd>
+            </dl>
+        </div>
+
+        <div class="section">
+            <h1>Working on</h1>
+            <dl>
+                <dt><a href="https://github.com/ergarcade/bonk">bonk</a></dt>
+                <dd>Analytics for evaluating athlete performance on <a href="https://concept2.com">Concept2</a> ergometers.</dd>
+            </dl>
+        </div>
+
+        <div class="section">
+            <h1>Built these</h1>
+            <dl>
+                <dt><a href="https://ergarcade.com">The Erg Arcade</a></dt>
+                <dd>Playground of tools for use with <a href="https://concept2.com">Concept2</a> ergometers.</dd>
+
+                <dt><a href="https://wodscrape.com.au">wodscrape</a></dt>
+                <dd>An updated-daily page of Workouts Of the Day scraped from various sources.</dd>
+
+                <dt><a href="https://github.com/angrytongan/calendararc">CalendarArc</a></dt>
+                <dd>Circular calendar generator.</dd>
+            </dl>
+        </div>
+
+        <div class="section">
+            <h1>GitHub</h1>
+            <dl>
+                <dt><a href="https://github.com/angrytongan">Personal</a></dt>
+                <dd>Code repositories of personal stuff.</dd>
+
+                <dt><a href="https://github.com/ergarcade">Erg Arcade</a></dt>
+                <dd>Code behind <a href="https://ergarcade.com">The Erg Arcade</a>.</dd>
+            </dl>
+        </div>
+
+        <div class="section">
+            <h1>Contact me</h1>
+            <dl>
+                <dt><a target="_blank" href="https://reddit.com/u/angrytongan">reddit</a></dt>
+                <dt><a target="_blank" href="https://instagram.com/angrytongan">Instagram</a></dt>
+                <dt><a target="_blank" href="https://facebook.com/angrytongan">Facebook</a></dt>
+            </dl>
+        </div>
+    </body>
 </html>
