@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>df.id.au - resume</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+
+        <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0 auto;
+            max-width: 800px;
+            font-size: 18px;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        #overview {
+            margin: 1em;
+        }
+        #main {
+            display: grid;
+            grid-template-areas: 'left right';
+            grid-template-columns: 60% 40%;
+            grid-template-rows: auto;
+        }
+        #left {
+            grid-area: left;
+            margin: 1em;
+        }
+        #right {
+            grid-area: right;
+            margin: 1em;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .job {
+            border-top: 1px solid #999;
+            padding-left: 1em;
+            padding-right: 1em;
+            margin-bottom: 1em;
+        }
+        .job h3 {
+            margin: 0;
+            margin-top: 0.5em;
+        }
+        .job p.title {
+            font-weight: bold;
+            margin-bottom: 0.5em;
+        }
+        .job p.based {
+            margin-bottom: 0;
+        }
+        .job p.dates {
+            margin-top: 0;
+            margin-bottom: 0.5em;
+        }
+
+        p.qualification,
+        ul.personalProjects p.title {
+            font-weight: bold;
+        }
+
+        ul li {
+            margin-bottom: 0.5em;
+        }
+
+        @media print {
+            .job,
+            .section,
+            ul {
+                page-break-inside: avoid;
+            }
+        }
+        </style>
+    </head>
+
+    <body>
+        <script src="/js/lib/mithril.min.js"></script>
+        <script src="/js/lib/luxon.min.js"></script>
+        <script src="/js/resume.js"></script>
+    </body>
+</html>
