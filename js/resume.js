@@ -34,6 +34,7 @@ const personalProjects = [
     },
     {
         title: 'Calendar Arc',
+        production: 'https://df.id.au/calendararc',
         source: 'https://github.com/angrytongan/calendararc',
     },
     {
