@@ -82,10 +82,10 @@ const experience = [
 ];
 
 const tools = `
-    git, Linux, C, dev-tools, Mithril, PHP, assembler, Python, PostgreSQL,
-    MySQL, Apache, embedded systems, JIRA, Bamboo, Jenkins, Stash, ansible,
-    AWS, ELK, ARM, atmel, Arduino, Agile, Qt, JavaScript, APIs, d3.js, SPAs,
-    vagrant and more!
+    git, JavaScript, Linux, C, dev-tools, mithril.js, PHP, assembler, Python,
+    PostgreSQL, HTML, CSS, MySQL, Apache, embedded systems, JIRA, Bamboo,
+    Jenkins, Stash, ansible, AWS, ELK, ARM, atmel, Arduino, Agile, Qt, APIs,
+    d3.js, SPAs, vagrant and more!
 `;
 
 const jobs = [
@@ -95,9 +95,9 @@ const jobs = [
         end: null,
         based: 'Brisbane, Australia',
         title: 'Owner',
-        description: `Consultancy focusing on small business system integration
-        and automation. Application development and statistical analytics
-        dashboards for exercise equipment supporting the CSAFE interface.`,
+        description: `Application development and statistical analytics
+        dashboards for exercise equipment supporting the CSAFE interface,
+        including the Concept2 range of rower, bike and ski ergometers.`,
     },
     {
         place: 'Atmail',
@@ -310,9 +310,8 @@ const PersonalProjects = {
         return [
             m('h2', 'Personal Projects'),
             m('ul.personalProjects', personalProjects.map((pp) => m('li', [
-                m('p.title', pp.title),
-                m('p.production', m('a', { href: pp.production }, pp.production)),
-                m('p.source', m('a', { href: pp.source }, 'GitHub')),
+                pp.production ? m('a.title', { href: pp.production }, pp.title) : m('p.title', pp.title),
+                m('p.source', m('a', { href: pp.source }, '(source)')),
             ]))),
         ];
     },
@@ -330,9 +329,9 @@ const Right = {
     view: () => {
         const sections = [
             Experience,
-            Tools,
             PersonalProjects,
             Certifications,
+            Tools,
             Referees
         ];
 
