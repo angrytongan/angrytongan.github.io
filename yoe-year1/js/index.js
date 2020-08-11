@@ -13,6 +13,7 @@ import { WorkRest } from '/yoe-year1/js/workrest.js';
 import { WorkoutType } from '/yoe-year1/js/workout-type.js';
 import { Weekly } from '/yoe-year1/js/weekly.js';
 import { TimeTrials } from '/yoe-year1/js/tt.js';
+import { Apparatus } from '/yoe-year1/js/apparatus.js';
 
 const controls = {};
 const options = {};
@@ -118,6 +119,7 @@ const Root = {
                 m(Frequency, { data: data }),
                 m(WorkRest, { data: data }),
                 m(WorkoutType, { data: data }),
+                m(Apparatus, { data: data }),
                 m(Weekly, { data: data }),
                 m(TimeTrials, { data: data }),
             ]),
