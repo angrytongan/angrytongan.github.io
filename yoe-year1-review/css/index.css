@@ -1,0 +1,27 @@
+body {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+table {
+    border-collapse: collapse;
+}
+th, td {
+    padding: 1em;
+}
+table, th, td {
+    border: 1px solid #999;
+}
+.right {
+    text-align: right;
+}
+
+.self {
+    border: 1px solid #999;
+    background: #eef;
+    padding: 1em;
+}
+div.self {
+    padding-top: 0;
+    padding-bottom: 0;
+}
