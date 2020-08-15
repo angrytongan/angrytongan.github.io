@@ -22,6 +22,11 @@ const graphs = [
         options: biologicalMarkers.weightOptions,
         height: 250,
     },
+    {
+        div: 'graph-haemoglobin',
+        options: biologicalMarkers.haemoglobinOptions,
+        height: 250,
+    }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,8 +41,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         g.chart = echarts.init(g.element);
+        g.chart.showLoading();
         g.chart.setOption(g.options());
-        console.log(g.options());
+        g.chart.hideLoading();
 
         if (g.height === undefined) {
             g.height = defaultGraphHeight;

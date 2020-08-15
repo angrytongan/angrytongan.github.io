@@ -18,8 +18,8 @@ const markers = [
     { date: '2019-12-22', systolic: 124, diastolic: 81, haemoglobin: 145, rhr: 62, },
     { date: '2019-12-08', systolic: 136, diastolic: 83, haemoglobin: 135, rhr: 60, },
     { date: '2019-11-24', systolic: 133, diastolic: 78, haemoglobin: 141, },
-    { date: '2019-11-10', systolic: 146, diastolic: 89, haemoglobin: 145, rhr: 60, },
-    { date: '2019-10-20', systolic: 144, diastolic: 83, haemoglobin: 148, rhr: 66, },
+    { date: '2019-11-10', systolic: 136, diastolic: 82, haemoglobin: 145, rhr: 60, },
+    { date: '2019-10-20', systolic: 130, diastolic: 80, haemoglobin: 148, rhr: 66, },
 
     { date: '2019-09-29', weight: 102.0 },
     { date: '2019-09-30', weight: 101.4 },
@@ -101,20 +101,24 @@ const markers = [
     { date: '2020-02-11', weight: 101.2 },
 ].sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : 0);
 
+const seriesName = (s) => {
+    const names = {
+        rhr: 'Resting heart rate',
+        systolic: 'Systolic pressure',
+        diastolic: 'Diastolic pressure',
+        weight: 'Weight',
+    };
+
+    return names[s];
+};
+
 const genericOptions = (o) => {
-    const title = [];
     const legend = [];
     const tooltip = [];
     const xAxis = [];
     const yAxis = [];
     const series = [];
     const dataset = [];
-
-    title.push({
-        text: o.title.text,
-        left: 'middle',
-        textAlign: 'center',
-    });
 
     tooltip.push({
         trigger: 'item',
@@ -159,11 +163,15 @@ const genericOptions = (o) => {
             },
             connectNulls: true,
             symbolSize: 10,
+            name: seriesName(y),
         });
     });
 
+    legend.push({
+        top: '10%',
+    });
+
     return {
-        title,
         legend,
         tooltip,
         xAxis,
@@ -180,6 +188,8 @@ const bloodPressureOptions = () => {
         },
         yAxis: {
             name: 'Blood pressure (mmHg)',
+            min: 60,
+            max: 180,
         },
         dataset: {
             dimensions: [ 'date', 'systolic', 'diastolic' ],
@@ -209,7 +219,7 @@ const restingHeartRateOptions = () => {
         },
         tooltip: {
             formatter: (params) => {
-                return `${params.value.date}<br />${params.value.rhr}`;
+                return `${params.value.date}<br />${params.value.rhr}bpm`;
             },
         },
     });
@@ -230,7 +240,28 @@ const weightOptions = () => {
         },
         tooltip: {
             formatter: (params) => {
-                return `${params.value.date}<br />${params.value.weight}`;
+                return `${params.value.date}<br />${params.value.weight}kg`;
+            },
+        },
+    });
+};
+
+const haemoglobinOptions = () => {
+    return genericOptions({
+        title: {
+            text: 'Haemoglobin',
+        },
+        yAxis: {
+            name: 'Haemoglobin (g/L)',
+            min: 125,
+            max: 185,
+        },
+        dataset: {
+            dimensions: [ 'date', 'haemoglobin' ],
+        },
+        tooltip: {
+            formatter: (params) => {
+                return `${params.value.date}<br />${params.value.haemoglobin}g/L`;
             },
         },
     });
@@ -238,6 +269,7 @@ const weightOptions = () => {
 
 export const biologicalMarkers = {
     bloodPressureOptions,
-    restingHeartRateOptions ,
+    restingHeartRateOptions,
     weightOptions,
+    haemoglobinOptions,
 };
