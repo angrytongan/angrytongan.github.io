@@ -1,11 +1,27 @@
 'use strict';
 
 import { multiOptions } from '/yoe-year1-review/charts/multi.js';
+import { biologicalMarkers } from '/yoe-year1-review/charts/biological.js';
 
 const defaultGraphHeight = 300;
 
 const graphs = [ 
     { div: 'multi', options: multiOptions },
+    {
+        div: 'graph-bloodPressure',
+        options: biologicalMarkers.bloodPressureOptions,
+        height: 250,
+    },
+    {
+        div: 'graph-restingHeartRate',
+        options: biologicalMarkers.restingHeartRateOptions,
+        height: 250,
+    },
+    {
+        div: 'graph-weight',
+        options: biologicalMarkers.weightOptions,
+        height: 250,
+    },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         g.chart = echarts.init(g.element);
         g.chart.setOption(g.options());
+        console.log(g.options());
 
         if (g.height === undefined) {
             g.height = defaultGraphHeight;
