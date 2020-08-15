@@ -7,7 +7,7 @@ table {
     border-collapse: collapse;
 }
 th, td {
-    padding: 1em;
+    padding: 0.5em;
 }
 table, th, td {
     border: 1px solid #999;
@@ -21,7 +21,14 @@ table, th, td {
     background: #eef;
     padding: 1em;
 }
+.self table {
+    margin-bottom: 1em;
+}
 div.self {
     padding-top: 0;
     padding-bottom: 0;
+}
+h2 {
+    border-top: 1px solid #999;
+    padding-top: 0.5em;
 }

@@ -1,10 +1,11 @@
 'use strict';
 
-import { multiOptions } from '/yoe-year1-review/js/multi.js';
+import { multiOptions } from '/yoe-year1-review/charts/multi.js';
 
 const defaultGraphHeight = 300;
 
 const graphs = [ 
+    { div: 'multi', options: multiOptions },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
