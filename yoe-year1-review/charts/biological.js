@@ -1,10 +1,14 @@
 'use strict';
 
+/*
+ * XXX TODO standard deviations
+ */
+
 const markers = [
     { date: '2020-08-09', systolic: 127, diastolic: 76, haemoglobin: 155, rhr: 60, weight: 99.8 },
     { date: '2020-07-26', systolic: 121, diastolic: 71, haemoglobin: 151, rhr: 58, weight: 100.6 },
     { date: '2020-06-23', systolic: 131, diastolic: 82, haemoglobin: 146, rhr: 60, weight: 100.4 },
-    { date: '2020-06-07', systolic: 150, diastolic: 83, haemoglobin: 142, rhr: 68, weight: 100.1 },
+    { date: '2020-06-07', systolic: 140, diastolic: 83, haemoglobin: 142, rhr: 68, weight: 100.1 },
     { date: '2020-05-24', systolic: 133, diastolic: 82, haemoglobin: 154, rhr: 60, weight: 100.5 },
     { date: '2020-05-03', systolic: 138, diastolic: 82, haemoglobin: 147, rhr: 64, weight: 100.1 },
     { date: '2020-04-19', systolic: 130, diastolic: 87, haemoglobin: 150, rhr: 60, weight: 100.9 },
@@ -107,6 +111,7 @@ const seriesName = (s) => {
         systolic: 'Systolic pressure',
         diastolic: 'Diastolic pressure',
         weight: 'Weight',
+        haemoglobin: 'Haemoglobin',
     };
 
     return names[s];
@@ -253,8 +258,8 @@ const haemoglobinOptions = () => {
         },
         yAxis: {
             name: 'Haemoglobin (g/L)',
-            min: 125,
-            max: 185,
+            min: 100,
+            max: 200,
         },
         dataset: {
             dimensions: [ 'date', 'haemoglobin' ],

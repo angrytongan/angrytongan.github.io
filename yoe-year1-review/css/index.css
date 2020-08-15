@@ -17,8 +17,8 @@ table, th, td {
 }
 
 .self {
-    border: 1px solid #999;
-    background: #eef;
+    border: 1px solid #0af;
+    background: #9df;
     padding: 1em;
 }
 .self table {
@@ -31,4 +31,7 @@ div.self {
 h2 {
     border-top: 1px solid #999;
     padding-top: 0.5em;
+}
+.space li {
+    padding-bottom: 1em;
 }
