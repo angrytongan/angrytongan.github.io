@@ -12,6 +12,9 @@ th, td {
 table, th, td {
     border: 1px solid #999;
 }
+table {
+    width: 100%;
+}
 .right {
     text-align: right;
 }
@@ -22,6 +25,7 @@ table, th, td {
     padding: 1em;
 }
 .self table {
+    margin-top: 1em;
     margin-bottom: 1em;
 }
 div.self {
