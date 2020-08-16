@@ -7,29 +7,11 @@ import { biologicalMarkers } from '/yoe-year1-review/charts/biological.js';
 const defaultGraphHeight = 300;
 
 const graphs = [ 
-    { div: 'graph-phases', options: programPhases.phasesOptions, height: 50, },
-    { div: 'graph-tracks', options: programPhases.tracksOptions, height: 75, },
+    /*
+    { div: 'graph-phases', options: programPhases.phasesOptions, height: 50 },
+    { div: 'graph-tracks', options: programPhases.tracksOptions, height: 75 },
+    */
     { div: 'graph-workout-types', options: workoutTypes, height: 200 },
-    {
-        div: 'graph-bloodPressure',
-        options: biologicalMarkers.bloodPressureOptions,
-        height: 250,
-    },
-    {
-        div: 'graph-restingHeartRate',
-        options: biologicalMarkers.restingHeartRateOptions,
-        height: 250,
-    },
-    {
-        div: 'graph-weight',
-        options: biologicalMarkers.weightOptions,
-        height: 250,
-    },
-    {
-        div: 'graph-haemoglobin',
-        options: biologicalMarkers.haemoglobinOptions,
-        height: 250,
-    }
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
