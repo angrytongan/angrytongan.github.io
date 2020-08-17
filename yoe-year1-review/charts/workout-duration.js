@@ -14,14 +14,19 @@ export const workoutDuration = (workouts) => {
             type: 'pie',
             data: [
                 {
-                    name: 'For Distance',
+                    name: 'Workouts for distance',
                     value: forDistance,
                 },
                 {
-                    name: 'For Time',
+                    name: 'Workouts for time',
                     value: forTime,
                 },
             ],
+            tooltip: {
+                formatter: (params) => {
+                    return `${params.value} ${params.name}`;
+                },
+            },
         },
     };
 };

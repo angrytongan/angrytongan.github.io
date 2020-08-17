@@ -23,10 +23,12 @@ const graphs = [
     { div: 'graph-time-commitment-polarisation', options: timeCommitment.polarisation },
     { div: 'graph-time-commitment-endurance', options: timeCommitment.endurance },
     { div: 'graph-time-commitment-flux', options: timeCommitment.flux },
-    { div: 'graph-workout-duration', options: workoutDuration },
     */
+    { div: 'graph-workout-duration', options: workoutDuration },
+    /*
     { div: 'graph-workout-spread-scatter', options: workoutSpread.scatter, height: 200 },
     { div: 'graph-workout-spread-treemap', options: workoutSpread.treemap, height: 200 },
+    */
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
