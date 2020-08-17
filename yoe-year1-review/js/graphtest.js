@@ -1,20 +1,49 @@
 'use strict';
 
-import { programPhases } from '/yoe-year1-review/charts/phases.js';
-import { workoutTypes } from '/yoe-year1-review/charts/workoutTypes.js';
-import { biologicalMarkers } from '/yoe-year1-review/charts/biological.js';
+import { workouts } from '/yoe-year1-review/charts/data.js';
 
-const defaultGraphHeight = 300;
+import { programPhases } from '/yoe-year1-review/charts/phases.js';
+import { workoutTypes } from '/yoe-year1-review/charts/workout-types.js';
+import { biologicalMarkers } from '/yoe-year1-review/charts/biological.js';
+import { timeTrial } from '/yoe-year1-review/charts/time-trial.js';
+import { timeCommitment } from '/yoe-year1-review/charts/time-commitment.js';
+
+const defaultGraphHeight = 200;
 
 const graphs = [ 
     /*
     { div: 'graph-phases', options: programPhases.phasesOptions, height: 50 },
     { div: 'graph-tracks', options: programPhases.tracksOptions, height: 75 },
-    */
     { div: 'graph-workout-types', options: workoutTypes, height: 200 },
+    { div: 'graph-tt-airdyne', options: timeTrial.ttAirDyne, height: 200 },
+    */
+    { div: 'graph-time-commitment', options: timeCommitment.summary },
+    { div: 'graph-time-commitment-intervals', options: timeCommitment.intervals },
+    { div: 'graph-time-commitment-polarisation', options: timeCommitment.polarisation },
+    { div: 'graph-time-commitment-endurance', options: timeCommitment.endurance },
+    { div: 'graph-time-commitment-flux', options: timeCommitment.flux },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
+    const sanitiseAndFilterData = (wd) => {
+        const toSeconds = (t) => {
+            const [ min, secs ] = t.split(':');
+            return +min * 60 + +secs;
+        };
+
+        return wd
+            .map((val) => {
+                const o = { ...val };
+
+                o.workTime = toSeconds(val.workTime);
+                o.restTime = toSeconds(val.restTime);
+                o.distance = +val.distance;
+
+                return o;
+            });
+    };
+    const workoutData = sanitiseAndFilterData(workouts);
+
     graphs.forEach((g) => {
         g.element = document.getElementById(g.div);
 
@@ -27,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         g.chart = echarts.init(g.element);
         g.chart.showLoading();
-        g.chart.setOption(g.options());
+        g.chart.setOption(g.options(workoutData));
         g.chart.hideLoading();
 
         if (g.height === undefined) {
