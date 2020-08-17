@@ -62,18 +62,7 @@ const summary = (workouts, filter = {}) => {
             stack: 'single',
             tooltip: {
                 formatter: (params, ticket, callback) => {
-                    const date = params.value.date;
-                    const workTime = dateTime.secs2mmss(params.value.workTime);
-                    const restTime = dateTime.secs2mmss(params.value.restTime);
-                    const total = dateTime.secs2mmss(params.value.workTime + params.value.restTime);
-
-                    let out = `${date}<br />${params.value.apparatus} ${workTime}`;
-
-                    if (params.value.restTime) {
-                        out += `/${restTime}r`;
-                    }
-
-                    return out;
+                    return params.value.date;
                 },
             },
             encode: {

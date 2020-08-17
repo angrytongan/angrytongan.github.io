@@ -1,5 +1,9 @@
 'use strict';
 
+/*
+ * XXX pull workouts from here - we get it from js/index.js
+ */
+
 import { workouts } from '/yoe-year1-review/charts/data.js';
 
 const ttAirDyne = {
