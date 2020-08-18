@@ -16,7 +16,7 @@ const summary = (workouts, filter = {}) => {
     };
 
     title.push({
-        text: filter.type || 'All workouts',
+        text: filter.type || '',
         left: 'middle',
         textAlign: 'center',
     });
@@ -46,7 +46,7 @@ const summary = (workouts, filter = {}) => {
     });
 
     legend.push({
-        top: '12%',
+        top: '5%',
     });
 
     dataset.push({
@@ -90,8 +90,4 @@ const summary = (workouts, filter = {}) => {
 
 export const timeCommitment = {
     summary,
-    intervals: (w) => summary(w, { type: 'Interval' }),
-    polarisation: (w) => summary(w, { type: 'Polarisation' }),
-    endurance: (w) => summary(w, { type: 'Endurance' }),
-    flux: (w) => summary(w, { type: 'FLUX' }),
 }

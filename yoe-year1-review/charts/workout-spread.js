@@ -128,19 +128,22 @@ const treemap = (data) => {
             },
             tooltip: {
                 formatter: (params) => {
-                    return `Phase ${params.treePathInfo[1].name}<br />
-                        ${params.value} ${params.treePathInfo[2].name} workouts`;
+                    let parentName = params.treePathInfo[1] ? params.treePathInfo[1] .name : '';
+                    let childName = params.treePathInfo[2] ? params.treePathInfo[2] .name : '';
 
-                    return params.treePathInfo.reduce((acc, val) => {
-                        if (val.name.length) {
-                            if (acc.length) {
-                                acc += ' > ';
-                            }
-                            acc += val.name;
-                        }
-                        return acc;
-                    }, "");
+                    if (parentName != '') {
+                        parentName = `Phase ${parentName}<br />`;
+                    }
+                    if (childName != '') {
+                        childName = `${params.value} ${childName} workouts`;
+                    }
+
+                    return parentName + childName;
+                        
                 },
+            },
+            itemStyle: {
+                gapWidth: 1,
             },
             data: treedata,
             leafDepth: null,

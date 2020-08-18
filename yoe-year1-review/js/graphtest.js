@@ -19,16 +19,10 @@ const graphs = [
     { div: 'graph-workout-types', options: workoutTypes, height: 200 },
     { div: 'graph-tt-airdyne', options: timeTrial.ttAirDyne, height: 200 },
     { div: 'graph-time-commitment', options: timeCommitment.summary },
-    { div: 'graph-time-commitment-intervals', options: timeCommitment.intervals },
-    { div: 'graph-time-commitment-polarisation', options: timeCommitment.polarisation },
-    { div: 'graph-time-commitment-endurance', options: timeCommitment.endurance },
-    { div: 'graph-time-commitment-flux', options: timeCommitment.flux },
-    */
     { div: 'graph-workout-duration', options: workoutDuration },
-    /*
     { div: 'graph-workout-spread-scatter', options: workoutSpread.scatter, height: 200 },
-    { div: 'graph-workout-spread-treemap', options: workoutSpread.treemap, height: 200 },
     */
+    { div: 'graph-workout-spread-treemap', options: workoutSpread.treemap, height: 200 },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
