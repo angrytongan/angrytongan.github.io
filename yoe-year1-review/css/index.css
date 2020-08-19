@@ -36,6 +36,18 @@ h2 {
     border-top: 1px solid #999;
     padding-top: 0.5em;
 }
+h3 {
+    padding-top: 1.0em;
+}
 .space li {
     padding-bottom: 1em;
+}
+img.centre {
+    display: block;
+    margin: 0 auto;
+}
+.mw {
+    border: 1px solid #f9a;
+    background: #fd9;
+    padding: 1em;
 }

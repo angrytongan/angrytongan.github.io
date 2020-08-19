@@ -78,86 +78,89 @@ const scatter = (data) => {
 };
 
 /*
- * 4 phases in top
- * one box with count for each workout type
  * [
- *  {
- *      name: '4: FLUX',
- *      children: [
- *          { name: 'FLUX', value: 1, }
- *          { name: 'Interval', value: 1, }
- *      ],
- *  },
- * ]
+ *      {
+ *          phase: '1: Engine Builder',
+ *          workouts: [
+ *              { name: 'Interval', value: 45 },
+ *              { name: 'Endurance', value: 12 },
+ *              { name: 'Time Trial', value: 3 },
+ *          ]
+ *      },
+ *      ...
+ *
  */
-const treemap = (data) => {
-    const treedata = data.reduce((acc, val) => {
-        const phase = acc.findIndex((a) => a.name == val.phase);
-        if (phase === -1) {
+const pies = (data) => {
+    const title = [];
+    const dataset = [];
+    const series = [];
+
+    const phaseData = data.reduce((acc, val) => {
+        let phase = acc.find((a) => a.phase == val.phase);
+        if (phase === undefined) {
             acc.push({
-                name: val.phase,
-                children: [{
-                    name: val.type,
-                    value: 1,
-                }],
+                phase: val.phase,
+                workouts: [],
+            });
+            phase = acc[acc.length-1];
+        }
+
+        const workout = phase.workouts.find((w) => w.name == val.type);
+        if (workout === undefined) {
+            phase.workouts.push({
+                name: val.type,
+                value: 1,
             });
         } else {
-            const type = acc[phase].children.findIndex((a) => a.name == val.type);
-            if (type === -1) {
-                acc[phase].children.push({
-                    name: val.type,
-                    value: 1,
-                });
-            } else {
-                acc[phase].children[type].value++;
-            }
+            workout.value++;
         }
 
         return acc;
+    }, []).sort((a, b) => a.phase < b.phase ? -1 : a.phase > b.phase ? 1 : 0);
 
-    }, []);
+    const graphSize = 25;
+    phaseData.forEach((p, i) => {
+        const graphLeft =  (i * graphSize) + '%';
+        const graphRight = (phaseData.length-1 - i) * graphSize + '%';
+
+        title.push({
+            subtext: p.phase,
+            textAlign: 'center',
+            left: i * graphSize + (graphSize/2) + '%',
+            top: '80%',
+        });
+
+        dataset.push({
+            dimensions: [ 'name', 'value' ],
+            source: p.workouts,
+        });
+
+        series.push({
+            type: 'pie',
+            datasetIndex: i,
+            name: p.phase,
+
+            left: graphLeft,
+            right: graphRight,
+            center: [ '50%', '50%' ],
+
+            label: {
+                position: 'inside',
+            },
+        });
+    });
 
     return {
+        title,
         tooltip: {
             trigger: 'item',
         },
-        series: {
-            type: 'treemap',
-            label: {
-                formatter: '{b}: {c}',
-            },
-            tooltip: {
-                formatter: (params) => {
-                    let parentName = params.treePathInfo[1] ? params.treePathInfo[1] .name : '';
-                    let childName = params.treePathInfo[2] ? params.treePathInfo[2] .name : '';
-
-                    if (parentName != '') {
-                        parentName = `Phase ${parentName}<br />`;
-                    }
-                    if (childName != '') {
-                        childName = `${params.value} ${childName} workouts`;
-                    }
-
-                    return parentName + childName;
-                        
-                },
-            },
-            itemStyle: {
-                gapWidth: 1,
-            },
-            data: treedata,
-            leafDepth: null,
-            roam: false,
-            nodeClick: false,
-            breadcrumb: {
-                show: false,
-            },
-            animation: false,
-        },
+        dataset,
+        series,
     };
 };
 
 export const workoutSpread = {
     scatter: (workouts) => scatter(workouts),
-    treemap: (workouts) => treemap(workouts),
+    pies: (workouts) => pies(workouts),
 };

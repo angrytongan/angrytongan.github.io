@@ -9,6 +9,8 @@ import { timeTrial } from '/yoe-year1-review/charts/time-trial.js';
 import { timeCommitment } from '/yoe-year1-review/charts/time-commitment.js';
 import { workoutDuration } from '/yoe-year1-review/charts/workout-duration.js';
 import { workoutSpread } from '/yoe-year1-review/charts/workout-spread.js';
+import { constantlyVaried } from '/yoe-year1-review/charts/constantly-varied.js';
+import { execution } from '/yoe-year1-review/charts/execution.js';
 
 const defaultGraphHeight = 200;
 
@@ -18,11 +20,14 @@ const graphs = [
     { div: 'graph-tracks', options: programPhases.tracksOptions, height: 75 },
     { div: 'graph-workout-types', options: workoutTypes, height: 200 },
     { div: 'graph-tt-airdyne', options: timeTrial.ttAirDyne, height: 200 },
-    { div: 'graph-time-commitment', options: timeCommitment.summary },
     { div: 'graph-workout-duration', options: workoutDuration },
     { div: 'graph-workout-spread-scatter', options: workoutSpread.scatter, height: 200 },
-    */
     { div: 'graph-workout-spread-treemap', options: workoutSpread.treemap, height: 200 },
+    { div: 'graph-workout-spread-pies', options: workoutSpread.pies, height: 200 },
+    { div: 'graph-time-commitment', options: timeCommitment.summary },
+    { div: 'graph-constantly-varied-summary', options: constantlyVaried.summary },
+    */
+    { div: 'graph-execution-summary', options: execution.summary },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

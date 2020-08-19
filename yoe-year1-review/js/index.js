@@ -9,6 +9,8 @@ import { timeTrial } from '/yoe-year1-review/charts/time-trial.js';
 import { timeCommitment } from '/yoe-year1-review/charts/time-commitment.js';
 import { workoutDuration } from '/yoe-year1-review/charts/workout-duration.js';
 import { workoutSpread } from '/yoe-year1-review/charts/workout-spread.js';
+import { constantlyVaried } from '/yoe-year1-review/charts/constantly-varied.js';
+import { execution } from '/yoe-year1-review/charts/execution.js';
 
 const defaultGraphHeight = 300;
 
@@ -20,7 +22,9 @@ const graphs = [
     { div: 'graph-time-commitment', options: timeCommitment.summary },
     { div: 'graph-workout-duration', options: workoutDuration, height: 150 },
     { div: 'graph-workout-spread-scatter', options: workoutSpread.scatter, height: 200 },
-    { div: 'graph-workout-spread-treemap', options: workoutSpread.treemap, height: 200 },
+    { div: 'graph-workout-spread-pies', options: workoutSpread.pies, height: 200 },
+    { div: 'graph-constantly-varied-summary', options: constantlyVaried.summary },
+    { div: 'graph-execution-summary', options: execution.summary, height: 200 },
     {
         div: 'graph-bloodPressure',
         options: biologicalMarkers.bloodPressureOptions,

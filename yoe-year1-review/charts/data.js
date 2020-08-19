@@ -12,7 +12,7 @@ export const workouts = [
 {
     workout: "12.1.2",
     phase: "4: FLUX",
-    date: "2020-08-17",
+    date: "2020-08-18",
     type: "Polarisation",
     apparatus: "AirDyne",
     distance: "21070",
