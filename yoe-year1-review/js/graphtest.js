@@ -29,8 +29,9 @@ const graphs = [
     { div: 'graph-time-commitment', options: timeCommitment.summary },
     { div: 'graph-constantly-varied-summary', options: constantlyVaried.summary },
     { div: 'graph-execution-summary', options: execution.summary },
-    */
     { div: 'graph-strokedata-tt20', options: strokedata.tt20, height: 200 },
+    */
+    { div: 'graph-tt-rower-2000-full-history', options: timeTrial.ttRower2000FullHistory, height: 200 },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
