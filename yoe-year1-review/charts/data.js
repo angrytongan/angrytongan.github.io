@@ -507,7 +507,9 @@ export const workouts = [
     apparatus: "Rower",
     distance: "5233",
     workTime: "20:00",
-    restTime: "0:00"
+    restTime: "0:00",
+    calories: "365",
+    pace: "1:54.6",
 },
 {
     workout: "9.3.4",
@@ -708,7 +710,9 @@ export const workouts = [
     apparatus: "Rower",
     distance: "5231",
     workTime: "20:00",
-    restTime: "0:00"
+    restTime: "0:00",
+    calories: "365",
+    pace: "1:54.7",
 },
 {
     workout: "8.3.4",
@@ -910,6 +914,8 @@ export const workouts = [
     distance: "5172",
     workTime: "20:00",
     restTime: "0:00",
+    calories: "355",
+    pace: "1:56.0",
 },
 {
     workout: "7.3.4",
@@ -1010,7 +1016,7 @@ export const workouts = [
     distance: "5740",
     workTime: "10:00",
     restTime: "0:00",
-    calories: "192"
+    calories: "192",
 },
 {
     workout: "7.1.4",
@@ -1661,7 +1667,7 @@ export const workouts = [
     distance: "5680",
     workTime: "10:00",
     restTime: "0:00",
-    calories: "189"
+    calories: "189",
 },
 {
     workout: "3.4.4",
@@ -1862,7 +1868,7 @@ export const workouts = [
     distance: "5650",
     workTime: "10:00",
     restTime: "0:00",
-    calories: "185"
+    calories: "185",
 },
 {
     workout: "2.4.4",
@@ -2053,7 +2059,7 @@ export const workouts = [
     distance: "5580",
     workTime: "10:00",
     restTime: "0:00",
-    calories: "178"
+    calories: "178",
 },
 {
     workout: "1.4.3",

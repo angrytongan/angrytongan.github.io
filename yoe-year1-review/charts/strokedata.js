@@ -21,6 +21,21 @@ const tt20 = () => {
 
     tooltip.push({
         trigger: 'axis',
+        axisPointer: {
+            type: 'cross',
+            label: {
+                formatter: (params) => {
+                    return dateTime.ds2time(params.value);
+                },
+            },
+            snap: true,
+        },
+        formatter: (params) => {
+            return params.reduce((acc, val) => {
+                acc += `${val.marker} ${val.seriesName}: ${dateTime.ds2time(val.value.p)}<br />`;
+                return acc;
+            }, '');
+        },
     });
 
     dataZoom.push({
@@ -70,6 +85,11 @@ const tt20 = () => {
             datasetIndex: i,
             showSymbol: false,
             animation: false,
+            tooltip: {
+                formatter: (val) => {
+                    console.log(val);
+                },
+            },
         });
     });
 

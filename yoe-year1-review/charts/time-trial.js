@@ -1,62 +1,99 @@
 'use strict';
 
-/*
- * XXX pull workouts from here - we get it from js/index.js
- */
+import { dateTime } from '/yoe-year1-review/js/utils/datetime.js';
 
-import { workouts } from '/yoe-year1-review/charts/data.js';
+const genericOptions = (o) => {
+    return {
+        dataset: {
+            dimensions: [ 'date', 'calories' ],
+            source: o.dataset.source,
+        },
 
-const ttAirDyne = {
-    top: 0,
+        xAxis: {
+            type: 'time',
+            name: 'Date',
+            nameGap: 40,
+            nameLocation: 'middle',
+            min: '2019-09-16',
+            max: '2020-09-16',
+        },
 
-    dataset: {
-        dimensions: [ 'date', 'calories' ],
-        source: workouts,
-    },
+        yAxis: {
+            type: 'value',
+            name: 'Calories',
+            nameLocation: 'middle',
+            nameGap: 40,
+            ...o.yAxis,
+        },
 
-    xAxis: {
-        type: 'time',
-        name: 'Date',
-        nameGap: 40,
-        nameLocation: 'middle',
-        min: '2019-09-16',
-        max: '2020-09-16',
-    },
+        series: {
+            type: 'line',
+            animation: false,
+            connectNulls: true,
+            label: {
+                show: true,
+            },
+            symbolSize: 16,
+            name: 'Calories',
+            ...o.series,
+        },
 
-    yAxis: {
-        type: 'value',
-        name: 'Calories',
-        nameLocation: 'middle',
-        nameGap: 40,
-        min: 175,
-        max: 210,
-    },
-
-    series: {
-        type: 'line',
         tooltip: {
-            formatter: (params) => {
-                return `${params.value.date}<br />Workout ${params.value.workout}<br />${params.value.calories} calories`;
+            trigger: 'item',
+        },
+
+        legend: {
+            top: '10%',
+        },
+    };
+};
+
+const ttAirDyne = (workouts) => {
+    return genericOptions({
+        dataset: {
+            source: workouts.filter((w) => w.apparatus == 'AirDyne' && w.type === 'Time Trial'),
+        },
+        yAxis: {
+            min: 175,
+            max: 210,
+        },
+        series: {
+            tooltip: {
+                formatter: (params) => {
+                    return `${params.value.date}<br />
+                        Workout ${params.value.workout}<br />
+                        ${(params.value.distance / 1000).toFixed(2)}km`;
+                },
             },
         },
-        animation: false,
-        connectNulls: true,
-        label: {
-            show: true,
+    });
+};
+
+const ttRower = (workouts) => {
+    return genericOptions({
+        dataset: {
+            source: workouts.filter((w) => w.apparatus == 'Rower' &&
+                w.workTime === 1200 &&
+                w.type === 'Time Trial'),
         },
-        symbolSize: 16,
-        name: 'Calories',
-    },
-
-    tooltip: {
-        trigger: 'item',
-    },
-
-    legend: {
-        top: '10%',
-    },
+        yAxis: {
+            min: 350,
+            max: 375
+        },
+        series: {
+            tooltip: {
+                formatter: (params) => {
+                    return `${params.value.date}<br />
+                        Workout ${params.value.workout}<br />
+                        Pace ${params.value.pace} /500m<br />
+                        ${(params.value.distance / 1000).toFixed(2)}km`;
+                },
+            },
+        },
+    });
 };
 
 export const timeTrial = {
-    ttAirDyne: () => ttAirDyne,
+    ttAirDyne,
+    ttRower,
 };

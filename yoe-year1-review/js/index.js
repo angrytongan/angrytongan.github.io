@@ -20,6 +20,7 @@ const graphs = [
     { div: 'graph-tracks', options: programPhases.tracksOptions, height: 75, },
     { div: 'graph-workout-types', options: workoutTypes, height: 200 },
     { div: 'graph-tt-airdyne', options: timeTrial.ttAirDyne, height: 200 },
+    { div: 'graph-tt-rower', options: timeTrial.ttRower, height: 200 },
     { div: 'graph-time-commitment', options: timeCommitment.summary },
     { div: 'graph-workout-duration', options: workoutDuration, height: 150 },
     { div: 'graph-workout-spread-scatter', options: workoutSpread.scatter, height: 200 },
