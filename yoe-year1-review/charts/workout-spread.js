@@ -120,6 +120,8 @@ const pies = (data) => {
 
     const graphSize = 25;
     phaseData.forEach((p, i) => {
+        p.workouts.sort((a, b) => a.name < b.name ? -1 : a.name > b.name ? 1 : 0);
+
         const graphLeft =  (i * graphSize) + '%';
         const graphRight = (phaseData.length-1 - i) * graphSize + '%';
 

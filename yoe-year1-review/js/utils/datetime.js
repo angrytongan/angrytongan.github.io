@@ -16,4 +16,9 @@ export const dateTime = {
         }
         return luxon.Duration.fromObject({ seconds: secs }).toFormat(format).replace(/\.([0-9]).*$/, '.$1');
     },
+
+    ds2time: (ds, add_ms = true) => {
+        const format = (ds > 36000 ? 'h:mm:ss' : 'm:ss') + (add_ms ? '.S' : '');
+        return luxon.Duration.fromObject({ seconds: ds / 10 }).toFormat(format).replace(/\.([0-9]).*$/, '.$1');
+    },
 };

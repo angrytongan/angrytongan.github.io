@@ -11,6 +11,7 @@ import { workoutDuration } from '/yoe-year1-review/charts/workout-duration.js';
 import { workoutSpread } from '/yoe-year1-review/charts/workout-spread.js';
 import { constantlyVaried } from '/yoe-year1-review/charts/constantly-varied.js';
 import { execution } from '/yoe-year1-review/charts/execution.js';
+import { strokedata } from '/yoe-year1-review/charts/strokedata.js';
 
 const defaultGraphHeight = 200;
 
@@ -26,8 +27,9 @@ const graphs = [
     { div: 'graph-workout-spread-pies', options: workoutSpread.pies, height: 200 },
     { div: 'graph-time-commitment', options: timeCommitment.summary },
     { div: 'graph-constantly-varied-summary', options: constantlyVaried.summary },
-    */
     { div: 'graph-execution-summary', options: execution.summary },
+    */
+    { div: 'graph-strokedata-tt20', options: strokedata.tt20, height: 200 },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
