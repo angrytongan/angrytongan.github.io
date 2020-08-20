@@ -21,6 +21,7 @@ const summary = (workouts) => {
         },
 
         calendar: {
+            right: '5%',
             cellSize: [ 'auto', 13 ],
             range: [ '2019-09-16', '2020-09-16' ],
             dayLabel: {
