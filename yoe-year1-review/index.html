@@ -631,13 +631,14 @@
         improvment over the first?
         </p>
         <p>
-        First, let's look at the variance between the two workouts.
+        First, let's table the data recorded by ErgData about the workouts, and
+        calculate the variance.
         </p>
         <table class="data">
             <tr>
-                <th>&nbsp;</th>
-                <th>First workout</th>
-                <th>Second workout</th>
+                <th>24x0:30/0:30r</th>
+                <th>First attempt</th>
+                <th>Second attempt</th>
                 <th>Variance</th>
             </tr>
             <tr>
@@ -691,11 +692,32 @@
         </table>
 
         <p>
-        Let's start with number of strokes per interval. The second workout
-        shows a decrease in the number of strokes each interval. We can surmise
-        that each stroke was 
+        Stroke count sticks out the most, so let's examine it first.  The second
+        attempt recorded 16 fewer strokes across the 24 intervals; some some 0.6
+        strokes per interval were dropped. We can see where this happened by
+        graphing stroke rate per interval:
         </p>
         <div id="graph-repeated-24_30_30-strokesPerInterval"></div>
+        <p>
+        Overall, the second attempt demonstrated a slower stroke rate than the
+        first attempt. We know the second attempt covered further distance, so
+        we can surmise that our distance per stroke increased.
+        </p>
+        <p>
+        The first attempt has a higher variance in rate compared to the second.
+        The second shows a more consistent stroke rate.
+        </p>
+        <p>standard deviation plot of strokes per interval here</p>
+
+        <p>
+        Let's now look at strokes per minute.
+        </p>
+        <div id="graph-repeated-24_30_30-strokesPerMinutePerInterval"></div>
+
+        <ul>
+            <li>distance per stroke</li>
+            <li>delta time per stroke</li>
+        </ul>
 
         <!-- biological markers -->
         <h3 id="objective-results-biological-markers">Biological markers</h3>

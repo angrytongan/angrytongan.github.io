@@ -35,6 +35,7 @@ const graphs = [
     */
     { div: 'graph-repeated-24_30_30', options: timeTrial.repeated243030 },
     { div: 'graph-repeated-24_30_30-strokesPerInterval', options: repeated.interval_24_30_30.strokesPerInterval },
+    { div: 'graph-repeated-24_30_30-strokesPerMinutePerInterval', options: repeated.interval_24_30_30.strokesPerMinutePerInterval },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

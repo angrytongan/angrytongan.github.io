@@ -1030,6 +1030,7 @@ const strokesPerInterval = (ids) => {
         const workout = workouts.find((w) => w.id == id);
 
         dataset.push({
+            dimension: [ 'interval', 'numStrokes' ],
             source: strokeData.find((sd) => sd.id == id).data.reduce((acc, val, interval) => {
                 acc.push({
                     interval: interval+1,
@@ -1045,6 +1046,10 @@ const strokesPerInterval = (ids) => {
             name: workout.date,
             datasetIndex: i,
             symbolSize: 12,
+            encode: {
+                x: 'interval',
+                y: 'numStrokes',
+            },
         });
     });
 
@@ -1065,5 +1070,6 @@ const strokesPerInterval = (ids) => {
 export const repeated = {
     interval_24_30_30: {
         strokesPerInterval: () => strokesPerInterval([ 40524237, 46414252 ]),
+        strokesPerMinutePerInterval: () => strokesPerMinutePerInterval([ 40524237, 46414252 ]),
     }
 };
