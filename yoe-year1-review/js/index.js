@@ -12,23 +12,26 @@ import { workoutSpread } from '/yoe-year1-review/charts/workout-spread.js';
 import { constantlyVaried } from '/yoe-year1-review/charts/constantly-varied.js';
 import { execution } from '/yoe-year1-review/charts/execution.js';
 import { strokedata } from '/yoe-year1-review/charts/strokedata.js';
+import { repeated } from '/yoe-year1-review/charts/repeated.js';
 
-const defaultGraphHeight = 300;
+const defaultGraphHeight = 200;
 
 const graphs = [ 
     { div: 'graph-phases', options: programPhases.phasesOptions, height: 50, },
     { div: 'graph-tracks', options: programPhases.tracksOptions, height: 75, },
-    { div: 'graph-workout-types', options: workoutTypes, height: 200 },
-    { div: 'graph-tt-airdyne', options: timeTrial.ttAirDyne, height: 200 },
-    { div: 'graph-tt-rower', options: timeTrial.ttRower, height: 200 },
-    { div: 'graph-tt-rower-2000-full-history', options: timeTrial.ttRower2000FullHistory, height: 200 },
+    { div: 'graph-workout-types', options: workoutTypes },
+    { div: 'graph-tt-airdyne', options: timeTrial.ttAirDyne },
+    { div: 'graph-tt-rower', options: timeTrial.ttRower },
+    { div: 'graph-tt-rower-2000-full-history', options: timeTrial.ttRower2000FullHistory },
+    { div: 'graph-repeated-24_30_30', options: timeTrial.repeated243030 },
     { div: 'graph-time-commitment', options: timeCommitment.summary },
     { div: 'graph-workout-duration', options: workoutDuration, height: 150 },
-    { div: 'graph-workout-spread-scatter', options: workoutSpread.scatter, height: 200 },
-    { div: 'graph-workout-spread-pies', options: workoutSpread.pies, height: 200 },
+    { div: 'graph-workout-spread-scatter', options: workoutSpread.scatter },
+    { div: 'graph-workout-spread-pies', options: workoutSpread.pies },
     { div: 'graph-constantly-varied-summary', options: constantlyVaried.summary },
     { div: 'graph-execution-summary', options: execution.summary, height: 170 },
-    { div: 'graph-strokedata-tt20', options: strokedata.tt20, height: 200 },
+    { div: 'graph-strokedata-tt20', options: strokedata.tt20 },
+    { div: 'graph-repeated-24_30_30-strokesPerInterval', options: repeated.interval_24_30_30.strokesPerInterval },
     {
         div: 'graph-bloodPressure',
         options: biologicalMarkers.bloodPressureOptions,

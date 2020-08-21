@@ -38,6 +38,8 @@ export const workouts = [
     distance: "3631",
     workTime: "12:00",
     restTime: "11:30",
+    calories: "294",
+    pace: "1:39.1",
 },
 {
     workout: "11.4.1",
@@ -1777,7 +1779,9 @@ export const workouts = [
     apparatus: "Rower",
     distance: "3624",
     workTime: "12:00",
-    restTime: "11:30"
+    restTime: "11:30",
+    calories: "296",
+    pace: "1:39.3",
 },
 {
     workout: "3.2.4",

@@ -67,3 +67,6 @@ img.centre {
 .clear {
     clear: both;
 }
+table.data td {
+    text-align: right;
+}

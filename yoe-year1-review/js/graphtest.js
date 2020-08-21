@@ -23,9 +23,7 @@ const graphs = [
     { div: 'graph-workout-types', options: workoutTypes, height: 200 },
     { div: 'graph-tt-airdyne', options: timeTrial.ttAirDyne, height: 200 },
     { div: 'graph-tt-rower', options: timeTrial.ttRower, height: 200 },
-    */
     { div: 'graph-tt-rower-2000-full-history', options: timeTrial.ttRower2000FullHistory, height: 200 },
-    /*
     { div: 'graph-workout-duration', options: workoutDuration },
     { div: 'graph-workout-spread-scatter', options: workoutSpread.scatter, height: 200 },
     { div: 'graph-workout-spread-treemap', options: workoutSpread.treemap, height: 200 },
@@ -35,7 +33,8 @@ const graphs = [
     { div: 'graph-execution-summary', options: execution.summary, height: 170 },
     { div: 'graph-strokedata-tt20', options: strokedata.tt20, height: 200 },
     */
-    { div: 'graph-repeated-interval_24_30_30', options: repeated.interval_24_30_30 },
+    { div: 'graph-repeated-24_30_30', options: timeTrial.repeated243030 },
+    { div: 'graph-repeated-24_30_30-strokesPerInterval', options: repeated.interval_24_30_30.strokesPerInterval },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -138,8 +138,32 @@ const ttRower2000FullHistory = (workouts) => {
     });
 };
 
+/* 24x0:30/0:30r */
+const repeated243030 = (workouts) => {
+    return genericOptions({
+        dataset: {
+            source: workouts.filter((w) => w.workout == '12.1.5' || w.workout == '3.2.3')
+        },
+        yAxis: {
+            min: 0,
+            max: 1000,
+        },
+        series: {
+            tooltip: {
+                formatter: (params) => {
+                    return `${params.value.date}<br />
+                        Workout ${params.value.workout}<br />
+                        Pace ${params.value.pace} /500m<br />
+                        ${(params.value.distance / 1000).toFixed(2)}km`;
+                },
+            },
+        },
+    });
+};
+
 export const timeTrial = {
     ttAirDyne,
     ttRower,
     ttRower2000FullHistory,
+    repeated243030,
 };
