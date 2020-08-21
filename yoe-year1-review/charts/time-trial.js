@@ -45,6 +45,7 @@ const genericOptions = (o) => {
 
         legend: {
             top: '10%',
+            ...o.legend,
         },
     };
 };
@@ -79,7 +80,7 @@ const ttRower = (workouts) => {
         },
         yAxis: {
             min: 350,
-            max: 375
+            max: 370
         },
         series: {
             tooltip: {
@@ -97,8 +98,8 @@ const ttRower = (workouts) => {
 const workouts2000rower = [
     /* 25029665 */ { workout: "N/A", date: "2015-11-20", distance: "4750", workTime: "1200", calories: "299", pace: "2:06.3" },
     /* 32104086 */ { workout: "N/A", date: "2018-01-17", distance: "5017", workTime: "1200", calories: "332", pace: "1:59.5" },
-    /* 39276484 */ { workout: "N/A", date: "2019-08-20", distance: "4894", workTime: "1200", calories: "319", pace: "2:02.5" },
     /* 37830654 */ { workout: "N/A", date: "2019-04-11", distance: "4997", workTime: "1200", calories: "332", pace: "2:00.0" },
+    /* 39276484 */ { workout: "N/A", date: "2019-08-20", distance: "4894", workTime: "1200", calories: "319", pace: "2:02.5" },
 ];
 const ttRower2000FullHistory = (workouts) => {
     return genericOptions({
@@ -123,6 +124,15 @@ const ttRower2000FullHistory = (workouts) => {
                         Pace ${params.value.pace} /500m<br />
                         ${(params.value.distance / 1000).toFixed(2)}km`;
                 },
+            },
+            markArea: {
+                silent: true,
+                data: [
+                    [
+                        { coord: [ '2019-09-16', 250 ] },
+                        { coord: [ '2020-09-16', 375 ] },
+                    ],
+                ],
             },
         },
     });

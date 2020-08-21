@@ -51,3 +51,19 @@ img.centre {
     background: #fd9;
     padding: 1em;
 }
+.images {
+    margin-top: 1em;
+}
+.images .column {
+    padding-left: 1%;
+    padding-right: 1%;
+    width: 31%;
+    float: left;
+    text-align: center;
+}
+.images .column p {
+    font-size: smaller;
+}
+.clear {
+    clear: both;
+}

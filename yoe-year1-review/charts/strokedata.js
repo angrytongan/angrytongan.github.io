@@ -81,7 +81,7 @@ const tt20 = () => {
                 y: 'p',
             },
             connectNulls: true,
-            name: `Test ${i+1}`,
+            name: `Test ${i+1} pace`,
             datasetIndex: i,
             showSymbol: false,
             animation: false,
