@@ -871,52 +871,7 @@ const strokeData = [
         ]
     }
 ];
-/*
- {"id":40524237,
-"user_id":1063564,
-"date":"2019-11-24 06:18:00",
-"timezone":"Australia/Brisbane",
-"date_utc":"2019-11-23 20:18:00",
-"distance":3624,
-"type":"rower",
-"time":7200,
-"time_formatted":"24:00.0",
-"workout_type":"FixedTimeInterval",
-"source":"ErgData iOS",
-"weight_class":"H",
-"verified":true,
-"ranked":false,
-"comments":"24x0:30/0:30r -TGL EB 3.2.3/10.3. Final rounds were good, too conservative at start.",
-"stroke_data":true,
-"rest_distance":451,
-"rest_time":7200,
-"calories_total":296,
-"drag_factor":120,
-"stroke_count":364,
-"stroke_rate":29}
 
-{"id":46414252,
-"user_id":1063564,
-"date":"2020-08-21 11:45:00",
-"timezone":"Australia/Brisbane",
-"date_utc":"2020-08-21 01:45:00",
-"distance":3631,
-"type":"rower",
-"time":7200,
-"time_formatted":"24:00.0",
-"workout_type":"FixedTimeInterval",
-"source":"ErgData iOS",
-"weight_class":"H",
-"verified":true,
-"ranked":false,
-"comments":"24x0:30/0:30r. Improved on 20191124 in speed and consistency. ", "stroke_data":true,
-"rest_distance":458,
-"rest_time":7200,
-"calories_total":294,
-"drag_factor":127,
-"stroke_count":348,
-"stroke_rate":28}
-*/
 /*
  * 24x0:30/0:30r
  * - 40524237
@@ -994,12 +949,23 @@ const workouts = [
 ];
 
 const strokesPerInterval = (ids) => {
+    const dataset = [];
+    const series = [];
+    const yAxis = [];
+    const xAxis = [];
     const legend = [];
     const tooltip = [];
-    const xAxis = [];
-    const yAxis = [];
-    const series = [];
-    const dataset = [];
+
+    xAxis.push({
+        type: 'value',
+        name: 'Interval',
+        nameGap: 30,
+        nameLocation: 'middle',
+    });
+
+    legend.push({
+        top: '10%',
+    });
 
     tooltip.push({
         trigger: 'axis',
@@ -1010,13 +976,11 @@ const strokesPerInterval = (ids) => {
                 },
             }
         },
-    });
-
-    xAxis.push({
-        type: 'value',
-        name: 'Interval',
-        nameGap: 35,
-        nameLocation: 'middle',
+        formatter: (params) => {
+            return params[0].axisValueLabel + params.reduce((acc, val) => {
+                return acc + `<br />${val.marker} ${val.value.numStrokes} strokes`;
+            }, '');
+        },
     });
 
     yAxis.push({
@@ -1050,11 +1014,8 @@ const strokesPerInterval = (ids) => {
                 x: 'interval',
                 y: 'numStrokes',
             },
+            animation: false,
         });
-    });
-
-    legend.push({
-        top: '10%',
     });
 
     return {
@@ -1062,14 +1023,610 @@ const strokesPerInterval = (ids) => {
         tooltip,
         xAxis,
         yAxis,
-        series,
         dataset,
+        series
+    };
+};
+
+const distancePerInterval = (ids) => {
+    const dataset = [];
+    const series = [];
+    const yAxis = [];
+    const tooltip = [];
+    const xAxis = [];
+    const legend = [];
+
+    xAxis.push({
+        type: 'value',
+        name: 'Interval',
+        nameGap: 30,
+        nameLocation: 'middle',
+    });
+
+    legend.push({
+        top: '10%',
+    });
+
+    tooltip.push({
+        trigger: 'axis',
+        axisPointer: {
+            label: {
+                formatter: (params) => {
+                    return `Interval ${params.value}`;
+                },
+            }
+        },
+        formatter: (params) => {
+            return params[0].axisValueLabel + params.reduce((acc, val) => {
+                return acc + `<br />${val.marker} ${val.value.distance}m`;
+            }, '');
+        },
+    });
+
+    yAxis.push({
+        name: 'Distance (m)',
+        nameGap: 35,
+        nameLocation: 'middle',
+        min: 140,
+    });
+
+    ids.forEach((id, iw) => {
+        const workout = workouts.find((w) => w.id == id);
+
+        dataset.push({
+            dimension: [ 'interval', 'distance' ],
+            source: workout.intervals.map((w, i) => ({
+                interval: i+1,
+                distance: w.distance,
+            })),
+        });
+
+        series.push({
+            type: 'bar',
+            name: workout.date,
+            datasetIndex: iw,
+            encode: {
+                x: 'interval',
+                y: 'distance',
+            },
+            animation: false,
+        });
+    });
+
+    return {
+        tooltip,
+        legend,
+        xAxis,
+        yAxis,
+        dataset,
+        series,
+    };
+};
+
+const cumulativeDistancePerStroke = (ids) => {
+    const dataset = [];
+    const xAxis = [];
+    const yAxis = [];
+    const series = [];
+    const tooltip = [];
+    const legend = [];
+
+    tooltip.push({
+        trigger: 'axis',
+        axisPointer: {
+            label: {
+                formatter: (params) => {
+                    return `Stroke ${params.value}`;
+                },
+            }
+        },
+        formatter: (params) => {
+            return params[0].axisValueLabel + params.reduce((acc, val) => {
+                return acc + `<br />${val.marker} ${(val.value.d / 10).toFixed(0)}m`;
+            }, '');
+        },
+    });
+
+    legend.push({
+        top: '10%',
+    });
+
+    xAxis.push({
+        name: 'Stroke',
+        nameGap: 30,
+        nameLocation: 'middle',
+        max: 'dataMax',
+    });
+    yAxis.push({
+        name: 'Cumulative distance / stroke (m)',
+        nameGap: 40,
+        nameLocation: 'middle',
+        axisLabel: {
+            formatter: (val) => (val / 10).toFixed(0),
+        },
+    });
+
+    ids.forEach((id, iw) => {
+        const workout = workouts.find((w) => w.id == id);
+        const sd = strokeData.find((s) => s.id == id);
+        let i = 1;
+
+        dataset.push({
+            dimension: [ 'stroke', 'd' ],
+            source: sd.data.reduce((acc, val) => {
+                return acc.concat(val.map((v) => {
+                    return {
+                        stroke: i++,
+                        d: v.d,
+                    };
+                }));
+            }, []),
+        });
+
+        series.push({
+            type: 'bar',
+            name: workout.date,
+            datasetIndex: iw,
+            showSymbol: false,
+            lineStyle: {
+                width: 1,
+            },
+            encode: {
+                x: 'stroke',
+                y: 'd',
+            },
+            animation: false,
+        });
+    });
+
+    return {
+        tooltip,
+        legend,
+        xAxis,
+        yAxis,
+        dataset,
+        series,
+    };
+};
+
+const distancePerStroke = (ids) => {
+    const dataset = [];
+    const xAxis = [];
+    const yAxis = [];
+    const series = [];
+    const tooltip = [];
+    const legend = [];
+
+    tooltip.push({
+        trigger: 'axis',
+        axisPointer: {
+            label: {
+                formatter: (params) => {
+                    return `Stroke ${params.value}`;
+                },
+            }
+        },
+        formatter: (params) => {
+            return params[0].axisValueLabel + params.reduce((acc, val) => {
+                return acc + `<br />${val.marker} ${(val.value.d / 10).toFixed(0)}m`;
+            }, '');
+        },
+    });
+
+    legend.push({
+        top: '10%',
+    });
+
+    xAxis.push({
+        name: 'Stroke',
+        nameGap: 30,
+        nameLocation: 'middle',
+        max: 'dataMax',
+    });
+    yAxis.push({
+        name: 'Distance per stroke (m)',
+        nameGap: 30,
+        nameLocation: 'middle',
+        axisLabel: {
+            formatter: (val) => (val / 10).toFixed(0),
+        },
+    });
+
+    ids.forEach((id, iw) => {
+        const workout = workouts.find((w) => w.id == id);
+        const sd = strokeData.find((s) => s.id == id);
+        let i = 1;
+
+        dataset.push({
+            dimension: [ 'stroke', 'd' ],
+            source: sd.data.reduce((acc, val) => {
+                let lastDistance = 0;
+                return acc.concat(val.map((v) => {
+                    const d = v.d - lastDistance;
+                    lastDistance = v.d;
+
+                    return {
+                        stroke: i++,
+                        d: d,
+                    };
+                }));
+            }, []),
+        });
+
+        series.push({
+            type: 'line',
+            name: workout.date,
+            datasetIndex: iw,
+            showSymbol: false,
+            lineStyle: {
+                width: 1,
+            },
+            encode: {
+                x: 'stroke',
+                y: 'distance',
+            },
+            animation: false,
+        });
+    });
+
+    return {
+        tooltip,
+        legend,
+        xAxis,
+        yAxis,
+        dataset,
+        series,
+    };
+};
+
+const distanceDeltaPerInterval = (ids) => {
+    const dataset = [];
+    const series = [];
+    const yAxis = [];
+    const xAxis = [];
+    const legend = [];
+    const tooltip = [];
+
+    legend.push({
+        top: '10%',
+    });
+
+    tooltip.push({
+        trigger: 'axis',
+        axisPointer: {
+            label: {
+                formatter: (params) => {
+                    return `Interval ${params.value}`;
+                },
+            }
+        },
+        formatter: (params) => {
+            return params[0].axisValueLabel +
+                `<br />${params[0].marker} ${params[0].value.delta}m`;
+        },
+    });
+
+    xAxis.push({
+        name: 'Interval',
+        nameGap: 30,
+        nameLocation: 'middle',
+    });
+
+    yAxis.push({
+        name: 'Distance (m)',
+        nameGap: 30,
+        nameLocation: 'middle',
+    });
+
+    const numIntervals = workouts[0].intervals.length;
+    const data = [];
+
+    for (let i = 0; i < numIntervals; i++) {
+        data.push({
+            interval: i+1,
+            delta: workouts[1].intervals[i].distance - workouts[0].intervals[i].distance,
+        });
     }
+
+    dataset.push({
+        dimension: [ 'interval', 'delta' ],
+        source: data,
+    });
+
+    series.push({
+        type: 'bar',
+        name: '2nd attempt change on 1st attempt',
+        encode: {
+            x: 'interval',
+            y: 'delta',
+        },
+        animation: false,
+    });
+
+    return {
+        tooltip,
+        legend,
+        xAxis,
+        yAxis,
+        dataset,
+        series
+    };
+};
+
+const timeDeltaPerStroke = (ids) => {
+    const dataset = [];
+    const xAxis = [];
+    const yAxis = [];
+    const series = [];
+    const tooltip = [];
+    const legend = [];
+
+    tooltip.push({
+        trigger: 'axis',
+        axisPointer: {
+            label: {
+                formatter: (params) => {
+                    return `Stroke ${params.value}`;
+                },
+            }
+        },
+        formatter: (params) => {
+            return params[0].axisValueLabel + params.reduce((acc, val) => {
+                return acc + `<br />${val.marker} ${dateTime.ds2time(val.value.d)}`;
+            }, '');
+        },
+    });
+
+    legend.push({
+        top: '10%',
+    });
+
+    xAxis.push({
+        name: 'Stroke',
+        nameGap: 30,
+        nameLocation: 'middle',
+        max: 'dataMax',
+    });
+    yAxis.push({
+        name: 'Time between strokes (mm:ss)',
+        nameGap: 45,
+        nameLocation: 'middle',
+        axisLabel: {
+            formatter: (val) => dateTime.ds2time(val),
+        },
+    });
+
+    ids.forEach((id, iw) => {
+        const workout = workouts.find((w) => w.id == id);
+        const sd = strokeData.find((s) => s.id == id);
+        let i = 1;
+
+        dataset.push({
+            dimension: [ 'stroke', 't' ],
+            source: sd.data.reduce((acc, val) => {
+                let lastTime = 0;
+                return acc.concat(val.map((v) => {
+                    const t = v.t - lastTime;
+                    lastTime = v.t;
+
+                    return {
+                        stroke: i++,
+                        d: t,
+                    };
+                }));
+            }, []),
+        });
+
+        series.push({
+            type: 'line',
+            name: workout.date,
+            datasetIndex: iw,
+            showSymbol: false,
+            lineStyle: {
+                width: 1,
+            },
+            encode: {
+                x: 'stroke',
+                y: 't',
+            },
+            animation: false,
+        });
+    });
+
+    return {
+        tooltip,
+        legend,
+        xAxis,
+        yAxis,
+        dataset,
+        series,
+    };
+};
+
+const pacePerInterval = (ids) => {
+    const dataset = [];
+    const series = [];
+    const yAxis = [];
+    const tooltip = [];
+    const xAxis = [];
+    const legend = [];
+
+    xAxis.push({
+        type: 'value',
+        name: 'Interval',
+        nameGap: 30,
+        nameLocation: 'middle',
+    });
+
+    legend.push({
+        top: '10%',
+    });
+
+    tooltip.push({
+        trigger: 'axis',
+        axisPointer: {
+            label: {
+                formatter: (params) => {
+                    return `Interval ${params.value}`;
+                },
+            }
+        },
+        formatter: (params) => {
+            return params[0].axisValueLabel + params.reduce((acc, val) => {
+                return acc + `<br />${val.marker} ${dateTime.ds2time(val.value.pace)}`;
+            }, '');
+        },
+    });
+
+    yAxis.push({
+        name: 'Pace (mm:ss)',
+        nameGap: 45,
+        nameLocation: 'middle',
+        axisLabel: {
+            formatter: (val) => dateTime.ds2time(val),
+        },
+        min: 850,
+        inverse: true,
+    });
+
+    ids.forEach((id, iw) => {
+        const workout = workouts.find((w) => w.id == id);
+
+        dataset.push({
+            dimension: [ 'interval', 'distance' ],
+            source: workout.intervals.map((w, i) => ({
+                interval: i+1,
+                pace: 500 * (w.time / w.distance),
+            })),
+        });
+
+        series.push({
+            type: 'line',
+            name: workout.date,
+            datasetIndex: iw,
+            encode: {
+                x: 'interval',
+                y: 'pace',
+            },
+            animation: false,
+        });
+    });
+
+    return {
+        tooltip,
+        legend,
+        xAxis,
+        yAxis,
+        dataset,
+        series,
+    };
+};
+
+const wattsPerStroke = (ids) => {
+    const dataset = [];
+    const xAxis = [];
+    const yAxis = [];
+    const series = [];
+    const tooltip = [];
+    const legend = [];
+    const dataZoom = [];
+
+    tooltip.push({
+        trigger: 'axis',
+        axisPointer: {
+            label: {
+                formatter: (params) => {
+                    return `Stroke ${params.value}`;
+                },
+            }
+        },
+        formatter: (params) => {
+            return params[0].axisValueLabel + params.reduce((acc, val) => {
+                return acc + `<br />${val.marker} ${val.value.w}W`;
+            }, '');
+        },
+    });
+
+    legend.push({
+        top: '10%',
+    });
+
+    xAxis.push({
+        name: 'Stroke',
+        nameGap: 30,
+        nameLocation: 'middle',
+        max: 'dataMax',
+    });
+    yAxis.push({
+        name: 'Watts per strokes (W)',
+        nameGap: 45,
+        nameLocation: 'middle',
+    });
+
+    ids.forEach((id, iw) => {
+        const workout = workouts.find((w) => w.id == id);
+        const sd = strokeData.find((s) => s.id == id);
+        let i = 1;
+
+        dataset.push({
+            dimension: [ 'stroke', 'w' ],
+            source: sd.data.reduce((acc, val) => {
+                return acc.concat(val.map((v) => {
+                    const w = v.t == 0 || v.d == 0 ? 0 : Math.trunc(2.8 / Math.pow((v.t/10) / (v.d/10), 3));
+
+                    if (w == null || w == NaN) {
+                        console.log(w, v);
+                    }
+
+                    return {
+                        stroke: i++,
+                        w: w,
+                    };
+                }));
+            }, []),
+        });
+
+        series.push({
+            type: 'line',
+            name: workout.date,
+            datasetIndex: iw,
+            showSymbol: false,
+            lineStyle: {
+                width: 1,
+            },
+            encode: {
+                x: 'stroke',
+                y: 'w',
+            },
+            animation: false,
+        });
+    });
+
+    dataZoom.push({
+    });
+
+    return {
+        tooltip,
+        legend,
+        xAxis,
+        yAxis,
+        dataset,
+        series,
+        dataZoom,
+    };
 };
 
 export const repeated = {
     interval_24_30_30: {
         strokesPerInterval: () => strokesPerInterval([ 40524237, 46414252 ]),
-        strokesPerMinutePerInterval: () => strokesPerMinutePerInterval([ 40524237, 46414252 ]),
+        distancePerInterval: () => distancePerInterval([ 40524237, 46414252 ]),
+        cumulativeDistancePerStroke: () => cumulativeDistancePerStroke([ 40524237, 46414252 ]),
+
+        distanceDeltaPerInterval: () => distanceDeltaPerInterval([ 40524237, 46414252 ]),
+        distancePerStroke: () => distancePerStroke([ 40524237, 46414252 ]),
+        timeDeltaPerStroke: () => timeDeltaPerStroke([ 40524237, 46414252 ]),
+
+        pacePerInterval: () => pacePerInterval([ 40524237, 46414252 ]),
+        wattsPerStroke: () => wattsPerStroke([ 40524237, 46414252 ]),
     }
 };
