@@ -37,11 +37,13 @@ const graphs = [
     { div: 'graph-repeated-24_30_30-strokesPerInterval', options: repeated.interval_24_30_30.strokesPerInterval },
     { div: 'graph-repeated-24_30_30-distancePerInterval', options: repeated.interval_24_30_30.distancePerInterval },
     { div: 'graph-repeated-24_30_30-cumulativeDistancePerStroke', options: repeated.interval_24_30_30.cumulativeDistancePerStroke },
-    { div: 'graph-repeated-24_30_30-distancePerStroke', options: repeated.interval_24_30_30.distancePerStroke },
+    { div: 'graph-repeated-24_30_30-cumulativeDistancePerInterval', options: repeated.interval_24_30_30.cumulativeDistancePerInterval },
     { div: 'graph-repeated-24_30_30-distanceDeltaPerInterval', options: repeated.interval_24_30_30.distanceDeltaPerInterval },
+    { div: 'graph-repeated-24_30_30-distancePerStroke', options: repeated.interval_24_30_30.distancePerStroke },
     { div: 'graph-repeated-24_30_30-timeDeltaPerStroke', options: repeated.interval_24_30_30.timeDeltaPerStroke },
     { div: 'graph-repeated-24_30_30-pacePerInterval', options: repeated.interval_24_30_30.pacePerInterval },
     { div: 'graph-repeated-24_30_30-wattsPerStroke', options: repeated.interval_24_30_30.wattsPerStroke },
+    { div: 'graph-repeated-24_30_30-bankedDistanceByInterval', options: repeated.interval_24_30_30.bankedDistanceByInterval },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

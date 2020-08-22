@@ -627,12 +627,7 @@
         A cursory glance indicates the second workout was poorer than the first.
         A closer look raises some questions. In the second attempt, the calorie
         count is lower, but both the distance is further and the pace is
-        faster, albeit by the smallest of deltas.  Does the second attempt show
-        improvment over the first?
-        </p>
-        <p>
-        First, let's table the data recorded by ErgData about the workouts, and
-        calculate the variance.
+        faster, albeit by the smallest of deltas:
         </p>
         <table class="data">
             <tr>
@@ -640,91 +635,187 @@
                 <th>First attempt</th>
                 <th>Second attempt</th>
                 <th>Variance</th>
+                <th>Interpretation</th>
             </tr>
             <tr>
                 <th>Date</th>
                 <td>24th November, 2019</td>
                 <td>21st August, 2020</td>
                 <td>+8 months, 28 days</td>
+                <td>N/A</td>
             </tr>
             <tr>
                 <th>Pace</th>
                 <td>1:39.3 /500m</td>
                 <td>1:39.1 /500m</td>
                 <td>-0:00.2 /500m</td>
+                <td>Improvement?</td>
             </tr>
             <tr>
                 <th>Distance</th>
                 <td>3,624m</td>
                 <td>3,631m</td>
                 <td>+7m</td>
+                <td>Improvement?</td>
             </tr>
             <tr>
                 <th>Calories</th>
                 <td>296 calories</td>
                 <td>294 calories</td>
                 <td>-2 calories</td>
-            </tr>
-            <tr>
-                <th>Drag Factor</th>
-                <td>120 drag factor</td>
-                <td>127 drag factor</td>
-                <td>+7 drag factor</td>
+                <td>Deterioration?</td>
             </tr>
             <tr>
                 <th>Stroke count</th>
                 <td>364 strokes</td>
                 <td>348 strokes</td>
                 <td>-16 strokes</td>
+                <td>Improvement?</td>
             </tr>
             <tr>
                 <th>Stroke rate</th>
                 <td>29 spm</td>
                 <td>28 spm</td>
                 <td>-1 spm</td>
+                <td>Improvement?</td>
             </tr>
             <tr class="self">
                 <th>RPE</th>
                 <td>8-9</td>
                 <td>7-8</td>
                 <td>-1 point</td>
+                <td>Improvement?</td>
             </tr>
         </table>
 
         <p>
         There were 9 months between the workouts. If the program works as
         claimed, and both workouts were done under similar circumstances, why
-        wasn't there are bigger improvement?
+        wasn't there any significant improvement?
         </p>
 
         <p>
-        Stroke count sticks out the most, so let's examine it first.  The second
-        attempt recorded 16 fewer strokes across the 24 intervals; some 0.6
-        strokes per interval were dropped. We can see where this happened by
-        graphing stroke rate per interval:
+        Before we try to answer that, let's look at the data closely. If we
+        consider there was no significant drop nor increase in performance, we
+        could consider the outcomes to be essentially "equal," right?
+        </p>
+
+        <p>
+        Let's start with stroke count, as it sticks out the most. The 2nd
+        attempt recorded 16 fewer strokes; some 0.6 strokes per interval were
+        dropped. We can see where this happened by looking at the number of
+        strokes per interval:
         </p>
         <div id="graph-repeated-24_30_30-strokesPerInterval"></div>
         <p>
-        Overall, the second attempt demonstrated a slower stroke rate than the
-        first attempt. We know the second attempt covered further distance, so
-        we can surmise that our distance per stroke increased. To be sure, let's
-        examine stroke distance per stroke, per interval:
+        The 2nd attempt had one less stroke in 16 of the 24 intervals
+        compared to the 1st attempt. We know the 2nd attempt covered further
+        distance, so we can make the presumption that in the 2nd attempt, the
+        <u>distance per stroke increased</u>.
         </p>
-        <p>
-        The first attempt has a higher variance in rate compared to the second.
-        The second shows a more consistent stroke rate.
-        </p>
-        <p>standard deviation plot of strokes per interval here</p>
 
         <p>
-        Let's now look at strokes per minute.
+        What is the impact of one fewer stroke per interval over the same
+        distance? We can examine cumulative distance per stroke, by interval:
         </p>
-        <div id="graph-repeated-24_30_30-strokesPerMinutePerInterval"></div>
+        <div id="graph-repeated-24_30_30-cumulativeDistancePerStroke"></div>
+        <p>
+        As attempt 2 drops strokes, it &ldquo;shifts left&rdquo;, until it is a
+        full 16 strokes (one full interval) ahead of attempt 1. Attempt 2 has
+        completed the same distance with fewer strokes overall.
+        </p>
 
+        <p>
+        Let's look at interval distance.
+        </p>
+        <div id="graph-repeated-24_30_30-distancePerInterval"></div>
+        <p>
+        While both attempts are similar, attempt 1 appears to have more
+        inconsistency with distances for each interval. We can compare the
+        deviation for both attempts:
+        </p>
+        <p>XXX deviation graph here</p>
+        <p>
+        Attempt 2 has a smaller standard deviation, demonstrating <u>higher
+        accuracy for distance</u> than attempt 1.
+        </p>
+
+        <p>
+        Are the differences in distance between attempts meaningful?  Using
+        attempt 1 as a baseline, we can compare attempt 2's distances per
+        interval:
+        </p>
+        <div id="graph-repeated-24_30_30-distanceDeltaPerInterval"></div>
+        <p>
+        We can see that compared to attempt 1, attempt 2 was hot in interval 1,
+        tempered through to interval 15, and not as fast as attempt 1 from
+        interval 17 to 24. We can visualise a race between the two attempts by
+        &ldquo;banking&rdquo; the difference in distance per interval:
+        </p>
+        <div id="graph-repeated-24_30_30-bankedDistanceByInterval"></div>
+        <p>
+        At interval 15, attempt 2 has accumulated 29m more than attempt 1. This
+        gain is eroded as the workout continues. The distance remaining in
+        attempt 2's bank at the end of the last interval is 7m, which matches
+        our variance previously tabled.
+        </p>
+
+        <p>
+        So there is some meaning behind the variance in distance. We know that
+        if we use attempt 1 as a baseline, attempt 2 was faster up to interval
+        15, then slower from there to interval 24. But we want to know why,
+        which can be found by looking at pace.
+        </p>
+
+        <p>
+        Let's examine consistency.
+        </p>
+
+        <p>
+        So let's recoup what we have discovered.
+        </p>
         <ul>
-            <li>distance per stroke</li>
-            <li>delta time per stroke</li>
+            <li>Attempt 2 went further per stroke.</li>
+            <li>Attempt 2 displayed a higher accuracy.</li>
+            <li>RPE improved.</li>
         </ul>
+        <p>
+        We could conclude that attempt 2 generated more power per stroke and was
+        more consistent than attempt 1; we can say that attempt 2 was more
+        efficient in execution of the workout. But this conclusion still doesn't
+        explain why there wasn't more a significant increase in performance
+        between the two workouts given the amount of training!
+        </p>
+
+        <div class="self">
+            <p>
+            And here's where my mistake comes in. When I repeat workouts, I check my
+            previous results, consider how I'm feeling and predict how much faster I
+            could complete the work, and use that as my goal. When I checked my
+            history, I accidently looked up <strong>2<u>0</u>x0:30/0:30r</strong>
+            (instead of 2<u>4</u>x0:30/0:30r).
+            </p>
+
+            <p>
+            20x0:30/0:30r had been done 6 weeks earlier than attempt 1 of 24x0:30/0:30r
+            and had an average pace of 1:40.5.
+            1:40.5.
+            <p>
+            <p>
+            So, for attempt 2 of 24x0:30/0:30r, I conservatively took a second
+            off and aimed for 1:39.5, not realising I should have been aiming
+            for 1:38.3.
+            </p>
+            <p>
+            My RPE was 7-8 rather than 8-9, which left me scratching my head a
+            bit until I realised my mistake.
+            </p>
+            <p>
+            So to sum up: my 
+            </p>
+        </div>
+
+        </p>
 
         <!-- biological markers -->
         <h3 id="objective-results-biological-markers">Biological markers</h3>
