@@ -1397,7 +1397,7 @@ export const workouts = [
     type: "Polarisation",
     apparatus: "AirDyne",
     distance: "13760",
-    workTime: "30:00",
+    workTime: "26:32",
     restTime: "0:00"
 },
 {

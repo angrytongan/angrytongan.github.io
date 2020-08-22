@@ -53,9 +53,6 @@ const genericOptions = (o) => {
 
 const ttAirDyne = (workouts) => {
     return genericOptions({
-        tooltip: {
-            trigger: 'axis',
-        },
         dataset: {
             source: workouts.filter((w) => w.apparatus == 'AirDyne' && w.type === 'Time Trial'),
         },
@@ -77,9 +74,6 @@ const ttAirDyne = (workouts) => {
 
 const ttRower = (workouts) => {
     return genericOptions({
-        tooltip: {
-            trigger: 'axis',
-        },
         dataset: {
             source: workouts.filter((w) => w.apparatus == 'Rower' &&
                 w.workTime === 1200 &&
@@ -110,9 +104,6 @@ const workouts2000rower = [
 ];
 const ttRower2000FullHistory = (workouts) => {
     return genericOptions({
-        tooltip: {
-            trigger: 'axis',
-        },
         dataset: {
             source: workouts.filter((w) => w.apparatus == 'Rower' &&
                 w.workTime === 1200 &&
@@ -151,9 +142,6 @@ const ttRower2000FullHistory = (workouts) => {
 /* 24x0:30/0:30r */
 const repeated243030 = (workouts) => {
     return genericOptions({
-        tooltip: {
-            trigger: 'axis',
-        },
         dataset: {
             source: workouts.filter((w) => w.workout == '12.1.5' || w.workout == '3.2.3')
         },

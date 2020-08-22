@@ -13,6 +13,7 @@ import { constantlyVaried } from '/yoe-year1-review/charts/constantly-varied.js'
 import { execution } from '/yoe-year1-review/charts/execution.js';
 import { strokedata } from '/yoe-year1-review/charts/strokedata.js';
 import { repeated } from '/yoe-year1-review/charts/repeated.js';
+import { intervalGraph } from '/yoe-year1-review/charts/interval-graph.js';
 
 const defaultGraphHeight = 200;
 
@@ -31,9 +32,10 @@ const graphs = [
     { div: 'graph-time-commitment', options: timeCommitment.summary },
     { div: 'graph-constantly-varied-summary', options: constantlyVaried.summary },
     { div: 'graph-execution-summary', options: execution.summary, height: 170 },
-    { div: 'graph-strokedata-tt20', options: strokedata.tt20, height: 200 },
-    { div: 'graph-repeated-24_30_30', options: timeTrial.repeated243030 },
     */
+    { div: 'graph-strokedata-tt20', options: strokedata.tt20, height: 200 },
+    /*
+    { div: 'graph-repeated-24_30_30', options: timeTrial.repeated243030 },
     { div: 'graph-repeated-24_30_30-strokesPerInterval', options: repeated.interval_24_30_30.strokesPerInterval },
     { div: 'graph-repeated-24_30_30-distancePerInterval', options: repeated.interval_24_30_30.distancePerInterval },
     { div: 'graph-repeated-24_30_30-cumulativeDistancePerStroke', options: repeated.interval_24_30_30.cumulativeDistancePerStroke },
@@ -44,6 +46,9 @@ const graphs = [
     { div: 'graph-repeated-24_30_30-pacePerInterval', options: repeated.interval_24_30_30.pacePerInterval },
     { div: 'graph-repeated-24_30_30-wattsPerStroke', options: repeated.interval_24_30_30.wattsPerStroke },
     { div: 'graph-repeated-24_30_30-bankedDistanceByInterval', options: repeated.interval_24_30_30.bankedDistanceByInterval },
+    { div: 'graph-interval.workout_40553854', options: intervalGraph.workout_40553854 },
+    { div: 'graph-interval.workout_41335805', options: intervalGraph.workout_41335805 },
+    */
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

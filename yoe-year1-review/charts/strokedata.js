@@ -43,6 +43,7 @@ const tt20 = () => {
     dataZoom.push({
         type: 'slider',
         labelFormatter: (val) => dateTime.ds2time(val),
+        start: 50,
     });
 
     xAxis.push({
