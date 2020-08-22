@@ -39,22 +39,22 @@ const graphs = [
     {
         div: 'graph-bloodPressure',
         options: biologicalMarkers.bloodPressureOptions,
-        height: 250,
+        height: 200,
     },
     {
         div: 'graph-restingHeartRate',
         options: biologicalMarkers.restingHeartRateOptions,
-        height: 250,
+        height: 200,
     },
     {
         div: 'graph-weight',
         options: biologicalMarkers.weightOptions,
-        height: 250,
+        height: 200,
     },
     {
         div: 'graph-haemoglobin',
         options: biologicalMarkers.haemoglobinOptions,
-        height: 250,
+        height: 200,
     }
 ];
 
