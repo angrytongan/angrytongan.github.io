@@ -4,7 +4,6 @@ import { workouts } from '/yoe-year1-review/charts/data.js';
 
 import { programPhases } from '/yoe-year1-review/charts/phases.js';
 import { workoutTypes } from '/yoe-year1-review/charts/workout-types.js';
-import { biologicalMarkers } from '/yoe-year1-review/charts/biological.js';
 import { timeTrial } from '/yoe-year1-review/charts/time-trial.js';
 import { timeCommitment } from '/yoe-year1-review/charts/time-commitment.js';
 import { workoutDuration } from '/yoe-year1-review/charts/workout-duration.js';
@@ -41,27 +40,8 @@ const graphs = [
     { div: 'graph-repeated-24_30_30-wattsPerStroke', options: repeated.interval_24_30_30.wattsPerStroke },
     { div: 'graph-interval.workout_40553854', options: intervalGraph.workout_40553854 },
     { div: 'graph-interval.workout_41335805', options: intervalGraph.workout_41335805 },
-    { div: 'graph-repated-24_30_30-sdPace', options: repeated.interval_24_30_30.sdPace },
-    {
-        div: 'graph-bloodPressure',
-        options: biologicalMarkers.bloodPressureOptions,
-        height: 200,
-    },
-    {
-        div: 'graph-restingHeartRate',
-        options: biologicalMarkers.restingHeartRateOptions,
-        height: 200,
-    },
-    {
-        div: 'graph-weight',
-        options: biologicalMarkers.weightOptions,
-        height: 200,
-    },
-    {
-        div: 'graph-haemoglobin',
-        options: biologicalMarkers.haemoglobinOptions,
-        height: 200,
-    }
+    { div: 'graph-repated-24_30_30-normalDistributionPace', options: repeated.interval_24_30_30.normalDistributionPace },
+    { div: 'graph-repated-24_30_30-normalDistributionWatts', options: repeated.interval_24_30_30.normalDistributionWatts },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

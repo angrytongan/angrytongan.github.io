@@ -51,6 +51,8 @@ const graph = (id) => {
     });
     yAxis.push({
         type: 'value',
+        name: 'Pace',
+        nameLocation: 'middle',
         inverse: true,
         axisTick: {
             show: false,
@@ -71,18 +73,20 @@ const graph = (id) => {
 
         series.push({
             type: 'line',
-            name: `${i+1}`,
+            name: `Int ${i+1}`,
             encode: {
                 x: 't',
                 y: 'p',
             },
             datasetIndex: i,
+            showSymbol: false,
             animation: false,
         });
     });
 
     return {
         legend: {
+            type: 'scroll',
             top: '10%',
         },
         title: {

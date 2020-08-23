@@ -4,7 +4,6 @@ import { workouts } from '/yoe-year1-review/charts/data.js';
 
 import { programPhases } from '/yoe-year1-review/charts/phases.js';
 import { workoutTypes } from '/yoe-year1-review/charts/workout-types.js';
-import { biologicalMarkers } from '/yoe-year1-review/charts/biological.js';
 import { timeTrial } from '/yoe-year1-review/charts/time-trial.js';
 import { timeCommitment } from '/yoe-year1-review/charts/time-commitment.js';
 import { workoutDuration } from '/yoe-year1-review/charts/workout-duration.js';
@@ -44,10 +43,13 @@ const graphs = [
     { div: 'graph-repeated-24_30_30-pacePerInterval', options: repeated.interval_24_30_30.pacePerInterval },
     { div: 'graph-repeated-24_30_30-wattsPerStroke', options: repeated.interval_24_30_30.wattsPerStroke },
     { div: 'graph-repeated-24_30_30-bankedDistanceByInterval', options: repeated.interval_24_30_30.bankedDistanceByInterval },
+    */
     { div: 'graph-interval.workout_40553854', options: intervalGraph.workout_40553854 },
     { div: 'graph-interval.workout_41335805', options: intervalGraph.workout_41335805 },
+    /*
+    { div: 'graph-repated-24_30_30-normalDistributionPace', options: repeated.interval_24_30_30.normalDistributionPace },
+    { div: 'graph-repated-24_30_30-normalDistributionWatts', options: repeated.interval_24_30_30.normalDistributionWatts },
     */
-    { div: 'graph-repated-24_30_30-sdPace', options: repeated.interval_24_30_30.sdPace },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -765,10 +765,6 @@ const wattsPerStroke = (ids) => {
                 return acc.concat(val.map((v) => {
                     const w = v.t == 0 || v.d == 0 ? 0 : Math.trunc(2.8 / Math.pow((v.t/10) / (v.d/10), 3));
 
-                    if (w == null || w == NaN) {
-                        console.log(w, v);
-                    }
-
                     return {
                         stroke: i++,
                         w: w,
@@ -994,7 +990,7 @@ const calcStandardNormalDistribution = (mean, standardDeviation) => {
     return coords;
 };
 
-const sdPace = (ids) => {
+const normalDistributionPace = (ids) => {
     const xAxis = [];
     const yAxis = [];
     const dataset = [];
@@ -1010,9 +1006,9 @@ const sdPace = (ids) => {
     });
 
     yAxis.push({
+        show: false,
         min: 'dataMin',
         max: 'dataMax',
-        show: false,
     });
 
     xAxis.push({
@@ -1022,9 +1018,7 @@ const sdPace = (ids) => {
         min: 'dataMin',
         max: 'dataMax',
         axisLabel: {
-            formatter: (val) => {
-                return dateTime.ds2time(val, true, false);
-            },
+            formatter: (val) => dateTime.ds2time(val, true, false),
         },
     });
 
@@ -1035,6 +1029,80 @@ const sdPace = (ids) => {
         const standardDeviation = calcStandardDeviation(
             workout.intervals.map((i) => i.time / i.distance), mean
         );
+
+        grid.push({
+            left: '20%',
+            right: '20%',
+        });
+
+        dataset.push({
+            dimension: [ 'x', 'y' ],
+            source: calcStandardNormalDistribution(mean, standardDeviation),
+        });
+
+        series.push({
+            type: 'line',
+            datasetIndex: i,
+            name: workout.date,
+            smooth: true,
+            showSymbol: false,
+            gridIndex: i,
+            animation: false,
+        });
+    });
+
+    return {
+        grid,
+        xAxis,
+        yAxis,
+        dataset,
+        series,
+        legend,
+    };
+};
+
+const normalDistributionWatts = (ids) => {
+    const xAxis = [];
+    const yAxis = [];
+    const dataset = [];
+    const series = [];
+    const tooltip = [];
+    const legend = [];
+    const grid = [];
+
+    const width = 55;
+
+    legend.push({
+        top: '10%',
+    });
+
+    yAxis.push({
+        show: false,
+        min: 'dataMin',
+        max: 'dataMax',
+    });
+
+    xAxis.push({
+        name: 'Watts',
+        nameGap: 30,
+        nameLocation: 'middle',
+        min: 'dataMin',
+        max: 'dataMax',
+    });
+
+    ids.forEach((id, i) => {
+        const workout = workouts.find((w) => w.id == id);
+        const sd = strokeData.find((s) => s.id == id);
+
+        const data = sd.data.reduce((acc, val) => {
+            return acc.concat(val.map((v) => {
+                return v.t == 0 || v.d == 0 ?
+                    0 : Math.trunc(2.8 / Math.pow((v.t/10) / (v.d/10), 3));
+            }));
+        }, []);
+
+        const mean = calcMean(data);
+        const standardDeviation = calcStandardDeviation(data, mean);
 
         grid.push({
             left: '20%',
@@ -1084,6 +1152,7 @@ export const repeated = {
 
         bankedDistanceByInterval: () => bankedDistanceByInterval([ 40524237, 46414252 ]),
 
-        sdPace: () => sdPace([  40524237, 46414252 ]),
+        normalDistributionPace: () => normalDistributionPace([  40524237, 46414252 ]),
+        normalDistributionWatts: () => normalDistributionWatts([  40524237, 46414252 ]),
     }
 };

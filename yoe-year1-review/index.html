@@ -82,14 +82,6 @@ vim: textwidth=80
                                 <li><a href="#objective-results-in-program-tests-metcons">MetCons</a></li>
                             </ul>
                         </li>
-                        <li><a href="#objective-results-biological-markers">Biological markers</a>
-                            <ul>
-                                <li><a href="#objective-results-biological-markers-resting-heart-rate">Resting heart rate</a></li>
-                                <li><a href="#objective-results-biological-markers-blood-pressure">Blood pressure</a></li>
-                                <li><a href="#objective-results-biological-markers-haemoglobin">Haemoglobin</a></li>
-                                <li><a href="#objective-results-biological-markers-weight">Weight</a></li>
-                            </ul>
-                        </li>
                     </ul>
                 </li>
                 <li><a href="#subjective-observations">Subjective Observations</a>
@@ -756,51 +748,57 @@ vim: textwidth=80
 
         <div id="graph-repeated-24_30_30-pacePerInterval"></div>
         <p>
-        Attempt 1's pace appears to vary more than attempt 2. We can verify this
-        by looking at the deviation:
+        The curve representing pace for attempt 1 does appear to vary more than
+        attempt 2. This can be verified by looking at the distribution:
         </p>
-        <div id="graph-repated-24_30_30-sdPace"></div>
+        <div id="graph-repated-24_30_30-normalDistributionPace"></div>
+        <p>
+        Attempt 2 indeed had a <u>more consistent pace</u> than attempt 1.
+        </p>
 
         <p>
-        One last thing to look at is the power generated per stroke. Here are
-        watts generated for each stroke.
+        One last thing to look at are watts generated per stroke:
         </p>
         <div id="graph-repeated-24_30_30-wattsPerStroke"></div>
 
         <p>
-        So let's recoup what we have discovered.
+        The spikes are where the Performance Monitor on the rower (PM)
+        erroneously picks up incorrect distance on the first stroke of the
+        interval; we can balance these out again by looking at the distribution:
+        </p>
+        <div id="graph-repated-24_30_30-normalDistributionWatts"></div>
+
+        <p>
+        Attempt 2 marginally <u>generated more power per stroke</u> than attempt
+        1.
+        </p>
+
+        <p>
+        Summing up: objectively we have:
         </p>
         <ul>
-            <li>Attempt 2 used fewer strokes.</li>
-            <li>Attempt 2 went a sliver further than attempt 1.</li>
+            <li>Attempt 2 used fewer strokes to go further.</li>
             <li>Attempt 2 had a lower calorie cost.</li>
-            <li>Attempt 2 displayed a higher accuracy for distance and pace per
-                interval.</li>
+            <li>Attempt 2 showed more consistency in pace.</li>
+            <li>Attempt 2 showed more power per stroke.</li>
+        </ul>
+
+        <p>
+        Subjectively, we have:
+        </p>
+        <ul>
             <li>Attempt 2 RPE improved.</li>
         </ul>
         <p>
         We can summarise the above points by saying attempt 2 was more
-        efficiently executed than attempt 1. That is, the same amount of work
-        was performed for a lower calorie expenditure.
+        <strong>efficiently executed</strong> than attempt 1. That is, attempt 2
+        achieved virtually the same result as attempt 1 but at a higher level of
+        efficiency. We can say attempt 2 did demonstrate improvement.
         </p>
         <p>
         But this conclusion still doesn't explain why there wasn't more a
-        significant increase in performance between the two workouts given the
-        amount of training!
-        </p>
-        <p>
-        Now consider interval distance:
-        </p>
-        <div id="graph-repeated-24_30_30-distancePerInterval"></div>
-        <p>
-        While both attempts are similar, attempt 1 appears to be more
-        inconsistent with distances for each interval. We can compare the
-        deviation for both attempts:
-        </p>
-        <p>XXX deviation graph here</p>
-        <p>
-        Attempt 2 has a smaller standard deviation, demonstrating <u>higher
-        accuracy for distance</u> per interval than attempt 1.
+        <strong>significant</strong> increase in performance between the two
+        workouts given the amount of training!
         </p>
 
         <div class="self">
@@ -829,95 +827,6 @@ vim: textwidth=80
             two workouts.
             </p>
         </div>
-
-        <!-- biological markers -->
-        <h3 id="objective-results-biological-markers">Biological markers</h3>
-        <p>
-        A number of markers were recorded throughout the program. The program
-        does not require recording these, however they were measured regularly
-        throughout my time on the program through a <a
-            href="#subjective-observations-donating-plasma">non-training
-            activity</a>. They are presented here because the data was available.
-        </p>
-        <p>
-        It must be noted that the program does not claim to change any of these
-        markers.
-        </p>
-
-        <!-- resting heart rate -->
-        <h4 id="objective-results-biological-markers-resting-heart-rate">Resting
-            heart rate</h4>
-        <p>
-        Resting heart rate was taken manually by palpation by a nurse as part of
-        the plasma donation acceptance criteria in Australia. Heart rate was
-        recorded over the course of one minute. This was performed approximately
-        every two weeks, except for two occasions when four weeks elapsed between
-        recordings.
-        </p>
-        <div id="graph-restingHeartRate"></div>
-        <p>
-        There were no significant change in resting heart rate throughout the
-        program.
-        </p>
-
-        <!-- blood pressure -->
-        <h4 id="objective-results-biological-markers-blood-pressure">Blood
-            pressure</h4>
-        <p>
-        Blood pressure was taken by a handheld battery powered blood pressure
-        machine by a nurse as part of the plasma donation acceptance criteria in
-        Australia. This was performed approximately every two weeks, except for
-        two occasions when four weeks elapsed between recordings.
-        </p>
-        <div id="graph-bloodPressure"></div>
-        <p>
-        There is some variance here, particularly systolic pressure:
-        </p>
-        <ol class="space">
-            <li>Blood pressure was taken using different handheld battery
-                operated machines on each visit. Each of these machines may not
-                be calibrated to match each other. Additionally, some machines
-                use a medium cuff and others a large cuff which may affect
-                results.</li>
-            <li>In March 2020, significant changes in employment and
-                restrictions in travel were introduced to Australia in order to
-                curb the COVID-19 pandemic. This created a huge amount of stress
-                for myself and my family, which is reflected in the higher than
-                normal systolic readings.</li>
-        </ol>
-        <p>
-        Neither of these two possible explanations is related to the program.
-        </p>
-
-        <!-- haemoglobin -->
-        <h4 id="objective-results-biological-markers-haemoglobin">Haemoglobin</h4>
-        <p>
-        Haemoglobin was measured from a drop of blood taken by finger pinprick
-        and examined in a handheld battery operated analyser as part of the
-        plasma donation acceptance criteria in Australia. This was performed
-        approximately every two weeks, except for two occasions when four weeks
-        elapsed between recordings.
-        </p>
-        <div id="graph-haemoglobin"></div>
-        <p>
-        There was no significant change in haemoglobin count throughout the
-        program.
-        </p>
-
-        <!-- weight -->
-        <h4 id="objective-results-biological-markers-weight">Weight</h4>
-        <p>
-        Weight was measured by consumer-grade weigh scales. This was performed
-        approximately three-times weekly, from October 2019 to February 2020, then
-        on the same day as plasma donation to coincide with other recorded data.
-        </p>
-        <div id="graph-weight"></div>
-        </p>
-        XXX need to clarify this - good argument to calculate SD and graph it
-        may be related to more time on the bike?
-        There was no significant change in weight, although there was a spike
-        coming into Christmas which we will never speak of again. Ahem.
-        </p>
 
         <!-- subjective observations -->
         <h2 id="subjective-observations">Subjective Observations</h2>
@@ -1108,6 +1017,13 @@ vim: textwidth=80
                 as per the Concept2 rower and SkiErg, some of which is
                 visualised in the graphs in this review. If the fates are kind,
                 perhaps a Concept2 BikeErg is on the horizon.</li>
+
+            <li><strong>Reassess endurance pace</strong>. Towards the end of
+                phase 4, I felt that endurance workouts were not providing
+                enough challenge, as even though the duration was regularly
+                greater than 40:00, my RPE fell from 9-10 to RPE 7. Adjusting
+                endurance pace slightly, perhaps at the start of each phase, may
+                possibly have fixed that.</li>
         </ul>
 
         <h2 id="program-review">Program review</h2>
