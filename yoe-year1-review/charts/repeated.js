@@ -295,7 +295,7 @@ const distancePerInterval = (ids) => {
     };
 };
 
-const cumulativeDistancePerStroke = (ids) => {
+const distancePerIntervalAllStrokes = (ids) => {
     const dataset = [];
     const xAxis = [];
     const yAxis = [];
@@ -330,7 +330,7 @@ const cumulativeDistancePerStroke = (ids) => {
         max: 'dataMax',
     });
     yAxis.push({
-        name: 'Cumulative distance / stroke (m)',
+        name: 'Distance per interval by strokes (m)',
         nameGap: 40,
         nameLocation: 'middle',
         axisLabel: {
@@ -721,7 +721,6 @@ const wattsPerStroke = (ids) => {
     const series = [];
     const tooltip = [];
     const legend = [];
-    const dataZoom = [];
 
     tooltip.push({
         trigger: 'axis',
@@ -794,9 +793,6 @@ const wattsPerStroke = (ids) => {
         });
     });
 
-    dataZoom.push({
-    });
-
     return {
         tooltip,
         legend,
@@ -804,7 +800,6 @@ const wattsPerStroke = (ids) => {
         yAxis,
         dataset,
         series,
-        dataZoom,
     };
 };
 
@@ -925,7 +920,7 @@ const bankedDistanceByInterval = (ids) => {
     });
 
     yAxis.push({
-        name: 'Attempt 2 bank (m)',
+        name: 'Distance (m)',
         nameGap: 30,
         nameLocation: 'middle',
     });
@@ -950,7 +945,7 @@ const bankedDistanceByInterval = (ids) => {
 
     series.push({
         type: 'bar',
-        name: '2nd attempt bank',
+        name: 'Attempt 2 lead',
         encode: {
             x: 'interval',
             y: 'bank',
@@ -968,12 +963,116 @@ const bankedDistanceByInterval = (ids) => {
     };
 };
 
+const calcMean = (vals) => {
+    return vals.reduce((acc, val) => acc + val, 0) / vals.length;
+};
+const calcStandardDeviation = (vals, mean) => {
+    let theStandardDeviation = Math.sqrt(vals.reduce((acc, val) => {
+        const squaredDifference = Math.pow(val - mean, 2);
+        return acc + squaredDifference;
+    }, 0) / (vals.length-1));
+
+    return theStandardDeviation;
+};
+
+const calcStandardNormalDistribution = (mean, standardDeviation) => {
+    const step = standardDeviation / 3;
+    const numDeviations = 3;
+    const range = [ mean - numDeviations * standardDeviation, mean + numDeviations * standardDeviation ];
+    const k = 1 / (standardDeviation * Math.sqrt(2 * Math.PI));
+    const coords = [];
+
+    for (let x = range[0]; x <= range[1]; x += step) {
+        const p = -0.5 * Math.pow(((x - mean) / standardDeviation), 2);
+
+        coords.push({
+            x: x,
+            y: k * Math.pow(Math.E, p),
+        });
+    }
+
+    return coords;
+};
+
+const sdPace = (ids) => {
+    const xAxis = [];
+    const yAxis = [];
+    const dataset = [];
+    const series = [];
+    const tooltip = [];
+    const legend = [];
+    const grid = [];
+
+    const width = 55;
+
+    legend.push({
+        top: '10%',
+    });
+
+    yAxis.push({
+        min: 'dataMin',
+        max: 'dataMax',
+        show: false,
+    });
+
+    xAxis.push({
+        name: 'Pace',
+        nameGap: 30,
+        nameLocation: 'middle',
+        min: 'dataMin',
+        max: 'dataMax',
+        axisLabel: {
+            formatter: (val) => {
+                return dateTime.ds2time(val, true, false);
+            },
+        },
+    });
+
+    ids.forEach((id, i) => {
+        const workout = workouts.find((w) => w.id == id);
+
+        const mean = calcMean(workout.intervals.map((i) => i.time / i.distance));
+        const standardDeviation = calcStandardDeviation(
+            workout.intervals.map((i) => i.time / i.distance), mean
+        );
+
+        grid.push({
+            left: '20%',
+            right: '20%',
+        });
+
+        dataset.push({
+            dimension: [ 'x', 'y' ],
+            source: calcStandardNormalDistribution(mean, standardDeviation),
+        });
+
+        series.push({
+            type: 'line',
+            datasetIndex: i,
+            name: workout.date,
+            smooth: true,
+            showSymbol: false,
+            gridIndex: i,
+            animation: false,
+        });
+    });
+
+    return {
+        grid,
+        xAxis,
+        yAxis,
+        dataset,
+        series,
+        legend,
+    };
+};
+
 export const repeated = {
     interval_24_30_30: {
         strokesPerInterval: () => strokesPerInterval([ 40524237, 46414252 ]),
         distancePerInterval: () => distancePerInterval([ 40524237, 46414252 ]),
 
-        cumulativeDistancePerStroke: () => cumulativeDistancePerStroke([ 40524237, 46414252 ]),
+        distancePerIntervalAllStrokes: () => distancePerIntervalAllStrokes([ 40524237, 46414252 ]),
         cumulativeDistancePerInterval: () => cumulativeDistancePerInterval([ 40524237, 46414252 ]),
 
         distanceDeltaPerInterval: () => distanceDeltaPerInterval([ 40524237, 46414252 ]),
@@ -984,5 +1083,7 @@ export const repeated = {
         wattsPerStroke: () => wattsPerStroke([ 40524237, 46414252 ]),
 
         bankedDistanceByInterval: () => bankedDistanceByInterval([ 40524237, 46414252 ]),
+
+        sdPace: () => sdPace([  40524237, 46414252 ]),
     }
 };

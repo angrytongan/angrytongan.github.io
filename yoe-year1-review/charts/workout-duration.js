@@ -27,6 +27,7 @@ export const workoutDuration = (workouts) => {
                     return `${params.value} ${params.name}`;
                 },
             },
+            animation: false,
         },
     };
 };

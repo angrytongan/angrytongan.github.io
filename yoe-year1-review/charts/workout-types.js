@@ -40,6 +40,7 @@ export const workoutTypes = () => {
             center: [ '42%', '50%' ],
             nodeClick: false,
             highlightPolicy: 'descendant',  // XXX not working?
+            animation: false,
         },
     };
 };

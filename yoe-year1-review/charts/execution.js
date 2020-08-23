@@ -51,6 +51,7 @@ const summary = (workouts) => {
                         return `Workout ${params.value[2]}`;
                     },
                 },
+                animation: false,
             };
         }),
     };

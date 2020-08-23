@@ -80,6 +80,7 @@ const tracksSankey = {
         nodeWidth: 10,
         draggable: false,
         focusNodeAdjacency: true,
+        animation: false,
     },
     animation: false,
 };

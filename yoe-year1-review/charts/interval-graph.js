@@ -77,6 +77,7 @@ const graph = (id) => {
                 y: 'p',
             },
             datasetIndex: i,
+            animation: false,
         });
     });
 

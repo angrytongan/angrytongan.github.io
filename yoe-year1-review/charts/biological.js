@@ -170,6 +170,7 @@ const genericOptions = (o) => {
             connectNulls: true,
             symbolSize: 10,
             name: seriesName(y),
+            animation: false,
         });
     });
 

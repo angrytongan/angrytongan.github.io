@@ -68,6 +68,7 @@ const ttAirDyne = (workouts) => {
                         ${(params.value.distance / 1000).toFixed(2)}km`;
                 },
             },
+            animation: false,
         },
     });
 };
@@ -92,6 +93,7 @@ const ttRower = (workouts) => {
                         ${(params.value.distance / 1000).toFixed(2)}km`;
                 },
             },
+            animation: false,
         },
     });
 };
@@ -126,6 +128,7 @@ const ttRower2000FullHistory = (workouts) => {
                         ${(params.value.distance / 1000).toFixed(2)}km`;
                 },
             },
+            animation: false,
             markArea: {
                 silent: true,
                 data: [
@@ -158,6 +161,7 @@ const repeated243030 = (workouts) => {
                         ${(params.value.distance / 1000).toFixed(2)}km`;
                 },
             },
+            animation: false,
         },
     });
 };

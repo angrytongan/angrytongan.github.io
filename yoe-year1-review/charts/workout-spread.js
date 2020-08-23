@@ -149,6 +149,7 @@ const pies = (data) => {
             label: {
                 position: 'inside',
             },
+            animation: false,
         });
     });
 
