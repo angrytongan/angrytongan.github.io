@@ -39,8 +39,8 @@ const graphs = [
     { div: 'graph-repeated-24_30_30-wattsPerStroke', options: repeated.interval_24_30_30.wattsPerStroke },
     { div: 'graph-interval.workout_40553854', options: intervalGraph.workout_40553854 },
     { div: 'graph-interval.workout_41335805', options: intervalGraph.workout_41335805 },
-    { div: 'graph-repated-24_30_30-normalDistributionPace', options: repeated.interval_24_30_30.normalDistributionPace },
-    { div: 'graph-repated-24_30_30-normalDistributionWatts', options: repeated.interval_24_30_30.normalDistributionWatts },
+    { div: 'graph-repeated-24_30_30-normalDistributionPace', options: repeated.interval_24_30_30.normalDistributionPace },
+    { div: 'graph-repeated-24_30_30-normalDistributionWatts', options: repeated.interval_24_30_30.normalDistributionWatts },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
