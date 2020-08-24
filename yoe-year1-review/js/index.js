@@ -33,7 +33,6 @@ const graphs = [
     { div: 'graph-strokedata-tt20', options: strokedata.tt20 },
     { div: 'graph-repeated-24_30_30-strokesPerInterval', options: repeated.interval_24_30_30.strokesPerInterval },
     { div: 'graph-repeated-24_30_30-distanceDeltaPerInterval', options: repeated.interval_24_30_30.distanceDeltaPerInterval },
-    { div: 'graph-repeated-24_30_30-distancePerInterval', options: repeated.interval_24_30_30.distancePerInterval },
     { div: 'graph-repeated-24_30_30-distancePerIntervalAllStrokes', options: repeated.interval_24_30_30.distancePerIntervalAllStrokes },
     { div: 'graph-repeated-24_30_30-bankedDistanceByInterval', options: repeated.interval_24_30_30.bankedDistanceByInterval },
     { div: 'graph-repeated-24_30_30-pacePerInterval', options: repeated.interval_24_30_30.pacePerInterval },
