@@ -62,7 +62,7 @@ const summary = (workouts, filter = {}) => {
             stack: 'single',
             tooltip: {
                 formatter: (params, ticket, callback) => {
-                    return params.value.date;
+                    return dateTime.secs2mmss(params.value.workTime + params.value.restTime);
                 },
             },
             encode: {

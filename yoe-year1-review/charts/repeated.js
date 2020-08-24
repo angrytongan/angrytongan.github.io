@@ -1018,16 +1018,24 @@ const normalDistributionPace = (ids) => {
         min: 'dataMin',
         max: 'dataMax',
         axisLabel: {
-            formatter: (val) => dateTime.ds2time(val, true, false),
+            formatter: (val) => {
+                return dateTime.ds2time(val, true);
+            },
+        },
+        axisPointer: {
+            show: true,
+            label: {
+                formatter: (params) => dateTime.ds2time(params.value),
+            },
         },
     });
 
     ids.forEach((id, i) => {
         const workout = workouts.find((w) => w.id == id);
 
-        const mean = calcMean(workout.intervals.map((i) => i.time / i.distance));
+        const mean = calcMean(workout.intervals.map((i) => 500 * i.time / i.distance));
         const standardDeviation = calcStandardDeviation(
-            workout.intervals.map((i) => i.time / i.distance), mean
+            workout.intervals.map((i) => 500 * i.time / i.distance), mean
         );
 
         grid.push({
@@ -1088,6 +1096,12 @@ const normalDistributionWatts = (ids) => {
         nameLocation: 'middle',
         min: 'dataMin',
         max: 'dataMax',
+        axisPointer: {
+            show: true,
+            label: {
+                formatter: (params) => params.value.toFixed(),
+            },
+        },
     });
 
     ids.forEach((id, i) => {
