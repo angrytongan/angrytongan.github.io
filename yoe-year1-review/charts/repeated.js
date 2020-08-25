@@ -984,10 +984,13 @@ const bankedDistanceByInterval = (ids) => {
     };
 };
 
-const calcMean = (vals) => {
+/*
+ * XXX Bah, I'm too lazy to make a new file.
+ */
+export const calcMean = (vals) => {
     return vals.reduce((acc, val) => acc + val, 0) / vals.length;
 };
-const calcStandardDeviation = (vals, mean) => {
+export const calcStandardDeviation = (vals, mean) => {
     let theStandardDeviation = Math.sqrt(vals.reduce((acc, val) => {
         const squaredDifference = Math.pow(val - mean, 2);
         return acc + squaredDifference;
@@ -996,7 +999,7 @@ const calcStandardDeviation = (vals, mean) => {
     return theStandardDeviation;
 };
 
-const calcStandardNormalDistribution = (mean, standardDeviation) => {
+export const calcStandardNormalDistribution = (mean, standardDeviation) => {
     const step = standardDeviation / 3;
     const numDeviations = 3;
     const range = [ mean - numDeviations * standardDeviation, mean + numDeviations * standardDeviation ];

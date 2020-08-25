@@ -1,6 +1,11 @@
 'use strict';
 
 import { dateTime } from '/yoe-year1-review/js/utils/datetime.js';
+import {
+    calcMean,
+    calcStandardDeviation,
+    calcStandardNormalDistribution 
+} from '/yoe-year1-review/charts/repeated.js';
 
 const summary = (workouts, filter = {}) => {
     const title = [];
@@ -88,6 +93,100 @@ const summary = (workouts, filter = {}) => {
     };
 };
 
+/*
+ * [
+ *  { type: 'Interval', workoutTime: [ 123, 124, 125... ], },
+ *  { type: 'FLUX', workoutTime: [ 123, 124, 125... ], },
+ *  { type: 'Polarisation', workoutTime [ 123, 125, 127... ], },
+ * ]
+ *
+ */
+const sdByType = (workouts) => {
+    const xAxis = [];
+    const yAxis = [];
+    const series = [];
+    const dataset = [];
+    const legend = [];
+
+    const data = [];
+
+    legend.push({
+        top: '10%',
+    });
+
+    workouts.forEach((workout) => {
+        let w = data.find((d) => d.type == workout.type);
+        if (w == undefined) {
+            data.push({
+                type: workout.type,
+                workoutTime: [],
+            });
+            w = data[data.length-1];
+        }
+        w.workoutTime.push(workout.workTime + workout.restTime);
+    });
+    data.sort((a, b) => a.type < b.type ? -1 : a.type > b.type ? 1 : 0);
+
+    console.log(data);
+
+    xAxis.push({
+        nameLocation: 'middle',
+        min: 'dataMin',
+        max: 'dataMax',
+        axisLabel: {
+            formatter: (val) => {
+                return dateTime.secs2mmss(val, true);
+            },
+        },
+        axisPointer: {
+            show: true,
+            label: {
+                formatter: (params) => dateTime.secs2mmss(params.value),
+            },
+        },
+    });
+
+    yAxis.push({
+        show: false,
+        min: 'dataMin',
+        max: 'dataMax',
+    });
+
+    data.forEach((d, i) => {
+        const mean = calcMean(d.workoutTime);
+        const sd = calcStandardDeviation(d.workoutTime, mean);
+
+        console.log(mean, sd);
+
+        dataset.push({
+            dimension: [ 'x', 'y' ],
+            source: calcStandardNormalDistribution(mean, sd),
+        });
+
+        series.push({
+            type: 'line',
+            datasetIndex: i,
+            encode: {
+                x: 'x',
+                y: 'y',
+            },
+            name: d.type,
+            smooth: true,
+            showSymbol: false,
+            animation: false,
+        });
+    });
+
+    return {
+        xAxis,
+        yAxis,
+        series,
+        dataset,
+        legend,
+    };
+};
+
 export const timeCommitment = {
     summary,
+    sdByType,
 }
