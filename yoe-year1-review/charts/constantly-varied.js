@@ -2,7 +2,7 @@
 
 import { dateTime } from '/yoe-year1-review/js/utils/datetime.js';
 
-const summary = (workouts) => {
+const apparatus = (workouts) => {
     const title = [];
     const series = [];
     const dataset = [];
@@ -91,5 +91,5 @@ const summary = (workouts) => {
 };
 
 export const constantlyVaried = {
-    summary,
+    apparatus,
 }

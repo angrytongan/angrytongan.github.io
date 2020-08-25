@@ -28,7 +28,7 @@ const graphs = [
     { div: 'graph-workout-duration', options: workoutDuration, height: 150 },
     { div: 'graph-workout-spread-scatter', options: workoutSpread.scatter },
     { div: 'graph-workout-spread-pies', options: workoutSpread.pies },
-    { div: 'graph-constantly-varied-summary', options: constantlyVaried.summary },
+    { div: 'graph-constantly-varied-apparatus', options: constantlyVaried.apparatus },
     { div: 'graph-execution-summary', options: execution.summary, height: 170 },
     { div: 'graph-strokedata-tt20', options: strokedata.tt20 },
     { div: 'graph-repeated-24_30_30-strokesPerInterval', options: repeated.interval_24_30_30.strokesPerInterval },

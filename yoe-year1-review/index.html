@@ -106,7 +106,6 @@ vim: textwidth=80
                         <li><a href="#program-review-workout-description">Workout description</a></li>
                         <li><a href="#program-review-workout-intensity">Workout intensity</a></li>
                         <li><a href="#program-review-workout-target-metric">Workout target metric</a></li>
-                        <li><a href="#program-review-workout-type-spread">Workout type spread</a></li>
                         <li><a href="#program-review-time-commitment">Time commitment</a></li>
                         <li><a href="#program-review-constantly-varied">Constantly varied?</a></li>
                         <li><a href="#program-review-mental-fortitude">Mental fortitude</a></li>
@@ -674,9 +673,9 @@ vim: textwidth=80
         strokes. There were 9 months between the workouts.
         </p>
         <ul>
-            <li>Did this workout show improvement?</li>
-            <li>If there was improvement, why wasn't it bigger, given the amount
-                of training between the same workout?</li>
+            <li>Was attempt 2 an improvement over attempt 1?</li>
+            <li>If so, why wasn't it bigger, since 9 months of training had
+                elapsed?</li>
         </ul>
 
         <p>
@@ -715,8 +714,7 @@ vim: textwidth=80
         We can see that compared to attempt 1, attempt 2 started out with a
         large lead in interval 1, continued building through to interval 15,
         then recorded reduced distance in intervals 17 to 24.  We can visualise
-        a race between the two attempts by accumulating this difference each
-        interval:
+        the &ldquo;lead&rdquo; by accumulating this difference each interval:
         </p>
         <div id="graph-repeated-24_30_30-bankedDistanceByInterval"></div>
         <p>
@@ -879,17 +877,6 @@ vim: textwidth=80
         than away from it.
         </p>
         <p>
-        Rowing technique hasn't changed very much. I spent a lot of time working
-        on the rower before Year of the Engine (including <a
-            target="_blank"
-            href="https://thepeteplan.wordpress.com/the-pete-plan/">The Pete Plan</a> and
-        <a
-            target="_blank"
-             href="https://quantifiedrowing.com/2016/12/26/the-john-plan-an-erg-training-plan-for-people-with-very-little-time/">The
-            Jon Plan</a> for a while), and while not perfect, I am happy
-        with how I operate this apparatus.
-        </p>
-        <p>
         The SkiErg remains a mystery to me.
         </p>
 
@@ -1008,6 +995,12 @@ vim: textwidth=80
                 order to practice and improve other skills, as well as
                 incorporate weighted movements.</li>
 
+            <li><strong>Reassess endurance pace</strong>. Towards the end of
+                phase 4, I felt that endurance workouts were not providing
+                enough challenge, and even though the duration increased my RPE
+                dropped.  Reassessing endurance pace at the start of phase
+                3 and 4 may have helped keep the same RPE.</li>
+
             <li><strong>Upgrade the air bike</strong>. I used the Schwinn
                 AirDyne 6 as my air bike, and aside from showing its age, it
                 has no method to accurately track effort and does not recall
@@ -1015,13 +1008,6 @@ vim: textwidth=80
                 as per the Concept2 rower and SkiErg, some of which is
                 visualised in the graphs in this review. Perhaps a Concept2
                 BikeErg is on the horizon.</li>
-
-            <li><strong>Reassess endurance pace</strong>. Towards the end of
-                phase 4, I felt that endurance workouts were not providing
-                enough challenge, as even though the duration was regularly
-                greater than 40:00, my RPE fell from 9-10 to RPE 7. Adjusting
-                endurance pace slightly, perhaps at the start of each phase, may
-                possibly have fixed that.</li>
         </ul>
 
         <h2 id="program-review">Program review</h2>
@@ -1126,7 +1112,7 @@ vim: textwidth=80
         <p>
         The other 232 workouts specify a set time as the metric.  These
         workouts are &ldquo;for distance&rdquo;, as the goal is to maintain or
-        maximise distance in a given time frame. High, <u>sustained</u> effort
+        maximise distance in a given time frame. High <u>sustainable</u> effort
         yields reward here.
         </p>
         <div id="graph-workout-duration"></div>
@@ -1177,28 +1163,8 @@ vim: textwidth=80
             here</a>.
         </p>
 
-        <h3 id="program-review-workout-type-spread">Workout type spread</h3>
-        <p class="self">
-        Note: this observation is based on the pure capacity track I followed,
-        not the the MetCon track.
-        </p>
-
-        <p>
-        Workout types are different day-to-day in a workout week. However, the
-        last workout type from the previous week may start the new week off.
-        Overall the workouts are spread well, and as mentioned previously, the
-        athlete may move them around within a workout week to suit.
-        </p>
-        <div id="graph-workout-spread-scatter"></div>
-
-        <p>
-        Interval workouts dominate phase 1. Phase 2 reduces Interval workouts,
-        balancing them with the introduction of Polarisation and steady
-        Endurance work. Phase 3 maintains Intervals, reduces Polarisation and
-        slighly increases Endurance. The program ends in phase 4 with emphasis
-        on FLUX workouts.
-        </p>
-        <div id="graph-workout-spread-pies"></div>
+        Workout duration
+        XXX chart distributions of workout durations versus workout type
 
         <h3 id="program-review-time-commitment">Time commitment</h3>
         <p class="self">
@@ -1222,18 +1188,33 @@ vim: textwidth=80
         not the the MetCon track.
         </p>
         <p>
-        Each workout is variation on the theme of the workout type - Intervals
+        Each workout is variation on the theme of the workout type: Intervals
         are interleaved periods of work and rest, Endurance is long &ldquo;steady
         state&rdquo;, Polarisation is shorter-length endurance but with bursts
         of max effort, and so on. As such, while each workout changes in it's
-        details, the theme of each type of workout remain consistent throughout
-        the program.
+        fine details, the theme of each type of workout remains consistent. We
+        can chart workout type across the program to see how they are spread:
         </p>
+        <div id="graph-workout-spread-scatter"></div>
         <p>
-        Apparatus choice is a variable in the program. My chosen apparatus
-        versus time below.
+        The last workout type from the previous week may start the new week off.
+        Overall the workout types are spread well, and as mentioned previously,
+        the athlete may move them around within a workout week to suit.
         </p>
-        <div id="graph-constantly-varied-summary"></div>
+
+        <p>
+        Interval workouts dominate phase 1. Phase 2 reduces Intervals, balancing
+        them with the introduction of Polarisation and steady Endurance work.
+        Phase 3 maintains Intervals, reduces Polarisation and slighly increases
+        Endurance. The program ends in phase 4 with emphasis on FLUX workouts.
+        </p>
+        <div id="graph-workout-spread-pies"></div>
+
+        <p>
+        Apparatus choice is a variable in the program. Here are my chosen
+        apparatus against workout duration:
+        </p>
+        <div id="graph-constantly-varied-apparatus"></div>
 
         <p>
         At times the program felt <i>grindy</i> - a lot of time, a lot of
@@ -1254,14 +1235,15 @@ vim: textwidth=80
             <p>
             I found phase 2, when Polarisation was introduced, to be the most
             physically difficult. The intensity increased, workout length
-            increased, and while I felt like I was improving , I had no hard
+            increased, and while I felt like I was improving, I had no hard
             data to back it up. This is in contrast to phase 1, where there were
             three time trials to gauge progress.
             </p>
             <p>
             However, after completing phase 2, and specifically after the time
-            trials in phase 3, it was more than obvious that the <i>grind</i>
-            in phase 2 yielded results.
+            trials in phase 3, it became overwhelmingly obvious that the
+            <i>grind</i> in phase 2 provided the foundation for results in phase
+            3 and especially in phase 4.
             </p>
         </div>
 

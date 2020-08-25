@@ -1,5 +1,15 @@
 export const workouts = [
 {
+    workout: "12.2.1",
+    phase: "4: FLUX",
+    date: "2020-08-25",
+    type: "Polarisation",
+    apparatus: "AirDyne",
+    distance: "22080",
+    workTime: "44:00",
+    restTime: "0:00",
+},
+{
     workout: "12.1.1",
     phase: "4: FLUX",
     date: "2020-08-17",
