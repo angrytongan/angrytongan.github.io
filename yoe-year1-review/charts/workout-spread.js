@@ -126,7 +126,7 @@ const pies = (data) => {
         const graphRight = (phaseData.length-1 - i) * graphSize + '%';
 
         title.push({
-            subtext: p.phase,
+            subtext: `Phase ${p.phase}`,
             textAlign: 'center',
             left: i * graphSize + (graphSize/2) + '%',
             top: '80%',
@@ -140,7 +140,7 @@ const pies = (data) => {
         series.push({
             type: 'pie',
             datasetIndex: i,
-            name: p.phase,
+            name: `Phase ${p.phase}`,
 
             left: graphLeft,
             right: graphRight,

@@ -128,12 +128,14 @@ const sdByType = (workouts) => {
     data.sort((a, b) => a.type < b.type ? -1 : a.type > b.type ? 1 : 0);
 
     xAxis.push({
+        name: 'Workout duration (h:mm:ss)',
+        nameGap: 30,
         nameLocation: 'middle',
         min: 'dataMin',
         max: 'dataMax',
         axisLabel: {
             formatter: (val) => {
-                return dateTime.secs2mmss(val, true);
+                return dateTime.secs2mmss(val, false);
             },
         },
         axisPointer: {
