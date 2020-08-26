@@ -53,6 +53,7 @@ const graphs = [
     //{ div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300 },
     //{ div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
     { div: 'graph-repeated-3_2000_300-interval-strokedata', options: repeated.interval_3_2000_300.intervalStrokedata },
+    { div: 'graph-repeated-3_2000_300-interval-normal-distribution', options: repeated.interval_3_2000_300.intervalNormalDistribution },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
