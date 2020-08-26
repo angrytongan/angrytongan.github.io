@@ -166,9 +166,46 @@ const repeated243030 = (workouts) => {
     });
 };
 
+/* 3x2,000m/3:00r */
+const repeated32000300 = (workouts) => {
+    return genericOptions({
+        dataset: {
+            source: workouts.filter((w) => w.workout == '3.4.2')
+        },
+        xAxis: {
+            max: '2021-09-16',
+        },
+        yAxis: {
+            min: 0,
+            max: 1000,
+        },
+        series: {
+            tooltip: {
+                formatter: (params) => {
+                    return `${params.value.date}<br />
+                        Workout ${params.value.workout}<br />
+                        Pace ${params.value.pace} /500m<br />
+                        ${(params.value.distance / 1000).toFixed(2)}km`;
+                },
+            },
+            animation: false,
+            markArea: {
+                silent: true,
+                data: [
+                    [
+                        { coord: [ '2019-09-16', 0 ] },
+                        { coord: [ '2020-09-16', 1000 ] },
+                    ],
+                ],
+            },
+        },
+    });
+};
+
 export const timeTrial = {
     ttAirDyne,
     ttRower,
     ttRower2000FullHistory,
     repeated243030,
+    repeated32000300,
 };

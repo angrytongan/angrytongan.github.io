@@ -42,6 +42,7 @@ const graphs = [
     { div: 'graph-interval.workout_41335805', options: intervalGraph.workout_41335805 },
     { div: 'graph-repeated-24_30_30-normalDistributionPace', options: repeated.interval_24_30_30.normalDistributionPace },
     { div: 'graph-repeated-24_30_30-normalDistributionWatts', options: repeated.interval_24_30_30.normalDistributionWatts },
+    { div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300.summary },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

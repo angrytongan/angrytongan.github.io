@@ -1177,18 +1177,91 @@ const normalDistributionWatts = (ids) => {
     };
 };
 
+/*
+ * [ { date: "2019-12-07", time: 4565, }, ]
+ * [ { date: "2019-12-07", time: 4549, }, ]
+ * [ { date: "2019-12-07", time: 4513, }, ]
+ */
 const summary = (ids) => {
     const xAxis = [];
     const yAxis = [];
     const dataset = [];
     const series = [];
     const legend = [];
+    const tooltip = [];
+
+    legend.push({
+        top: '10%',
+    });
+
+    tooltip.push({
+        trigger: 'axis',
+        axisPointer: {
+            show: false,
+        },
+        formatter: (params) => {
+            return params.reduce((acc, val) => {
+                return acc + `${val.marker} ${dateTime.ds2time(val.value.time)}<br />`;
+            }, '');
+        },
+    });
+
+    xAxis.push({
+        type: 'time',
+        name: 'Date',
+        nameGap: 35,
+        nameLocation: 'middle',
+        min: '2019-09-16',
+        max: '2021-09-16',
+    });
+
+    yAxis.push({
+        name: 'Time',
+        nameLocation: 'middle',
+        nameGap: 45,
+        min: 'dataMin',
+        max: 'dataMax',
+        axisLabel: {
+            formatter: (value) => dateTime.ds2time(value),
+        }
+    });
+
+    ids.forEach((id) => {
+        const workout = workouts.find((w) => w.id == id);
+
+        workout.intervals.forEach((interval, i) => {
+            if (dataset[i] == undefined) {
+                dataset.push({
+                    dimension: [ 'date', 'time' ],
+                    source: [
+                        { date: workout.date, time: interval.time, }
+                    ],
+                });
+            } else {
+                dataset[i].source.push({
+                    date: workout.date,
+                    time: interval.time,
+                });
+            }
+        });
+    });
+
+    for (let i = 0; i < 3; i++) {
+        series.push({
+            type: 'line',
+            datasetIndex: i,
+            symbolSize: 15,
+            animation: false,
+            name: `Interval ${i+1}`,
+        });
+    }
 
     return {
         xAxis,
         yAxis,
         dataset,
         series,
+        tooltip,
         legend,
     };
 };

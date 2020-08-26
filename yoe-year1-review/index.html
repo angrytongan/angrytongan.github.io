@@ -171,7 +171,9 @@ vim: textwidth=80
         <p>
         The results and graphs presented in this review come directly from data
         collected throughout the program. The raw data is <a
-            href="charts/data.js">available here</a>.
+            href="charts/data.js">available here</a>. Stroke data information
+        for individual workouts sourced from my account on the <a
+           href="https://log.concept2.com">Concept2 Logbook</a>.
         </p>
 
         <!-- program -->
@@ -554,15 +556,20 @@ vim: textwidth=80
         </p>
         <div class="self">
             <p>
-            There's not much exposition for these tests. My goal each instance
-            was to increase over the previous result and maintain a consistent
-            pace. The overall goal was to get to 200cals by the last test;
-            didn't quite get there.
+            There's not much in the way of exposition for these tests. The goal
+            each time was to increase number of calories from the last test, and
+            to be as consistent as possible. Couldn't quite get to 200cals in
+            the last test.
+            </p>
+            <p>
+            The AirDyne doesn't have any way of recording intra-workout metrics;
+            it would have been nice to see where pace changes occurred in order
+            to develop a better approach than &ldquo;got fast and survive&rdquo;.
             </p>
             <p>
             All six tests felt RPE 10. The last two tests I did not feel the need
-            to collapse on the floor, and sat upright on the bike slowly spinning
-            the pedals while recovering.
+            to collapse on the floor to recover, instead sitting upright and
+            slowly pedalling.
             </p>
         </div>
 
@@ -585,8 +592,8 @@ vim: textwidth=80
         Test 3 felt very poor. I was unwell at the end of the previous week and
         was most likely still recovering. While faster than test 1, it was
         equal to test 2. I bonked with less than 4 minutes to go, whereas pace
-        was held throughout tests 1 and 2. This is easily visible by comparing
-        the pace graph for the three tests, shown overlaid below.
+        was held throughout tests 1 and 2. We can see this by examining the pace
+        for each test:
         </p>
         <div id="graph-strokedata-tt20"></div>
         <p class="self">
@@ -612,15 +619,15 @@ vim: textwidth=80
         24x0:30/0:30r (24 intervals of 30 seconds work, 30 seconds rest) is
         scheduled once each in phases 1, 3 and 4 (weeks 11, 27, 45).  I
         completed the 1st and 3rd workout on the rower, and the second on the
-        SkiErg. Here we will consider just the rower results.
+        SkiErg. Here we will examine the rower workouts.
         </p>
         <div id="graph-repeated-24_30_30"></div>
 
         <table class="data">
             <tr>
                 <th>24x0:30/0:30r</th>
-                <th>1st Attempt</th>
-                <th>2nd Attempt</th>
+                <th>Attempt 1</th>
+                <th>Attempt 2</th>
                 <th>Variance</th>
                 <th>Interpretation</th>
             </tr>
@@ -673,6 +680,15 @@ vim: textwidth=80
                 <td>-1 to 2 points</td>
                 <td>Improvement?</td>
             </tr>
+            <tr>
+                <th>Concept2 logbook</th>
+                <td><a href="https://log.concept2.com/profile/1063564/log/40524237">Attempt
+                        1 data</a></td>
+                <td><a href="https://log.concept2.com/profile/1063564/log/46414252">Attempt
+                        2 data</a></td>
+                <td>N/A</td>
+                <td>N/A</td>
+            </tr>
         </table>
 
         <p>
@@ -693,8 +709,8 @@ vim: textwidth=80
         </p>
         <div id="graph-repeated-24_30_30-strokesPerInterval"></div>
         <p>
-        The 2nd attempt had one less stroke in 16 of the 24 intervals
-        compared to the 1st attempt. We know the 2nd attempt covered further
+        Attempt 2 had one less stroke in 16 of the 24 intervals
+        compared to the attempt 1. We know the 2nd attempt covered further
         distance, so we can make the presumption that in the 2nd attempt, the
         <u>distance per stroke increased</u>.
         </p>
@@ -741,7 +757,7 @@ vim: textwidth=80
         <div id="graph-repeated-24_30_30-pacePerInterval"></div>
         <p>
         The points representing pace for attempt 1 appear to vary more than
-        attempt 2. This can be verified by looking at the distribution:
+        attempt 2. We can look at the distribution for both paces:
         </p>
         <div id="graph-repeated-24_30_30-normalDistributionPace"></div>
         <p>
@@ -799,28 +815,110 @@ vim: textwidth=80
             faster I could complete the work, and use that as my goal. When I
             checked my history, I accidently looked up
             <strong>2<u>0</u>x0:30/0:30r</strong> (instead of
-            2<u>4</u>x0:30/0:30r).
+            2<u>4</u>x0:30/0:30r) which was done six weeks earlier than attempt
+            1.
             </p>
-
             <p>
-            20x0:30/0:30r had been done 6 weeks earlier than attempt 1 of 24x0:30/0:30r.
-            That workout had an average pace of 1:40.5.
-            <p>
-            <p>
-            So, for attempt 2 of 24x0:30/0:30r, I conservatively took a second
-            off that pace, and aimed for 1:39.5, not realising I should have
+            So, for attempt 2, I conservatively took a second off the pace for
+            20x0:30/0:30r, and aimed for 1:39.5, not realising I should have
             been aiming for 1:38.3.
             </p>
             <p>
             End result was a pace of 1:39.1; an improvement on 20x0:30/0:30r, an
             improvement on 24x0:30/0:30r, faster than the goal pace set at the
-            start of the workout, and with a lowered RPE. While using RPE as a
-            measure is not concrete, I believe I <i>did</i> significantly
-            improve between the two workouts.
+            start of the workout, and with a lowered RPE.
+            </p>
+            <p>
+            This yields an interesting observation: I was easily able to hold
+            the pace required to hit my goal. If my goal pace was 1:38.3, I
+            believe that at the time of attempt 2 I would have been able to hit
+            that, perhaps at a higher RPE, but hit it nonetheless.
             </p>
         </div>
 
         <h4 id="objective-results-notable-workouts-3x2,000m/3:00r">3x2,000m/3:00r</h4>
+        <p>
+        3x2,000m/3:00r (3 intervals of 2,000m with 3:00 rest in between) is
+        scheduled once in phase 1 (week 12, and the day before a 10:00.0 air
+        bike time trial!). As this workout occurs only once in the program,
+        attempt 2 was done after the end of the program. Year of the Engine
+        programming period is shaded.
+        </p>
+        <div id="graph-repeated-3_2000_300"></div>
+
+        <table class="data">
+            <tr>
+                <th>3x2,000m/3:00r</th>
+                <th>Attempt 1</th>
+                <th>Attempt 2</th>
+                <th>Variance</th>
+                <th>Interpretation</th>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>7th December, 2019</td>
+                <td></td>
+                <td></td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <th>Pace</th>
+                <td>1:53.5 /500m</td>
+                <td> /500m</td>
+                <td> /500m</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>22:42.6</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Calories</th>
+                <td>423 calories</td>
+                <td> calories</td>
+                <td> calories</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Stroke count</th>
+                <td>588 strokes</td>
+                <td> strokes</td>
+                <td> strokes</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Stroke rate</th>
+                <td>26 spm</td>
+                <td> spm</td>
+                <td> spm</td>
+                <td></td>
+            </tr>
+            <tr class="self">
+                <th>RPE</th>
+                <td>8-9</td>
+                <td></td>
+                <td> points</td>
+                <td></td>
+            </tr>
+            <tr>
+                <th>Concept2 logbook</th>
+                <td><a
+                        href="https://log.concept2.com/profile/1063564/log/40793098">Attempt
+                        1 data</a></td>
+                <td><a href="">Attempt
+                        2 data</a></td>
+                <td>N/A</td>
+                <td>N/A</td>
+            </tr>
+        </table>
+
+        <p>
+        Let's plot the time of each interval from both attempts:
+        </p>
+        <div id="graph-repeated-3_2000_300-summary"></div>
 
         <h3 id="objective-results-out-of-program-tests">Out-of-program tests</h3>
 

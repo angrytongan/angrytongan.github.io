@@ -1688,7 +1688,9 @@ export const workouts = [
     apparatus: "Rower",
     distance: "6000",
     workTime: "22:42.6",
-    restTime: "6:00"
+    restTime: "6:00",
+    calories: "423",
+    pace: "1:53.5",
 },
 {
     workout: "3.4.3",

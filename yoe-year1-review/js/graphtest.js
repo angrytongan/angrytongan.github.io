@@ -16,7 +16,7 @@ import { intervalGraph } from '/yoe-year1-review/charts/interval-graph.js';
 
 const defaultGraphHeight = 200;
 
-const graphs = [ 
+const graphs = [
     /*
     { div: 'graph-phases', options: programPhases.phasesOptions, height: 50 },
     { div: 'graph-tracks', options: programPhases.tracksOptions, height: 75 },
@@ -47,9 +47,10 @@ const graphs = [
     { div: 'graph-repeated-24_30_30-normalDistributionWatts', options: repeated.interval_24_30_30.normalDistributionWatts },
     { div: 'graph-interval.workout_40553854', options: intervalGraph.workout_40553854 },
     { div: 'graph-interval.workout_41335805', options: intervalGraph.workout_41335805 },
-    */
-    //{ div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
     { div: 'graph-time-commitment-sd-by-type', options: timeCommitment.sdByType },
+    */
+    { div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300 },
+    { div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
