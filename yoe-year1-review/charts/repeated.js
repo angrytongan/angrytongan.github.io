@@ -1200,8 +1200,8 @@ const summary = (ids) => {
             show: false,
         },
         formatter: (params) => {
-            return params.reduce((acc, val) => {
-                return acc + `${val.marker} ${dateTime.ds2time(val.value.time)}<br />`;
+            return params[0].value.date + params.reduce((acc, val) => {
+                return acc + `<br />${val.marker} ${dateTime.ds2time(val.value.time)}`;
             }, '');
         },
     });
@@ -1253,6 +1253,18 @@ const summary = (ids) => {
             symbolSize: 15,
             animation: false,
             name: `Interval ${i+1}`,
+            markArea: {
+                silent: true,
+                itemStyle: {
+                    color: 'rgba(238, 50, 50, 0.15)',   // XXX need to adjust this
+                },
+                data: [
+                    [
+                        { coord: [ '2019-09-16', ] },
+                        { coord: [ '2020-09-16', ] },
+                    ],
+                ],
+            },
         });
     }
 

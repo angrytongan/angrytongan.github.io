@@ -156,8 +156,6 @@ const sdByType = (workouts) => {
         const mean = calcMean(d.workoutTime);
         const sd = calcStandardDeviation(d.workoutTime, mean);
 
-        console.log(mean, sd);
-
         dataset.push({
             dimension: [ 'x', 'y' ],
             source: calcStandardNormalDistribution(mean, sd),
