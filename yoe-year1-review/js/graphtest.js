@@ -49,8 +49,10 @@ const graphs = [
     { div: 'graph-interval.workout_41335805', options: intervalGraph.workout_41335805 },
     { div: 'graph-time-commitment-sd-by-type', options: timeCommitment.sdByType },
     */
-    { div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300 },
-    { div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
+
+    //{ div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300 },
+    //{ div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
+    { div: 'graph-repeated-3_2000_300-interval-strokedata', options: repeated.interval_3_2000_300.intervalStrokedata },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

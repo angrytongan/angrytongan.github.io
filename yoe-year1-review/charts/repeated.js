@@ -63,6 +63,8 @@ const strokeData = [
         ]
     },
 
+    /* XXX Consider removing first stroke to even out the graphs */
+    /* XXX check attempt 2 first stroke */
     {
         "id":40793098,
         "data":[
@@ -1192,6 +1194,7 @@ const summary = (ids) => {
 
     legend.push({
         top: '10%',
+        selectedMode: false,
     });
 
     tooltip.push({
@@ -1256,7 +1259,7 @@ const summary = (ids) => {
             markArea: {
                 silent: true,
                 itemStyle: {
-                    color: 'rgba(238, 50, 50, 0.15)',   // XXX need to adjust this
+                    color: 'rgba(194, 53, 49, 0.17)',
                 },
                 data: [
                     [
@@ -1269,6 +1272,164 @@ const summary = (ids) => {
     }
 
     return {
+        xAxis,
+        yAxis,
+        dataset,
+        series,
+        tooltip,
+        legend,
+    };
+};
+
+const intervalStrokedata = (ids) => {
+    const xAxis = [];
+    const yAxis = [];
+    const dataset = [];
+    const series = [];
+    const tooltip = [];
+    const legend = [];
+    const grid = [];
+    const dataZoom = [];
+
+    let bounds = {
+        minTime: Infinity,
+        minPace: Infinity,
+        maxTime: 0,
+        maxPace: 0,
+    };
+
+    legend.push({
+        top: '10%',
+        selectedMode: false,
+    });
+
+    tooltip.push({
+        trigger: 'axis',
+        axisPointer: {
+            label: {
+                formatter: (params) => {
+                    return dateTime.ds2time(params.value);
+                },
+            }
+        },
+        formatter: (params) => {
+            return params[0].axisValueLabel + params.reduce((acc, val) => {
+                return acc + `<br />${val.marker} ${dateTime.ds2time(val.value.p)}`;
+            }, '');
+        },
+    });
+
+    const width = 31;
+    const offset = 5;
+    grid.push(
+        { left: offset + 0 * width + '%', right: offset + 2 * width + '%', },
+        { left: offset + 1 * width + '%', right: offset + 1 * width + '%', },
+        { left: offset + 2 * width + '%', right: offset + 0 * width + '%', },
+    );
+
+    grid.forEach((g, i) => {
+        xAxis.push({
+            type: 'time',
+            gridIndex: i,
+            name: `Interval ${i+1}`,
+            nameGap: 25,
+            nameLocation: 'middle',
+            min: 'dataMin',
+            max: 'dataMax',
+            axisLabel: {
+                formatter: (value) => dateTime.ds2time(value),
+            },
+        });
+
+        yAxis.push({
+            type: 'value',
+            gridIndex: i,
+            name: 'Pace',
+            nameLocation: 'middle',
+            min: 'dataMin',
+            max: 'dataMax',
+            axisLabel: {
+                formatter: (value) => dateTime.ds2time(value),
+            },
+            inverse: true,
+            show: false,
+        });
+    });
+
+    /*
+    dataZoom.push({
+        type: 'slider',
+        xAxisIndex: xAxis.reduce((acc, val, i) => {
+            acc.push(i);
+            return acc;
+        }, []),
+        left: '10%',
+        right: '10%',
+        labelFormatter: (value) => dateTime.ds2time(value),
+    });
+    */
+
+    dataZoom.push({
+        type: 'slider',
+        yAxisIndex: yAxis.reduce((acc, val, i) => {
+            acc.push(i);
+            return acc;
+        }, []),
+        start: 82.5,
+        labelFormatter: (value) => dateTime.ds2time(value),
+    });
+
+    ids.forEach((id) => {
+        const workout = workouts.find((w) => w.id == id);
+        const sd = strokeData.find((s) => s.id == id);
+
+        for (let interval = 0; interval < sd.data.length; interval++) {
+            dataset.push({
+                dimension: [ 't', 'p' ],
+                source: sd.data[interval],
+            });
+
+            /*
+             * We want the graphs to be consistent, so sort out min and max
+             * for stroke data across all intervals.
+             */
+            bounds = sd.data[interval].reduce((acc, val) => {
+                if (val.p < bounds.minPace) { bounds.minPace = val.p; }
+                if (val.p > bounds.maxPace) { bounds.maxPace = val.p; }
+                if (val.t < bounds.minTime) { bounds.minTime = val.t; }
+                if (val.t > bounds.maxTime) { bounds.maxTime = val.t; }
+
+                return bounds;
+            }, bounds);
+
+            series.push({
+                type: 'line',
+                name: workout.date,
+                xAxisIndex: interval,
+                yAxisIndex: interval,
+                datasetIndex: dataset.length - 1,
+                encode: {
+                    x: 't',
+                    y: 'p',
+                },
+                showSymbol: false,
+            });
+        }
+    });
+
+
+    console.log(bounds);
+
+    grid.forEach((g, i) => {
+        xAxis[i].min = bounds.minPace;
+        xAxis[i].max = bounds.maxTime;
+        yAxis[i].min = bounds.minPace;
+        yAxis[i].max = bounds.maxPace;
+    });
+
+    return {
+        grid,
+        dataZoom,
         xAxis,
         yAxis,
         dataset,
@@ -1300,5 +1461,6 @@ export const repeated = {
     },
     interval_3_2000_300: {
         summary: () => summary([ 40793098 ]),
+        intervalStrokedata: () => intervalStrokedata([ 40793098 ]),
     },
 };

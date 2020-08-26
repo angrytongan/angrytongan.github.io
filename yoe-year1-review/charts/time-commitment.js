@@ -127,8 +127,6 @@ const sdByType = (workouts) => {
     });
     data.sort((a, b) => a.type < b.type ? -1 : a.type > b.type ? 1 : 0);
 
-    console.log(data);
-
     xAxis.push({
         nameLocation: 'middle',
         min: 'dataMin',
@@ -171,7 +169,6 @@ const sdByType = (workouts) => {
             name: d.type,
             smooth: true,
             showSymbol: false,
-            animation: false,
         });
     });
 
