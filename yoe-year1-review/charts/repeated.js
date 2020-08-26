@@ -233,7 +233,6 @@ const strokesPerInterval = (ids) => {
                 x: 'interval',
                 y: 'numStrokes',
             },
-            animation: false,
         });
     });
 
@@ -308,7 +307,6 @@ const distancePerInterval = (ids) => {
                 x: 'interval',
                 y: 'distance',
             },
-            animation: false,
         });
     });
 
@@ -394,7 +392,6 @@ const distancePerIntervalAllStrokes = (ids) => {
                 x: 'stroke',
                 y: 'd',
             },
-            animation: false,
         });
     });
 
@@ -484,7 +481,6 @@ const distancePerStroke = (ids) => {
                 x: 'stroke',
                 y: 'distance',
             },
-            animation: false,
         });
     });
 
@@ -559,7 +555,6 @@ const distanceDeltaPerInterval = (ids) => {
             x: 'interval',
             y: 'delta',
         },
-        animation: false,
     });
 
     return {
@@ -648,7 +643,6 @@ const timeDeltaPerStroke = (ids) => {
                 x: 'stroke',
                 y: 't',
             },
-            animation: false,
         });
     });
 
@@ -727,7 +721,6 @@ const pacePerInterval = (ids) => {
                 x: 'interval',
                 y: 'pace',
             },
-            animation: false,
         });
     });
 
@@ -812,7 +805,6 @@ const wattsPerStroke = (ids) => {
                 x: 'stroke',
                 y: 'w',
             },
-            animation: false,
         });
     });
 
@@ -895,7 +887,6 @@ const cumulativeDistancePerInterval = (ids) => {
                 x: 'interval',
                 y: 'distance',
             },
-            animation: false,
         });
     });
 
@@ -973,7 +964,6 @@ const bankedDistanceByInterval = (ids) => {
             x: 'interval',
             y: 'bank',
         },
-        animation: false,
     });
 
     return {
@@ -1085,7 +1075,6 @@ const normalDistributionPace = (ids) => {
             smooth: true,
             showSymbol: false,
             gridIndex: i,
-            animation: false,
         });
     });
 
@@ -1165,7 +1154,6 @@ const normalDistributionWatts = (ids) => {
             smooth: true,
             showSymbol: false,
             gridIndex: i,
-            animation: false,
         });
     });
 
@@ -1249,12 +1237,11 @@ const summary = (ids) => {
         });
     });
 
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {   // XXX magic constant
         series.push({
             type: 'line',
             datasetIndex: i,
             symbolSize: 15,
-            animation: false,
             name: `Interval ${i+1}`,
             markArea: {
                 silent: true,
@@ -1419,8 +1406,6 @@ const intervalStrokedata = (ids) => {
         }
     });
 
-
-    console.log(bounds);
 
     grid.forEach((g, i) => {
         xAxis[i].min = bounds.minPace;
