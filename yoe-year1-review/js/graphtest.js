@@ -14,6 +14,8 @@ import { strokedata } from '/yoe-year1-review/charts/strokedata.js';
 import { repeated } from '/yoe-year1-review/charts/repeated.js';
 import { intervalGraph } from '/yoe-year1-review/charts/interval-graph.js';
 
+import { airbike } from '/yoe-year1-review/charts/air-bike.js';
+
 const defaultGraphHeight = 200;
 
 const graphs = [
@@ -51,8 +53,17 @@ const graphs = [
     { div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300 },
     { div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
     */
+    /*
     { div: 'graph-repeated-3_2000_300-interval-strokedata', options: repeated.interval_3_2000_300.intervalStrokedata },
     { div: 'graph-repeated-3_2000_300-interval-normal-distribution', options: repeated.interval_3_2000_300.intervalNormalDistribution },
+    */
+
+    { div: 'graph-airbike-speedVsWatts', options: airbike.speedVsWatts },
+    { div: 'graph-airbike-wattsVsSpeed', options: airbike.wattsVsSpeed },
+    { div: 'graph-airbike-speedVsRPM', options: airbike.speedVsRPM },
+    { div: 'graph-airbike-RPMVsSpeed', options: airbike.RPMVsSpeed },
+    { div: 'graph-airbike-wattsVsRPM', options: airbike.wattsVsRPM },
+    { div: 'graph-airbike-RPMVsWatts', options: airbike.RPMVsWatts },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
