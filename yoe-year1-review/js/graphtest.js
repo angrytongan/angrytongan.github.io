@@ -43,17 +43,14 @@ const graphs = [
     { div: 'graph-repeated-24_30_30-pacePerInterval', options: repeated.interval_24_30_30.pacePerInterval },
     { div: 'graph-repeated-24_30_30-wattsPerStroke', options: repeated.interval_24_30_30.wattsPerStroke },
     { div: 'graph-repeated-24_30_30-bankedDistanceByInterval', options: repeated.interval_24_30_30.bankedDistanceByInterval },
-    */
     { div: 'graph-repeated-24_30_30-normalDistributionPace', options: repeated.interval_24_30_30.normalDistributionPace },
     { div: 'graph-repeated-24_30_30-normalDistributionWatts', options: repeated.interval_24_30_30.normalDistributionWatts },
-    /*
     { div: 'graph-interval.workout_40553854', options: intervalGraph.workout_40553854 },
     { div: 'graph-interval.workout_41335805', options: intervalGraph.workout_41335805 },
     { div: 'graph-time-commitment-sd-by-type', options: timeCommitment.sdByType },
+    { div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300 },
+    { div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
     */
-
-    //{ div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300 },
-    //{ div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
     { div: 'graph-repeated-3_2000_300-interval-strokedata', options: repeated.interval_3_2000_300.intervalStrokedata },
     { div: 'graph-repeated-3_2000_300-interval-normal-distribution', options: repeated.interval_3_2000_300.intervalNormalDistribution },
 ];

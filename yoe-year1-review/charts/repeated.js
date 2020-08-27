@@ -1219,8 +1219,8 @@ const summary = (ids) => {
         name: 'Time',
         nameLocation: 'middle',
         nameGap: 45,
-        min: 'dataMin',
-        max: 'dataMax',
+        min: 4480,
+        max: 4580,
         axisLabel: {
             formatter: (value) => dateTime.ds2time(value),
         }
@@ -1252,6 +1252,14 @@ const summary = (ids) => {
             datasetIndex: i,
             symbolSize: 15,
             name: `Interval ${i+1}`,
+            label: {
+                show: true,
+                position: 'right',
+                formatter: (value) => {
+                    return dateTime.ds2time(value.value.time);
+                },
+            },
+            /*
             markArea: {
                 silent: true,
                 itemStyle: {
@@ -1264,6 +1272,7 @@ const summary = (ids) => {
                     ],
                 ],
             },
+            */
         });
     }
 
@@ -1329,11 +1338,12 @@ const intervalStrokedata = (ids, o) => {
             type: 'time',
             gridIndex: i,
             name: `Time (Interval ${i+1})`,
-            nameGap: 25,
+            nameGap: 30,
             nameLocation: 'middle',
             min: 'dataMin',
             max: 'dataMax',
             axisLabel: {
+                rotate: 45,
                 formatter: (value) => dateTime.ds2time(value, false),
             },
         });
@@ -1360,7 +1370,7 @@ const intervalStrokedata = (ids, o) => {
             return acc;
         }, []),
         left: 'right',
-        start: 82.5,
+        start: 87.0,
         labelFormatter: (value) => dateTime.ds2time(value, false),
     });
 
