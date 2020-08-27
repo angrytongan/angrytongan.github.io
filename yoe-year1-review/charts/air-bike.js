@@ -201,7 +201,6 @@ const vs = (dims) => {
 
     apparatus.forEach((a, i) => {
         dataset.push({
-            dimension: dims,
             source: data.reduce((acc, d) => {
                 const foo = {};
 

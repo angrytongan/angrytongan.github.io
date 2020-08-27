@@ -73,7 +73,6 @@ const tt20 = () => {
 
     results.forEach((r, i) => {
         dataset.push({
-            dimensions: [ 't', 'p' ],
             source: strokedata_tt20.find((sd) => sd.id == r.id).data,
         });
 

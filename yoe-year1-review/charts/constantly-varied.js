@@ -52,7 +52,6 @@ const apparatus = (workouts) => {
 
     apparatus.forEach((a, i) => {
         dataset.push({
-            dimensions: [ 'date', 'workoutTime' ],
             source: data.filter((d) => d.apparatus == a),
         });
 

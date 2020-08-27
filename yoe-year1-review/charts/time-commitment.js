@@ -55,7 +55,6 @@ const summary = (workouts, filter = {}) => {
     });
 
     dataset.push({
-        dimensions: [ 'date', 'workTime', 'restTime' ],
         source: workouts
             .filter((w) => filter.type === undefined || filter.type == w.type),
     });
@@ -157,7 +156,6 @@ const sdByType = (workouts) => {
         const sd = calcStandardDeviation(d.workoutTime, mean);
 
         dataset.push({
-            dimension: [ 'x', 'y' ],
             source: calcStandardNormalDistribution(mean, sd),
         });
 

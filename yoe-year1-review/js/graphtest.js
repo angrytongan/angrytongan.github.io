@@ -16,10 +16,11 @@ import { intervalGraph } from '/yoe-year1-review/charts/interval-graph.js';
 
 import { airbike } from '/yoe-year1-review/charts/air-bike.js';
 
+import { acidBath } from '/yoe-year1-review/charts/acid-bath.js';
+
 const defaultGraphHeight = 200;
 
 const graphs = [
-    /*
     { div: 'graph-phases', options: programPhases.phasesOptions, height: 50 },
     { div: 'graph-tracks', options: programPhases.tracksOptions, height: 75 },
     { div: 'graph-workout-types', options: workoutTypes, height: 200 },
@@ -28,10 +29,8 @@ const graphs = [
     { div: 'graph-tt-rower-2000-full-history', options: timeTrial.ttRower2000FullHistory, height: 200 },
     { div: 'graph-workout-duration', options: workoutDuration },
     { div: 'graph-workout-spread-scatter', options: workoutSpread.scatter, height: 200 },
-    { div: 'graph-workout-spread-treemap', options: workoutSpread.treemap, height: 200 },
     { div: 'graph-workout-spread-pies', options: workoutSpread.pies, height: 200 },
     { div: 'graph-time-commitment', options: timeCommitment.summary },
-    { div: 'graph-constantly-varied-summary', options: constantlyVaried.summary },
     { div: 'graph-execution-summary', options: execution.summary, height: 170 },
     { div: 'graph-strokedata-tt20', options: strokedata.tt20, height: 200 },
     { div: 'graph-repeated-24_30_30', options: timeTrial.repeated243030 },
@@ -52,11 +51,8 @@ const graphs = [
     { div: 'graph-time-commitment-sd-by-type', options: timeCommitment.sdByType },
     { div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300 },
     { div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
-    */
-    /*
     { div: 'graph-repeated-3_2000_300-interval-strokedata', options: repeated.interval_3_2000_300.intervalStrokedata },
     { div: 'graph-repeated-3_2000_300-interval-normal-distribution', options: repeated.interval_3_2000_300.intervalNormalDistribution },
-    */
 
     { div: 'graph-airbike-speedVsWatts', options: airbike.speedVsWatts },
     { div: 'graph-airbike-wattsVsSpeed', options: airbike.wattsVsSpeed },
@@ -64,6 +60,9 @@ const graphs = [
     { div: 'graph-airbike-RPMVsSpeed', options: airbike.RPMVsSpeed },
     { div: 'graph-airbike-wattsVsRPM', options: airbike.wattsVsRPM },
     { div: 'graph-airbike-RPMVsWatts', options: airbike.RPMVsWatts },
+
+    { div: 'graph-acidbath-dubaiNormalDistribution', options: acidBath.dubaiNormalDistribution },
+    { div: 'graph-acidbath-dubai', options: acidBath.dubaiLeaderboard, height: 800 },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

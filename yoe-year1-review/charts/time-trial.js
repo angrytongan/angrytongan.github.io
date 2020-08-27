@@ -5,7 +5,6 @@ import { dateTime } from '/yoe-year1-review/js/utils/datetime.js';
 const genericOptions = (o) => {
     return {
         dataset: {
-            dimensions: [ 'date', 'calories' ],
             source: o.dataset.source,
         },
 
@@ -36,6 +35,10 @@ const genericOptions = (o) => {
             },
             symbolSize: 16,
             name: 'Calories',
+            encode: {
+                x: 'date',
+                y: 'calories',
+            },
             ...o.series,
         },
 

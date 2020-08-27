@@ -67,7 +67,6 @@ const graph = (id) => {
     const sd = strokeData.find((sd) => sd.id == id);
     sd.data.forEach((d, i) => {
         dataset.push({
-            dimension: [ 'p', 't' ],
             source: d,
         });
 

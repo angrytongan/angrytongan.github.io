@@ -211,7 +211,6 @@ const strokesPerInterval = (ids) => {
         const workout = workouts.find((w) => w.id == id);
 
         dataset.push({
-            dimension: [ 'interval', 'numStrokes' ],
             source: strokeData.find((sd) => sd.id == id).data.reduce((acc, val, interval) => {
                 acc.push({
                     interval: interval+1,
@@ -290,7 +289,6 @@ const distancePerInterval = (ids) => {
         const workout = workouts.find((w) => w.id == id);
 
         dataset.push({
-            dimension: [ 'interval', 'distance' ],
             source: workout.intervals.map((w, i) => ({
                 interval: i+1,
                 distance: w.distance,
@@ -367,7 +365,6 @@ const distancePerIntervalAllStrokes = (ids) => {
         let i = 1;
 
         dataset.push({
-            dimension: [ 'stroke', 'd' ],
             source: sd.data.reduce((acc, val) => {
                 return acc.concat(val.map((v) => {
                     return {
@@ -452,7 +449,6 @@ const distancePerStroke = (ids) => {
         let i = 1;
 
         dataset.push({
-            dimension: [ 'stroke', 'd' ],
             source: sd.data.reduce((acc, val) => {
                 let lastDistance = 0;
                 return acc.concat(val.map((v) => {
@@ -477,7 +473,7 @@ const distancePerStroke = (ids) => {
             },
             encode: {
                 x: 'stroke',
-                y: 'distance',
+                y: 'd',
             },
         });
     });
@@ -542,7 +538,6 @@ const distanceDeltaPerInterval = (ids) => {
     }
 
     dataset.push({
-        dimension: [ 'interval', 'delta' ],
         source: data,
     });
 
@@ -614,7 +609,6 @@ const timeDeltaPerStroke = (ids) => {
         let i = 1;
 
         dataset.push({
-            dimension: [ 'stroke', 't' ],
             source: sd.data.reduce((acc, val) => {
                 let lastTime = 0;
                 return acc.concat(val.map((v) => {
@@ -704,7 +698,6 @@ const pacePerInterval = (ids) => {
         const workout = workouts.find((w) => w.id == id);
 
         dataset.push({
-            dimension: [ 'interval', 'pace' ],
             source: workout.intervals.map((w, i) => ({
                 interval: i+1,
                 pace: 500 * (w.time / w.distance),
@@ -778,7 +771,6 @@ const wattsPerStroke = (ids) => {
         let i = 1;
 
         dataset.push({
-            dimension: [ 'stroke', 'w' ],
             source: sd.data.reduce((acc, val) => {
                 return acc.concat(val.map((v) => {
                     const w = v.t == 0 || v.d == 0 ? 0 : Math.trunc(2.8 / Math.pow((v.t/10) / (v.d/10), 3));
@@ -865,7 +857,6 @@ const cumulativeDistancePerInterval = (ids) => {
         let lastDistance = 0;
 
         dataset.push({
-            dimension: [ 'interval', 'distance' ],
             source: workout.intervals.map((w, i) => {
                 const distance = lastDistance + w.distance;
                 lastDistance += w.distance;
@@ -951,7 +942,6 @@ const bankedDistanceByInterval = (ids) => {
     }
 
     dataset.push({
-        dimension: [ 'interval', 'bank' ],
         source: data,
     });
 
@@ -1046,6 +1036,7 @@ const normalDistributionPace = (ids) => {
                 formatter: (params) => dateTime.ds2time(params.value),
             },
         },
+        inverse: true,
     });
 
     ids.forEach((id, i) => {
@@ -1062,7 +1053,6 @@ const normalDistributionPace = (ids) => {
         });
 
         dataset.push({
-            dimension: [ 'x', 'y' ],
             source: calcStandardNormalDistribution(mean, standardDeviation),
         });
 
@@ -1073,6 +1063,10 @@ const normalDistributionPace = (ids) => {
             smooth: true,
             showSymbol: false,
             gridIndex: i,
+            encode: {
+                x: 'x',
+                y: 'y',
+            },
         });
 
         if (i == 0) {
@@ -1148,7 +1142,6 @@ const normalDistributionWatts = (ids) => {
         });
 
         dataset.push({
-            dimension: [ 'x', 'y' ],
             source: calcStandardNormalDistribution(mean, standardDeviation),
         });
 
@@ -1159,6 +1152,10 @@ const normalDistributionWatts = (ids) => {
             smooth: true,
             showSymbol: false,
             gridIndex: i,
+            encode: {
+                x: 'x',
+                y: 'y',
+            },
         });
 
         if (i == 0) {
@@ -1232,7 +1229,6 @@ const summary = (ids) => {
         workout.intervals.forEach((interval, i) => {
             if (dataset[i] == undefined) {
                 dataset.push({
-                    dimension: [ 'date', 'time' ],
                     source: [
                         { date: workout.date, time: interval.time, }
                     ],
@@ -1258,6 +1254,10 @@ const summary = (ids) => {
                 formatter: (value) => {
                     return dateTime.ds2time(value.value.time);
                 },
+            },
+            encode: {
+                x: 'date',
+                y: 'time',
             },
             /*
             markArea: {
@@ -1380,7 +1380,6 @@ const intervalStrokedata = (ids, o) => {
 
         for (let interval = 0; interval < sd.data.length; interval++) {
             dataset.push({
-                dimension: [ 't', o.field ],
                 source: sd.data[interval],
             });
 
@@ -1473,6 +1472,7 @@ const intervalNormalDistribution = (ids, o) => {
                     formatter: (params) => dateTime.ds2time(params.value),
                 },
             },
+            inverse: true,
         });
 
         yAxis.push({
@@ -1495,7 +1495,6 @@ const intervalNormalDistribution = (ids, o) => {
             );
 
             dataset.push({
-                dimension: [ 'x', 'y' ],
                 source: calcStandardNormalDistribution(mean, standardDeviation),
             });
 

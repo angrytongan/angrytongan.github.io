@@ -133,7 +133,6 @@ const pies = (data) => {
         });
 
         dataset.push({
-            dimensions: [ 'name', 'value' ],
             source: p.workouts,
         });
 
