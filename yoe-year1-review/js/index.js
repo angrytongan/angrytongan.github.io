@@ -88,6 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (g.chart.getHeight() != g.height) {
+            g.element.style.height = g.height + 'px';
             g.chart.resize({ height: g.height });
         }
     });
