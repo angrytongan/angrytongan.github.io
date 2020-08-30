@@ -63,8 +63,8 @@ const tt20 = () => {
         name: 'Pace',
         nameGap: 45,
         nameLocation: 'middle',
-        min: 'dataMin',
-        max: 'dataMax',
+        min: 950,
+        max: 1400,
         inverse: true,
         axisLabel: {
             formatter: (val) => dateTime.ds2time(val),

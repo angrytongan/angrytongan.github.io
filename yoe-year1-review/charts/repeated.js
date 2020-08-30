@@ -1268,7 +1268,7 @@ const summary = (ids) => {
                 data: [
                     [
                         { coord: [ '2019-09-16', ] },
-                        { coord: [ '2020-09-16', ] },
+                        { coord: [ '2020-09-13', ] },
                     ],
                 ],
             },
@@ -1352,14 +1352,18 @@ const intervalStrokedata = (ids, o) => {
             type: 'value',
             gridIndex: i,
             name: o.label,
+            nameGap: 5,
             nameLocation: 'middle',
             min: 'dataMin',
             max: 'dataMax',
+            axisTick: {
+                inside: true,
+            },
             axisLabel: {
-                formatter: (value) => dateTime.ds2time(value),
+                show: false,
+                //formatter: (value) => dateTime.ds2time(value),
             },
             inverse: true,
-            show: false,
         });
     });
 
@@ -1370,7 +1374,7 @@ const intervalStrokedata = (ids, o) => {
             return acc;
         }, []),
         left: 'right',
-        start: 87.0,
+        //start: 87.0,
         labelFormatter: (value) => dateTime.ds2time(value, false),
     });
 
@@ -1421,7 +1425,7 @@ const intervalStrokedata = (ids, o) => {
 
     return {
         grid,
-        dataZoom,
+        //dataZoom,
         xAxis,
         yAxis,
         dataset,

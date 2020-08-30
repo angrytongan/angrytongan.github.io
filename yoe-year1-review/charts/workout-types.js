@@ -31,7 +31,7 @@ export const workoutTypes = () => {
                     value: 3,
                 },
                 {
-                    name: 'Flux',
+                    name: 'FLUX',
                     value: 3,
                 },
             ],

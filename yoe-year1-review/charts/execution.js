@@ -24,7 +24,7 @@ const summary = (workouts) => {
             right: '5%',
             bottom: '15%',
             cellSize: [ 'auto', 'auto' ],
-            range: [ '2019-09-16', '2020-09-16' ],
+            range: [ '2019-09-16', '2020-09-13' ],
             dayLabel: {
                 firstDay: 1,
             },

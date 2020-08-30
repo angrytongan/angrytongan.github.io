@@ -14,7 +14,7 @@ const genericOptions = (o) => {
             nameGap: 40,
             nameLocation: 'middle',
             min: '2019-09-16',
-            max: '2020-09-16',
+            max: '2020-09-13',
             ...o.xAxis,
         },
 
@@ -116,7 +116,7 @@ const ttRower2000FullHistory = (workouts) => {
         },
         xAxis: {
             min: '2015-10-01',
-            max: '2020-09-16',
+            max: '2020-09-13',
         },
         yAxis: {
             min: 250,
@@ -137,7 +137,7 @@ const ttRower2000FullHistory = (workouts) => {
                 data: [
                     [
                         { coord: [ '2019-09-16', 250 ] },
-                        { coord: [ '2020-09-16', 375 ] },
+                        { coord: [ '2020-09-13', 375 ] },
                     ],
                 ],
             },
@@ -176,7 +176,7 @@ const repeated32000300 = (workouts) => {
             source: workouts.filter((w) => w.workout == '3.4.2')
         },
         xAxis: {
-            max: '2021-09-16',
+            max: '2020-10-01',
         },
         yAxis: {
             min: 0,
@@ -197,7 +197,7 @@ const repeated32000300 = (workouts) => {
                 data: [
                     [
                         { coord: [ '2019-09-16', 0 ] },
-                        { coord: [ '2020-09-16', 1000 ] },
+                        { coord: [ '2020-09-13', 1000 ] },
                     ],
                 ],
             },

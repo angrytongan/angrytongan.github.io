@@ -33,7 +33,7 @@ const summary = (workouts, filter = {}) => {
         nameLocation: 'middle',
         data: workouts.map((d) => d.date).sort(),
         min: '2019-09-16',
-        max: '2020-09-16'
+        max: '2020-09-13'
     });
 
     yAxis.push({

@@ -30,7 +30,7 @@ const scatter = (data) => {
         nameGap: 40,
         nameLocation: 'middle',
         min: '2019-09-16',
-        max: '2020-09-16',
+        max: '2020-09-13',
     });
 
     yAxis.push({
