@@ -51,37 +51,56 @@ const butteryBros = [
     { name: "Marston Sawyers", time: "5:18", },
 ];
 
-const dubaiLeaderboard = () => {
+const me = [
+    { name: '/u/angrytongan', time: "5:15", },
+];
+
+const placings = (adjustForAirDyne = false) => {
     const xAxis = [];
     const yAxis = [];
     const series = [];
-    const grid = [];
     const legend = [];
+    const tooltip = [];
+    const grid = [];
 
     const data = [
-        ...dubai2019.map((d) => {
-            return {
-                name: d.name,
-                time: dateTime.mmss2secs(d.time),
-            };
-        }),
-        ...butteryBros.map((bb) => {
-            return {
-                name: bb.name,
-                time: dateTime.mmss2secs(bb.time),
-                itemStyle: {
-                    color: 'rgba(41, 69, 84, 1.0)', /* 0.16, 0.27, 0.33 */
-                }
-            };
-        }),
+        ...dubai2019.map((d) => ({
+            name: d.name,
+            time: dateTime.mmss2secs(d.time),
+        })),
+        ...butteryBros.map((bb) => ({
+            name: bb.name,
+            time: dateTime.mmss2secs(bb.time),
+            itemStyle: {
+                color: 'rgba(41, 69, 84, 1.0)', // 0.16, 0.27, 0.33
+            },
+        })),
+        ...me.map((_m) => ({
+            name: _m.name,
+            time: dateTime.mmss2secs(_m.time),
+            itemStyle: {
+                color: 'rgba(73, 162, 170, 1)', // 0.2863, 0.6353, 0.6667
+            },
+        })),
     ].sort((a, b) => a.time < b.time ? 1 : a.time > b.time ? -1 : 0);
+
+    /*
+     * XXX TODO adjust for AirDyne calcs here
+     */
 
     legend.push({
         top: '10%',
     });
 
+    tooltip.push({
+        trigger: 'item',
+        formatter: (params) => {
+            return `${params.marker}${dateTime.secs2mmss(params.value)} ${params.name}`;
+        },
+    });
+
     grid.push({
-        left: '25%',
+        left: '10%',
     });
 
     xAxis.push({
@@ -90,54 +109,58 @@ const dubaiLeaderboard = () => {
         nameGap: 25,
         nameLocation: 'middle',
         gridIndex: 0,
-        axisPointer: {
-            show: 'true',
-            label: {
-                formatter: (params) => {
-                    return dateTime.secs2mmss(params.value);
-                },
-            },
-        },
         axisLabel: {
             formatter: (value) => dateTime.secs2mmss(value),
         },
-        min: dateTime.mmss2secs("4:40"),
-        max: dateTime.mmss2secs("6:00"),
+        min: dateTime.mmss2secs("4:50"),
+        max: dateTime.mmss2secs("5:50"),
+        gridIndex: 0,
     });
     yAxis.push({
         type: 'category',
+        name: 'Athlete',
+        nameLocation: 'middle',
         gridIndex: 0,
         data: data.map((d) => d.name),
+        show: true,
+        axisLine: {
+            show: false,
+        },
+        axisTick: {
+            show: false,
+        },
+        axisLabel: {
+            show: false,
+        },
+        gridIndex: 0,
     });
 
     series.push({
         type: 'bar',
-        data: data.map((d) => {
-            const out = {
+        data: data.map((d) => ({
                 value: d.time,
-            };
-
-            if (d.itemStyle != undefined) {
-                out.itemStyle = d.itemStyle;
-            }
-            return out;
-        }),
+                itemStyle: d.itemStyle,
+        })),
         label: {
-            show: true,
+            show: false,
             formatter: (params) => dateTime.secs2mmss(params.value),
-            position: 'insideRight',
+            position: 'right',
         },
     });
 
     return {
+        grid,
         xAxis,
         yAxis,
         series,
         grid,
         legend,
+        tooltip,
     };
 };
 
 export const acidBath = {
-    dubaiLeaderboard,
+    placingsRaw: () => placings(false),
+    placingsAdjusted: () => placings(true),
+
 };
