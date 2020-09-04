@@ -1037,6 +1037,7 @@ const normalDistributionPace = (ids) => {
             },
         },
         inverse: true,
+        splitNumber: 3,
     });
 
     ids.forEach((id, i) => {
@@ -1120,6 +1121,7 @@ const normalDistributionWatts = (ids) => {
         axisLabel: {
             formatter: (value) => value.toFixed(),
         },
+        splitNumber: 3,
     });
 
     ids.forEach((id, i) => {
@@ -1305,6 +1307,7 @@ const intervalStrokedata = (ids, o) => {
 
     legend.push({
         top: '10%',
+        selectedMode: false,
     });
 
     tooltip.push({
@@ -1357,6 +1360,7 @@ const intervalStrokedata = (ids, o) => {
             min: 'dataMin',
             max: 'dataMax',
             axisTick: {
+                show: false,
                 inside: true,
             },
             axisLabel: {
@@ -1364,6 +1368,7 @@ const intervalStrokedata = (ids, o) => {
                 //formatter: (value) => dateTime.ds2time(value),
             },
             inverse: true,
+            splitLine: false,
         });
     });
 
@@ -1446,6 +1451,7 @@ const intervalNormalDistribution = (ids, o) => {
 
     legend.push({
         top: '10%',
+        selectedMode: false,
     });
 
     /* XXX Would be nice to calc this on the run */
@@ -1477,6 +1483,7 @@ const intervalNormalDistribution = (ids, o) => {
                 },
             },
             inverse: true,
+            splitNumber: 3,
         });
 
         yAxis.push({
@@ -1514,6 +1521,7 @@ const intervalNormalDistribution = (ids, o) => {
                 },
                 showSymbol: false,
                 smooth: true,
+                splitNumber: 3,
             });
 
             if (idw == 0) {

@@ -143,6 +143,7 @@ const sdByType = (workouts) => {
                 formatter: (params) => dateTime.secs2mmss(params.value),
             },
         },
+        splitNumber: 3,
     });
 
     yAxis.push({

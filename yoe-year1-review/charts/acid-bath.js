@@ -2,12 +2,6 @@
 
 import { dateTime } from '/yoe-year1-review/js/utils/datetime.js';
 
-import {
-    calcMean,
-    calcStandardDeviation,
-    calcStandardNormalDistribution
-} from '/yoe-year1-review/charts/repeated.js';
-
 const dubai2019 = [
     { name: "Roman Khrennikov", time: "4:54", },
     { name: "Mathew Fraser", time: "4:57", },
