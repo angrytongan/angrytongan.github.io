@@ -14,6 +14,7 @@ import { strokedata } from '/yoe-year1-review/charts/strokedata.js';
 import { repeated } from '/yoe-year1-review/charts/repeated.js';
 import { intervalGraph } from '/yoe-year1-review/charts/interval-graph.js';
 import { acidBath } from '/yoe-year1-review/charts/acid-bath.js';
+import { twok } from '/yoe-year1-review/charts/2k.js';
 
 const defaultGraphHeight = 200;
 
@@ -48,6 +49,7 @@ const graphs = [
     { div: 'graph-repeated-3_2000_300-interval-strokedata', options: repeated.interval_3_2000_300.intervalStrokedata },
     { div: 'graph-repeated-3_2000_300-interval-normal-distribution', options: repeated.interval_3_2000_300.intervalNormalDistribution },
     { div: 'graph-acidbath-placingsRaw', options: acidBath.placingsRaw, height: 300 },
+    { div: 'graph-twok-summary', options: twok.summary },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
