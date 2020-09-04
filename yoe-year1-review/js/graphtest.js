@@ -21,7 +21,6 @@ import { biological } from '/yoe-year1-review/charts/biological.js';
 const defaultGraphHeight = 200;
 
 const graphs = [
-    /*
     { div: 'graph-phases', options: programPhases.phasesOptions, height: 50 },
     { div: 'graph-tracks', options: programPhases.tracksOptions, height: 75 },
     { div: 'graph-workout-types', options: workoutTypes, height: 200 },
@@ -31,9 +30,7 @@ const graphs = [
     { div: 'graph-workout-duration', options: workoutDuration },
     { div: 'graph-workout-spread-scatter', options: workoutSpread.scatter, height: 200 },
     { div: 'graph-workout-spread-pies', options: workoutSpread.pies, height: 200 },
-    */
     { div: 'graph-constantly-varied-apparatus', options: constantlyVaried.apparatus },
-    /*
     { div: 'graph-time-commitment', options: timeCommitment.summary },
     { div: 'graph-execution-summary', options: execution.summary, height: 170 },
     { div: 'graph-strokedata-tt20', options: strokedata.tt20, height: 200 },
@@ -61,7 +58,6 @@ const graphs = [
     { div: 'graph-twok-summary', options: twok.summary },
     { div: 'graph-biological-summary', options: biological.summary },
     { div: 'graph-biological-distribution', options: biological.distribution },
-    */
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

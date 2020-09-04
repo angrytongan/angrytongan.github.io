@@ -175,6 +175,7 @@ const summary = () => {
                 y: 'time',
             },
             datasetIndex: dataset.length-1,
+            symbolSize: 16,
         });
 
         if (i == 0) {

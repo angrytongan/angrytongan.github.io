@@ -25,6 +25,9 @@ const scatter = (data) => {
         nameLocation: 'middle',
         min: '2019-09-16',
         max: '2020-09-13',
+        axisLabel: {
+            formatter: (value) => echarts.format.formatTime('yyyy-MM-dd', value),
+        },
     });
 
     yAxis.push({

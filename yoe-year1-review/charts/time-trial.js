@@ -30,13 +30,13 @@ const genericOptions = (o) => {
         },
 
         series: {
-            type: 'line',
+            type: 'scatter',
             animation: false,
             connectNulls: true,
             label: {
                 show: true,
             },
-            symbolSize: 16,
+            symbolSize: 24,
             name: 'Calories',
             encode: {
                 x: 'date',
@@ -176,8 +176,8 @@ const repeated243030 = (workouts) => {
             source: workouts.filter((w) => w.workout == '12.1.5' || w.workout == '3.2.3')
         },
         yAxis: {
-            min: 0,
-            max: 1000,
+            min: 250,
+            max: 350,
         },
         series: {
             tooltip: {
