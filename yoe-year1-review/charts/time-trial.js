@@ -15,6 +15,9 @@ const genericOptions = (o) => {
             nameLocation: 'middle',
             min: '2019-09-16',
             max: '2020-09-13',
+            axisLabel: {
+                formatter: (value) => echarts.format.formatTime('yyyy-MM-dd', value),
+            },
             ...o.xAxis,
         },
 
@@ -43,7 +46,7 @@ const genericOptions = (o) => {
         },
 
         tooltip: {
-            trigger: 'item',
+            trigger: 'axis',
             ...o.tooltip,
         },
 
@@ -73,6 +76,13 @@ const ttAirDyne = (workouts) => {
             },
             animation: false,
         },
+        tooltip: {
+            formatter: (params) => {
+                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
+                    return acc + `${val.marker} ${(val.value.distance / 1000).toFixed(2)}km`;
+                }, '');
+            },
+        },
     });
 };
 
@@ -97,6 +107,13 @@ const ttRower = (workouts) => {
                 },
             },
             animation: false,
+        },
+        tooltip: {
+            formatter: (params) => {
+                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
+                    return acc + `${val.marker} ${(val.value.distance / 1000).toFixed(2)}km`;
+                }, '');
+            },
         },
     });
 };
@@ -142,6 +159,13 @@ const ttRower2000FullHistory = (workouts) => {
                 ],
             },
         },
+        tooltip: {
+            formatter: (params) => {
+                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
+                    return acc + `${val.marker} ${(val.value.distance / 1000).toFixed(2)}km`;
+                }, '');
+            },
+        },
     });
 };
 
@@ -165,6 +189,13 @@ const repeated243030 = (workouts) => {
                 },
             },
             animation: false,
+        },
+        tooltip: {
+            formatter: (params) => {
+                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
+                    return acc + `${val.marker} ${(val.value.distance / 1000).toFixed(2)}km`;
+                }, '');
+            },
         },
     });
 };
@@ -200,6 +231,13 @@ const repeated32000300 = (workouts) => {
                         { coord: [ '2020-09-13', 1000 ] },
                     ],
                 ],
+            },
+        },
+        tooltip: {
+            formatter: (params) => {
+                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
+                    return acc + `${val.marker} ${(val.value.distance / 1000).toFixed(2)}km`;
+                }, '');
             },
         },
     });

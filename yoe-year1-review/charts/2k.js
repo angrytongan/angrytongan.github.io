@@ -92,6 +92,9 @@ const summary = () => {
         nameGap: 35,
         nameLocation: 'middle',
         max: '2020-09-20',
+        axisLabel: {
+            formatter: (value) => echarts.format.formatTime('yyyy-MM-dd', value),
+        },
     });
 
     yAxis.push({

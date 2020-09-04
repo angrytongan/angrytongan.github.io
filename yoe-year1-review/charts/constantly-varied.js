@@ -30,7 +30,10 @@ const apparatus = (workouts) => {
         nameLocation: 'middle',
         data: workouts.map((d) => d.date).sort(),
         min: '2019-09-16',
-        max: '2020-09-13'
+        max: '2020-09-13',
+        axisLabel: {
+            formatter: (value) => echarts.format.formatTime('yyyy-MM-dd', value),
+        },
     });
 
     yAxis.push({
@@ -79,7 +82,12 @@ const apparatus = (workouts) => {
     return {
         title,
         tooltip: {
-            trigger: 'item',
+            trigger: 'axis',
+            formatter: (params) => {
+                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
+                    return acc + `${val.marker} ${val.value.apparatus}`;
+                }, '');
+            },
         },
         legend,
         series,

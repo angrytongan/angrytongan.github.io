@@ -33,7 +33,10 @@ const summary = (workouts, filter = {}) => {
         nameLocation: 'middle',
         data: workouts.map((d) => d.date).sort(),
         min: '2019-09-16',
-        max: '2020-09-13'
+        max: '2020-09-13',
+        axisLabel: {
+            formatter: (value) => echarts.format.formatTime('yyyy-MM-dd', value),
+        },
     });
 
     yAxis.push({
@@ -82,7 +85,18 @@ const summary = (workouts, filter = {}) => {
     return {
         title,
         tooltip: {
-            trigger: 'item',
+            trigger: 'axis',
+            formatter: (params) => {
+                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
+                    const v = val.value[val.dimensionNames[val.encode.y[0]]];
+
+                    if (v == 0) {
+                        return acc;
+                    }
+
+                    return acc + `${val.marker} ${val.seriesName}: ${dateTime.secs2mmss(v)}<br />`;
+                }, '');
+            },
         },
         legend,
         series,

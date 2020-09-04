@@ -1212,6 +1212,9 @@ const summary = (ids) => {
         nameLocation: 'middle',
         min: '2019-09-16',
         max: '2021-09-16',
+        axisLabel: {
+            formatter: (value) => echarts.format.formatTime('yyyy-MM-dd', value),
+        },
     });
 
     yAxis.push({

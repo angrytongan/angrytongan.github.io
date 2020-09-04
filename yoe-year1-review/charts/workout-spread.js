@@ -3,17 +3,11 @@
 import { dateTime } from '/yoe-year1-review/js/utils/datetime.js';
 
 const scatter = (data) => {
-    const title = [];
     const series = [];
     const xAxis = [];
     const yAxis = [];
     const dataset = [];
     const legend = [];
-
-    title.push({
-        left: 'middle',
-        textAlign: 'center',
-    });
 
     legend.push({
         top: '10%',
@@ -38,7 +32,7 @@ const scatter = (data) => {
         name: 'Workout type',
         nameLocation: 'middle',
         nameGap: 80,
-        data: [
+        data: [                 // XXX shouldn't specify this, as we have dataset
             'FLUX',
             'Polarisation',
             'Time Trial',
@@ -65,11 +59,7 @@ const scatter = (data) => {
     });
 
     return {
-        title,
         legend,
-        tooltip: {
-            trigger: 'item',
-        },
         series,
         dataset,
         xAxis,
