@@ -10,6 +10,16 @@ export const workouts = [
         restTime: "0:00",
     },
     {
+        workout: "12.3.2",
+        phase: "4: FLUX",
+        date: "2020-09-04",
+        type: "Endurance",
+        apparatus: "AirDyne",
+        distance: "29500",
+        workTime: "59:00",
+        restTime: "0:00",
+    },
+    {
         workout: "12.3.3",
         phase: "4: FLUX",
         date: "2020-09-02",
