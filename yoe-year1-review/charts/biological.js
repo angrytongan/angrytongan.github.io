@@ -8,6 +8,8 @@ import {
 } from '/yoe-year1-review/charts/repeated.js';
 
 const markers = [
+    { date: '2020-09-06', haemoglobin: 150, rhr: 68, weight: 100.0 },
+    { date: '2020-08-23', haemoglobin: 143, rhr: 70, weight: 99.8 },
     { date: '2020-08-09', haemoglobin: 155, rhr: 64, weight: 99.8 },
     { date: '2020-07-26', haemoglobin: 151, rhr: 68, weight: 100.6 },
     { date: '2020-06-23', haemoglobin: 146, rhr: 64, weight: 100.4 },

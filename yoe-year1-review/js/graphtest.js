@@ -21,6 +21,7 @@ import { biological } from '/yoe-year1-review/charts/biological.js';
 const defaultGraphHeight = 200;
 
 const graphs = [
+    /*
     { div: 'graph-phases', options: programPhases.phasesOptions, height: 50 },
     { div: 'graph-tracks', options: programPhases.tracksOptions, height: 75 },
     { div: 'graph-workout-types', options: workoutTypes, height: 200 },
@@ -56,6 +57,7 @@ const graphs = [
     { div: 'graph-repeated-3_2000_300-interval-normal-distribution', options: repeated.interval_3_2000_300.intervalNormalDistribution },
     { div: 'graph-acidbath-placingsRaw', options: acidBath.placingsRaw, height: 300 },
     { div: 'graph-twok-summary', options: twok.summary },
+    */
     { div: 'graph-biological-summary', options: biological.summary },
     { div: 'graph-biological-distribution', options: biological.distribution },
 ];

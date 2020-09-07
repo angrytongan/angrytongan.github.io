@@ -31,12 +31,6 @@ const summary = () => {
             link: 'https://log.concept2.com/profile/1063564/log/33807825',
         },
         {
-            date: '2018-01-04',
-            time: '7:56.9',
-            type: 'Training',
-            link: 'https://log.concept2.com/profile/1063564/log/31896011',
-        },
-        {
             date: '2017-12-14',
             time: '7:35.5',
             type: 'Training',
@@ -178,7 +172,7 @@ const summary = () => {
             symbolSize: 16,
         });
 
-        if (i == 0) {
+        if (type == 'Attempt') {
             series[series.length-1].markArea = {
                 silent: true,
                 itemStyle: {
@@ -188,6 +182,20 @@ const summary = () => {
                     [
                         { coord: [ '2019-09-16', ] },
                         { coord: [ '2020-09-13', ] },
+                    ],
+                ],
+            };
+        }
+        if (type == 'Competition') {
+            series[series.length-1].markArea = {
+                silent: true,
+                itemStyle: {
+                    color: 'rgba(53, 194, 49, 0.17)',
+                },
+                data: [
+                    [
+                        { coord: [ '2018-04-05', ] },
+                        { coord: [ '2018-09-15', ] },
                     ],
                 ],
             };
