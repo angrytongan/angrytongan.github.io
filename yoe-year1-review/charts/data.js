@@ -1,6 +1,6 @@
 export const workouts = [
     {
-        workout: "12.4.1",
+        workout: "12.4.2",
         phase: "4: FLUX",
         date: "2020-09-08",
         type: "FLUX",
@@ -8,6 +8,16 @@ export const workouts = [
         distance: "23060",
         workTime: "46:00",
         restTime: "0:00",
+    },
+    {
+        workout: "12.4.3",
+        phase: "4: FLUX",
+        date: "2020-09-09",
+        type: "Interval",
+        apparatus: "Rower",
+        distance: "4368",
+        workTime: "15:00",
+        restTime: "14:15",
     },
 
     {

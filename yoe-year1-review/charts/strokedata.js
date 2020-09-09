@@ -87,11 +87,7 @@ const tt20 = () => {
             datasetIndex: i,
             showSymbol: false,
             animation: false,
-            tooltip: {
-                formatter: (val) => {
-                    console.log(val);
-                },
-            },
+            sampling: 'average',
         });
     });
 

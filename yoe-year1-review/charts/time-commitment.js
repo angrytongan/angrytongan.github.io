@@ -183,7 +183,7 @@ const sdByType = (workouts) => {
             },
             name: d.type,
             smooth: true,
-            showSymbol: false,
+            symbolSize: 2,
         });
     });
 
