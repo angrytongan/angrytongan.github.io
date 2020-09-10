@@ -49,7 +49,6 @@ const graphs = [
     { div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
     { div: 'graph-repeated-3_2000_300-interval-strokedata', options: repeated.interval_3_2000_300.intervalStrokedata },
     { div: 'graph-repeated-3_2000_300-interval-normal-distribution', options: repeated.interval_3_2000_300.intervalNormalDistribution },
-    { div: 'graph-acidbath-placingsRaw', options: acidBath.placingsRaw, height: 300 },
     { div: 'graph-twok-summary', options: twok.summary },
     { div: 'graph-biological-summary', options: biological.summary, height: 300 },
     { div: 'graph-biological-distribution', options: biological.distribution },

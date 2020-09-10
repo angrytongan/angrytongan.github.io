@@ -54,6 +54,11 @@ img.centre {
     background: #fd9;
     padding: 1em;
 }
+.todo {
+    border: 1px solid #aa9;
+    background: #faa;
+    padding: 1em;
+},
 .images {
     margin-top: 1em;
 }
