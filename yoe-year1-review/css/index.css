@@ -61,12 +61,17 @@ img.centre {
     float: left;
     text-align: center;
 }
-.images .column p {
+.images .column p,
+p.image {
     font-size: smaller;
+    text-align: center;
 }
 .clear {
     clear: both;
 }
 table.data td {
     text-align: right;
+}
+#contents {
+    clear: both;
 }

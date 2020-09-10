@@ -19,7 +19,16 @@ export const workouts = [
         workTime: "15:00",
         restTime: "14:15",
     },
-
+    {
+        workout: "12.4.4",
+        phase: "4: FLUX",
+        date: "2020-09-10",
+        type: "Polarisation",
+        apparatus: "AirDyne",
+        distance: "24070",
+        workTime: "48:00",
+        restTime: "00:00",
+    },
     {
         workout: "12.3.1",
         phase: "4: FLUX",

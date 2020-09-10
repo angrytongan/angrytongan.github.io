@@ -11,7 +11,7 @@ const genericOptions = (o) => {
         xAxis: {
             type: 'time',
             name: 'Date',
-            nameGap: 40,
+            nameGap: 25,
             nameLocation: 'middle',
             min: '2019-09-16',
             max: '2020-09-13',
