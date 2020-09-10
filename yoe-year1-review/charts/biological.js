@@ -50,8 +50,9 @@ const units = (metric, value) => {
 };
 const bounds = {
     haemoglobin: { min: 130, max: 160 },
-    rhr: { min: 55, max: 80 },
-    weight: { min: 95, max: 105 },
+    rhr: { min: 50, max: 80 },
+    weight: { min: 90, max: 110 },
+    bp: { min: 60, max: 200 },
 };
 
 const summary = () => {
@@ -81,13 +82,22 @@ const summary = () => {
     });
 
     grid.push(
-        { bottom: '55%', },
-        { top: '55%', },
+        { bottom: '54%', },
+        { top: '54%', },
     );
 
     xAxis.push({
         type: 'category',
         gridIndex: 0,
+        axisLabel: {
+            show: false,
+        },
+        axisLine: {
+            show: false,
+        },
+        axisTick: {
+            show: false,
+        },
     });
 
     [ 'weight', 'haemoglobin' ].forEach((metric) => {
@@ -100,9 +110,10 @@ const summary = () => {
             min: bounds[metric].min,
             max: bounds[metric].max,
             splitLine: {
-                show: false,
+                show: metric == 'weight',
             },
             gridIndex: 0,
+            splitNumber: 3,
         });
 
         series.push({
@@ -122,7 +133,7 @@ const summary = () => {
         type: 'category',
         name: 'Date',
         nameLocation: 'center',
-        nameGap: 35,
+        nameGap: 25,
         gridIndex: 1,
     });
     yAxis.push({
@@ -131,8 +142,9 @@ const summary = () => {
             formatter: (value) => units('bp', value),
         },
         gridIndex: 1,
-        min: 60,
-        max: 200,
+        min: bounds['bp'].min,
+        max: bounds['bp'].max,
+        splitNumber: 3,
     });
     series.push({
         type: 'candlestick',
@@ -151,12 +163,13 @@ const summary = () => {
         axisLabel: {
             formatter: (value) => units('rhr', value),
         },
-        min: 0,
-        max: 100,
+        min: bounds['rhr'].min,
+        max: bounds['rhr'].max,
         splitLine: {
             show: false,
         },
         gridIndex: 1,
+        splitNumber: 3,
     });
     series.push({
         type: 'line',
@@ -241,6 +254,7 @@ const distribution = () => {
                 formatter: (value) => units(d, value),
             },
             gridIndex: i,
+
             splitNumber: 3,
         });
         series.push({

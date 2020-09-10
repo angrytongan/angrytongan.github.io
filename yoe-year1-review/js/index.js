@@ -53,6 +53,7 @@ const graphs = [
     { div: 'graph-twok-summary', options: twok.summary },
     { div: 'graph-biological-summary', options: biological.summary, height: 300 },
     { div: 'graph-biological-distribution', options: biological.distribution },
+    { div: 'graph-repeated-24_30_30-rangePace', options: repeated.interval_24_30_30.rangePace },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

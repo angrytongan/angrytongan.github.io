@@ -11,7 +11,7 @@ const genericOptions = (o) => {
         xAxis: {
             type: 'time',
             name: 'Date',
-            nameGap: 25,
+            nameGap: 30,
             nameLocation: 'middle',
             min: '2019-09-16',
             max: '2020-09-13',
@@ -47,6 +47,17 @@ const genericOptions = (o) => {
 
         tooltip: {
             trigger: 'axis',
+            formatter: (params) => {
+                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
+                    let out = `${val.marker} ${(val.value.distance / 1000).toFixed(2)}km`;
+
+                    if (val.value.pace) {
+                        out += ` / ${val.value.pace}`;
+                    }
+
+                    return acc + out;
+                }, '');
+            },
             ...o.tooltip,
         },
 
@@ -66,23 +77,6 @@ const ttAirDyne = (workouts) => {
             min: 175,
             max: 210,
         },
-        series: {
-            tooltip: {
-                formatter: (params) => {
-                    return `${params.value.date}<br />
-                        Workout ${params.value.workout}<br />
-                        ${(params.value.distance / 1000).toFixed(2)}km`;
-                },
-            },
-            animation: false,
-        },
-        tooltip: {
-            formatter: (params) => {
-                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
-                    return acc + `${val.marker} ${(val.value.distance / 1000).toFixed(2)}km`;
-                }, '');
-            },
-        },
     });
 };
 
@@ -96,24 +90,6 @@ const ttRower = (workouts) => {
         yAxis: {
             min: 350,
             max: 370
-        },
-        series: {
-            tooltip: {
-                formatter: (params) => {
-                    return `${params.value.date}<br />
-                        Workout ${params.value.workout}<br />
-                        Pace ${params.value.pace} /500m<br />
-                        ${(params.value.distance / 1000).toFixed(2)}km`;
-                },
-            },
-            animation: false,
-        },
-        tooltip: {
-            formatter: (params) => {
-                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
-                    return acc + `${val.marker} ${(val.value.distance / 1000).toFixed(2)}km`;
-                }, '');
-            },
         },
     });
 };
@@ -140,15 +116,6 @@ const ttRower2000FullHistory = (workouts) => {
             max: 375
         },
         series: {
-            tooltip: {
-                formatter: (params) => {
-                    return `${params.value.date}<br />
-                        Workout ${params.value.workout}<br />
-                        Pace ${params.value.pace} /500m<br />
-                        ${(params.value.distance / 1000).toFixed(2)}km`;
-                },
-            },
-            animation: false,
             markArea: {
                 silent: true,
                 data: [
@@ -157,13 +124,6 @@ const ttRower2000FullHistory = (workouts) => {
                         { coord: [ '2020-09-13', 375 ] },
                     ],
                 ],
-            },
-        },
-        tooltip: {
-            formatter: (params) => {
-                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
-                    return acc + `${val.marker} ${(val.value.distance / 1000).toFixed(2)}km`;
-                }, '');
             },
         },
     });
@@ -178,24 +138,6 @@ const repeated243030 = (workouts) => {
         yAxis: {
             min: 250,
             max: 350,
-        },
-        series: {
-            tooltip: {
-                formatter: (params) => {
-                    return `${params.value.date}<br />
-                        Workout ${params.value.workout}<br />
-                        Pace ${params.value.pace} /500m<br />
-                        ${(params.value.distance / 1000).toFixed(2)}km`;
-                },
-            },
-            animation: false,
-        },
-        tooltip: {
-            formatter: (params) => {
-                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
-                    return acc + `${val.marker} ${(val.value.distance / 1000).toFixed(2)}km`;
-                }, '');
-            },
         },
     });
 };
@@ -214,15 +156,6 @@ const repeated32000300 = (workouts) => {
             max: 1000,
         },
         series: {
-            tooltip: {
-                formatter: (params) => {
-                    return `${params.value.date}<br />
-                        Workout ${params.value.workout}<br />
-                        Pace ${params.value.pace} /500m<br />
-                        ${(params.value.distance / 1000).toFixed(2)}km`;
-                },
-            },
-            animation: false,
             markArea: {
                 silent: true,
                 data: [
@@ -231,13 +164,6 @@ const repeated32000300 = (workouts) => {
                         { coord: [ '2020-09-13', 1000 ] },
                     ],
                 ],
-            },
-        },
-        tooltip: {
-            formatter: (params) => {
-                return params[0].value.date + '<br />' + params.reduce((acc, val) => {
-                    return acc + `${val.marker} ${(val.value.distance / 1000).toFixed(2)}km`;
-                }, '');
             },
         },
     });

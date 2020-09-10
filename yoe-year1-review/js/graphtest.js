@@ -34,9 +34,7 @@ const graphs = [
     { div: 'graph-constantly-varied-apparatus', options: constantlyVaried.apparatus },
     { div: 'graph-time-commitment', options: timeCommitment.summary },
     { div: 'graph-execution-summary', options: execution.summary, height: 170 },
-    */
     { div: 'graph-strokedata-tt20', options: strokedata.tt20, height: 200 },
-    /*
     { div: 'graph-repeated-24_30_30', options: timeTrial.repeated243030 },
     { div: 'graph-repeated-24_30_30-strokesPerInterval', options: repeated.interval_24_30_30.strokesPerInterval },
     { div: 'graph-repeated-24_30_30-distancePerInterval', options: repeated.interval_24_30_30.distancePerInterval },
@@ -48,7 +46,9 @@ const graphs = [
     { div: 'graph-repeated-24_30_30-pacePerInterval', options: repeated.interval_24_30_30.pacePerInterval },
     { div: 'graph-repeated-24_30_30-wattsPerStroke', options: repeated.interval_24_30_30.wattsPerStroke },
     { div: 'graph-repeated-24_30_30-bankedDistanceByInterval', options: repeated.interval_24_30_30.bankedDistanceByInterval },
+    */
     { div: 'graph-repeated-24_30_30-normalDistributionPace', options: repeated.interval_24_30_30.normalDistributionPace },
+    /*
     { div: 'graph-repeated-24_30_30-normalDistributionWatts', options: repeated.interval_24_30_30.normalDistributionWatts },
     { div: 'graph-interval.workout_40553854', options: intervalGraph.workout_40553854 },
     { div: 'graph-interval.workout_41335805', options: intervalGraph.workout_41335805 },
@@ -62,6 +62,7 @@ const graphs = [
     { div: 'graph-biological-summary', options: biological.summary, height: 300 },
     { div: 'graph-biological-distribution', options: biological.distribution },
     */
+    { div: 'graph-repeated-24_30_30-rangePace', options: repeated.interval_24_30_30.rangePace },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -94,11 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.appendChild(g.element);
         }
 
-        console.log(g.options(workoutData));
+        const options = g.options(workoutData);
+        console.log(options);
 
         g.chart = echarts.init(g.element);
         g.chart.showLoading();
-        g.chart.setOption(g.options(workoutData));
+        g.chart.setOption(options);
         g.chart.hideLoading();
 
         if (g.height === undefined) {

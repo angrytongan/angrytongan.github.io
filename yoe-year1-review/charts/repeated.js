@@ -788,6 +788,7 @@ const wattsPerStroke = (ids) => {
             name: workout.date,
             datasetIndex: iw,
             showSymbol: false,
+            sampling: 'average',
             lineStyle: {
                 width: 1,
             },
@@ -1544,6 +1545,97 @@ const intervalNormalDistribution = (ids, o) => {
     };
 };
 
+const rangePace = (ids, o) => {
+    const xAxis = [];
+    const yAxis = [];
+    const dataset = [];
+    const series = [];
+    const tooltip = [];
+    const legend = [];
+    const grid = [];
+
+    legend.push({
+        top: '10%',
+    });
+
+    grid.push({
+        left: '20%',
+        right: '20%',
+    });
+
+    xAxis.push({
+        type: 'category',
+        name: 'Attempt',
+        nameLocation: 'middle',
+        gridIndex: 0,
+    });
+    yAxis.push({
+        name: 'Pace range (mm:ss)',
+        nameGap: 45,
+        nameLocation: 'middle',
+        axisLabel: {
+            formatter: (val) => dateTime.ds2time(val),
+        },
+        inverse: true,
+        gridIndex: 0,
+        min: dateTime.mmss2secs('1:28') * 10,
+        max: dateTime.mmss2secs('1:45') * 10,
+        axisPointer: {
+            show: true,
+            label: {
+                formatter: (params) => dateTime.ds2time(params.value),
+            },
+        },
+    });
+
+    ids.forEach((id) => {
+        const workout = workouts.find((w) => w.id == id);
+
+        dataset.push({
+            dimensions: [ 'date', 'pace' ],
+            source: workout.intervals.map((interval, i) => {
+                return {
+                    date: workout.date,
+                    pace: 500 * (interval.time) / interval.distance,
+                    interval: i + 1,
+                }
+            }),
+        });
+
+        series.push({
+            type: 'line',
+            name: workout.date,
+            encode: {
+                x: 'date',
+                y: 'pace',
+            },
+            datasetIndex: dataset.length-1,
+        });
+    });
+
+    tooltip.push({
+        formatter: (params) => {
+            if (params.length == undefined) {
+                return `${params.marker} ${params.value.interval}`;
+            }
+
+            return 'Intervals<br />' + params.reduce((acc, p) => {
+                return acc + `${p.marker} ${p.value.interval}<br />`;
+            }, '');
+        },
+    });
+
+    return {
+        grid,
+        xAxis,
+        yAxis,
+        dataset,
+        series,
+        tooltip,
+        legend,
+    };
+};
+
 export const repeated = {
     interval_24_30_30: {
         strokesPerInterval: () => strokesPerInterval([ 40524237, 46414252 ]),
@@ -1563,6 +1655,8 @@ export const repeated = {
 
         normalDistributionPace: () => normalDistributionPace([  40524237, 46414252 ]),
         normalDistributionWatts: () => normalDistributionWatts([  40524237, 46414252 ]),
+
+        rangePace: () => rangePace([ 40524237, 46414252 ]),
     },
     interval_3_2000_300: {
         summary: () => summary([ 40793098 ]),

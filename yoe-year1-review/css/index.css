@@ -32,6 +32,9 @@ div.self {
     padding-top: 0;
     padding-bottom: 0;
 }
+h1 {
+    text-align: center;
+}
 h2 {
     border-top: 1px solid #999;
     padding-top: 1.0em;
