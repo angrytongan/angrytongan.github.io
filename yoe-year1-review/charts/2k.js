@@ -89,19 +89,19 @@ const summary = () => {
         {
             date: '2019-12-07',
             time: '7:36.5',
-            type: 'YoE 3x2k/3:00r attempt 1',
+            type: 'YoE 3x2k/3:00r',
             link: '',
         },
         {
             date: '2019-12-07',
             time: '7:34.8',
-            type: 'YoE 3x2k/3:00r attempt 1',
+            type: 'YoE 3x2k/3:00r',
             link: '',
         },
         {
             date: '2019-12-07',
             time: '7:31.3',
-            type: 'YoE 3x2k/3:00r attempt 1',
+            type: 'YoE 3x2k/3:00r',
             link: '',
         }
     );
