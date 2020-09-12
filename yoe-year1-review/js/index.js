@@ -53,6 +53,7 @@ const graphs = [
     { div: 'graph-biological-summary', options: biological.summary, height: 300 },
     { div: 'graph-biological-distribution', options: biological.distribution },
     { div: 'graph-repeated-24_30_30-rangePace', options: repeated.interval_24_30_30.rangePace },
+    { div: 'graph-acidbath-timeline', options: acidBath.timeline, height: 250 },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
