@@ -94,6 +94,7 @@ const tt20 = () => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     return {

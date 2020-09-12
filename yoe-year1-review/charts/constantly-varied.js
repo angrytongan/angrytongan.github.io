@@ -51,6 +51,7 @@ const apparatus = (workouts) => {
 
     legend.push({
         top: '5%',
+        type: 'scroll',
     });
 
     apparatus.forEach((a, i) => {

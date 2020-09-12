@@ -186,6 +186,7 @@ const summary = () => {
 
     legend.push({
         top: '7%',
+        type: 'scroll',
     });
 
     return {
@@ -218,6 +219,7 @@ const distribution = () => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
         selectedMode: false,
     });
 

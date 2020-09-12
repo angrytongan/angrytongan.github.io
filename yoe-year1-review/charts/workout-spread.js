@@ -12,6 +12,7 @@ const scatter = (data) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
         selectedMode: false,
     });
 

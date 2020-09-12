@@ -182,6 +182,7 @@ const strokesPerInterval = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     tooltip.push({
@@ -260,6 +261,7 @@ const distancePerInterval = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     tooltip.push({
@@ -342,6 +344,7 @@ const distancePerIntervalAllStrokes = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     xAxis.push({
@@ -426,6 +429,7 @@ const distancePerStroke = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     xAxis.push({
@@ -498,6 +502,7 @@ const distanceDeltaPerInterval = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     tooltip.push({
@@ -586,6 +591,7 @@ const timeDeltaPerStroke = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     xAxis.push({
@@ -665,6 +671,7 @@ const pacePerInterval = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     tooltip.push({
@@ -751,6 +758,7 @@ const wattsPerStroke = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     xAxis.push({
@@ -826,6 +834,7 @@ const cumulativeDistancePerInterval = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     tooltip.push({
@@ -900,6 +909,7 @@ const bankedDistanceByInterval = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     tooltip.push({
@@ -1012,6 +1022,7 @@ const normalDistributionPace = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     yAxis.push({
@@ -1099,6 +1110,7 @@ const normalDistributionWatts = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     yAxis.push({
@@ -1191,6 +1203,7 @@ const summary = (ids) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
         selectedMode: false,
     });
 
@@ -1311,6 +1324,7 @@ const intervalStrokedata = (ids, o) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
         selectedMode: false,
     });
 
@@ -1455,6 +1469,7 @@ const intervalNormalDistribution = (ids, o) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
         selectedMode: false,
     });
 
@@ -1556,6 +1571,7 @@ const rangePace = (ids, o) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     grid.push({

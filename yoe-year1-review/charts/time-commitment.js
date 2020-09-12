@@ -55,6 +55,7 @@ const summary = (workouts, filter = {}) => {
 
     legend.push({
         top: '5%',
+        type: 'scroll',
     });
 
     dataset.push({
@@ -125,6 +126,7 @@ const sdByType = (workouts) => {
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     workouts.forEach((workout) => {

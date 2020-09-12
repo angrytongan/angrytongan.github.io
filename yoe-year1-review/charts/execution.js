@@ -14,6 +14,7 @@ const summary = (workouts) => {
     return {
         legend: {
             top: '5%',
+            type: 'scroll',
         },
 
         tooltip: {
