@@ -84,9 +84,12 @@ const timeline = () => {
         };
 
         athletes.forEach((athlete) => {
+            const r = results[athlete].find((a) => a.where == w);
+            const l = results[athlete].find((a) => a.where == 'Finish');
+
             foo.durations.push({
-                athlete: athlete,
-                duration: results[athlete].find((a) => a.where == w).duration,
+                athlete: `${athlete} - ${dateTime.secs2mmss(l.time)}`,
+                duration: r.duration,
             });
         });
 
@@ -94,7 +97,7 @@ const timeline = () => {
     });
 
     grid.push({
-        left: '20%',
+        left: '25%',
     });
 
     legend.push({

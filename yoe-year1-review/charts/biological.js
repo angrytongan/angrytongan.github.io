@@ -185,7 +185,7 @@ const summary = () => {
     });
 
     legend.push({
-        top: '10%',
+        top: '7%',
     });
 
     return {

@@ -88,6 +88,7 @@ const tt20 = () => {
             showSymbol: false,
             animation: false,
             sampling: 'average',
+            large: true,
         });
     });
 
