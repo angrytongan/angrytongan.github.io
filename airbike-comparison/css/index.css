@@ -1,0 +1,14 @@
+body {
+    max-width: 700px;
+    margin: 0 auto;
+    /*
+    background: #222;
+    color: #eee;
+    */
+}
+
+div[id^='graph'] {
+    height: 200px;
+    border: 1px solid #aaa;
+    margin-top: 1em;
+}
