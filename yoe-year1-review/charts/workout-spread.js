@@ -8,9 +8,11 @@ const scatter = (data) => {
     const yAxis = [];
     const dataset = [];
     const legend = [];
+    const axisPointer = [];
 
     legend.push({
         top: '10%',
+        type: 'scroll',
         selectedMode: false,
     });
 
@@ -42,6 +44,9 @@ const scatter = (data) => {
             'Endurance',
             'Interval',
         ],
+        axisPointer: {
+            show: false,
+        },
     });
 
     series.push({
@@ -61,12 +66,21 @@ const scatter = (data) => {
         name: 'Workout',
     });
 
+    axisPointer.push({
+        show: true,
+        snap: true,
+        label: {
+            formatter: (params) => echarts.format.formatTime('yyyy-MM-dd', params.value),
+        }
+    });
+
     return {
         legend,
         series,
         dataset,
         xAxis,
         yAxis,
+        axisPointer,
     };
 };
 

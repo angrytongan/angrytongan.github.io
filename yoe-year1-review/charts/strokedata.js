@@ -88,11 +88,13 @@ const tt20 = () => {
             showSymbol: false,
             animation: false,
             sampling: 'average',
+            large: true,
         });
     });
 
     legend.push({
         top: '10%',
+        type: 'scroll',
     });
 
     return {

@@ -63,6 +63,7 @@ const genericOptions = (o) => {
 
         legend: {
             top: '10%',
+            type: 'scroll',
             ...o.legend,
         },
     };
