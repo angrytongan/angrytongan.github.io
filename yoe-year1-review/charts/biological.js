@@ -87,7 +87,7 @@ const summary = () => {
     );
 
     xAxis.push({
-        type: 'category',
+        type: 'time',
         gridIndex: 0,
         axisLabel: {
             show: false,
@@ -98,6 +98,8 @@ const summary = () => {
         axisTick: {
             show: false,
         },
+        min: '2019-09-16',
+        max: '2020-09-13',
     });
 
     [ 'weight', 'haemoglobin' ].forEach((metric) => {
@@ -130,11 +132,16 @@ const summary = () => {
     });
 
     xAxis.push({
-        type: 'category',
+        type: 'time',
         name: 'Date',
         nameLocation: 'center',
         nameGap: 25,
         gridIndex: 1,
+        axisLabel: {
+            formatter: (value) => echarts.format.formatTime('yyyy-MM-dd', value),
+        },
+        min: '2019-09-16',
+        max: '2020-09-13',
     });
     yAxis.push({
         type: 'value',
