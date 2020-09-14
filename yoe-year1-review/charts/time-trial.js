@@ -150,11 +150,11 @@ const repeated32000300 = (workouts) => {
             source: workouts.filter((w) => w.workout == '3.4.2')
         },
         xAxis: {
-            max: '2020-10-01',
+            max: '2020-09-16',
         },
         yAxis: {
             min: 0,
-            max: 1000,
+            max: 750,
         },
         series: {
             markArea: {
@@ -162,7 +162,7 @@ const repeated32000300 = (workouts) => {
                 data: [
                     [
                         { coord: [ '2019-09-16', 0 ] },
-                        { coord: [ '2020-09-13', 1000 ] },
+                        { coord: [ '2020-09-13', 750 ] },
                     ],
                 ],
             },
