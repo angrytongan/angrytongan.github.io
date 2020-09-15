@@ -34,9 +34,7 @@ const graphs = [
     { div: 'graph-constantly-varied-apparatus', options: constantlyVaried.apparatus },
     { div: 'graph-time-commitment', options: timeCommitment.summary },
     { div: 'graph-execution-summary', options: execution.summary, height: 170 },
-    */
     { div: 'graph-strokedata-tt20', options: strokedata.tt20, height: 200 },
-    /*
     { div: 'graph-repeated-24_30_30', options: timeTrial.repeated243030 },
     { div: 'graph-repeated-24_30_30-strokesPerInterval', options: repeated.interval_24_30_30.strokesPerInterval },
     { div: 'graph-repeated-24_30_30-distancePerInterval', options: repeated.interval_24_30_30.distancePerInterval },
@@ -55,13 +53,18 @@ const graphs = [
     { div: 'graph-time-commitment-sd-by-type', options: timeCommitment.sdByType },
     { div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300 },
     { div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
+    */
     { div: 'graph-repeated-3_2000_300-interval-strokedata', options: repeated.interval_3_2000_300.intervalStrokedata },
+    { div: 'graph-repeated-3_2000_300-interval-strokedata-spm', options: repeated.interval_3_2000_300.intervalStrokedataSPM },
+    /*
     { div: 'graph-repeated-3_2000_300-interval-normal-distribution', options: repeated.interval_3_2000_300.intervalNormalDistribution },
+    { div: 'graph-repeated-3_2000_300-normalDistributionPace', options: repeated.interval_3_2000_300.normalDistributionPace },
     { div: 'graph-acidbath-timeline', options: acidBath.timeline, height: 250 },
     { div: 'graph-twok-summary', options: twok.summary },
     { div: 'graph-biological-summary', options: biological.summary, height: 300 },
     { div: 'graph-biological-distribution', options: biological.distribution },
     { div: 'graph-repeated-24_30_30-rangePace', options: repeated.interval_24_30_30.rangePace },
+    { div: 'graph-repeated-3_2000_300-rangePace', options: repeated.interval_3_2000_300.rangePace },
     */
 ];
 

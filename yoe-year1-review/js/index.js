@@ -46,14 +46,15 @@ const graphs = [
     { div: 'graph-repeated-24_30_30-normalDistributionPace', options: repeated.interval_24_30_30.normalDistributionPace },
     { div: 'graph-repeated-24_30_30-normalDistributionWatts', options: repeated.interval_24_30_30.normalDistributionWatts },
     { div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300 },
-    { div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
     { div: 'graph-repeated-3_2000_300-interval-strokedata', options: repeated.interval_3_2000_300.intervalStrokedata },
+    { div: 'graph-repeated-3_2000_300-interval-strokedata-spm', options: repeated.interval_3_2000_300.intervalStrokedataSPM },
     { div: 'graph-repeated-3_2000_300-interval-normal-distribution', options: repeated.interval_3_2000_300.intervalNormalDistribution },
     { div: 'graph-twok-summary', options: twok.summary },
     { div: 'graph-biological-summary', options: biological.summary, height: 300 },
     { div: 'graph-biological-distribution', options: biological.distribution },
     { div: 'graph-repeated-24_30_30-rangePace', options: repeated.interval_24_30_30.rangePace },
     { div: 'graph-acidbath-timeline', options: acidBath.timeline, height: 250 },
+    { div: 'graph-repeated-3_2000_300-rangePace', options: repeated.interval_3_2000_300.rangePace },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {
