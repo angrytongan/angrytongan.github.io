@@ -148,6 +148,12 @@ const repeated32000300 = (workouts) => {
     return genericOptions({
         dataset: {
             source: workouts.filter((w) => w.workout == '3.4.2')
+                .concat({
+                    date: '2020-09-15',
+                    distance: 6000,
+                    calories: 433,
+                    pace: '1:51.7',
+                }),
         },
         xAxis: {
             max: '2020-09-16',

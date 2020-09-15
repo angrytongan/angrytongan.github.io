@@ -48,6 +48,7 @@ const graphs = [
     { div: 'graph-repeated-3_2000_300', options: timeTrial.repeated32000300 },
     { div: 'graph-repeated-3_2000_300-summary', options: repeated.interval_3_2000_300.summary },
     { div: 'graph-repeated-3_2000_300-interval-strokedata', options: repeated.interval_3_2000_300.intervalStrokedata },
+    { div: 'graph-repeated-3_2000_300-interval-strokedata-spm', options: repeated.interval_3_2000_300.intervalStrokedataSPM },
     { div: 'graph-repeated-3_2000_300-interval-normal-distribution', options: repeated.interval_3_2000_300.intervalNormalDistribution },
     { div: 'graph-twok-summary', options: twok.summary },
     { div: 'graph-biological-summary', options: biological.summary, height: 300 },

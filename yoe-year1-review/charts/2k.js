@@ -103,7 +103,26 @@ const summary = () => {
             time: '7:31.3',
             type: 'YoE 3x2k/3:00r',
             link: '',
-        }
+        },
+
+        {
+            date: '2020-09-15',
+            time: '7:30.1',
+            type: 'YoE 3x2k/3:00r',
+            link: '',
+        },
+        {
+            date: '2020-09-15',
+            time: '7:30.1',
+            type: 'YoE 3x2k/3:00r',
+            link: '',
+        },
+        {
+            date: '2020-09-15',
+            time: '7:20.3',
+            type: 'YoE 3x2k/3:00r',
+            link: '',
+        },
     );
 
     legend.push({
