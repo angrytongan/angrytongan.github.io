@@ -55,6 +55,7 @@ const graphs = [
     { div: 'graph-biological-distribution', options: biological.distribution },
     { div: 'graph-repeated-24_30_30-rangePace', options: repeated.interval_24_30_30.rangePace },
     { div: 'graph-acidbath-timeline', options: acidBath.timeline, height: 250 },
+    { div: 'graph-repeated-3_2000_300-rangePace', options: repeated.interval_3_2000_300.rangePace },
 ];
 
 document.addEventListener('DOMContentLoaded', () => {

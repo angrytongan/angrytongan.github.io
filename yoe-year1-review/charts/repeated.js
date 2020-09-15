@@ -1336,7 +1336,6 @@ const intervalStrokedata = (ids, o) => {
     const tooltip = [];
     const legend = [];
     const grid = [];
-    const dataZoom = [];
 
     let bounds = {
         minTime: Infinity,
@@ -1357,7 +1356,10 @@ const intervalStrokedata = (ids, o) => {
             type: 'cross',
             label: {
                 formatter: (params) => {
-                    return o.field == 'p' ? dateTime.ds2time(params.value) : params.value;
+                    if (params.axisDimension === 'y') {
+                        return o.field === 'p' ? dateTime.ds2time(params.value) : params.value;
+                    }
+                    return dateTime.ds2time(params.value);
                 },
             }
         },
@@ -1416,22 +1418,10 @@ const intervalStrokedata = (ids, o) => {
             },
             axisLabel: {
                 show: false,
-                //formatter: (value) => dateTime.ds2time(value),
             },
             inverse: o.field === 'p',
             splitLine: false,
         });
-    });
-
-    dataZoom.push({
-        type: 'slider',
-        yAxisIndex: yAxis.reduce((acc, val, i) => {
-            acc.push(i);
-            return acc;
-        }, []),
-        left: 'right',
-        //start: 87.0,
-        labelFormatter: (value) => dateTime.ds2time(value, false),
     });
 
     ids.forEach((id) => {
@@ -1481,7 +1471,6 @@ const intervalStrokedata = (ids, o) => {
 
     return {
         grid,
-        //dataZoom,
         xAxis,
         yAxis,
         dataset,
@@ -1635,8 +1624,8 @@ const rangePace = (ids, o) => {
         },
         inverse: true,
         gridIndex: 0,
-        min: dateTime.mmss2secs('1:28') * 10,
-        max: dateTime.mmss2secs('1:45') * 10,
+        min: 'dataMin', //dateTime.mmss2secs('1:28') * 10,
+        max: 'dataMax', //dateTime.mmss2secs('1:45') * 10,
         axisPointer: {
             show: true,
             label: {
@@ -1730,5 +1719,6 @@ export const repeated = {
             label: 'Pace',
         }),
         normalDistributionPace: () => normalDistributionPace([ 40793098, 46905512 ]),
+        rangePace: () => rangePace([ 40793098, 46905512 ]),
     },
 };
