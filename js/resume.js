@@ -26,20 +26,22 @@ const personalProjects = [
         title: 'The Erg Arcade',
         production: 'https://ergarcade.com/',
         source: 'https://github.com/ergarcade',
+        description: `Utilities for collection and inspection of data used
+        in Concept2 ergometers.`,
     },
     {
         title: 'wodscrape',
         production: 'http://wodscrape.com.au',
         source: 'https://github.com/angrytongan/wodscrape',
+        description: `Aggregator of publicly-available daily workouts
+        into a single page.`,
     },
     {
         title: 'Calendar Arc',
         production: 'https://df.id.au/calendararc',
         source: 'https://github.com/angrytongan/calendararc',
-    },
-    {
-        title: 'Solar monitor log relay',
-        source: 'https://github.com/angrytongan/dfinvrelay',
+        description: `Circular calendar generator for using
+        the chain productivity method.`,
     },
 ];
 
@@ -48,21 +50,19 @@ const certifications = [
         qualification: 'Bachelor of Computer Science',
         educator: 'University of Newcastle',
     },
+    /*
     {
         qualification: 'First Aid',
         educator: 'St Johns Ambulance',
     },
+    */
     {
-        qualification: 'Blue Card',
-        educator: 'Queensland Government',
+        qualification: 'Remedial Massage Therapist',
+        educator: 'QAcademy',
     },
     {
         qualification: 'CrossFit Level 1 Trainer',
         educator: 'CrossFit Inc.',
-    },
-    {
-        qualification: 'Remedial Massage Therapist',
-        educator: 'QAcademy',
     },
     {
         qualification: 'Certificate III and IV in Fitness',
@@ -71,22 +71,9 @@ const certifications = [
 ];
 
 const overview = `
-Flexible, experienced multi-discipline software developer with strong work
+Flexible, multi-discipline software engineer with a strong work
 ethic. Automation advocate. Happy working solo or in a team as a member or
 leader. Enjoys learning, being challenged and getting things done.
-`;
-
-const experience = [
-    'Software development',
-    'System administration',
-    'Team management',
-];
-
-const tools = `
-    git, JavaScript, Linux, C, dev-tools, mithril.js, PHP, assembler, Python,
-    PostgreSQL, HTML, CSS, MySQL, Apache, embedded systems, JIRA, Bamboo,
-    Jenkins, Stash, ansible, AWS, ELK, ARM, atmel, Arduino, Agile, Qt, APIs,
-    d3.js, SPAs, vagrant and more!
 `;
 
 const jobs = [
@@ -99,6 +86,8 @@ const jobs = [
         description: `Application development and statistical analytics
         dashboards for exercise equipment supporting the CSAFE interface,
         including the Concept2 range of rower, bike and ski ergometers.`,
+        tools: `JavaScript / mithril.js / node.js / HTML / CSS / git / d3.js /
+        Apache ECharts / XCode / Qt / WebSockets`,
     },
     {
         place: 'Atmail',
@@ -109,6 +98,8 @@ const jobs = [
         description: `Systems administrator and architect. Maintenance on
         existing infrastructure. Development of new infrastructure for
         email platform.`,
+        tools: `AWS / Linux / git / JIRA / Confluence / Bamboo /
+        ELK / ansible / vagrant`,
     },
     {
         place: 'Flight Centre',
@@ -119,6 +110,7 @@ const jobs = [
         description: `Web and system administrator. Deployment and
         management of internal and public websites. Automation, continuous
         integration and new systems management and allocation.`,
+        tools: `AWS / WSH / Linux / Jenkins / sh / git / JIRA / Confluence`,
     },
     {
         place: 'Melbourne IT',
@@ -128,6 +120,7 @@ const jobs = [
         title: 'Solutions Engineer (contract)',
         description: `Enterprise services team. Developer for internal R&D
         tools. High interaction with ops teams.`,
+        tools: `Linux / AWS / LAMP / CSS / git`,
     },
     {
         place: 'Queensland University of Technology',
@@ -135,9 +128,10 @@ const jobs = [
         end: '2013-06-30',
         based: 'Brisbane, Australia',
         title: 'Analyst',
-        description: `Business analyst and support on QUT’s HRM system
-        Alesco. Pickup programmer and consultant for integration projects.
+        description: `Business analyst and support on QUT’s HRM systems.
+        Pickup programmer and consultant for integration projects.
         Team leader (short term).`,
+        tools: `Alseco / SQL / PHP / git / svn`,
     },
     {
         place: 'Flight Centre - Healthwise',
@@ -155,6 +149,7 @@ const jobs = [
         Healthwise. Business management and development. Developer and
         maintainer on associated websites and event management software.
         Application support and development on internal HR tools.`,
+        tools: `Linux / LAMP / JavaScript / CSS / PostreSQL / git / python`,
     },
     {
         place: 'Trolltech',
@@ -165,6 +160,7 @@ const jobs = [
         description: `Embedded systems development. Maintenance and
         improvements to Qtopia and Qt/E variants of Qt. Port of IBM
         ViaVoice to Qt/E.`,
+        tools: `Qt / Qtopia / Linux / svn`,
     },
     {
         place: 'RSA Security',
@@ -175,6 +171,7 @@ const jobs = [
         description: `Embedded systems development. Cryptographic library
         porting between embedded architectures. Build automation for embedded
         platforms. Team leader (short term).`,
+        tools: `asm / C / C++ / Linux / Windows / svn`,
     },
     {
         place: 'Stallion Technologies',
@@ -184,6 +181,7 @@ const jobs = [
         title: 'Embedded developer',
         description: `Embedded systems development. Multiport serial
         adaptor maintenance. ADSL aggregator development.`,
+        tools: `asm / C / C++ / Linux / svn`,
     },
     {
         place: 'Ingenico International',
@@ -200,6 +198,7 @@ const jobs = [
         description: `Embedded systems development. Mobile RF EFTPoS
         terminal software. Software download backend for Mobile RF EFTPoS
         terminals over Telstra DataTAC network.`,
+        tools: `asm / C / C++ / Linux / LAMP / Windows`,
     },
 ];
 
@@ -233,14 +232,6 @@ const dateRange = (s, e) => {
     return str;
 };
 
-const Experience = {
-    view: () => {
-        return [
-            m('h2', 'Experience'),
-            m('.experience', m('ul', experience.map((e) => m('li', e))))
-        ];
-    },
-};
 
 const Referees = {
     view: () => {
@@ -250,8 +241,7 @@ const Referees = {
                 return m('li', [
                     m('p', m.trust(`<strong>${r.name}</strong>`)),
                     m('p', m('a', { href: `mailto:${r.email}`, }, r.email)),
-                    m('p', r.title),
-                    m('p', r.place),
+                    m('p', r.title + ' / ' + r.place),
                 ]);
             }))),
         ];
@@ -264,7 +254,7 @@ const Certifications = {
             m('h2', 'Certifications'),
             m('ul', certifications.map((c) => m('li', [
                 m('p.qualification', c.qualification),
-                m('p.educator', c.educator),
+                c.educator && m('p.educator', c.educator),
             ]))),
         ];
     },
@@ -273,8 +263,10 @@ const Certifications = {
 const Overview = {
     view: () => {
         return [
-            m('h1', 'Dean Fogarty'),
-            m('h3', m('a', { href: 'mailto:dean@df.id.au' }, 'dean@df.id.au')),
+            m('.two-col .kinda-even', [
+                m('.left', m('h1', 'Dean Fogarty')),
+                m('.right .email', m('h3', m('a', { href: 'mailto:dean@df.id.au' }, 'dean@df.id.au'))),
+            ]),
             m('p', overview)
         ];
     },
@@ -287,21 +279,19 @@ const Jobs = {
             m('.jobs', jobs.map((j) => {
                 return m('.job', [
                     m('h3', j.place),
-                    m('p.title', expandArray(j.title)),
-                    m('p.based', expandArray(j.based)),
-                    m('p.dates', dateRange(j.start, j.end)),
-                    m('p.description', j.description),
+                    m('.two-col', [
+                        m('.left', [
+                            m('p.title', expandArray(j.title)),
+                            m('p.based', expandArray(j.based)),
+                            m('p.dates', dateRange(j.start, j.end)),
+                            m('p.description', j.description),
+                        ]),
+                        m('.right', [
+                            m('p.tools', m.trust(j.tools.replace(/\//, '&nbsp;/'))),
+                        ]),
+                    ]),
                 ]);
-            })),
-        ];
-    },
-};
-
-const Tools = {
-    view: () => {
-        return [
-            m('h2', 'Tools and skills'),
-            m('ul', m('li', tools)),
+            }))
         ];
     },
 };
@@ -310,44 +300,32 @@ const PersonalProjects = {
     view: () => {
         return [
             m('h2', 'Personal Projects'),
-            m('ul.personalProjects', personalProjects.map((pp) => m('li', [
-                pp.production ? m('a.title', { href: pp.production }, pp.title) : m('p.title', pp.title),
-                m('p.source', m('a', { href: pp.source }, '(source)')),
-            ]))),
+            m('ul.personalProjects', personalProjects.map((pp) => m('li',
+                m('a.title', { href: pp.production }, pp.title),
+                m.trust('&nbsp;'),
+                m('a', { href: pp.source }, '(source)'),
+                m.trust('<br />' + pp.description),
+            ))),
         ];
     },
 };
 
-const Left = {
+const CertsProjects = {
     view: () => {
-        return [
-            m(Jobs),
-        ];
-    },
-};
-
-const Right = {
-    view: () => {
-        const sections = [
-            Experience,
-            PersonalProjects,
-            Certifications,
-            Tools,
-            Referees
-        ];
-
-        return sections.map((s) => m('.section', m(s)));
+        return m('.two-col .kinda-even', [
+            m('.left', m(Certifications)),
+            m('.right', m(PersonalProjects)),
+        ]);
     },
 };
 
 const Resume = {
     view: () => {
         return [
-            m('#overview', m(Overview)),
-            m('#main', [
-                m('#left', m(Left)),
-                m('#right', m(Right)),
-            ]),
+            m(Overview),
+            m(CertsProjects),
+            m(Jobs),
+            m(Referees),
         ];
     },
 };
