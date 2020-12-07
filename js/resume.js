@@ -2,12 +2,6 @@
 
 const referees = [
     {
-        name: 'David McCullough',
-        email: 'david.mccullough@accelecon.com',
-        title: 'Systems Engineer',
-        place: 'Accelerated Concepts',
-    },
-    {
         name: 'Tod Horton',
         email: 'tod_horton@flightcentre.com',
         title: 'Global Leader Healthwise',
@@ -19,6 +13,12 @@ const referees = [
         title: 'Manager HR Systems',
         place: 'QUT',
     },
+    {
+        name: 'David McCullough',
+        email: 'david.mccullough@accelecon.com',
+        title: 'Systems Engineer',
+        place: 'Accelerated Concepts',
+    },
 ];
 
 const personalProjects = [
@@ -26,22 +26,19 @@ const personalProjects = [
         title: 'The Erg Arcade',
         production: 'https://ergarcade.com/',
         source: 'https://github.com/ergarcade',
-        description: `Utilities for collection and inspection of data used
-        in Concept2 ergometers.`,
-    },
-    {
-        title: 'wodscrape',
-        production: 'http://wodscrape.com.au',
-        source: 'https://github.com/angrytongan/wodscrape',
-        description: `Aggregator of publicly-available daily workouts
-        into a single page.`,
+        description: `Concept2 ergometer data collection utilities.`,
     },
     {
         title: 'Calendar Arc',
         production: 'https://df.id.au/calendararc',
         source: 'https://github.com/angrytongan/calendararc',
-        description: `Circular calendar generator for using
-        the chain productivity method.`,
+        description: `Chain productivity method applied to circular calcendar.`,
+    },
+    {
+        title: 'wodscrape',
+        production: 'http://wodscrape.com.au',
+        source: 'https://github.com/angrytongan/wodscrape',
+        description: `Aggregator of publicly-available daily workouts.`,
     },
 ];
 
@@ -55,7 +52,6 @@ const certifications = [
         qualification: 'First Aid',
         educator: 'St Johns Ambulance',
     },
-    */
     {
         qualification: 'Remedial Massage Therapist',
         educator: 'QAcademy',
@@ -68,10 +64,24 @@ const certifications = [
         qualification: 'Certificate III and IV in Fitness',
         educator: 'Queensland Academy of Fitness',
     },
+    */
+];
+
+const presentations = [
+    {
+        title: 'Porting OpenBSD to the Motorola ColdFire',
+        role: 'Author, co-presenter',
+        place: 'BSDCon 2000, San Mateo, California',
+    },
+    {
+        title: 'Animated Three-Dimensional Information Visualizations',
+        role: 'Co-author',
+        place: 'Australiasian Computer Science Conference 1996, UM / RMIT',
+    },
 ];
 
 const overview = `
-Flexible, multi-discipline software engineer with a strong work
+Flexible, multi-discipline software engineer and team leader with a strong work
 ethic. Automation advocate. Happy working solo or in a team as a member or
 leader. Enjoys learning, being challenged and getting things done.
 `;
@@ -96,10 +106,10 @@ const jobs = [
         based: 'Sunshine Coast, Australia',
         title: 'System Administrator (contract)',
         description: `Systems administrator and architect. Maintenance on
-        existing infrastructure. Development of new infrastructure for
-        email platform.`,
-        tools: `AWS / Linux / git / JIRA / Confluence / Bamboo /
-        ELK / ansible / vagrant`,
+        existing infrastructure. Development and initial prototyping of new
+        infrastructure for email platform.`,
+        tools: `AWS / Linux / git / JIRA / Bamboo / ELK / ansible / vagrant /
+        Release management`,
     },
     {
         place: 'Flight Centre',
@@ -110,7 +120,8 @@ const jobs = [
         description: `Web and system administrator. Deployment and
         management of internal and public websites. Automation, continuous
         integration and new systems management and allocation.`,
-        tools: `AWS / WSH / Linux / Jenkins / sh / git / JIRA / Confluence`,
+        tools: `AWS / WSH / Linux / Jenkins / sh / git / JIRA / Release
+        management`,
     },
     {
         place: 'Melbourne IT',
@@ -160,7 +171,7 @@ const jobs = [
         description: `Embedded systems development. Maintenance and
         improvements to Qtopia and Qt/E variants of Qt. Port of IBM
         ViaVoice to Qt/E.`,
-        tools: `Qt / Qtopia / Linux / svn`,
+        tools: `Qt / Qtopia / Linux / svn / cross-compilers`,
     },
     {
         place: 'RSA Security',
@@ -171,7 +182,7 @@ const jobs = [
         description: `Embedded systems development. Cryptographic library
         porting between embedded architectures. Build automation for embedded
         platforms. Team leader (short term).`,
-        tools: `asm / C / C++ / Linux / Windows / svn`,
+        tools: `asm / C / C++ / Linux / Windows / svn / cross-compilers`,
     },
     {
         place: 'Stallion Technologies',
@@ -181,7 +192,7 @@ const jobs = [
         title: 'Embedded developer',
         description: `Embedded systems development. Multiport serial
         adaptor maintenance. ADSL aggregator development.`,
-        tools: `asm / C / C++ / Linux / svn`,
+        tools: `asm / C / C++ / Linux / svn / cross-compilers`,
     },
     {
         place: 'Ingenico International',
@@ -198,7 +209,7 @@ const jobs = [
         description: `Embedded systems development. Mobile RF EFTPoS
         terminal software. Software download backend for Mobile RF EFTPoS
         terminals over Telstra DataTAC network.`,
-        tools: `asm / C / C++ / Linux / LAMP / Windows`,
+        tools: `asm / C / C++ / Linux / LAMP / Windows / cross-compilers`,
     },
 ];
 
@@ -248,6 +259,22 @@ const Referees = {
     },
 };
 
+const Presentations = {
+    view: () => {
+        return [
+            m('h2', 'Presentations'),
+            m('ul', presentations.map((p) => m('li', [
+                m('p', [
+                    m('b', p.title),
+                    m.trust('<br />'),
+                    m('i', p.role),
+                    m('.presentations-place', p.place),
+                ]),
+            ]))),
+        ];
+    },
+};
+
 const Certifications = {
     view: () => {
         return [
@@ -256,6 +283,7 @@ const Certifications = {
                 m('p.qualification', c.qualification),
                 c.educator && m('p.educator', c.educator),
             ]))),
+            m(Presentations),
         ];
     },
 };
@@ -287,7 +315,7 @@ const Jobs = {
                             m('p.description', j.description),
                         ]),
                         m('.right', [
-                            m('p.tools', m.trust(j.tools.replace(/\//, '&nbsp;/'))),
+                            m('p.tools', m.trust(j.tools.replace(/ \//g, '&nbsp;/'))),
                         ]),
                     ]),
                 ]);
@@ -302,9 +330,9 @@ const PersonalProjects = {
             m('h2', 'Personal Projects'),
             m('ul.personalProjects', personalProjects.map((pp) => m('li',
                 m('a.title', { href: pp.production }, pp.title),
-                m.trust('&nbsp;'),
+                m.trust(' '),
                 m('a', { href: pp.source }, '(source)'),
-                m.trust('<br />' + pp.description),
+                m.trust('<br />' + pp.description + '<br /><br />'),
             ))),
         ];
     },
