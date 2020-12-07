@@ -20,80 +20,118 @@
         }
         body {
             margin: 0 auto;
-            max-width: 800px;
+            padding-left: 1em;
+            padding-right: 1em;
+            max-width: 750px;
             font-size: 18px;
         }
 
-        p {
-            margin: 0;
+        .email {
+            text-align: right;
         }
 
-        #overview {
-            margin: 1em;
-        }
-        #main {
-            display: grid;
-            grid-template-areas: 'left right';
-            grid-template-columns: 60% 40%;
-            grid-template-rows: auto;
-        }
-        #left {
-            grid-area: left;
-            margin: 1em;
-        }
-        #right {
-            grid-area: right;
-            margin: 1em;
+        h1 {
+            margin-bottom: 0;
         }
 
         h2 {
             margin-top: 0;
         }
 
-        .job {
-            border-top: 1px solid #999;
-            padding-left: 1em;
-            padding-right: 1em;
-            margin-bottom: 1em;
+        .two-col {
+            display: grid;
+            grid-template-areas: 'left right';
+            grid-template-columns: 70% 30%;
+            grid-template-rows: auto;
         }
+        .kinda-even {
+            grid-template-columns: 65% 35%;
+        }
+        .left {
+            grid-area: left;
+            margin-right: 1em;
+        }
+        .right {
+            grid-area: right;
+            margin-left: 1em;
+        }
+
         .job h3 {
-            margin: 0;
-            margin-top: 0.5em;
+            margin-top: 0;
+            margin-bottom: 0;
+            border-top: 1px solid #999;
+            padding-top: 0.5em;
         }
+
         .job .title {
             font-weight: bold;
-            margin-bottom: 0.5em;
+            margin-top: 0;
+            margin-bottom: 0;
         }
         .job p.based {
             margin-bottom: 0;
+            margin-top: 0;
         }
         .job p.dates {
             margin-top: 0;
-            margin-bottom: 0.5em;
+            font-size: smaller;
+        }
+        .job p.description {
+        }
+        .job p.tools {
+            font-style: italic;
         }
 
         p.qualification,
         ul.personalProjects .title {
             font-weight: bold;
         }
+        p.qualification {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        p.educator {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
 
-        ul li {
-            margin-bottom: 0.5em;
+        .presentations-place {
+            font-size: smaller
+        }
+
+        .referees li p {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        .referees li {
+            margin-bottom: 1em;
         }
 
         @media print {
             .job,
-            .section,
             ul {
                 page-break-inside: avoid;
             }
+
+            .jobs {
+                page-break-after: always;
+            }
+
+            a {
+            }
         }
         @media only screen and (max-width: 450px) {
-            #main {
+            .two-col {
                 display: grid;
                 grid-template-areas: 'left' 'right';
                 grid-template-columns: 100%;
                 grid-template-rows: auto;
+            }
+            .left {
+                margin-right: 0em;
+            }
+            .right {
+                margin-left: 0em;
             }
         }
         </style>
