@@ -21,7 +21,7 @@ const referees = [
     },
 ];
 
-const personalProjects = [
+const products = [
     {
         title: 'The Erg Arcade',
         production: 'https://ergarcade.com/',
@@ -32,14 +32,22 @@ const personalProjects = [
         title: 'Calendar Arc',
         production: 'https://df.id.au/calendararc',
         source: 'https://github.com/angrytongan/calendararc',
-        description: `Chain productivity method applied to circular calcendar.`,
+        description: `Circular calendar chain productivity tracker.`,
     },
+    {
+        title: 'GitHub',
+        production: '',
+        source: 'https://github.com/angrytongan',
+        description: `Personal repositories.`,
+    },
+    /*
     {
         title: 'wodscrape',
         production: 'http://wodscrape.com.au',
         source: 'https://github.com/angrytongan/wodscrape',
         description: `Aggregator of publicly-available daily workouts.`,
     },
+    */
 ];
 
 const certifications = [
@@ -93,11 +101,12 @@ const jobs = [
         end: null,
         based: 'Brisbane, Australia',
         title: 'Owner',
-        description: `Application development and statistical analytics
-        dashboards for exercise equipment supporting the CSAFE interface,
-        including the Concept2 range of rower, bike and ski ergometers.`,
-        tools: `JavaScript / mithril.js / node.js / HTML / CSS / git / d3.js /
-        Apache ECharts / XCode / Qt / WebSockets`,
+        description: `Application development and analytics dashboards for
+        measuring athletic performance. Connectors for exercise equipment
+        supporting the CSAFE interface, including the Concept2 range of rower,
+        bike and ski ergometers.`,
+        tools: `JavaScript / mithril.js / node.js / svelte / HTML / CSS / git /
+        d3.js / ECharts / XCode / Qt / WebSockets`,
     },
     {
         place: 'Atmail',
@@ -324,25 +333,25 @@ const Jobs = {
     },
 };
 
-const PersonalProjects = {
+const Products = {
     view: () => {
         return [
-            m('h2', 'Personal Projects'),
-            m('ul.personalProjects', personalProjects.map((pp) => m('li',
-                m('a.title', { href: pp.production }, pp.title),
+            m('h2', 'Products'),
+            m('ul.products', products.map((pp) => m('li',
+                m('a.title', pp.production ? { href: pp.production } : '', pp.title),
                 m.trust(' '),
-                m('a', { href: pp.source }, '(source)'),
+                pp.source && m('a', { href: pp.source }, '(source)'),
                 m.trust('<br />' + pp.description + '<br /><br />'),
             ))),
         ];
     },
 };
 
-const CertsProjects = {
+const CertsProducts = {
     view: () => {
         return m('.two-col .kinda-even', [
             m('.left', m(Certifications)),
-            m('.right', m(PersonalProjects)),
+            m('.right', m(Products)),
         ]);
     },
 };
@@ -351,7 +360,7 @@ const Resume = {
     view: () => {
         return [
             m(Overview),
-            m(CertsProjects),
+            m(CertsProducts),
             m(Jobs),
             m(Referees),
         ];
