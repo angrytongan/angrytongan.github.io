@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+        <link rel="stylesheet" href="/styles.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>df.id.au - /technical/svelte/persist-localStorage</title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-a7aed0f1.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-3d5021e0.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-9b8e5450.js">
+		<link rel="modulepreload" href="/./_app/chunks/store-93849798.js">
+		<link rel="modulepreload" href="/./_app/pages/technical/__layout.md-934f8e8b.js">
+		<link rel="modulepreload" href="/./_app/pages/technical/svelte/persist-localStorage.md-c7974891.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-5a19647c.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-a7aed0f1.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-9b8e5450.js"),
+						import("/./_app/pages/technical/__layout.md-934f8e8b.js"),
+						import("/./_app/pages/technical/svelte/persist-localStorage.md-c7974891.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/technical/svelte/persist-localStorage",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<div><img src="/13109002_223898111320684_484395489_n.jpg" alt="Dean Fogarty" class="svelte-shurfy">
+    <span class="theme svelte-shurfy"><select><option value="light">light</option><option value="dark">dark</option></select></span>
+    <h1 class="svelte-shurfy">df.id.au</h1>
+    <h4 class="svelte-shurfy">Dean Fogarty</h4>
+    / <a href="/">home</a> / <a href="/technical">technical</a> / <a href="/technical/svelte">svelte</a> / persist-localStorage</div>
+<hr>
+
+<main><p>Easily persisting data in <a href="https://svelte.dev/docs#4_Prefix_stores_with_$_to_access_their_values" rel="nofollow">Svelte
+stores</a>
+to browser localStorage.</p>
+<hr>
+<h2>What is localStorage?</h2>
+<p>Browser
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" rel="nofollow">localStorage</a>
+allows web applications to retain application data within the browser, with no
+expiration date, which persists after the browser is shutdown. It is limited in
+size and should not be used for private data, but very useful for storing
+application state.</p>
+<h2>Our goal?</h2>
+<p>We want to persist data that we put in a Svelte store in localStorage. For the
+developer, the interface to a localStorage store should use be no different to
+using a standard Svelte store.</p>
+<h3>Aside: Svelte stores</h3>
+<p>Svelte stores are accessed by prefixing the store variable with <code>$</code>:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> writable <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'svelte/store'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> value <span class="token operator">=</span> <span class="token function">writable</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// create a store holding 0</span>
+
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>$value<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// outputs 0</span>
+    $value <span class="token operator">=</span> <span class="token number">12345</span><span class="token punctuation">;</span>             <span class="token comment">// puts 12345 in the store</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>$value<span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token comment">// outputs 12345</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<p>Convention is to place store variables in a file (say <code>store.js</code>) that can
+be imported into multiple components:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> value <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./store.js'</span><span class="token punctuation">;</span>
+
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>$value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    $value <span class="token operator">=</span> <span class="token number">54321</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<p>Stores are also reactive. Components who subscribe to the store will be
+notified when the store value changes.</p>
+<h2>Method</h2>
+<p>We will create a <a href="https://svelte.dev/docs#svelte_store" rel="nofollow">custom Svelte store</a>
+that uses <code>localStorage.setItem()</code> and <code>localStorage.getItem()</code> behind
+the <code>$</code> accessor. This maintains a consistent interface with existing stores.</p>
+<h3>The custom store</h3>
+<p>A simple custom store for handling localStorage would look like this (say
+<code>localStorage.js</code>):</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> writable <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'svelte/store'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">const</span> <span class="token function-variable function">createLocalStorage</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">key<span class="token punctuation">,</span> init</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">let</span> value <span class="token operator">=</span> localStorage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>value<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>init<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        value <span class="token operator">=</span> init<span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+        value <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+
+    <span class="token comment">// Create our store.</span>
+    <span class="token keyword">const</span> <span class="token punctuation">&#123;</span> subscribe<span class="token punctuation">,</span> set <span class="token punctuation">&#125;</span> <span class="token operator">=</span> <span class="token function">writable</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Adhere to the store contract.</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+        subscribe<span class="token punctuation">,</span>
+        <span class="token function-variable function">set</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">v</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            localStorage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token function">set</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<h2>Usage</h2>
+<p>To setup our stores (say <code>store.js</code>):</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token keyword">import</span> <span class="token punctuation">&#123;</span> createLocalStorage <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./localStorage.js'</span><span class="token punctuation">;</span>
+
+<span class="token keyword">export</span> <span class="token keyword">const</span> theme <span class="token operator">=</span> <span class="token function">createLocalStorage</span><span class="token punctuation">(</span><span class="token string">'theme'</span><span class="token punctuation">,</span> <span class="token string">'pink'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">export</span> <span class="token keyword">const</span> fontSize <span class="token operator">=</span> <span class="token function">createLocalStorage</span><span class="token punctuation">(</span><span class="token string">'fontSize'</span><span class="token punctuation">,</span> <span class="token string">'10px'</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<p>To use the localStorage stores in our components:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> theme<span class="token punctuation">,</span> fontSize <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'./store.js'</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>p style<span class="token operator">=</span><span class="token string">"font-size: &#123;$fontSize&#125;;"</span><span class="token operator">></span>
+    <span class="token operator">...</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>p<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>select bind<span class="token operator">:</span>value<span class="token operator">=</span><span class="token punctuation">&#123;</span>$theme<span class="token punctuation">&#125;</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>option value<span class="token operator">=</span><span class="token string">"blue"</span><span class="token operator">></span>Blue<span class="token operator">&lt;</span><span class="token operator">/</span>option<span class="token operator">></span>
+    <span class="token operator">&lt;</span>option value<span class="token operator">=</span><span class="token string">"green"</span><span class="token operator">></span>Green<span class="token operator">&lt;</span><span class="token operator">/</span>option<span class="token operator">></span>
+    <span class="token operator">...</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>select<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<p>An implementation can be seen on this website, tracking the current theme using
+the selector at the top of the page.</p>
+<h2>Summary</h2>
+<p>We have written a custom store that wraps localStorage, and created a function
+to that returns an instance of this custom store. The interface is no different
+to a normal Svelte store, creating a consistent experience for the developer.</p>
+<h3>Improvements</h3>
+<ul><li>The above example only shows basic handling of storing “something” -
+the developer would still be required to know what type of data is being stored
+and convert it appropriately before use. We expand this example to handle
+covering different types in <a href="/technical/svelte/persist-arbitrary">part II</a>.</li>
+<li><a href="https://kit.svelte.dev" rel="nofollow">SvelteKit</a> performs server-side rendering of the
+application, so <code>localStorage</code> is not available and the reference to it in
+the above example will fail. This should be guarded by <code>browser</code> from
+<code>$app/env</code>. More details
+<a href="https://kit.svelte.dev/docs#modules-$app-env" rel="nofollow">here</a>.</li></ul>
+<h2>More information</h2>
+<ul><li><a href="/technical/svelte/persist-arbitrary">Part II</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" rel="nofollow">localStorage</a></li>
+<li><a href="https://svelte.dev/docs#svelte_store" rel="nofollow">Stores</a></li>
+<li><a href="https://svelte.dev/docs#Store_contract" rel="nofollow">Store Contract</a></li></ul></main>
+
+<hr>
+<p>Want to say g&#39;day? Drop me an <a href="mailto:dean@df.id.au">email</a>.
+    <span class="right svelte-shurfy">Style by <a target="_blank" href="https://uglyduck.ca/typesafe-css">TypeSafe CSS</a></span>
+</p>
+
+
+
+	
+</div>
+	</body>
+
+    <script>
+        window.goatcounter = { no_onload: true };
+        window.addEventListener('sveltekit:navigation-end', (event) => {
+            window.goatcounter.count({
+                path: location.pathname + location.search + location.hash,
+            });
+        });
+    </script>
+    <script data-goatcounter="https://angrytongan.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</html>
