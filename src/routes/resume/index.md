@@ -19,7 +19,7 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
 
 * [The Erg Arcade](https://ergarcade.com)  [(source)](https://github.com/ergarcade)  
   Concept2 ergometer utilities, tools, visualisations, games.
-* [Calendar Arc](https://df.id.au/calendararc) [(source)](https://github.com/angrytongan/calendararc)  
+* [Calendar Arc](https://angrytongan.github.io/calendararc) [(source)](https://github.com/angrytongan/calendararc)  
   Circular calendar chain productivity tracker.
 
 ### Employment history
