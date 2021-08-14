@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+        <link rel="stylesheet" href="/styles.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>df.id.au - /technical/svelte/timezones</title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-a7aed0f1.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-3d5021e0.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-9b8e5450.js">
+		<link rel="modulepreload" href="/./_app/chunks/store-93849798.js">
+		<link rel="modulepreload" href="/./_app/pages/technical/__layout.md-934f8e8b.js">
+		<link rel="modulepreload" href="/./_app/pages/technical/svelte/timezones.md-6cd217bf.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-5a19647c.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-a7aed0f1.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-9b8e5450.js"),
+						import("/./_app/pages/technical/__layout.md-934f8e8b.js"),
+						import("/./_app/pages/technical/svelte/timezones.md-6cd217bf.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/technical/svelte/timezones",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<div><img src="/13109002_223898111320684_484395489_n.jpg" alt="Dean Fogarty" class="svelte-shurfy">
+    <span class="theme svelte-shurfy"><select><option value="light">light</option><option value="dark">dark</option></select></span>
+    <h1 class="svelte-shurfy">df.id.au</h1>
+    <h4 class="svelte-shurfy">Dean Fogarty</h4>
+    / <a href="/">home</a> / <a href="/technical">technical</a> / <a href="/technical/svelte">svelte</a> / timezones</div>
+<hr>
+
+<main><p>Display the current date and time from multiple timezones.</p>
+<hr>
+<h2>Our goal?</h2>
+<p>We want to display the current time for a number of locations around the world
+as a table:</p>
+<table><tr><td>America/New_York</td>
+            <td>Friday, August 13, 2021, 22:01:24</td>
+        </tr><tr><td>Europe/London</td>
+            <td>Saturday, August 14, 2021, 03:01:24</td>
+        </tr><tr><td>Asia/Tokyo</td>
+            <td>Saturday, August 14, 2021, 11:01:24</td>
+        </tr><tr><td>Australia/Brisbane</td>
+            <td>Saturday, August 14, 2021, 12:01:24</td>
+        </tr></table>
+<h2>Method</h2>
+<p>Create a component that periodically uses <code>Date().toLocaleString()</code> to
+format the current local time in arbitrary timezones and display as a table.</p>
+<h3>onMount / onDestroy</h3>
+<p>We can use Svelte’s lifecycle functions <code>onMount()</code> and <code>onDestroy()</code>
+to initialise and cleanup a periodic timer. The timer will get the date and
+update a reactive varible, which will redraw the table when changed.</p>
+<h3>The component</h3>
+<p>A single component fulfills our requirements (say <code>./TimeZoneTable.svelte</code>):</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> onMount<span class="token punctuation">,</span> onDestroy <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'svelte'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">export</span> <span class="token keyword">let</span> timezones <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">'America/New_York'</span><span class="token punctuation">,</span>
+        <span class="token string">'Europe/London'</span><span class="token punctuation">,</span>
+        <span class="token string">'Asia/Tokyo'</span><span class="token punctuation">,</span>
+        <span class="token string">'Australia/Brisbane'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> locale <span class="token operator">=</span> <span class="token string">'en-US'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> intervalId<span class="token punctuation">;</span>
+
+    <span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        intervalId <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">onDestroy</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>intervalId<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">clearInterval</span><span class="token punctuation">(</span>intervalId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>table<span class="token operator">></span>
+    <span class="token punctuation">&#123;</span>#each timezones <span class="token keyword">as</span> z<span class="token punctuation">&#125;</span>
+        <span class="token operator">&lt;</span>tr<span class="token operator">></span>
+            <span class="token operator">&lt;</span>td<span class="token operator">></span><span class="token punctuation">&#123;</span>z<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">></span>
+            <span class="token operator">&lt;</span>td<span class="token operator">></span><span class="token punctuation">&#123;</span>now<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span>locale<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> timeZone<span class="token operator">:</span> z <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">></span>
+    <span class="token punctuation">&#123;</span><span class="token operator">/</span>each<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>table<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<h2>Usage</h2>
+<p>Use the component wherever it’s required:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">import</span> TimeZoneTable <span class="token keyword">from</span> <span class="token string">'./TimeZoneTable.svelte'</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>TimeZoneTable <span class="token operator">/</span><span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<h2>Summary</h2>
+<p>We created a simple method for displaying the time in differen timezones
+around the world.</p>
+<h2>More information</h2>
+<ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" rel="nofollow">Date</a></li></ul></main>
+
+<hr>
+<p>Want to say g&#39;day? Drop me an <a href="mailto:dean@df.id.au">email</a>.
+    <span class="right svelte-shurfy">Style by <a target="_blank" href="https://uglyduck.ca/typesafe-css">TypeSafe CSS</a></span>
+</p>
+
+
+
+	
+</div>
+	</body>
+
+    <script>
+        window.goatcounter = { no_onload: true };
+        window.addEventListener('sveltekit:navigation-end', (event) => {
+            window.goatcounter.count({
+                path: location.pathname + location.search + location.hash,
+            });
+        });
+    </script>
+    <script data-goatcounter="https://angrytongan.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</html>

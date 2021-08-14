@@ -1,0 +1,1 @@
+import{C as t}from"./vendor-3d5021e0.js";const e=((e,s)=>{let r;r=localStorage.getItem(e),r?r=JSON.parse(r):(localStorage.setItem(e,JSON.stringify(s)),r=s);const{subscribe:o,set:a}=t(r);return{subscribe:o,set:t=>(localStorage.setItem(e,JSON.stringify(t)),a(t))}})("theme","light");export{e as t};

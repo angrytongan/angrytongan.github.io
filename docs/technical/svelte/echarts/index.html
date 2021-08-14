@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+        <link rel="stylesheet" href="/styles.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>df.id.au - /technical/svelte/echarts</title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-a7aed0f1.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-3d5021e0.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-9b8e5450.js">
+		<link rel="modulepreload" href="/./_app/chunks/store-93849798.js">
+		<link rel="modulepreload" href="/./_app/pages/technical/__layout.md-934f8e8b.js">
+		<link rel="modulepreload" href="/./_app/pages/technical/svelte/echarts.md-6ca9beee.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-5a19647c.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-a7aed0f1.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-9b8e5450.js"),
+						import("/./_app/pages/technical/__layout.md-934f8e8b.js"),
+						import("/./_app/pages/technical/svelte/echarts.md-6ca9beee.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/technical/svelte/echarts",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<div><img src="/13109002_223898111320684_484395489_n.jpg" alt="Dean Fogarty" class="svelte-shurfy">
+    <span class="theme svelte-shurfy"><select><option value="light">light</option><option value="dark">dark</option></select></span>
+    <h1 class="svelte-shurfy">df.id.au</h1>
+    <h4 class="svelte-shurfy">Dean Fogarty</h4>
+    / <a href="/">home</a> / <a href="/technical">technical</a> / <a href="/technical/svelte">svelte</a> / echarts</div>
+<hr>
+
+<main><p>A minimal component that wraps <a href="https://echarts.apache.org" rel="nofollow">Apache ECharts</a>.</p>
+<hr>
+<div><div><div id="echart-article-chart" style="height: 200px"></div></div>
+    <label><input type="checkbox"> Animation
+    </label>
+    <label><input type="checkbox" checked> March
+    </label>
+    <label><input type="range" min="0.5" max="3" step="0.5" value="2"> 2Hz
+    </label></div>
+<h2>Our goal?</h2>
+<p>Provide a minimal wrapper around Apache ECharts. It must be responsive to
+size, options and theme changes.</p>
+<h2>Method</h2>
+<p>Install echarts as per <a href="https://echarts.apache.org/en/tutorial.html#Get%20Started%20with%20ECharts%20in%205%20minutes" rel="nofollow">the manual</a>:</p>
+<pre class="language-undefined"><!-- HTML_TAG_START --><code class="language-undefined">% npm install echarts</code><!-- HTML_TAG_END --></pre>
+<p>The component itself is straightforward, if a little long. We will break it up
+into parts.</p>
+<h3>Component initialisation</h3>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">    <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> onMount<span class="token punctuation">,</span> onDestroy <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'svelte'</span><span class="token punctuation">;</span>
+    <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> echarts <span class="token keyword">from</span> <span class="token string">'echarts'</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<p><code>onMount()</code> and <code>onDestroy()</code> are used for initialisation and cleanup
+of the ECharts instance.</p>
+<h3>Props</h3>
+<p>Required for <a href="https://echarts.apache.org/en/api.html#echarts.init" rel="nofollow">chart initialisation</a>:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">    <span class="token keyword">export</span> <span class="token keyword">let</span> id<span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">let</span> theme<span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">let</span> width <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">let</span> height <span class="token operator">=</span> <span class="token number">200</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<p>Required for <a href="https://echarts.apache.org/en/api.html#echartsInstance.setOption" rel="nofollow">setting chart
+options</a>:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">    <span class="token keyword">export</span> <span class="token keyword">let</span> option<span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">let</span> notMerge <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">let</span> replaceMerge <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">let</span> lazyUpdate <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<h3>Setup</h3>
+<p>Creating and destroying the chart, as well as setting chart options:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">    <span class="token keyword">let</span> chart<span class="token punctuation">;</span>                      <span class="token comment">// our chart instance</span>
+
+    <span class="token keyword">const</span> <span class="token function-variable function">setOption</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>chart <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>chart<span class="token punctuation">.</span><span class="token function">isDisposed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            chart<span class="token punctuation">.</span><span class="token function">setOption</span><span class="token punctuation">(</span>
+                option<span class="token punctuation">,</span>
+                notMerge<span class="token punctuation">,</span>
+                replaceMerge<span class="token punctuation">,</span>
+                lazyUpdate
+            <span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> <span class="token function-variable function">destroyChart</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>chart <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>chart<span class="token punctuation">.</span><span class="token function">isDisposed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            chart<span class="token punctuation">.</span><span class="token function">dispose</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">const</span> <span class="token function-variable function">makeChart</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token function">destroyChart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        chart <span class="token operator">=</span> echarts<span class="token punctuation">.</span><span class="token function">init</span><span class="token punctuation">(</span>
+            document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">,</span>
+            theme
+        <span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<p>Initialisation and teardown:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">    <span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token function">makeChart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">onDestroy</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token function">destroyChart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<h3>Resizing</h3>
+<p>Resizing with ECharts is done using <code>echartsInstance.resize()</code>.
+Debouncing has been added in this example:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">    <span class="token keyword">let</span> timeoutId<span class="token operator">:</span> any<span class="token punctuation">;</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">handleResize</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>timeoutId <span class="token operator">==</span> <span class="token keyword">undefined</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            timeoutId <span class="token operator">=</span> <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+                <span class="token keyword">if</span> <span class="token punctuation">(</span>chart <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>chart<span class="token punctuation">.</span><span class="token function">isDisposed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+                    chart<span class="token punctuation">.</span><span class="token function">resize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">&#125;</span>
+                timeoutId <span class="token operator">=</span> <span class="token keyword">undefined</span><span class="token punctuation">;</span>
+            <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span></code><!-- HTML_TAG_END --></pre>
+<h3>Reactivity</h3>
+<p>We want the component to react to changes in size, option and theme. While
+<code>width</code> and <code>option</code> are easy, changing the theme requires destroying
+the chart and remaking it:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js">    $<span class="token operator">:</span> width <span class="token operator">&amp;&amp;</span> <span class="token function">handleResize</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    $<span class="token operator">:</span> option <span class="token operator">&amp;&amp;</span> <span class="token function">setOption</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    $<span class="token operator">:</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>chart <span class="token operator">&amp;&amp;</span> theme<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token function">makeChart</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">setOption</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span></code><!-- HTML_TAG_END --></pre>
+<h3>The DOM</h3>
+<p>ECharts requires attaching to a DOM element, identified by <code>id</code>. We take
+advantage of <a href="https://svelte.dev/docs#Block-level_element_bindings" rel="nofollow">Svelte’s block element
+bindings</a> to watch for
+changes in width:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>div bind<span class="token operator">:</span>clientWidth<span class="token operator">=</span><span class="token punctuation">&#123;</span>width<span class="token punctuation">&#125;</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>div
+        id<span class="token operator">=</span><span class="token punctuation">&#123;</span>id<span class="token punctuation">&#125;</span>
+        style<span class="token operator">=</span><span class="token string">"height: &#123;height&#125;px"</span>
+    <span class="token operator">/</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<h3>All together</h3>
+<p>Putting all those elements together (say, <code>./EChart.js</code>):</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token comment">// component initialisation</span>
+    <span class="token comment">// props</span>
+    <span class="token comment">// setup</span>
+    <span class="token comment">// resizing</span>
+    <span class="token comment">// reactivity</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> the <span class="token constant">DOM</span> <span class="token operator">--</span><span class="token operator">></span>
+</code><!-- HTML_TAG_END --></pre>
+<h2>Usage</h2>
+<p>Use the component whever it’s required. Supply arguments as per <a href="https://echarts.apache.org/en/option.html#title" rel="nofollow">the
+manual</a>:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">import</span> EChart <span class="token keyword">from</span> <span class="token string">'./EChart.js'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> option <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+        title<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+            text<span class="token operator">:</span> <span class="token string">'Chart title'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+        <span class="token operator">...</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>EChart <span class="token punctuation">&#123;</span>option<span class="token punctuation">&#125;</span> <span class="token operator">/</span><span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<h2>Summary</h2>
+<p>We created the minimal wrapper around Apache ECharts. It is a fully reactive
+component, handling sizing, options and theme changes.</p>
+<h3>Improvements</h3>
+<ul><li>This component does the minimum required; it could be filled out to better
+match the <a href="https://echarts.apache.org/en/api.html#echarts" rel="nofollow">ECharts Instance API</a>.</li></ul>
+<h2>More information</h2>
+<ul><li><a href="https://echarts.apache.org" rel="nofollow">Apache ECharts</a></li></ul></main>
+
+<hr>
+<p>Want to say g&#39;day? Drop me an <a href="mailto:dean@df.id.au">email</a>.
+    <span class="right svelte-shurfy">Style by <a target="_blank" href="https://uglyduck.ca/typesafe-css">TypeSafe CSS</a></span>
+</p>
+
+
+
+	
+</div>
+	</body>
+
+    <script>
+        window.goatcounter = { no_onload: true };
+        window.addEventListener('sveltekit:navigation-end', (event) => {
+            window.goatcounter.count({
+                path: location.pathname + location.search + location.hash,
+            });
+        });
+    </script>
+    <script data-goatcounter="https://angrytongan.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</html>

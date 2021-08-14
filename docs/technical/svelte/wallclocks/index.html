@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+        <link rel="stylesheet" href="/styles.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>df.id.au - /technical/svelte/wallclocks</title>
+
+		
+
+		<link rel="modulepreload" href="/./_app/start-a7aed0f1.js">
+		<link rel="modulepreload" href="/./_app/chunks/vendor-3d5021e0.js">
+		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-9b8e5450.js">
+		<link rel="modulepreload" href="/./_app/chunks/store-93849798.js">
+		<link rel="modulepreload" href="/./_app/pages/technical/__layout.md-934f8e8b.js">
+		<link rel="modulepreload" href="/./_app/pages/technical/svelte/wallclocks.md-6132e821.js">
+		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-5a19647c.css">
+		<link rel="stylesheet" href="/./_app/assets/pages/technical/svelte/wallclocks.md-f29ecdfd.css">
+
+		<script type="module">
+			import { start } from "/./_app/start-a7aed0f1.js";
+			start({
+				target: document.querySelector("#svelte"),
+				paths: {"base":"","assets":"/."},
+				session: {},
+				host: location.host,
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/./_app/pages/__layout.svelte-9b8e5450.js"),
+						import("/./_app/pages/technical/__layout.md-934f8e8b.js"),
+						import("/./_app/pages/technical/svelte/wallclocks.md-6132e821.js")
+					],
+					page: {
+						host: location.host, // TODO this is redundant
+						path: "/technical/svelte/wallclocks",
+						query: new URLSearchParams(""),
+						params: {}
+					}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		<div id="svelte">
+
+
+
+
+<div><img src="/13109002_223898111320684_484395489_n.jpg" alt="Dean Fogarty" class="svelte-shurfy">
+    <span class="theme svelte-shurfy"><select><option value="light">light</option><option value="dark">dark</option></select></span>
+    <h1 class="svelte-shurfy">df.id.au</h1>
+    <h4 class="svelte-shurfy">Dean Fogarty</h4>
+    / <a href="/">home</a> / <a href="/technical">technical</a> / <a href="/technical/svelte">svelte</a> / wallclocks</div>
+<hr>
+
+<main><p>Display the current date and time from multiple timezones as a bunch of wall clocks.</p>
+<hr>
+<h2>Our goal?</h2>
+<p>We want to display the current time for a number of locations around the world in
+the form of a wall of clocks:</p>
+<div class="clocks svelte-ivz82d"><div class="clock svelte-ivz82d"><div><svg viewBox="-50 -50 100 100" class="svelte-197hpgm"><circle class="clock-face PM svelte-197hpgm" r="48"></circle><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(0)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(6)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(12)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(18)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(24)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(150)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(36)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(42)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(48)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(54)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(300)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(66)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(72)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(78)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(84)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(450)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(96)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(102)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(108)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(114)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(600)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(126)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(132)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(138)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(144)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(750)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(156)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(162)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(168)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(174)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(900)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(186)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(192)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(198)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(204)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(1050)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(216)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(222)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(228)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(234)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(1200)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(246)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(252)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(258)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(264)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(1350)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(276)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(282)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(288)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(294)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(1500)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(306)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(312)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(318)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(324)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(1650)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(336)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(342)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(348)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(354)"></line><line class="hour svelte-197hpgm" y1="2" y2="-20" transform="rotate(300.5)"></line><line class="minute svelte-197hpgm" y1="4" y2="-30" transform="rotate(8.4)"></line><g transform="rotate(144)"><line class="second svelte-197hpgm" y1="10" y2="-38"></line><line class="second-counterweight svelte-197hpgm" y1="10" y2="2"></line></g></svg>
+    <p style="text-align: center;">10:01:24 PM<br>
+        America/New_York</p>
+</div>
+        </div><div class="clock svelte-ivz82d"><div><svg viewBox="-50 -50 100 100" class="svelte-197hpgm"><circle class="clock-face AM svelte-197hpgm" r="48"></circle><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(0)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(6)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(12)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(18)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(24)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(150)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(36)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(42)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(48)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(54)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(300)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(66)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(72)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(78)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(84)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(450)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(96)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(102)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(108)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(114)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(600)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(126)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(132)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(138)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(144)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(750)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(156)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(162)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(168)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(174)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(900)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(186)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(192)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(198)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(204)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1050)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(216)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(222)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(228)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(234)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1200)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(246)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(252)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(258)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(264)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1350)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(276)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(282)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(288)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(294)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1500)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(306)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(312)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(318)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(324)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1650)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(336)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(342)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(348)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(354)"></line><line class="hour svelte-197hpgm" y1="2" y2="-20" transform="rotate(90.5)"></line><line class="minute svelte-197hpgm" y1="4" y2="-30" transform="rotate(8.4)"></line><g transform="rotate(144)"><line class="second svelte-197hpgm" y1="10" y2="-38"></line><line class="second-counterweight svelte-197hpgm" y1="10" y2="2"></line></g></svg>
+    <p style="text-align: center;">3:01:24 AM<br>
+        Europe/London</p>
+</div>
+        </div><div class="clock svelte-ivz82d"><div><svg viewBox="-50 -50 100 100" class="svelte-197hpgm"><circle class="clock-face AM svelte-197hpgm" r="48"></circle><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(0)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(6)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(12)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(18)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(24)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(150)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(36)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(42)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(48)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(54)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(300)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(66)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(72)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(78)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(84)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(450)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(96)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(102)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(108)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(114)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(600)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(126)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(132)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(138)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(144)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(750)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(156)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(162)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(168)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(174)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(900)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(186)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(192)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(198)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(204)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1050)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(216)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(222)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(228)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(234)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1200)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(246)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(252)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(258)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(264)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1350)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(276)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(282)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(288)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(294)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1500)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(306)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(312)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(318)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(324)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1650)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(336)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(342)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(348)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(354)"></line><line class="hour svelte-197hpgm" y1="2" y2="-20" transform="rotate(330.5)"></line><line class="minute svelte-197hpgm" y1="4" y2="-30" transform="rotate(8.4)"></line><g transform="rotate(144)"><line class="second svelte-197hpgm" y1="10" y2="-38"></line><line class="second-counterweight svelte-197hpgm" y1="10" y2="2"></line></g></svg>
+    <p style="text-align: center;">11:01:24 AM<br>
+        Asia/Tokyo</p>
+</div>
+        </div><div class="clock svelte-ivz82d"><div><svg viewBox="-50 -50 100 100" class="svelte-197hpgm"><circle class="clock-face PM svelte-197hpgm" r="48"></circle><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(0)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(6)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(12)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(18)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(24)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(150)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(36)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(42)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(48)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(54)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(300)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(66)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(72)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(78)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(84)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(450)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(96)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(102)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(108)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(114)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(600)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(126)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(132)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(138)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(144)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(750)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(156)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(162)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(168)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(174)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(900)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(186)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(192)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(198)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(204)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(1050)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(216)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(222)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(228)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(234)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(1200)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(246)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(252)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(258)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(264)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(1350)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(276)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(282)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(288)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(294)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(1500)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(306)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(312)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(318)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(324)"></line><line class="major PM svelte-197hpgm" y1="35" y2="45" transform="rotate(1650)"></line>
+
+            <line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(336)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(342)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(348)"></line><line class="minor PM svelte-197hpgm" y1="42" y2="45" transform="rotate(354)"></line><line class="hour svelte-197hpgm" y1="2" y2="-20" transform="rotate(360.5)"></line><line class="minute svelte-197hpgm" y1="4" y2="-30" transform="rotate(8.4)"></line><g transform="rotate(144)"><line class="second svelte-197hpgm" y1="10" y2="-38"></line><line class="second-counterweight svelte-197hpgm" y1="10" y2="2"></line></g></svg>
+    <p style="text-align: center;">12:01:24 PM<br>
+        Australia/Brisbane</p>
+</div>
+        </div><div class="clock svelte-ivz82d"><div><svg viewBox="-50 -50 100 100" class="svelte-197hpgm"><circle class="clock-face AM svelte-197hpgm" r="48"></circle><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(0)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(6)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(12)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(18)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(24)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(150)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(36)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(42)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(48)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(54)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(300)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(66)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(72)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(78)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(84)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(450)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(96)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(102)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(108)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(114)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(600)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(126)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(132)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(138)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(144)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(750)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(156)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(162)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(168)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(174)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(900)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(186)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(192)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(198)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(204)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1050)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(216)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(222)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(228)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(234)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1200)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(246)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(252)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(258)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(264)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1350)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(276)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(282)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(288)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(294)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1500)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(306)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(312)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(318)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(324)"></line><line class="major AM svelte-197hpgm" y1="35" y2="45" transform="rotate(1650)"></line>
+
+            <line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(336)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(342)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(348)"></line><line class="minor AM svelte-197hpgm" y1="42" y2="45" transform="rotate(354)"></line><line class="hour svelte-197hpgm" y1="2" y2="-20" transform="rotate(300.5)"></line><line class="minute svelte-197hpgm" y1="4" y2="-30" transform="rotate(8.4)"></line><g transform="rotate(144)"><line class="second svelte-197hpgm" y1="10" y2="-38"></line><line class="second-counterweight svelte-197hpgm" y1="10" y2="2"></line></g></svg>
+    <p style="text-align: center;">10:01:24 AM<br>
+        Australia/Perth</p>
+</div>
+        </div>
+</div>
+<h2>Method</h2>
+<p>We will need two components: an individual clock component (say
+<code>./WallClock.svelte</code>) and a container that manages the clocks by feeding
+them the current local time and required locale (say
+<code>./WallClocks.svelte</code>). <code>WallClock.svelte</code> will calculate the time in
+it’s locale and draw a clock with this time.</p>
+<h3><code>WallClocks.svelte</code></h3>
+<p>Similarly to <a href="/technical/svelte/timezones">our table of locations and times</a>,
+we will set an interval that updates a variable, which is used as a prop
+to the clock component:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> onMount<span class="token punctuation">,</span> onDestroy <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'svelte'</span><span class="token punctuation">;</span>
+    <span class="token keyword">import</span> WallClock <span class="token keyword">from</span> <span class="token string">'./WallClock.svelte'</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">export</span> <span class="token keyword">let</span> timezones <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token string">'America/New_York'</span><span class="token punctuation">,</span>
+        <span class="token string">'Europe/London'</span><span class="token punctuation">,</span>
+        <span class="token string">'Asia/Tokyo'</span><span class="token punctuation">,</span>
+        <span class="token string">'Australia/Brisbane'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> intervalId<span class="token punctuation">;</span>
+    <span class="token keyword">let</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">onMount</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        intervalId <span class="token operator">=</span> <span class="token function">setInterval</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+            now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">,</span> <span class="token number">1000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token function">onDestroy</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>intervalId<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+            <span class="token function">clearInterval</span><span class="token punctuation">(</span>intervalId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"clocks"</span><span class="token operator">></span>
+    <span class="token punctuation">&#123;</span>#each timezones <span class="token keyword">as</span> timezone<span class="token punctuation">&#125;</span>
+        <span class="token operator">&lt;</span>div <span class="token keyword">class</span><span class="token operator">=</span><span class="token string">"clock"</span><span class="token operator">></span>
+            <span class="token operator">&lt;</span>WallClock <span class="token punctuation">&#123;</span>now<span class="token punctuation">&#125;</span> <span class="token punctuation">&#123;</span>timezone<span class="token punctuation">&#125;</span> <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+    <span class="token punctuation">&#123;</span><span class="token operator">/</span>each<span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<h3><code>WallClock.svelte</code></h3>
+<p>The individual clock component uses <code>toLocaleString()</code> as our <a href="/technical/svelte/timezones">table
+version</a>, and parses the output:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">export</span> <span class="token keyword">let</span> timezone<span class="token punctuation">;</span>
+    <span class="token keyword">export</span> <span class="token keyword">let</span> now<span class="token punctuation">;</span>
+
+    <span class="token keyword">let</span> hours <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> minutes <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> seconds <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> amPm <span class="token operator">=</span> <span class="token string">''</span><span class="token punctuation">;</span>
+
+    $<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> d <span class="token operator">=</span> now<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span><span class="token string">'en-US'</span><span class="token punctuation">,</span> <span class="token punctuation">&#123;</span>
+            timeZone<span class="token operator">:</span> timezone<span class="token punctuation">,</span>
+            hour<span class="token operator">:</span> <span class="token string">'numeric'</span><span class="token punctuation">,</span>
+            minute<span class="token operator">:</span> <span class="token string">'numeric'</span><span class="token punctuation">,</span>
+            second<span class="token operator">:</span> <span class="token string">'numeric'</span><span class="token punctuation">,</span>
+        <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token punctuation">[</span> hours<span class="token punctuation">,</span> minutes<span class="token punctuation">,</span> seconds<span class="token punctuation">,</span> amPm <span class="token punctuation">]</span> <span class="token operator">=</span> d<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">[ :]</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>div<span class="token operator">></span>
+    <span class="token operator">&lt;</span>svg<span class="token operator">></span>
+        <span class="token operator">...</span>
+    <span class="token operator">&lt;</span><span class="token operator">/</span>svg<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+</code><!-- HTML_TAG_END --></pre>
+<p>The clock face itself is built with SVG. Rather than reproduce the
+it here, you are encouraged to check the <a href="https://svelte.dev/examples#clock" rel="nofollow">clock
+example</a> from the <a href="https://svelte.dev/examples" rel="nofollow">Svelte Example
+list</a>; the example at the top of this page uses
+this code verbatim.</p>
+<h2>Usage</h2>
+<p>Use the component wherever it’s required:</p>
+<pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
+    <span class="token keyword">import</span> WallClocks <span class="token keyword">from</span> <span class="token string">'./WallClocks.svelte'</span><span class="token punctuation">;</span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+
+<span class="token operator">&lt;</span>WallClocks <span class="token operator">/</span><span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
+<h2>Summary</h2>
+<p>We have created two components that can be used to display wall clocks based on
+timezone.</p>
+<h2>More information</h2>
+<ul><li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" rel="nofollow">Date</a></li>
+<li><a href="https://svelte.dev/examples#clock" rel="nofollow">Svelte Examples: clock</a></li></ul></main>
+
+<hr>
+<p>Want to say g&#39;day? Drop me an <a href="mailto:dean@df.id.au">email</a>.
+    <span class="right svelte-shurfy">Style by <a target="_blank" href="https://uglyduck.ca/typesafe-css">TypeSafe CSS</a></span>
+</p>
+
+
+
+	
+</div>
+	</body>
+
+    <script>
+        window.goatcounter = { no_onload: true };
+        window.addEventListener('sveltekit:navigation-end', (event) => {
+            window.goatcounter.count({
+                path: location.pathname + location.search + location.hash,
+            });
+        });
+    </script>
+    <script data-goatcounter="https://angrytongan.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</html>
