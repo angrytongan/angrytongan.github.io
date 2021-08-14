@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+        <link rel="stylesheet" href="/styles.css" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		%svelte.head%
+	</head>
+	<body>
+		<div id="svelte">%svelte.body%</div>
+	</body>
+
+    <script>
+        window.goatcounter = { no_onload: true };
+        window.addEventListener('sveltekit:navigation-end', (event) => {
+            window.goatcounter.count({
+                path: location.pathname + location.search + location.hash,
+            });
+        });
+    </script>
+    <script data-goatcounter="https://angrytongan.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</html>
