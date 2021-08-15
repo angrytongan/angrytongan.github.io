@@ -4,6 +4,8 @@ path: '/technical/svelte'
 
 Code for all samples below available in the [repository for this website](https://github.com/angrytongan/angrytongan.github.io/).
 
+---
+
 ## Charts
 
 * [ECharts]({path}/echarts) - integration with [Apache ECharts](https://echarts.apache.org).

@@ -25,3 +25,10 @@ pre code {
 .dark code {
     color: goldenrod;
 }
+
+@media print {
+    * {
+        color: #000;
+        background: #fff;
+    }
+}

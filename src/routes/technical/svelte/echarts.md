@@ -8,7 +8,7 @@
 
     const randomData = (n) => {
         return [ ...Array(30).keys() ].map((i) => {
-            return [ i, Math.random() ];
+            return [ i, Math.random().toFixed(2) ];
         });
     };
 
@@ -81,12 +81,19 @@
                 stack: 'the-stack',
             },
         ],
+        tooltip: {
+            trigger: 'axis',
+            formatter: (params) => `${params[0]?.data[0]}<br />` + params.reduce((acc, p) => {
+                acc += `${p.marker} ${p.seriesName}: ${p.data[1]}<br />`;
+                return acc;
+            }, ''),
+        },
     };
 
     const march = () => {
         option.dataset.forEach((o) => {
             o.source.shift();
-            o.source.push([ o.source[o.source.length-1][0]+1, Math.random() ]);
+            o.source.push([ o.source[o.source.length-1][0]+1, Math.random().toFixed(2) ]);
         });
         option = option;
     };

@@ -100,14 +100,13 @@ subjective information in the way of review and opinion.
     made while on the program.
 </p>
 
-
 ### <a name="about-this-review-disclosure">Disclosure</a>
 
 I have trained with The Gains Lab previously, having completed five months of
 the [Total Domination](https://www.thegainslab.com/dominate) program about 9
 months prior to starting Year of the Engine. I have also done some
 behind-the-scenes work on [The Gains Lab website](https://thegainslab.com)
-exchange for a reduced rate on this program.
+in exchange for a reduced rate on this program.
 
 This review is unsolicited.
 
@@ -214,10 +213,8 @@ Workouts were received via email each month as a single .pdf file. Each
 file contains four weeks of workouts, each week having five workouts to
 complete.
 
-
 An exception to this format is the first month of the program, in
 which the fifth workout in each week is optional.
-
 
 ### <a name="program-workout-types">Workout types</a>
 
@@ -227,10 +224,10 @@ which the fifth workout in each week is optional.
     option={charts.workoutTypes.workoutTypes()}
 />
 
-Each workout type is described below. As <a
-     href="#about-this-review-workout-obfuscation">mentioned above</a>, only a
-select number of workouts are described in full in this document; all
-other workout descriptions are obfuscated according to the rules below.
+Each workout type is described below. As <a rel="external"
+href="#about-this-review-workout-obfuscation">mentioned above</a>, only a
+select number of workouts are described in full in this document; all other
+workout descriptions are obfuscated according to the rules below.
 
 <table>
     <tr>
@@ -322,7 +319,6 @@ Each workout can be completed with a different apparatus. Scalings are
 supplied. The program strongly suggests which apparatus are <i>not</i>
 suitable for certain workouts.
 
-
 ### <a name="program-additional-training">Additional Training</a>
 
 The program can be run as standalone or in addition to other training.
@@ -378,7 +374,7 @@ week in order to fit in with other training and life.
     prior to first meal of the day.
 </div>
 
-### <a name="methodology-additional-training">Additional training</a>
+### <a name="methodology-additional-training">Additional Training</a>
 
 <div class="self">
     During phases 2 and 3, I was able to fit in strength training of
@@ -935,17 +931,14 @@ minute:
 />
 
 <div class="self">
-    <p>
     Attempt 2 felt no more difficult than attempt 1, but the result was a
     big increase in pace and consistency. I feel that this result is much
     more important than the time trials, as it demonstrates a skill increase
     in managing pace, stroke rate, power delivery and recovery, and not just
     pure grunt increase.
-    </p>
-    <p>
+
     It would be interesting to try this test again with a higher stroke
     rate in the last interval.
-    </p>
 </div>
 
 ### <a name="objective-results-acid-bath">Acid Bath</a>
