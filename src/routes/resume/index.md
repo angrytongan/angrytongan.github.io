@@ -1,3 +1,7 @@
+<script context="module">
+    export const prerender = true;
+</script>
+
 Flexible, multi-discipline software engineer and team leader with a strong work ethic. Automation advocate. Happy working solo or in a team as a member or leader. Enjoys learning, being challenged and getting things done.
 
 ### Certifications
@@ -31,7 +35,7 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
 
   Application development and analytics dashboards for measuring athletic performance. Connectors for exercise equipment supporting the CSAFE interface, including the Concept2 range of rower, bike and ski ergometers.
 
-  JavaScript / mithril.js / node.js / svelte / HTML / CSS / git / d3.js / ECharts / XCode / Qt / WebSockets
+  JavaScript / Svelte / node.js / HTML / CSS / git / d3.js / ECharts / XCode / Qt / WebSockets
 
 * **Atmail**  
   System Administrator (contract)  

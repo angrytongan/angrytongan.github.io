@@ -1,3 +1,7 @@
+<script context="module">
+    export const prerender = true;
+</script>
+
 ## Year of the Engine
 An ongoing review of [The Gains Lab](https://thegainslab.com/) [Year of the
 Engine](https://thegainslab.com/engine) physical conditioning program.

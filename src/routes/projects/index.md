@@ -1,3 +1,7 @@
+<script context="module">
+    export const prerender = true;
+</script>
+
 - [The Erg Arcade!](https://www.ergarcade.com) - A playground of user and
   development tools, visualisation and games for use on the
   [Concept2](https://www.concept2.com) range of rowing, skiing and biking

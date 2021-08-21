@@ -1,4 +1,5 @@
 <script>
+    import { dev } from '$app/env';
     import EChart from '$lib/components/Echart.svelte';
     import { theme } from '$lib/store';
     import * as charts from './charts.js';
@@ -481,9 +482,8 @@ A sample of the air bike post-workout gallery.
 I started the program on Monday 16th September 2019, and finished on
 Sunday 13th September, 2020.
 
-<!--
-Workouts, and their phases, were completed
-as below.
+{#if !dev}
+Workouts, and their phases, were completed as below.
 
 <EChart
     id="graph-execution-summary"
@@ -491,7 +491,7 @@ as below.
     height="170"
     option={charts.execution.summary()}
 />
--->
+{/if}
 
 ## <a name="objective-results">Objective results</a>
 
