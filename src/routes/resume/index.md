@@ -2,6 +2,9 @@
     export const prerender = true;
 </script>
 
+<h1>Dean Fogarty</h1>
+<h2><a href="mailto:dean@df.id.au">dean@df.id.au</a></h2>
+
 Flexible, multi-discipline software engineer and team leader with a strong work ethic. Automation advocate. Happy working solo or in a team as a member or leader. Enjoys learning, being challenged and getting things done.
 
 ### Certifications
@@ -19,7 +22,7 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
   Co-author  
   Australiasian Computer Science Conference 1996, UM / RMIT  
 
-### Products
+### Projects
 
 * [The Erg Arcade](https://ergarcade.com)  [(source)](https://github.com/ergarcade)  
   Concept2 ergometer utilities, tools, visualisations, games.
@@ -117,3 +120,13 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
   Embedded systems development. Mobile RF EFTPoS terminal software. Software download backend for Mobile RF EFTPoS terminals over Telstra DataTAC network.
 
   asm / C / C++ / Linux / LAMP / Windows / cross-compilers
+
+### References
+
+Available upon request.
+
+<style>
+    h1, h2 {
+        margin: 0;
+    }
+</style>

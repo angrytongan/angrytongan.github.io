@@ -20,7 +20,7 @@
 
 <div class="wrapper">
     <main>
-        <div>
+        <div class="header">
             <img
                 src="/13109002_223898111320684_484395489_n.jpg"
                 alt="Dean Fogarty"
@@ -65,5 +65,11 @@
         min-height: 96vh;
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    @media print {
+        .header, footer {
+            display: none;
+        }
     }
 </style>
