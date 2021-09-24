@@ -38,7 +38,7 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
 
   Application development and analytics dashboards for measuring athletic performance. Connectors for exercise equipment supporting the CSAFE interface, including the Concept2 range of rower, bike and ski ergometers.
 
-  JavaScript / Svelte / node.js / HTML / CSS / git / d3.js / ECharts / XCode / Qt / WebSockets
+  JavaScript / mithril.js / Svelte / node.js / HTML / CSS / git / d3.js / ECharts / XCode / Qt / WebSockets
 
 * **Atmail**  
   System Administrator (contract)  

@@ -50,9 +50,16 @@ if you wish to improve your cardiovascular capacity.
 
 * <a rel="external" href="#objective-results">Objective Results</a>
 
-    * <a rel="external" href="#objective-results-10-minute-air-bike">10:00.0 Air Bike time trial</a>
-    * <a rel="external" href="#objective-results-3x2,000m/3:00r-rower">3x2,000m/3:00r rower</a>
-    * <a rel="external" href="#objective-results-acid-bath">Acid Bath</a>
+* <a rel="external" href="#subjective-observations">Subjective Observations</a>
+
+* <a rel="external" href="#program-review">Program review</a>
+
+    * <a rel="external" href="#program-review-program-structure">Program structure</a>
+    * <a rel="external" href="#program-review-workout-intensity">Workout intensity</a>
+    * <a rel="external" href="#program-review-time-commitment">Time commitment</a>
+    * <a rel="external" href="#program-review-constantly-varied">Constantly varied?</a>
+    * <a rel="external" href="#program-review-mental-fortitude">Mental fortitude</a>
+    * <a rel="external" href="#program-review-recovery">Recovery</a>
 
 ### <a name="about-this-review">About this review</a>
 
@@ -272,8 +279,9 @@ workout descriptions are obfuscated according to the rules below.
         0:30 work, 0:30 rest<br />
         1:00 work, 0:30 rest<br />
         1:30 work, 0:30 rest<br />
+        ...<br />
         Continue until you reach 4:00<br />
-        Pace = time trial pace - 1cal</td>
+        Pace = time trial pace -1cal</td>
         <td>Cumulative work time and rest time</td>
         <td class="right"><strong>10:00/8:00r</strong></td>
     </tr>
@@ -282,7 +290,7 @@ workout descriptions are obfuscated according to the rules below.
         <td>Intervals with increasing work time but steady rest, then intervals
         with steady work time but decreasing rest, then a max time round. All
         intervals to be done at a variant of time trial pace.</td>
-        <td>@ time trial pace - 1cal:<br />
+        <td>@ time trial pace -1cal:<br />
         1:00 work, 1:00 rest<br />
         2:00 work, 1:00 rest<br />
         3:00 work, 1:00 rest<br />
@@ -327,7 +335,7 @@ Integration with other training is left to the athlete to manage.
 - Basketball, mountain biking, road cycling, snowboarding, martial arts prior
   to 2012. CrossFit and running about after the kids since 2012.
 - Non-competitive exerciser. Training to stay healthy.
-- Less than an hour available to train each day.
+- Between 30 and 45 minutes available to train each day.
 - Meat-and-three-veg diet. Dad-bod well in progress.
 
 ### <a name="methodology-scheduling">Scheduling</a>
@@ -343,9 +351,9 @@ week in order to fit in with other training and life.
     Due to the impact of restrictions in Australia as a result of the <a
     href="https://en.wikipedia.org/wiki/COVID-19_pandemic">COVID-19
     pandemic</a>, it became incredibly difficult to routinely schedule training
-    due to family responsibilities. Workouts were forced into gaps in my
-    timetable as they became available, unlike Year 1 which was more strictly
-    regimented.
+    due to changing familial responsibilities. Workouts were forced into gaps
+    in my timetable as they became available, unlike Year 1 which was more
+    strictly regimented.
 
     Rest days were also slotted haphazardly, which no doubt affected
     recovery and subsequent workouts.
@@ -418,7 +426,7 @@ I chose:
     </div>
 
     <div class="apparatus">
-        <img src="/yoe-year-2-review/bikeerg.jpeg" alt="Concept2 BikeErg" title="Concept2 BikeErg" />
+        <img src="/yoe-year-2-review/IMG_2054.jpeg" alt="Concept2 BikeErg" title="Concept2 BikeErg" />
         Concept2 BikeErg
     </div>
 </div>
@@ -467,87 +475,60 @@ The following workouts are presented as evidence of performance changes both
 during and after Year 2 of the Year of the Engine program. The results are
 mine alone (<i>n</i> = 1).
 
-These workouts have been chosen to match the same workouts as detailed in
-from the Year 1 review. Detail about these workouts will not be repeated
-here; check [Year 1](/recreation/yoe-year1-review) for that.
+## <a name="subjective-observations">Subjective Observations</a>
 
-### <a name="objective-results-10-minute-air-bike">10:00.0 Air Bike time trial</a>
+## <a name="program-review">Program review</a>
 
-There are two 10:00 time trials in Year 2 (weeks 28, 40). I chose to do these
-two trials on the rower instead of the air bike during the training period;
-however I did complete a 10:00 time trial on the AirDyne after finishing Year 2
-to ensure consistency from Year 1.
+### <a name="program-review-program-structure">Program Structure</a>
 
-<!--
-<EChart
-    id="graph-tt-airdyne"
-    theme={$theme}
-    option={charts.timeTrial.ttAirDyne()}
-/>
--->
+The structuring of Year 2 is the same as Year 1:
 
-<div class="self">
-    Increase of **TODO** cals from the last test in Year 1.
-</div>
+- 5 workouts per week.
+- 4 weeks supplied at the start of the month.
+- 3 months per phase.
+- 4 phases over the entire year.
+- Move workouts around to suit your schedule.
+- Standalone or integrate with your existing training.
+- Ergometer or feet required.
+- Workouts are unambiguously described.
 
-### <a name="objective-results-3x2,000m/3:00r-rower">3x2,000m/3:00r rower</a>
+### <a name="program-review-workout-intensity">Workout intensity</a>
 
-3x2,000m/3:00r rower (3 intervals of 2,000m with 3:00 rest in between)
-is scheduled once in Year 1 (week 12). I performed attempt 2 at the end of
-Year 1, and chose to perform it again at the end of Year 2.
+Like Year 1, the intensity of each workout type is described at the start of
+each 3-month phase, as well as carrying over from Year 1. The first 2 phases of
+Year 2 run like Year 1, where the athlete works at a pace sustainable across
+the entire workout, or as a percentage of the athlete's endurance pace that was
+determined in year 1.
 
-<!--
-<EChart
-    id="graph-repeated-3_2000_300"
-    theme={$theme}
-    option={charts.timeTrial.repeated32000300()}
-/>
--->
+However, the latter 2 phases of Year 2 (Devour and Infinity) incorporate new
+workout types where pacing for these workouts is given as a variation of a
+time-trial pace.
 
-<div class="self">
-    **TODO**
-</div>
+At the start of month 7 (Devour phase) and month 10 (Infinity phase), the
+athlete completes a 10:00 time trial on their chosen apparatus. The number of
+calories accumulated on their apparatus' monitor at the end of the trial is
+divided by 10 to yield a target **pace per minute** value.
 
-### <a name="objective-results-acid-bath">Acid Bath</a>
+This value is used in Devour and Infinity workouts. These workouts are described
+as TT plus or minus a constant. For example,
 
-&ldquo;Acid Bath&rdquo; was the 6th individual workout programmed for the <a
-target="_blank" href="https://dubaicrossfitchampionship.com/schedule.html">2018
-Dubai CrossFit Championship</a>. It is one variant of the <a target="_blank"
-href="https://www.concept2.com/news/introducing-ergathlon">Concept2 Ergathlon
-Super Sprint</a>:
+- 8 rounds at pace TT-1:
+  - 0:30 work, 0:30 rest
+  - 1:00 work, 0:30 rest
+  - 1:30 work, 0:30 rest
+  - ...
 
-<blockquote>
-For time:
+This workout is 8 rounds long, each work period extends by 0:30, the rest
+period does not change, and it is to be performed at the athlete's time trial
+pace minus one (1) calorie.
 
-* 500m Concept2 SkiErg
-* 500m Concept2 rower
-* 1000m Concept2 BikeErg
+Devour and Infinity workouts vary in pacing from TT-4 to TT+4.
 
-7:00 time cap (women)  
-6:00 time cap (men)
-</blockquote>
+<p class="self">
 
-I clocked 5:18 on this workout just after finishing Year 1. After Year 2, it took
-me **TODO**:
+</p>
 
-<!--
-<EChart
-    id="graph-acidbath-timeline"
-    theme={$theme}
-    height="250"
-    option={charts.acidBath.timeline()}
-/>
--->
-
-See [Year 1](/recreation/yoe-year1-review) for information about the results of
-this workout.
-
-<div class="self">
-    It's still not part of the program, but is fun to do.
-    **TODO**
-</div>
-
-
+### <a name="program-review-time-commitment">Time commitment</a>
 
 <style>
     blockquote {
@@ -569,9 +550,5 @@ this workout.
     }
     .self a {
         color: white;
-    }
-    img.centre {
-        display: block;
-        margin: 0 auto;
     }
 </style>
