@@ -16,12 +16,12 @@ year](/recreation/yoe-year1-review).
 
 ## tl;dr
 
-I completed the second year of [The Gains Lab](https://thegainslab.com) [Year of
-the Engine](https://thegainslab.com/engine) capacity program by [Matt
+I completed the second year of [The Gains Lab](https://thegainslab.com) [Year
+of the Engine](https://thegainslab.com/engine) capacity program by [Matt
 Wiebke](https://www.instagram.com/thegainslab1/). The results of each workout
-were recorded. Tests were performed during the program and after it was
-completed which showed significant improvement in capacity, workout execution
-and consistency of effort across a range of workouts. I recommend the program
+were recorded. Some evidence of continued improvement from Year 1 is
+demonstrated. External factors significantly impacted training efforts.
+Difficulty level increased substantially. I continue to recommend the program
 if you wish to improve your cardiovascular capacity.
 
 ## Contents
@@ -50,6 +50,8 @@ if you wish to improve your cardiovascular capacity.
     * <a rel="external" href="#methodology-execution">Execution</a>
 
 * <a rel="external" href="#objective-results">Objective Results</a>
+
+    * <a rel="external" href="#objective-results-10-minute-rower">10:00.0 Rower time trial</a>
 
 * <a rel="external" href="#subjective-observations">Subjective Observations</a>
 
@@ -464,6 +466,8 @@ Workouts, and their phases, were completed as below.
 The following workouts are presented as evidence of performance changes both
 during and after Year 2 of the Year of the Engine program. The results are
 mine alone (<i>n</i> = 1).
+
+### <a name="objective-results-10-minute-rower">10:00.0 Rower time trial</a>
 
 ## <a name="subjective-observations">Subjective Observations</a>
 
