@@ -37,10 +37,10 @@ const summary = () => {
          * https://github.com/apache/echarts/issues/15098
          */
         visualMap: {
-            show: false,
+            show: true,
         },
 
-        series: phases.map((p) => {
+        series: phases.map((p, i) => {
             return {
                 type: 'heatmap',
                 coordinateSystem: 'calendar',
@@ -50,7 +50,7 @@ const summary = () => {
                         acc.push([
                             val.date,
                             1,
-                            1,
+                            i * 70, // FIXME UGH, fix this
                         ]);
                     }
 
@@ -58,7 +58,7 @@ const summary = () => {
                 }, []),
                 tooltip: {
                     formatter: (params) => {
-                        return `Workout ${params.value[2]}`;
+                        return `Workout ${params.value[2]}`; // FIXME UGH, fix this
                     },
                 },
                 animation: false,
