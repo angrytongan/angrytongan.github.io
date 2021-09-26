@@ -57,13 +57,12 @@ if you wish to improve your cardiovascular capacity.
     * <a rel="external" href="#program-review-program-structure">Program structure</a>
     * <a rel="external" href="#program-review-workout-intensity">Workout intensity</a>
     * <a rel="external" href="#program-review-time-commitment">Time commitment</a>
-    * <a rel="external" href="#program-review-constantly-varied">Constantly varied?</a>
     * <a rel="external" href="#program-review-mental-fortitude">Mental fortitude</a>
     * <a rel="external" href="#program-review-recovery">Recovery</a>
 
 ### <a name="about-this-review">About this review</a>
 
-This review of Year 2 follows on from [year 1](/recreation/yoe-year1-review).
+This review of Year 2 follows on from [Year 1](/recreation/yoe-year1-review).
 
 <p class="self">
     A box like this describes a decision, experience or an observation that I
@@ -152,7 +151,7 @@ next.
 
 ### <a name="program-tracks">Tracks</a>
 
-Unlike Year 1, Year 2 uses a single conditioning track.
+Year 2 uses a single track; there is no MetCon track like in Year 1.
 
 ### <a name="program-workouts">Workouts</a>
 
@@ -160,14 +159,6 @@ Workouts were received via email each month as a single .pdf file. Each file
 contains four weeks of workouts, each week having five workouts to complete.
 
 ### <a name="program-workout-types">Workout types</a>
-
-<!--
-<EChart
-    id="graph-workout-types"
-    theme={$theme}
-    option={charts.workoutTypes.workoutTypes()}
-/>
--->
 
 Each workout type is described below. As <a rel="external"
 href="#about-this-review-workout-obfuscation">mentioned above</a>, only a
@@ -455,19 +446,8 @@ recording directly on the sheet.
 
 ### <a name="methodology-execution">Execution</a>
 
-I started the program on Monday 17th September 2020, and finished on **TODO**
-
-<!--
-Workouts, and their phases, were completed
-as below.
-
-<EChart
-    id="graph-execution-summary"
-    theme={$theme}
-    height="170"
-    option={charts.execution.summary()}
-/>
--->
+I started the program on Monday 17th September 2020, and finished on Monday
+27th September, 2021.
 
 ## <a name="objective-results">Objective results</a>
 
@@ -498,7 +478,7 @@ Like Year 1, the intensity of each workout type is described at the start of
 each 3-month phase, as well as carrying over from Year 1. The first 2 phases of
 Year 2 run like Year 1, where the athlete works at a pace sustainable across
 the entire workout, or as a percentage of the athlete's endurance pace that was
-determined in year 1.
+determined in Year 1.
 
 However, the latter 2 phases of Year 2 (Devour and Infinity) incorporate new
 workout types where pacing for these workouts is given as a variation of a
