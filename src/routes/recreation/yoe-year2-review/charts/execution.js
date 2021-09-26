@@ -50,7 +50,7 @@ const summary = () => {
                         acc.push([
                             val.date,
                             1,
-                            1,  // FIXME
+                            1,
                         ]);
                     }
 
