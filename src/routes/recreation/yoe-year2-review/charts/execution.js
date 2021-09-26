@@ -11,7 +11,7 @@ const summary = () => {
 
     }, []).sort();
 
-    return {
+    const out = {
         animation: false,
         legend: {
             top: '5%',
@@ -50,7 +50,7 @@ const summary = () => {
                         acc.push([
                             val.date,
                             1,
-                            val.workout,
+                            1,  // FIXME
                         ]);
                     }
 
@@ -65,6 +65,8 @@ const summary = () => {
             };
         }),
     };
+    console.log(out);
+    return out;
 };
 
 export default {

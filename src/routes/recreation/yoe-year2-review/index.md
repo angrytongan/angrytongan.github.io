@@ -2,6 +2,7 @@
     import EChart from '$lib/components/Echart.svelte';
     import { theme } from '$lib/store';
     import * as charts from './charts.js';
+    import { dev } from '$app/env';
 </script>
 
 # Year of the Engine Program Review - Year 2
@@ -449,6 +450,15 @@ recording directly on the sheet.
 I started the program on Monday 17th September 2020, and finished on Monday
 27th September, 2021.
 
+Workouts, and their phases, were completed as below.
+
+<EChart
+    id="graph-execution-summary"
+    theme={$theme}
+    height="170"
+    option={charts.execution.summary()}
+/>
+
 ## <a name="objective-results">Objective results</a>
 
 The following workouts are presented as evidence of performance changes both
@@ -511,11 +521,6 @@ Devour and Infinity workouts vary in pacing from TT-4 to TT+4.
 ### <a name="program-review-time-commitment">Time commitment</a>
 
 <style>
-    blockquote {
-        padding-top: 0;
-        padding-bottom: 0;
-        font-size: 100%;
-    }
     .images {
         display: flex;
     }
