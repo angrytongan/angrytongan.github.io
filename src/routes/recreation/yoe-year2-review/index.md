@@ -449,9 +449,10 @@ recording directly on the sheet.
 
 ### <a name="methodology-execution">Execution</a>
 
-I started the program on Monday 17th September 2020, and finished on Monday
-27th September, 2021.
+I started the program on Thursday 17th September 2020, and finished on Tuesday
+28th September, 2021.
 
+{#if !dev}
 Workouts, and their phases, were completed as below.
 
 <EChart
@@ -460,6 +461,7 @@ Workouts, and their phases, were completed as below.
     height="170"
     option={charts.execution.summary()}
 />
+{/if}
 
 ## <a name="objective-results">Objective results</a>
 
