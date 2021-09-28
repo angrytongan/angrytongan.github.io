@@ -1,5 +1,5 @@
 <script>
-    import EChart from '$lib/components/Echart.svelte';
+    import EChart from '$lib/components/EChart.svelte';
     import { theme } from '$lib/store';
     import * as charts from './charts.js';
     import { dev } from '$app/env';
@@ -470,6 +470,32 @@ during and after Year 2 of the Year of the Engine program. The results are
 mine alone (<i>n</i> = 1).
 
 ### <a name="objective-results-10-minute-rower">10:00.0 Rower time trial</a>
+
+The 10:00.0 time trial is scheduled once in phase 3 (week 27) and once in phase 4
+(week 41). These tests are not placed outside of the workout schedule; they are
+included as part of training. No special preparation was taken for these tests.
+
+<EChart
+    id="graph-tt-rower"
+    theme={$theme}
+    option={charts.timeTrial.rower()}
+/>
+
+There was a 1% increase in calories and an increase in 20m recorded by the
+monitor between the two trials. A closer examination is necessary:
+
+<EChart
+    id="graph-tt-stroke"
+    theme={$theme}
+    option={charts.timeTrial.strokes(
+        [52817150,55235950],
+        {
+            dataZoom: [{
+                startValue: 5,
+            }],
+        },
+    )}
+/>
 
 ## <a name="subjective-observations">Subjective Observations</a>
 

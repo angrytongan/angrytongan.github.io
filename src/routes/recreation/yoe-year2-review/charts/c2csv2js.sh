@@ -18,5 +18,5 @@ WORKOUTID=`echo $1 | sed -e 's/.*\///' -e 's/concept2-result-//' -e 's/\.csv$//'
 (
     echo "export const workout_${WORKOUTID} = [";
     cat $1 | awk -F, 'BEGIN { OFS="," } { print "t:"$2, "d:"$3, "p:"$4, "w:"$5, "c:"$6, "sr:"$7 }'|sed -e '1d'|sed -e 's/^/{/' -e 's/$/},/'
-    echo ']';
+    echo '];';
 ) > $WORKOUTID.js
