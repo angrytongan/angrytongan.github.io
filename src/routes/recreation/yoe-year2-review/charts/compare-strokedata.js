@@ -2,7 +2,17 @@ import { workouts } from './data.js';
 import { strokedata } from './strokedata';
 import { dateTime } from '../../yoe-year1-review/datetime.js';
 
-export const compareStrokedata = (ids, options = {}) => {
+const fieldMap = new Map([
+    [ 't', 'Time' ],
+    [ 'd', 'Distance' ],
+    [ 'p', 'Pace' ],
+    [ 'c', 'Cals/hr' ],
+    [ 'sr', 'Stroke Rate' ],
+    [ 'hr', 'Heart Rate' ],
+    [ 'w', 'Watts' ],
+]);
+
+export const compareStrokedata = (ids, options = {}, field = 'p') => {
     const legend = [];
     const tooltip = [];
     const xAxis = [];
@@ -24,7 +34,8 @@ export const compareStrokedata = (ids, options = {}) => {
         },
         formatter: (params) => {
             return params.reduce((acc, val) => {
-                acc += `${val.marker} ${val.seriesName}: ${dateTime.secs2mmss(val.data.p)}<br />`;
+                const v = field === 'p' ? dateTime.secs2mmss(val.data.p) : val.data[field];
+                acc += `${val.marker} ${val.seriesName}: ${v}<br />`;
                 return acc;
             }, '');
         },
@@ -46,14 +57,14 @@ export const compareStrokedata = (ids, options = {}) => {
 
     yAxis.push({
         type: 'value',
-        name: 'Pace',
+        name: fieldMap.get(field),
         nameGap: 45,
         nameLocation: 'middle',
-        inverse: true,
+        inverse: field == 'p' ? true : false,
         min: 'dataMin',
         max: 'dataMax',
         axisLabel: {
-            formatter: (value) => dateTime.secs2mmss(value, true),
+            formatter: (value) => field === 'p' ? dateTime.secs2mmss(value, true) : value,
         },
     });
 
@@ -67,10 +78,10 @@ export const compareStrokedata = (ids, options = {}) => {
             type: 'line',
             encode: {
                 x: 't',
-                y: 'p',
+                y: field,
             },
             connectNulls: true,
-            name: `Test ${i+1} pace`,
+            name: `Test ${i+1} ${fieldMap.get(field)}`,
             datasetIndex: i,
             showSymbol: false,
             animation: false,
@@ -94,5 +105,5 @@ export const compareStrokedata = (ids, options = {}) => {
         series,
         dataset,
         ...options
-    }
+    };
 };

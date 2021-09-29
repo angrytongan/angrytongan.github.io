@@ -67,10 +67,10 @@ if you wish to improve your cardiovascular capacity.
 
 This review of Year 2 follows on from [Year 1](/recreation/yoe-year1-review).
 
-<p class="self">
+<div class="self">
     A box like this describes a decision, experience or an observation that I
     made while on the program.
-</p>
+</div>
 
 ### <a name="about-this-review-disclosure">Disclosure</a>
 
@@ -465,9 +465,9 @@ Workouts, and their phases, were completed as below.
 
 ## <a name="objective-results">Objective results</a>
 
-The following workouts are presented as evidence of performance changes both
-during and after Year 2 of the Year of the Engine program. The results are
-mine alone (<i>n</i> = 1).
+The following workout is presented as evidence of performance changes during
+Year 2 of the Year of the Engine program. The results are mine alone (<i>n</i> =
+1).
 
 ### <a name="objective-results-10-minute-rower">10:00.0 Rower time trial</a>
 
@@ -483,11 +483,21 @@ taken for these tests.
 />
 
 There was a 1% increase in both calories and distance recorded between the two
-trials. This small an increase requires further investigation. Let's look at
-pace over the two pieces first:
+trials. This small an increase requires further investigation. Let's compare
+splits first:
 
 <EChart
-    id="graph-tt-stroke"
+    id="test-chart"
+    theme={$theme}
+    height="350"
+    option={charts.compareSplits([52817150,55235950])}
+/>
+
+Test 2 showed small, consistent increases in distance at each split over test 1
+with large increase in the last one. Now let's look at pace for both tests:
+
+<EChart
+    id="graph-tt-strokedata-pace"
     theme={$theme}
     option={charts.compareStrokedata(
         [52817150,55235950],
@@ -496,8 +506,56 @@ pace over the two pieces first:
                 startValue: 5,
             }],
         },
+        'p',
     )}
 />
+
+In test 1, pace was consistent until a sharp increase at 9:30.
+
+In test 2, pace was consistent until a sharp increase at 8:00, then a small
+reduction at 8:30, then resumption at higher pace at 9:14.
+
+<p class="self">
+    The change in pace in test 1 was an "everything is going good; let's sprint the
+    finish" thought. The change in pace in test 2 was an over optimistic "sprint the last two
+    minutes... nope, started too early, let's back off a bit, try to sprint the very
+    last bit."
+</p>
+
+A more interesting observation is the stroke rate:
+
+<EChart
+    id="graph-tt-strokedata-strokerate"
+    theme={$theme}
+    option={charts.compareStrokedata(
+        [52817150,55235950],
+        {
+            dataZoom: [{
+                startValue: 5,
+            }],
+        },
+        'sr'
+    )}
+/>
+
+The stroke rate in test 1 sharply increased during the sprint, however in test
+2, while the stroke rate did increase by a point, it was not nearly as high as
+in test 1. We can say that **a higher level of power was generated at the same
+stroke rate in test 2, whereas test 1 required a higher stroke rate**.
+
+It is difficult to say whether there was a significant improvement between both
+efforts based on this test.
+
+<div class="self">
+    The 2km mark was achieved comfortably, hitting it in 7:19.7 in test 1 and 7:18.7
+    in test 2. The delta of 0:01 between efforts is not significant, although
+    may indicate conservative pacing in test 2.
+
+    Both tests felt RPE 8-9 at the end. I would guess I may be operating near my
+    limit for this time trial on the rower, although test 2 definitely showed a
+    pacing error that was recoverable. Perhaps a coach could provide better
+    insight into this result.
+</div>
 
 ## <a name="subjective-observations">Subjective Observations</a>
 

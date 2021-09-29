@@ -1,15 +1,5 @@
 export const workouts = [
-    {
-        date:'2020-09-17',
-        workout:'1.1.3',
-        phase:'1. Cyborg',
-        type:'Polarisation',
-        apparatus:'AirDyne',
-        distance:12100,
-        workTime:1440,
-        restTime:0,
-        calories:336
-    },
+{date:'2020-09-17',workout:'1.1.3',phase:'1. Cyborg',type:'Polarisation',apparatus:'AirDyne',distance:12100,workTime:1440,restTime:0,calories:336},
 {date:'2020-09-19',workout:'1.1.1',phase:'1. Cyborg',type:'Cyborg',apparatus:'Rower',distance:0,workTime:360,restTime:0,calories:0},
 {date:'2020-09-20',workout:'1.1.5',phase:'1. Cyborg',type:'Endurance',apparatus:'Rower',distance:7200,workTime:1800,restTime:0,calories:460},
 {date:'2020-09-22',workout:'1.1.2',phase:'1. Cyborg',type:'Intervals',apparatus:'Rower',distance:4000,workTime:810,restTime:810,calories:313},
