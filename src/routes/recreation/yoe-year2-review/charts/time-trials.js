@@ -1,10 +1,10 @@
-
 'use strict';
 
 import { time } from 'echarts';
 
 import { workouts } from './data.js';
 import { strokedata } from './strokedata';
+import { dateTime } from '../../yoe-year1-review/datetime.js';
 
 const caloriesCompare = (o) => {
     return {
@@ -103,6 +103,12 @@ const strokes = (ids, options = {}) => {
             type: 'cross',
             snap: true,
         },
+        formatter: (params) => {
+            return params.reduce((acc, val) => {
+                acc += `${val.marker} ${val.seriesName}: ${dateTime.ds2time(val.data.p)}<br />`;
+                return acc;
+            }, '');
+        },
     });
 
     dataZoom.push({
@@ -115,8 +121,7 @@ const strokes = (ids, options = {}) => {
         nameGap: 50,
         nameLocation: 'middle',
         axisLabel: {
-            formatter: (value) => value,
-            //formatter: (value) => time.format(value, '{mm}:{ss}', false),
+            formatter: (value) => dateTime.secs2mmss(value),
         },
     });
 
@@ -128,6 +133,9 @@ const strokes = (ids, options = {}) => {
         inverse: true,
         min: 'dataMin',
         max: 'dataMax',
+        axisLabel: {
+            formatter: (value) => dateTime.secs2mmss(value, true),
+        },
     });
 
     ids.forEach((id, i) => {
@@ -151,8 +159,6 @@ const strokes = (ids, options = {}) => {
             large: true,
         });
     });
-
-    console.log(dataset);
 
     legend.push({
         top: '10%',

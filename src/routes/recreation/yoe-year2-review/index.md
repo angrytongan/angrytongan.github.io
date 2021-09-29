@@ -449,8 +449,8 @@ recording directly on the sheet.
 
 ### <a name="methodology-execution">Execution</a>
 
-I started the program on Thursday 17th September 2020, and finished on Tuesday
-28th September, 2021.
+I started the program on Thursday 17th September 2020, and finished on Thursday
+29th September, 2021.
 
 {#if !dev}
 Workouts, and their phases, were completed as below.
@@ -471,9 +471,10 @@ mine alone (<i>n</i> = 1).
 
 ### <a name="objective-results-10-minute-rower">10:00.0 Rower time trial</a>
 
-The 10:00.0 time trial is scheduled once in phase 3 (week 27) and once in phase 4
-(week 41). These tests are not placed outside of the workout schedule; they are
-included as part of training. No special preparation was taken for these tests.
+The 10:00.0 time trial is scheduled at the start of phase 3 (week 27) and at the
+start of phase 4 (week 41). These tests are not placed outside of the workout
+schedule; they are included as part of training. No special preparation was
+taken for these tests.
 
 <EChart
     id="graph-tt-rower"
@@ -481,8 +482,8 @@ included as part of training. No special preparation was taken for these tests.
     option={charts.timeTrial.rower()}
 />
 
-There was a 1% increase in calories and an increase in 20m recorded by the
-monitor between the two trials. A closer examination is necessary:
+There was a 1% increase in calories and a 20m increase in distance recorded
+between the two trials. A closer examination is necessary:
 
 <EChart
     id="graph-tt-stroke"

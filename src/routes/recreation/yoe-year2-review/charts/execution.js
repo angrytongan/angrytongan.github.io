@@ -27,7 +27,7 @@ const summary = () => {
             right: '5%',
             bottom: '15%',
             cellSize: [ 'auto', 'auto' ],
-            range: [ '2020-09-17', '2021-09-27' ],
+            range: [ '2020-09-17', '2021-09-30' ],
             dayLabel: {
                 firstDay: 1,
             },
