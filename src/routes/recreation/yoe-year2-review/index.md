@@ -479,16 +479,17 @@ taken for these tests.
 <EChart
     id="graph-tt-rower"
     theme={$theme}
-    option={charts.timeTrial.rower()}
+    option={charts.timeTrials.rower()}
 />
 
-There was a 1% increase in calories and a 20m increase in distance recorded
-between the two trials. A closer examination is necessary:
+There was a 1% increase in both calories and distance recorded between the two
+trials. This small an increase requires further investigation. Let's look at
+pace over the two pieces first:
 
 <EChart
     id="graph-tt-stroke"
     theme={$theme}
-    option={charts.timeTrial.strokes(
+    option={charts.compareStrokedata(
         [52817150,55235950],
         {
             dataZoom: [{
