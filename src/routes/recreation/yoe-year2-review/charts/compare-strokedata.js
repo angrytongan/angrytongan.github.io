@@ -20,6 +20,15 @@ export const compareStrokedata = (ids, options = {}, field = 'p') => {
     const series = [];
     const dataset = [];
     const dataZoom = [];
+    const grid = [];
+
+    grid.push({
+        top: 30,
+        bottom: 25,
+        left: 20,
+        right: 20,
+        containLabel: true,
+    });
 
     tooltip.push({
         trigger: 'axis',
@@ -53,6 +62,7 @@ export const compareStrokedata = (ids, options = {}, field = 'p') => {
         axisLabel: {
             formatter: (value) => dateTime.secs2mmss(value),
         },
+        gridIndex: 0,
     });
 
     yAxis.push({
@@ -66,6 +76,7 @@ export const compareStrokedata = (ids, options = {}, field = 'p') => {
         axisLabel: {
             formatter: (value) => field === 'p' ? dateTime.secs2mmss(value, true) : value,
         },
+        gridIndex: 0,
     });
 
     ids.forEach((id, i) => {
@@ -91,12 +102,12 @@ export const compareStrokedata = (ids, options = {}, field = 'p') => {
     });
 
     legend.push({
-        top: '10%',
         type: 'scroll',
     });
 
     return {
         animation: false,
+        grid,
         legend,
         dataZoom,
         tooltip,

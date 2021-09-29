@@ -13,6 +13,14 @@ const caloriesCompare = (o) => {
             source: o.dataset.source,
         },
 
+        grid: {
+            top: 30,
+            bottom: 10,
+            left: 10,
+            right: 20,
+            containLabel: true,
+        },
+
         xAxis: {
             type: 'time',
             name: 'Date',
@@ -23,6 +31,7 @@ const caloriesCompare = (o) => {
             axisLabel: {
                 formatter: (value) => time.format(value, '{yyyy}-{MM}-{dd}', false),
             },
+            gridIndex: 0,
             ...o.xAxis,
         },
 
@@ -31,6 +40,7 @@ const caloriesCompare = (o) => {
             name: 'Calories',
             nameLocation: 'middle',
             nameGap: 40,
+            gridIndex: 0,
             ...o.yAxis,
         },
 
@@ -67,7 +77,6 @@ const caloriesCompare = (o) => {
         },
 
         legend: {
-            top: '10%',
             type: 'scroll',
             ...o.legend,
         },
@@ -86,9 +95,6 @@ const rower = () => {
             max: 210,
         },
     });
-};
-
-const splits = () => {
 };
 
 export default {

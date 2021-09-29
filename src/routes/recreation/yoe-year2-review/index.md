@@ -479,22 +479,27 @@ taken for these tests.
 <EChart
     id="graph-tt-rower"
     theme={$theme}
+    height={150}
     option={charts.timeTrials.rower()}
 />
 
 There was a 1% increase in both calories and distance recorded between the two
-trials. This small an increase requires further investigation. Let's compare
-splits first:
+trials. This small an increase requires further investigation.
+
+Let's compare split distance and pace first:
 
 <EChart
     id="test-chart"
     theme={$theme}
-    height="350"
+    height="250"
     option={charts.compareSplits([52817150,55235950])}
 />
 
-Test 2 showed small, consistent increases in distance at each split over test 1
-with large increase in the last one. Now let's look at pace for both tests:
+Test 2 showed small, consistent increases in distance at each split over test 1,
+with a large increase in the final split. Similarly, the variance in pace between the
+tests was consistent, with negative splits in the last 4.
+
+Now let's examine pace per stroke:
 
 <EChart
     id="graph-tt-strokedata-pace"

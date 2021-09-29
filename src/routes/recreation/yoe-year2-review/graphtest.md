@@ -8,6 +8,6 @@
 <EChart
     id="test-chart"
     theme={$theme}
-    height="400"
+    height="250"
     option={charts.compareSplits([52817150,55235950])}
 />
