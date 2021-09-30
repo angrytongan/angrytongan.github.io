@@ -8,6 +8,6 @@
 <EChart
     id="test-chart"
     theme={$theme}
-    height="250"
-    option={charts.compareSplits([52817150,55235950])}
+    height="300"
+    option={charts.compareStrokeFrequency([52817150,55235950])}
 />

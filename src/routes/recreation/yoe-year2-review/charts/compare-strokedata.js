@@ -12,6 +12,143 @@ const fieldMap = new Map([
     [ 'w', 'Watts' ],
 ]);
 
+export const compareStrokeFrequency = (ids, options = {}, field = 'sr') => {
+    const legend = [];
+    const tooltip = [];
+    const xAxis = [];
+    const yAxis = [];
+    const series = [];
+    const dataset = [];
+    const grid = [];
+
+    const theMap = new Map();
+    ids.forEach((id, i) => {
+        const data = new Map();
+        strokedata.get(id).forEach((r) => {
+            if (r[field] !== 0) {
+                const v = data.get(r[field]);
+                data.set(r[field], v == undefined ? 1 : v + 1);
+            }
+        });
+
+        theMap.set(i, [ ...data ].sort());
+    });
+
+    tooltip.push({});
+
+    grid.push({
+        top: 30,
+        bottom: 25,
+        left: 20,
+        right: 30,
+        containLabel: true,
+    });
+
+    xAxis.push({
+        type: 'value',
+        name: 'Count',
+        nameGap: 30,
+        nameLocation: 'middle',
+        gridIndex: 0,
+        min: 'dataMin',
+        max: 'dataMax',
+    });
+
+    yAxis.push({
+        type: 'category',
+        name: fieldMap.get(field),
+        nameGap: 30,
+        nameLocation: 'middle',
+        min: 'dataMin',
+        max: 'dataMax',
+        gridIndex: 0,
+    });
+
+    ids.forEach((id, i) => {
+        dataset.push({
+            sourceHeader: false,
+            source: theMap.get(i),
+        });
+
+        series.push({
+            type: 'bar',
+            encode: {
+                x: 1,
+                y: 0,
+            },
+            name: `Test ${i+1} ${fieldMap.get(field)}`,
+            datasetIndex: i,
+            animation: false,
+            label: {
+                show: true,
+                position: 'right',
+            },
+        });
+    });
+
+/*
+    xAxis.push({
+        type: 'value',
+        name: fieldMap.get(field),
+        nameGap: 30,
+        nameLocation: 'middle',
+        gridIndex: 0,
+        min: 'dataMin',
+        max: 'dataMax',
+    });
+
+    yAxis.push({
+        type: 'value',
+        name: 'Count',
+        nameGap: 30,
+        nameLocation: 'middle',
+        min: 'dataMin',
+        max: 'dataMax',
+        gridIndex: 0,
+    });
+
+    ids.forEach((id, i) => {
+        dataset.push({
+            sourceHeader: false,
+            source: theMap.get(i),
+        });
+
+        series.push({
+            type: 'bar',
+            encode: {
+                x: 0,
+                y: 1,
+            },
+            connectNulls: true,
+            name: `Test ${i+1} ${fieldMap.get(field)}`,
+            datasetIndex: i,
+            animation: false,
+            sampling: 'average',
+            large: true,
+            label: {
+                show: true,
+                //position: 'insideTop',
+            },
+        });
+    });
+*/
+    legend.push({
+        type: 'scroll',
+    });
+
+    return {
+        animation: false,
+        grid,
+        legend,
+        tooltip,
+        xAxis,
+        yAxis,
+        series,
+        dataset,
+        ...options
+    };
+};
+
 export const compareStrokedata = (ids, options = {}, field = 'p') => {
     const legend = [];
     const tooltip = [];
