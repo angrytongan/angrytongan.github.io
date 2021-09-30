@@ -61,14 +61,18 @@ program if you wish to improve your cardiovascular capacity.
 
     * <a rel="external" href="#program-review-program-structure">Program structure</a>
     * <a rel="external" href="#program-review-workout-intensity">Workout intensity</a>
+    * <a rel="external" href="#program-review-pacing-off-a-time-trial">Pacing off
+      a time trial</a>
     * <a rel="external" href="#program-review-time-commitment">Time commitment</a>
     * <a rel="external" href="#program-review-mental-fortitude">Mental fortitude</a>
     * <a rel="external" href="#program-review-recovery">Recovery</a>
 
 * <a rel="external" href="#supplementary-notes">Supplementary notes</a>
 
-    * <a rel="external" href="#supplementary-notes-concept2-pm">Concept2
-      Performance Monitor issues</a>
+    * <a rel="external" href="#supplementary-notes-concept2-pm">Concept2 Performance Monitor issues</a>
+    * <a rel="external"
+      href="#supplementary-notes-comparing-bikerg-and-airdyne">Comparing the BikeErg
+      and AirDyne</a>
 
 * <a rel="external" href="#summary">Summary</a>
 * <a rel="external" href="#recommendations">Recommendations</a>
@@ -93,7 +97,8 @@ effective, but have also introduced many stressors to day-to-day activities
 including training:
 
 * inability to establish a consistent training schedule;
-* sacrificing recovery days for training, so as not to fall too far behind;
+* sacrificing recovery days for training, so as not to fall too far behind
+  schedule;
 * multiple days of no training due to fulfiling familial responsibilities;
 * alterations to diet and eating schedule;
 * interrupted sleep and an increase in overall stress.
@@ -554,8 +559,7 @@ reduction at 8:30, then resumption at higher pace at 9:14.
     very last bit."
 </div>
 
-A more interesting observation is the stroke rate. The instantaneous stroke
-rate:
+A more interesting observation is the instantaneous stroke rate:
 
 <EChart
     id="graph-tt-strokedata-strokerate"
@@ -575,8 +579,8 @@ The stroke rate in test 1 sharply increased during the sprint, however in test
 2, while the stroke rate did increase by a point, it was not nearly as high as
 in test 1.
 
-We can confirm a tighter grouping of stroke rate by comparing the number of
-strokes at each stroke rate:
+We can confirm a tighter grouping of stroke rate in test 2 by counting the
+number of strokes at each stroke rate:
 
 <EChart
     id="graph-tt-strokedata-strokecount"
@@ -592,11 +596,10 @@ We can say that **a higher level of power was generated at the same stroke rate
 during the sprint in test 2**.
 
 <div class="self">
-    Aside: 2,000m (2km) is a competition distance in the rowing community, for
-    both on-the-water and indoor apparatus. I comfortably hit 2km at 7:19.7 in
-    test 1 and 7:18.7 in test 2 (for comparison, my competition best is 6:51.8).
-    I don't believe the 0:01 difference is significant, but it does indicate how
-    closely I paced both tests.
+    An aside: 2,000m (2km) is a competition distance in the rowing community,
+    for both on-the-water and indoor apparatus. I comfortably hit 2km at 7:19.7
+    in test 1 and 7:18.7 in test 2. I don't believe the 0:01 difference is
+    significant, but it does indicate how closely I paced both tests.
 </div>
 
 It is difficult to conclude there was a significant improvement in performance
@@ -657,11 +660,100 @@ trial pace minus one (1) calorie.
 
 Devour and Infinity workouts vary in pacing from TT-4 to TT+4.
 
-<p class="self">
-
-</p>
+### <a name="program-review-pacing-off-a-time-trial">Pacing off a time trial</a>
 
 ### <a name="program-review-time-commitment">Time commitment</a>
+
+### <a name="program-review-mental-fortitude">Mental fortitude</a>
+
+### <a name="program-review-recovery">Recovery</a>
+
+## <a name="supplementary-notes">Supplementary notes</a>
+
+### <a name="supplementary-notes-concept2-pm">Concept2 Performance Monitor Issues</a>
+
+Devour and Infinity phases use interval workokuts where the work period changes,
+the rest period changes, or some combination of both. On the Concept2 rower,
+SkiErg or BikeErg, these can be setup as [Variable Interval
+Workouts](https://www.concept2.com/service/monitors/pm5/how-to-use/setting-variable-interval-workout)
+using the Performance Monitor (PM5). This makes executing the workout easier, as
+once set, the athlete just follows the timing on the PM5. A pace boat / skier /
+bike can also be set.
+
+However, about half of the workouts I did that used variable intervals were not
+recorded properly by the PM5, due to:
+
+* the PM5 dropping out of the workout to the main menu;
+* the PM5 display stopping randomly;
+* the PM5 display stopping randomly, but the workout timer continued;
+* the PM5 showing an error message, and stopping the workout;
+* losing the connection to ErgData, and dropping the workout;
+* ErgData crashing;
+* or a combination of the above.
+
+Sometimes recorded workouts in the PM5 history would appear as garbage:
+
+<div style="display: flex; justify-content: space-around;">
+    <img
+        src="/yoe-year-2-review/IMG_2063.jpeg"
+        alt="Broken recorded workout in PM5"
+        title="Broken recorded workout in PM5"
+        />
+</div>
+
+Ugh.
+
+<div class="self">
+    Tried troubleshooting but didn't get anywhere. New batteries, with ErgData,
+    without ErgData, latest firmware - there was no reliable way to reproduce
+    the behaviour or mitigate it's frequency.
+
+    The odd behaviour wasn't limited to the rower; it occurred using variable
+    rest periods in the Cyborg series on the BikeErg as well. The BikeErg
+    workouts were done outside away from any electrial interference; the rower
+    and SkiErg inside a concrete garage with limited electrical devices. The
+    same behaviour occurred in both areas.
+
+    A simple backup would be to write out the workout and timestamps on a
+    whiteboard, and have use an external clock just in case the monitor dumps in
+    the middle of the workout. It became quite frustrating to try and program
+    the remainder of a workout into the device part way through an effort.
+</div>
+
+### <a name="supplementary-notes-comparing-bikerg-and-airdyne">Comparing the BikeErg and AirDyne</a>
+
+A common question on the [CrossFit subreddit](https://reddit.com/r/crossfit)
+involves equating the metrics of the Concept2 BikeErg, the Rogue Echo Bike, the
+Assault AirBike, the Schwinn AirDyne and other bike ergometers. This is a
+popular topic, as workouts are typically written for only one type of bike, and
+athletes may have not have access to that specific machine, but a similar one.
+
+It is accepted that each manufacturer uses different designs, materials,
+assembly and calculations to convert your physical effort into numbers displayed
+on the monitor. Some bikes exhibit different values depending upon wear, while
+others provide self- or manual-calibration mechanisms.
+
+No manufacturer makes available the exact specifictions for calculating their
+metrics on their machines. Various formulas for converting between some bikes
+exist on the Internet, all of which are unverified and largely supported by
+anecdotal evidence only.
+
+<div class="self">
+    I have mapped the output metrics of the Concept2 BikeErg, Schwinn AirDyne6
+    and the Assault bike into
+    <a href="https://ergarcade.com/articles/airbike-rpm-speed-power.html">a few
+    simple to read graphs</a> to try and answer this question. This allows you
+    to equate speed, RPM and power between these machines. Note that this
+    <strong>does not</strong> equate <em>your effort</em> on the device, just
+    the values displayed on the monitors.
+</div>
+
+- talk about comparing airdyne to bikeerg on 45:00 pieces
+- support with evidence
+
+## <a name="summary">Summary</a>
+
+## <a name="recommendations">Recommendations</a>
 
 <style>
     .images {
