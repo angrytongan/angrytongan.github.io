@@ -68,7 +68,7 @@ program if you wish to improve your cardiovascular capacity.
 * <a rel="external" href="#supplementary-notes">Supplementary notes</a>
 
     * <a rel="external" href="#supplementary-notes-concept2-pm">Concept2
-      Performance Monitor</a>
+      Performance Monitor issues</a>
 
 * <a rel="external" href="#summary">Summary</a>
 * <a rel="external" href="#recommendations">Recommendations</a>

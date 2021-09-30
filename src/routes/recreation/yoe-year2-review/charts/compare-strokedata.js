@@ -86,52 +86,6 @@ export const compareStrokeFrequency = (ids, options = {}, field = 'sr') => {
         });
     });
 
-/*
-    xAxis.push({
-        type: 'value',
-        name: fieldMap.get(field),
-        nameGap: 30,
-        nameLocation: 'middle',
-        gridIndex: 0,
-        min: 'dataMin',
-        max: 'dataMax',
-    });
-
-    yAxis.push({
-        type: 'value',
-        name: 'Count',
-        nameGap: 30,
-        nameLocation: 'middle',
-        min: 'dataMin',
-        max: 'dataMax',
-        gridIndex: 0,
-    });
-
-    ids.forEach((id, i) => {
-        dataset.push({
-            sourceHeader: false,
-            source: theMap.get(i),
-        });
-
-        series.push({
-            type: 'bar',
-            encode: {
-                x: 0,
-                y: 1,
-            },
-            connectNulls: true,
-            name: `Test ${i+1} ${fieldMap.get(field)}`,
-            datasetIndex: i,
-            animation: false,
-            sampling: 'average',
-            large: true,
-            label: {
-                show: true,
-                //position: 'insideTop',
-            },
-        });
-    });
-*/
     legend.push({
         type: 'scroll',
     });

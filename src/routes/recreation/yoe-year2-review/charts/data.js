@@ -236,4 +236,4 @@ export const workouts = [
 {date:'2021-09-25',workout:'12.3.5',phase:'4. Infinity',type:'Infinity',apparatus:'Rower',distance:2500,workTime:600,restTime:345,calories:196},
 {date:'2021-09-25',workout:'12.4.2',phase:'4. Infinity',type:'Hybrid',apparatus:'Rower',distance:4600,workTime:990,restTime:450,calories:340},
 {date:'2021-09-26',workout:'12.4.1',phase:'4. Infinity',type:'Infinity',apparatus:'Rower',distance:3900,workTime:1230,restTime:240,calories:297},
-{date:'2021-09-27',workout:'12.4.4',phase:'4. Infinity',type:'Infinity',apparatus:'Rower',distance:0,workTime:0,restTime:0,calories:0} ];
+{date:'2021-09-27',workout:'12.4.4',phase:'4. Infinity',type:'Infinity',apparatus:'Rower',distance:3600,workTime:1200,restTime:225,calories:282} ];
