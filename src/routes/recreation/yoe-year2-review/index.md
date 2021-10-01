@@ -92,14 +92,13 @@ I undertook this program during the <a
 href="https://en.wikipedia.org/wiki/COVID-19_pandemic">COVID-19 pandemic</a>. I
 am located in Australia, and the response from the federal and state governments
 has been largely effective at minimising cases and fatalities. To achieve this,
-many restrictions were instigated in my home state, which have been very
-effective, but have also introduced many stressors to day-to-day activities
-including training:
+many restrictions were instigated in my home state which introduced many
+stressors to day-to-day activities including training:
 
 * inability to establish a consistent training schedule;
 * sacrificing recovery days for training, so as not to fall too far behind
   schedule;
-* multiple days of no training due to fulfiling familial responsibilities;
+* multiple days of no training due to fulfiling extra familial responsibilities;
 * alterations to diet and eating schedule;
 * interrupted sleep and an increase in overall stress.
 
@@ -662,6 +661,9 @@ Devour and Infinity workouts vary in pacing from TT-4 to TT+4.
 
 ### <a name="program-review-pacing-off-a-time-trial">Pacing off a time trial</a>
 
+<div class="self">
+</div>
+
 ### <a name="program-review-time-commitment">Time commitment</a>
 
 ### <a name="program-review-mental-fortitude">Mental fortitude</a>
@@ -691,7 +693,7 @@ recorded properly by the PM5, due to:
 * ErgData crashing;
 * or a combination of the above.
 
-Sometimes recorded workouts in the PM5 history would appear as garbage:
+Broken workouts appeared the PM5 history either truncated, or as garbage:
 
 <div style="display: flex; justify-content: space-around;">
     <img
@@ -704,52 +706,53 @@ Sometimes recorded workouts in the PM5 history would appear as garbage:
 Ugh.
 
 <div class="self">
-    Tried troubleshooting but didn't get anywhere. New batteries, with ErgData,
-    without ErgData, latest firmware - there was no reliable way to reproduce
-    the behaviour or mitigate it's frequency.
-
-    The odd behaviour wasn't limited to the rower; it occurred using variable
-    rest periods in the Cyborg series on the BikeErg as well. The BikeErg
-    workouts were done outside away from any electrial interference; the rower
-    and SkiErg inside a concrete garage with limited electrical devices. The
-    same behaviour occurred in both areas.
+    Troubleshooting didn't get anywhere. Old batteries, new batteries, with
+    ErgData, without ErgData, latest firmware, move the ergs to different
+    locations - there was no reliable way to reproduce the behaviour or mitigate
+    it's frequency.
 
     A simple backup would be to write out the workout and timestamps on a
     whiteboard, and have use an external clock just in case the monitor dumps in
     the middle of the workout. It became quite frustrating to try and program
-    the remainder of a workout into the device part way through an effort.
+    the remainder of a workout into the device part way through.
 </div>
 
 ### <a name="supplementary-notes-comparing-bikerg-and-airdyne">Comparing the BikeErg and AirDyne</a>
 
 A common question on the [CrossFit subreddit](https://reddit.com/r/crossfit)
-involves equating the metrics of the Concept2 BikeErg, the Rogue Echo Bike, the
-Assault AirBike, the Schwinn AirDyne and other bike ergometers. This is a
-popular topic, as workouts are typically written for only one type of bike, and
-athletes may have not have access to that specific machine, but a similar one.
-
-It is accepted that each manufacturer uses different designs, materials,
-assembly and calculations to convert your physical effort into numbers displayed
-on the monitor. Some bikes exhibit different values depending upon wear, while
-others provide self- or manual-calibration mechanisms.
+is how to equate the metrics of the Concept2 BikeErg, the Rogue Echo Bike, the
+Assault AirBike, the Schwinn AirDyne and other bike ergometers. Workouts targets
+for one type of machine will differ for others, and athletes may not have access
+to the device specified in the workout but want to equate their performance.
 
 No manufacturer makes available the exact specifictions for calculating their
-metrics on their machines. Various formulas for converting between some bikes
-exist on the Internet, all of which are unverified and largely supported by
+metrics on their machines (the [Physics of
+Ergometers](http://eodg.atm.ox.ac.uk/user/dudhia/rowing/physics/ergometer.html)
+makes a good case for Concept2 devices). Various formulas for converting between
+some bikes exist on the Internet, all of which are unverified and supported by
 anecdotal evidence only.
 
+[Here are a few
+graphs](https://ergarcade.com/articles/airbike-rpm-speed-power.html) that equate
+speed, RPM and power between the BikeErg, Schwinn AirDyne6 and the Assault bike.
+Note that this **does not equate your effort on the machine**, only the
+values displayed on the monitors.
+
 <div class="self">
-    I have mapped the output metrics of the Concept2 BikeErg, Schwinn AirDyne6
-    and the Assault bike into
-    <a href="https://ergarcade.com/articles/airbike-rpm-speed-power.html">a few
-    simple to read graphs</a> to try and answer this question. This allows you
-    to equate speed, RPM and power between these machines. Note that this
-    <strong>does not</strong> equate <em>your effort</em> on the device, just
-    the values displayed on the monitors.
+    I was fortunate enough to have access to both a Schwinn AirDyne6 and a
+    Concept2 BikeErg during Year 2. Below are my 45:00 steady-state endurance
+    workouts, done on either AirDyne6 or BikeErg (drag factor 80 to 82), held at
+    my steady state pace of approxmately 30km/h. Note that the BikeErg
+    accumulated more calories than the AirDyne at what I perceived to be the
+    same effort.
 </div>
 
-- talk about comparing airdyne to bikeerg on 45:00 pieces
-- support with evidence
+<EChart
+    id="graph-tt-airdyne-bikeerg"
+    theme={$theme}
+    height="150"
+    option={charts.bikeergAirdyne()}
+/>
 
 ## <a name="summary">Summary</a>
 
@@ -767,6 +770,7 @@ anecdotal evidence only.
         color: #eee;
         background: #06a;
         padding: 1em;
+        margin-bottom: 1em;
     }
     .self a {
         color: white;

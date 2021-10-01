@@ -222,7 +222,7 @@ export const workouts = [
 {date:'2021-08-31',workout:'12.1.3',phase:'4. Infinity',type:'Ascending',apparatus:'BikeErg',distance:4100,workTime:420,restTime:420,calories:165},
 {date:'2021-09-01',workout:'12.1.2',phase:'4. Infinity',type:'Infinity',apparatus:'Rower',distance:4700,workTime:1320,restTime:225,calories:358},
 {date:'2021-09-02',workout:'12.1.4',phase:'4. Infinity',type:'Endurance',apparatus:'AirDyne',distance:16400,workTime:1920,restTime:0,calories:462},
-{date:'2021-09-04',workout:'12.2.3',phase:'4. Infinity',type:'Endurance',apparatus:'BikeErg',distance:22100,workTime:2700,restTime:0,calories:619},
+{date:'2021-09-04',workout:'12.2.3',phase:'4. Infinity',type:'Endurance',apparatus:'BikeErg',distance:22100,workTime:2700,restTime:0,calories:719},
 {date:'2021-09-06',workout:'12.1.5',phase:'4. Infinity',type:'Infinity',apparatus:'Rower',distance:3700,workTime:1200,restTime:165,calories:278},
 {date:'2021-09-07',workout:'12.2.2',phase:'4. Infinity',type:'Hybrid',apparatus:'Rower',distance:5500,workTime:1170,restTime:765,calories:414},
 {date:'2021-09-09',workout:'12.3.1',phase:'4. Infinity',type:'Polarisation',apparatus:'BikeErg',distance:27400,workTime:3300,restTime:0,calories:907},

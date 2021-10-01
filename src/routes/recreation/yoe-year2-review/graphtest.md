@@ -6,8 +6,8 @@
 </script>
 
 <EChart
-    id="test-chart"
+    id="graph-tt-airdyne-bikeerg"
     theme={$theme}
-    height="300"
-    option={charts.compareStrokeFrequency([52817150,55235950])}
+    height="150"
+    option={charts.bikeergAirdyne()}
 />
