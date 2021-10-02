@@ -1,4 +1,3 @@
-import { workouts } from './data.js';
 import { strokedata } from './strokedata';
 import { dateTime } from '../../yoe-year1-review/datetime.js';
 
@@ -64,7 +63,7 @@ export const compareStrokeFrequency = (ids, options = {}, field = 'sr') => {
         gridIndex: 0,
     });
 
-    ids.forEach((id, i) => {
+    ids.forEach((_, i) => {
         dataset.push({
             sourceHeader: false,
             source: theMap.get(i),

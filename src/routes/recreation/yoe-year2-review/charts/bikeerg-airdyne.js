@@ -1,5 +1,4 @@
 import { workouts } from './data.js';
-import { dateTime } from '../../yoe-year1-review/datetime.js';
 
 export const bikeergAirdyne = () => {
     const legend = [];

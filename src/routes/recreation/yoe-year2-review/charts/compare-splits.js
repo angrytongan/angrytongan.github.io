@@ -1,4 +1,3 @@
-import { workouts } from './data.js';
 import { splits } from './splits';
 import { dateTime } from '../../yoe-year1-review/datetime.js';
 

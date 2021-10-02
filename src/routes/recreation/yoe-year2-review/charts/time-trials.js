@@ -3,7 +3,6 @@
 import { time } from 'echarts';
 
 import { workouts } from './data.js';
-import { strokedata } from './strokedata';
 import { dateTime } from '../../yoe-year1-review/datetime.js';
 
 const caloriesCompare = (o) => {

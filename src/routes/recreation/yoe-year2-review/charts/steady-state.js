@@ -11,7 +11,6 @@ export const steadyState = () => {
     const yAxis = [];
     const dataset = [];
     const series = [];
-    const visualMap = [];
 
     const data = [
         ...year2
