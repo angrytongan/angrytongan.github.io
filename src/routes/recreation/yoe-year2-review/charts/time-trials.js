@@ -175,8 +175,7 @@ export const ttConversionChart = () => {
         yAxis.push({
             type: 'value',
             name: v,
-            nameLocation: 'middle',
-            nameGap: 45,
+            nameLocation: yAxis.length === 0 ? 'start' : 'end',
             position: yAxis.length === 0 ? 'left' : 'right',
             offset: yAxis.length == 0 ? 0 : (yAxis.length-1) * 45 + 15,
             inverse: k == 'p',

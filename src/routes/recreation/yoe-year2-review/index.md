@@ -56,19 +56,6 @@ program if you wish to improve your cardiovascular capacity.
     * <a rel="external" href="#objective-results-10-minute-rower">10:00.0 Rower time trial</a>
     * <a rel="external" href="#objective-results-improved-steady-state">Steady state performance</a>
 
-* <a rel="external" href="#subjective-observations">Subjective Observations</a>
-
-    * <a rel="external" href="#subjective-observations-doubting-pace-selection">Doubting pace selection</a>
-
-* <a rel="external" href="#reflection">Reflection</a>
-
-    * <a rel="external" href="#reflection-what-I-belive-I-got-right">What I believe I got
-      right</a>
-    * <a rel="external" href="#reflection-what-I-know-I-got-wrong">What I know I
-      got wrong</a>
-    * <a rel="external" href="#reflection-what-I-think-I-would-change">What I
-      think I would change</a>
-
 * <a rel="external" href="#program-review">Program review</a>
 
     * <a rel="external" href="#program-review-program-structure">Program structure</a>
@@ -360,8 +347,8 @@ Year of the Engine uses ergometers. The program as supplied gives options for:
   AirDyne or similar; and
 - Running.
 
-Each workout can be completed with a different apparatus. Scalings are
-supplied.
+Each workout can be completed with a different apparatus. Alternative apparatus
+for the workout are noted.
 
 ### <a name="program-additional-training">Additional Training</a>
 
@@ -627,13 +614,13 @@ based on these results.
 
 ### <a name="objective-results-improved-steady-state">Steady state performance</a>
 
-Steady state workouts (Endurance) are a staple of the Year of the Engine.
-In Year 1, they range from 20:00 to 60:00, while in Year 2 Endurance work is
-prescribed as 45:00 however the athlete may choose anywhere from 30:00 to 60:00.
+In Year 1, steady state (Endurance) workouts range from 20:00 to 60:00, while in
+Year 2, Endurance is prescribed as 45:00 however the athlete may choose anywhere
+from 30:00 to 60:00.
 
-Below is a graph of all my steady state workouts, shown as speed (workout
-distance divided by workout time) against date. The red shading are workouts
-from Year 1, the green shading are workouts from Year 2:
+Below are all my steady state workouts, shown as speed (workout distance divided
+by workout time) against date. The red shading are workouts from Year 1, the
+green shading are workouts from Year 2:
 
 <EChart
     id="graph-steady-state"
@@ -652,22 +639,6 @@ from Year 1, the green shading are workouts from Year 2:
     The pace was slightly slower but far more consistent, and increasing as
     Year 2 progressed.
 </div>
-
-## <a name="subjective-observations">Subjective Observations</a>
-
-### <a name="subjective-observations-doubting-pace-selection">Doubting pace selection</a>
-
-## <a name="reflection">Reflection</a>
-
-### <a name="#reflection-what-I-belive-I-got-right">What I believe I got right</a>
-
-### <a name="#reflection-what-I-know-I-got-wrong">What I know I got wrong</a>
-
-- the entire devour section
-
-### <a name="#reflection-what-I-think-I-would-change">What I think I would change</a>
-
-- focus more on the devour workouts
 
 ## <a name="program-review">Program review</a>
 
@@ -708,9 +679,9 @@ this pace.
 
 At the completion of each time trial, the number of calories accumulated on the
 apparatus' monitor is divided by 10 to yield a target **pace per minute** value.
-This value is described as **TT**, and the required pace in a workout is
-specified as a variation of this value (for example, TT-1 means 1 second *faster*
-than TT pace, TT+2 means 2 seconds *slower* than TT pace).
+This value is referenced as **TT**, and the required pace in a workout is
+specified as a variation of this value. For example, TT-1 means 1 second
+*slower* than TT pace, TT&plus;2 means 2 seconds *faster* than TT pace).
 
 This value is used in Devour and Infinity workout types. For example,
 
@@ -720,13 +691,13 @@ This value is used in Devour and Infinity workout types. For example,
   - 1:30 work, 0:30 rest
   - ...
 - Continue until you reach 4:00
-- Pace = **TT-1**
+- Pace = **TT&minus;1**
 
 This workout is 8 rounds long. Each work period per round extends by 0:30, the
 rest period does not change, and it is to be performed at the athlete's time
 trial pace minus one (1).
 
-Devour and Infinity workouts vary in pacing from TT-4 to TT+4.
+Devour and Infinity workouts vary in pacing from TT&minus;4 to TT&plus;4.
 
 <div class="self">
     I found it easier to program TT by converting from <em>calories per
@@ -746,17 +717,55 @@ Devour and Infinity workouts vary in pacing from TT-4 to TT+4.
     option={charts.ttConversionChart()}
 />
 
-It should be noted that decreases and increases using TT does not affect pace
-linearly.
-
-something about me failing in here
-
 <div class="self">
+    I found the Devour and Infinity workouts to be exceedingly difficult, and
+    failed more of these than passed. I classified the workout as failed if I
+    was unable to sustain the prescribed pace at any time (ie. I
+    &ldquo;bonked&rdquo).
+
+    In the Devour phase, after failing multiple workouts, I chose to drop
+    my TT on three separate occasions until I reached a pace that allowed me to
+    get to the end of these workouts. The downside was workouts specified slower
+    than TT were not challenging.
+
+    During the Infinity phase, I chose to remain at my calculated TT, instead
+    working to failure on any given interval, taking the remaining time as rest,
+    then repeating this for the remaining intervals. For Infinity workouts, I
+    did the max-out round at least 1 TT point higher than prescribed in order to
+    &ldquo;make up&rdquo; for the fails (it made sense in my head at the time).
 </div>
 
 ### <a name="program-review-time-commitment">Time commitment</a>
 
+Similarly to Year 1, workout length in Year 2 varies from medium to long:
+
+<EChart
+    id="graph-time-commitment"
+    theme={$theme}
+    height="250"
+    option={charts.timeCommitment()}
+/>
+
+Expect to set aside 30:00 on interval days, and between 20:00 to 55:00 on
+Polarisation days. Endurance work is prescribed at 45:00.
+
 ### <a name="program-review-mental-fortitude">Mental fortitude</a>
+
+The Devour and Infinity phases of Year 2 will do more than test your ability to
+&ldquo;embrace the suck&rdquo;. Operating at multiple steps above your 10:00
+time trial pace, even though at shorter intervals, is very mentally taxing.
+Matt advises to back off the intensity of the other workout types a little, as
+the TT&plus; workouts very much give your brain a beating.
+
+<div class="self">
+    I found phase 4 to be a bit disheartening, as it was clear I would not be
+    able to successfully complete all rounds of many of the Infinity workouts
+    without failing.
+
+    In comparison, the other interval workout types feel easier, although they
+    are still solid work. Endurance and Polarisation workouts feel like a breeze
+    against Devour and Infinity workouts.
+</div>
 
 ## <a name="supplementary-notes">Supplementary notes</a>
 
@@ -844,7 +853,27 @@ values displayed on the monitors.
 
 ## <a name="summary">Summary</a>
 
+The Year of the Engine continues at full speed in Year 2. New workout types are
+introduced, keeping variability high, whilst still remaining true to the core
+work introduced in Year 1.
+
+The guides, introduced at the start of each phase, remain clear and easy to
+understand.
+
+It should be noted that the difficulty of some workouts increases, particularly
+in the second half of the year.
+
 ## <a name="recommendations">Recommendations</a>
+
+<div class="self">
+    I thoroughly enjoyed the challenges presented in Year 2. Even though I had
+    substantial difficulty in the Devour and Infinity phases, I believe that I
+    am fitter at the end of Year 2 compared to the end of Year 1, even with all
+    the distractions that life threw my way. My consistency has improved and I
+    have addressed some steady state issues. Overall, I am very happy.
+
+    I look forward to starting Year 3.
+</div>
 
 <style>
     .images {

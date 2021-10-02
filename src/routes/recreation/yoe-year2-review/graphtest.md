@@ -6,8 +6,8 @@
 </script>
 
 <EChart
-    id="graph-steady-state"
+    id="graph-time-commitment"
     theme={$theme}
     height="250"
-    option={charts.steadyState()}
+    option={charts.timeCommitment()}
 />

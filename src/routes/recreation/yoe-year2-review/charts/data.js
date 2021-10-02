@@ -3,7 +3,7 @@ export const workouts = [
 {date:'2020-09-19',workout:'1.1.1',phase:'1. Cyborg',type:'Cyborg',apparatus:'Rower',distance:0,workTime:360,restTime:0,calories:0},
 {date:'2020-09-20',workout:'1.1.5',phase:'1. Cyborg',type:'Endurance',apparatus:'Rower',distance:7200,workTime:1800,restTime:0,calories:460},
 {date:'2020-09-22',workout:'1.1.2',phase:'1. Cyborg',type:'Intervals',apparatus:'Rower',distance:4000,workTime:810,restTime:810,calories:313},
-{date:'2020-09-23',workout:'1.2.1',phase:'1. Cyborg',type:'Ascending',apparatus:'Rower',distance:2100,workTime:437,restTime:27000,calories:164},
+{date:'2020-09-23',workout:'1.2.1',phase:'1. Cyborg',type:'Ascending',apparatus:'Rower',distance:2100,workTime:437,restTime:450,calories:164},
 {date:'2020-09-24',workout:'1.1.4',phase:'1. Cyborg',type:'Cyborg',apparatus:'Rower',distance:2200,workTime:540,restTime:0,calories:0},
 {date:'2020-09-25',workout:'1.2.3',phase:'1. Cyborg',type:'Polarisation',apparatus:'AirDyne',distance:15200,workTime:1800,restTime:0,calories:422},
 {date:'2020-09-29',workout:'1.2.4',phase:'1. Cyborg',type:'Intervals',apparatus:'Rower',distance:4300,workTime:900,restTime:600,calories:326},
