@@ -634,7 +634,12 @@ between based on these test results.
 
 ### <a name="subjective-observations-improved-steady-state">Improved steady state</a>
 
-
+<EChart
+    id="graph-steady-state"
+    theme={$theme}
+    height="250"
+    option={charts.steadyState()}
+/>
 
 ## <a name="reflection">Reflection</a>
 
@@ -708,8 +713,8 @@ trial pace minus one (1).
 
     For Concept2 machines, the conversion can be done using <a
     href="https://www.concept2.com/indoor-rowers/training/calculators/pace-calculator">Concept2's
-    calculators</a>, the PM5 itself when you program the workout, or by
-    referencing this chart:
+    calculators</a>, the PM5 itself using the pace option, or by referencing
+    this chart:
 </div>
 
 <EChart

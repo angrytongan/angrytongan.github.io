@@ -6,8 +6,8 @@
 </script>
 
 <EChart
-    id="graph-tt-conversion-chart"
+    id="graph-steady-state"
     theme={$theme}
     height="250"
-    option={charts.ttConversionChart()}
+    option={charts.steadyState()}
 />

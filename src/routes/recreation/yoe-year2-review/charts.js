@@ -3,6 +3,7 @@ import { timeTrials, ttConversionChart } from './charts/time-trials.js';
 import { compareStrokedata, compareStrokeFrequency } from './charts/compare-strokedata.js';
 import { compareSplits } from './charts/compare-splits.js';
 import { bikeergAirdyne } from './charts/bikeerg-airdyne.js';
+import { steadyState } from './charts/steady-state.js';
 
 export {
     execution,
@@ -12,4 +13,5 @@ export {
     compareStrokeFrequency,
     compareSplits,
     bikeergAirdyne,
+    steadyState,
 };

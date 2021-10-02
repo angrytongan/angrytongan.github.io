@@ -27,7 +27,7 @@ const caloriesCompare = (o) => {
             nameGap: 30,
             nameLocation: 'middle',
             min: '2020-09-17',
-            max: '2021-09-29',
+            max: '2021-09-30',
             axisLabel: {
                 formatter: (value) => time.format(value, '{yyyy}-{MM}-{dd}', false),
             },
