@@ -54,11 +54,11 @@ program if you wish to improve your cardiovascular capacity.
 * <a rel="external" href="#objective-results">Objective Results</a>
 
     * <a rel="external" href="#objective-results-10-minute-rower">10:00.0 Rower time trial</a>
+    * <a rel="external" href="#objective-results-improved-steady-state">Steady state performance</a>
 
 * <a rel="external" href="#subjective-observations">Subjective Observations</a>
 
     * <a rel="external" href="#subjective-observations-doubting-pace-selection">Doubting pace selection</a>
-    * <a rel="external" href="#subjective-observations-improved-steady-state">Improved steady state</a>
 
 * <a rel="external" href="#reflection">Reflection</a>
 
@@ -77,7 +77,6 @@ program if you wish to improve your cardiovascular capacity.
       a time trial</a>
     * <a rel="external" href="#program-review-time-commitment">Time commitment</a>
     * <a rel="external" href="#program-review-mental-fortitude">Mental fortitude</a>
-    * <a rel="external" href="#program-review-recovery">Recovery</a>
 
 * <a rel="external" href="#supplementary-notes">Supplementary notes</a>
 
@@ -506,7 +505,7 @@ Workouts, and their phases, were completed as below.
 
 ## <a name="objective-results">Objective results</a>
 
-The following workout is presented as evidence of performance changes during
+The following workouts are presented as evidence of performance changes during
 Year 2 of the Year of the Engine program. The results are mine alone (<i>n</i> =
 1).
 
@@ -614,7 +613,7 @@ during the sprint in test 2**.
 </div>
 
 It is difficult to conclude there was a significant improvement in performance
-between based on these test results.
+based on these results.
 
 <div class="self">
     Both tests felt RPE 7-8 at 2km, RPE 8-9 at the end of the sprints. I think
@@ -626,13 +625,15 @@ between based on these test results.
     useful.
 </div>
 
-## <a name="subjective-observations">Subjective Observations</a>
+### <a name="objective-results-improved-steady-state">Steady state performance</a>
 
-### <a name="subjective-observations-doubting-pace-selection">Doubting pace selection</a>
+Steady state workouts (Endurance) are a staple of the Year of the Engine.
+In Year 1, they range from 20:00 to 60:00, while in Year 2 Endurance work is
+prescribed as 45:00 however the athlete may choose anywhere from 30:00 to 60:00.
 
-
-
-### <a name="subjective-observations-improved-steady-state">Improved steady state</a>
+Below is a graph of all my steady state workouts, shown as speed (workout
+distance divided by workout time) against date. The red shading are workouts
+from Year 1, the green shading are workouts from Year 2:
 
 <EChart
     id="graph-steady-state"
@@ -641,13 +642,32 @@ between based on these test results.
     option={charts.steadyState()}
 />
 
+<div class="self">
+    I chose too fast a pace in the first half of Year 1, as these workouts were
+    a shorter duration and I reasoned I could get away with it. My results in
+    the second half of Year 1 showed I did not have a good base, and paid for it
+    with haphazard results, albeit improving at the end of the year.
+
+    A better result can be seen in Year 2 against a dedicated time of 45:00.
+    The pace was slightly slower but far more consistent, and increasing as
+    Year 2 progressed.
+</div>
+
+## <a name="subjective-observations">Subjective Observations</a>
+
+### <a name="subjective-observations-doubting-pace-selection">Doubting pace selection</a>
+
 ## <a name="reflection">Reflection</a>
 
 ### <a name="#reflection-what-I-belive-I-got-right">What I believe I got right</a>
 
 ### <a name="#reflection-what-I-know-I-got-wrong">What I know I got wrong</a>
 
+- the entire devour section
+
 ### <a name="#reflection-what-I-think-I-would-change">What I think I would change</a>
+
+- focus more on the devour workouts
 
 ## <a name="program-review">Program review</a>
 
@@ -706,8 +726,10 @@ This workout is 8 rounds long. Each work period per round extends by 0:30, the
 rest period does not change, and it is to be performed at the athlete's time
 trial pace minus one (1).
 
+Devour and Infinity workouts vary in pacing from TT-4 to TT+4.
+
 <div class="self">
-    I found it easier to understand TT by converting from <em>calories per
+    I found it easier to program TT by converting from <em>calories per
     minute</em> to <em>pace</em> which is useful for machines that do not
     display calories per minute.
 
@@ -724,7 +746,10 @@ trial pace minus one (1).
     option={charts.ttConversionChart()}
 />
 
-Devour and Infinity workouts vary in pacing from TT-4 to TT+4.
+It should be noted that decreases and increases using TT does not affect pace
+linearly.
+
+something about me failing in here
 
 <div class="self">
 </div>
@@ -732,8 +757,6 @@ Devour and Infinity workouts vary in pacing from TT-4 to TT+4.
 ### <a name="program-review-time-commitment">Time commitment</a>
 
 ### <a name="program-review-mental-fortitude">Mental fortitude</a>
-
-### <a name="program-review-recovery">Recovery</a>
 
 ## <a name="supplementary-notes">Supplementary notes</a>
 

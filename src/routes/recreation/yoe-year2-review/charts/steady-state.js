@@ -11,6 +11,7 @@ export const steadyState = () => {
     const yAxis = [];
     const dataset = [];
     const series = [];
+    const visualMap = [];
 
     const data = [
         ...year2
@@ -33,18 +34,19 @@ export const steadyState = () => {
             .filter((w) => w.distance !== "0")
             .map((w) => {
                 const workTime = w.workTime.split(':').reduce((acc, val) => acc * 60 + Number(val), 0);
+                const distance = Number(w.distance);
                 return {
                     date: w.date,
-                    distance: Number(w.distance) / 10,
+                    distance,
                     workTime,
-                    speed: w.distance / workTime * 3.6,
+                    speed: distance / workTime * 3.6,
                     apparatus: w.apparatus,
                 };
             })
     ];
 
     grid.push({
-        top: 20,
+        top: 40,
         left: 20,
         right: 20,
         bottom: 30,
@@ -52,15 +54,22 @@ export const steadyState = () => {
     });
 
     tooltip.push({
+        trigger: 'item',
         formatter: (params) => {
-            const distance = params.data.distance.toLocaleString();
-            const time = dateTime.secs2mmss(params.data.workTime, true);
+            if (params.componentType !== 'markArea') {
+                const distance = params.data.distance.toLocaleString();
+                const time = dateTime.secs2mmss(params.data.workTime, true);
 
-            return `${params.marker} ${params.data.apparatus}<br />${params.data.date}<br />${params.data.speed.toFixed(0)}km/h<br />` +
-                `${distance}m / ${time}`;
+                return `${params.marker} ${params.data.apparatus}<br />` +
+                    `${params.data.date}<br />${params.data.speed.toFixed(1)}km/h<br />` +
+                    `${distance}m / ${time}`;
+            }
+            return '';
         }
     });
-    legend.push({});
+    legend.push({
+        top: 0,
+    });
 
     xAxis.push({
         type: 'time',
@@ -104,6 +113,29 @@ export const steadyState = () => {
             xAxisIndex: xAxis.length-1,
             yAxisIndex: yAxis.length-1,
             datasetIndex: dataset.length-1,
+
+            markArea: {
+                data: [
+                    [
+                        {
+                            name: 'Year 1',
+                            xAxis: '2019-09-17',
+                            itemStyle: {
+                                color: 'rgba(128, 0, 0, 0.1)',
+                            },
+                        },
+                        { xAxis: '2020-09-17', },
+                    ],
+                    [
+                        { name: 'Year 2', xAxis: '2020-09-17',
+                            itemStyle: {
+                                color: 'rgba(0, 128, 0, 0.1)',
+                            },
+                        },
+                        { xAxis: '2021-09-30', },
+                    ],
+                ],
+            },
         });
     });
 
