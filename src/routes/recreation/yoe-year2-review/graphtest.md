@@ -6,8 +6,8 @@
 </script>
 
 <EChart
-    id="graph-tt-airdyne-bikeerg"
+    id="graph-tt-conversion-chart"
     theme={$theme}
-    height="150"
-    option={charts.bikeergAirdyne()}
+    height="250"
+    option={charts.ttConversionChart()}
 />

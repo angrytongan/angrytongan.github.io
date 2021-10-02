@@ -57,6 +57,18 @@ program if you wish to improve your cardiovascular capacity.
 
 * <a rel="external" href="#subjective-observations">Subjective Observations</a>
 
+    * <a rel="external" href="#subjective-observations-doubting-pace-selection">Doubting pace selection</a>
+    * <a rel="external" href="#subjective-observations-improved-steady-state">Improved steady state</a>
+
+* <a rel="external" href="#reflection">Reflection</a>
+
+    * <a rel="external" href="#reflection-what-I-belive-I-got-right">What I believe I got
+      right</a>
+    * <a rel="external" href="#reflection-what-I-know-I-got-wrong">What I know I
+      got wrong</a>
+    * <a rel="external" href="#reflection-what-I-think-I-would-change">What I
+      think I would change</a>
+
 * <a rel="external" href="#program-review">Program review</a>
 
     * <a rel="external" href="#program-review-program-structure">Program structure</a>
@@ -509,7 +521,7 @@ taken for these tests.
     id="graph-tt-rower"
     theme={$theme}
     height={150}
-    option={charts.timeTrials.rower()}
+    option={charts.timeTrials()}
 />
 
 There was a 1% increase in both calories and distance recorded between the two
@@ -605,16 +617,39 @@ It is difficult to conclude there was a significant improvement in performance
 between based on these test results.
 
 <div class="self">
-    Both tests felt RPE 8-9 at the end. I think an improved pacing strategy
-    across the entire piece, rather than trying to sprint the last split, may be
-    more productive. It is interesting that the pace error in test 2 was not
-    only recoverable but did not affect the finish. A coach's interpretation
-    here would be quite useful.
+    Both tests felt RPE 7-8 at 2km, RPE 8-9 at the end of the sprints. I think
+    an improved pacing strategy across the entire piece, rather than trying to
+    sprint the last split, may be more productive.
+
+    It is interesting that the pace error in test 2 was not only recoverable but
+    did not affect the finish.  A coach's interpretation here would be quite
+    useful.
 </div>
 
 ## <a name="subjective-observations">Subjective Observations</a>
 
+### <a name="subjective-observations-doubting-pace-selection">Doubting pace selection</a>
+
+
+
+### <a name="subjective-observations-improved-steady-state">Improved steady state</a>
+
+
+
+## <a name="reflection">Reflection</a>
+
+### <a name="#reflection-what-I-belive-I-got-right">What I believe I got right</a>
+
+### <a name="#reflection-what-I-know-I-got-wrong">What I know I got wrong</a>
+
+### <a name="#reflection-what-I-think-I-would-change">What I think I would change</a>
+
 ## <a name="program-review">Program review</a>
+
+<div class="self">
+    From here on is entirely my opinion. Data is from my results.
+    <a href="https://reddit.com/u/angrytongan">Feel free to disagree</a>.
+</div>
 
 ### <a name="program-review-program-structure">Program Structure</a>
 
@@ -634,14 +669,23 @@ The structuring of Year 2 is the same as Year 1:
 Like Year 1, the intensity of each workout type is described at the start of
 each 3-month phase. The first 2 phases of Year 2 run like Year 1, where the
 athlete works at a pace sustainable across the entire workout, or as a
-percentage of the athlete's endurance pace that was determined in Year 1.
+percentage of the athlete's endurance pace that was determined in Year 1. Here,
+the athlete's goal in approaching all workouts remains unchanged: [maximise the
+average, minimise the range](https://www.thegainslab.com/interval-training).
 
 The latter 2 phases of Year 2 (Devour and Infinity) incorporate new workout
 types where pacing for these workouts is given as a variation of a **time-trial
 pace**. At the start of month 7 (Devour phase) and month 10 (Infinity phase),
-the athlete completes a 10:00 time trial on their chosen apparatus. The number
-of calories accumulated on their apparatus' monitor at the end of the trial is
-divided by 10 to yield a target **pace per minute** value.
+the athlete completes a 10:00 time trial on their chosen apparatus to determine
+this pace.
+
+### <a name="program-review-pacing-off-a-time-trial">Pacing off a time trial</a>
+
+At the completion of each time trial, the number of calories accumulated on the
+apparatus' monitor is divided by 10 to yield a target **pace per minute** value.
+This value is described as **TT**, and the required pace in a workout is
+specified as a variation of this value (for example, TT-1 means 1 second *faster*
+than TT pace, TT+2 means 2 seconds *slower* than TT pace).
 
 This value is used in Devour and Infinity workout types. For example,
 
@@ -651,15 +695,31 @@ This value is used in Devour and Infinity workout types. For example,
   - 1:30 work, 0:30 rest
   - ...
 - Continue until you reach 4:00
-- Pace = time trial pace - 1
+- Pace = **TT-1**
 
 This workout is 8 rounds long. Each work period per round extends by 0:30, the
 rest period does not change, and it is to be performed at the athlete's time
-trial pace minus one (1) calorie.
+trial pace minus one (1).
+
+<div class="self">
+    I found it easier to understand TT by converting from <em>calories per
+    minute</em> to <em>pace</em> which is useful for machines that do not
+    display calories per minute.
+
+    For Concept2 machines, the conversion can be done using <a
+    href="https://www.concept2.com/indoor-rowers/training/calculators/pace-calculator">Concept2's
+    calculators</a>, the PM5 itself when you program the workout, or by
+    referencing this chart:
+</div>
+
+<EChart
+    id="graph-tt-conversion-chart"
+    theme={$theme}
+    height="250"
+    option={charts.ttConversionChart()}
+/>
 
 Devour and Infinity workouts vary in pacing from TT-4 to TT+4.
-
-### <a name="program-review-pacing-off-a-time-trial">Pacing off a time trial</a>
 
 <div class="self">
 </div>
@@ -712,9 +772,9 @@ Ugh.
     it's frequency.
 
     A simple backup would be to write out the workout and timestamps on a
-    whiteboard, and have use an external clock just in case the monitor dumps in
-    the middle of the workout. It became quite frustrating to try and program
-    the remainder of a workout into the device part way through.
+    whiteboard, and use an external clock just in case the monitor dumps in the
+    middle of the workout. It became quite frustrating to try and program the
+    remainder of a workout into the device part way through.
 </div>
 
 ### <a name="supplementary-notes-comparing-bikerg-and-airdyne">Comparing the BikeErg and AirDyne</a>
