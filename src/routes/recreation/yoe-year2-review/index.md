@@ -756,8 +756,8 @@ Different workout types vary in length, just like Year 1:
     option={charts.timeWorkoutDistribution()}
 />
 
-Most workouts are around the 30:00 mark, with the exception of Endurance and
-Polarisation which are between 30:00 and 60:00.
+Most workouts in Year 2 are around 30:00, with the exception of Endurance and
+Polarisation which can be up to 60:00.
 
 ### <a name="program-review-varied-not-random">Varied, not random</a>
 

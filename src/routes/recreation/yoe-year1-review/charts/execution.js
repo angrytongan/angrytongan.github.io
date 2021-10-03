@@ -1,5 +1,6 @@
 'use strict';
 
+import { dev } from '$app/env';
 import { workouts } from './data.js';
 
 const summary = () => {
@@ -11,7 +12,7 @@ const summary = () => {
 
     }, []).sort();
 
-    return {
+    const out = {
         animation: false,
         legend: {
             top: '5%',
@@ -30,14 +31,6 @@ const summary = () => {
             dayLabel: {
                 firstDay: 1,
             },
-        },
-
-        /*
-         * V5 needs a visualmap to linkk against; reported in
-         * https://github.com/apache/echarts/issues/15098
-         */
-        visualMap: {
-            show: false,
         },
 
         series: phases.map((p) => {
@@ -61,10 +54,21 @@ const summary = () => {
                         return `Workout ${params.value[2]}`;
                     },
                 },
-                animation: false,
             };
         }),
     };
+
+    /*
+     * V5 needs a visualmap to link against while in dev; reported in
+     * https://github.com/apache/echarts/issues/15098
+     */
+    if (dev) {
+        out['visualMap'] = {
+            show: false,
+        };
+    }
+
+    return out;
 };
 
 export default {
