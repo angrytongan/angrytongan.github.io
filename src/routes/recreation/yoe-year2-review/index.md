@@ -1,7 +1,8 @@
 <script>
-    import EChart from '$lib/components/Echart.svelte';
+    import EChart from '$lib/components/EChart.svelte';
     import { theme } from '$lib/store';
     import * as charts from './charts.js';
+    import { dev } from '$app/env';
 </script>
 
 # Year of the Engine Program Review - Year 2
@@ -18,16 +19,18 @@ year](/recreation/yoe-year1-review).
 I completed the second year of [The Gains Lab](https://thegainslab.com) [Year of
 the Engine](https://thegainslab.com/engine) capacity program by [Matt
 Wiebke](https://www.instagram.com/thegainslab1/). The results of each workout
-were recorded. Tests were performed during the program and after it was
-completed which showed significant improvement in capacity, workout execution
-and consistency of effort across a range of workouts. I recommend the program
-if you wish to improve your cardiovascular capacity.
+were recorded. Some evidence of continued improvement from Year 1 is
+demonstrated, although external factors significantly hampered training efforts.
+Program difficulty level increased substantially. I continue to recommend the
+program if you wish to improve your cardiovascular capacity.
 
 ## Contents
 
 * <a rel="external" href="#about-this-review">About this review</a>
 
     * <a rel="external" href="#about-this-review-disclosure">Disclosure</a>
+    * <a rel="external" href="#about-this-review-the-virus-in-the-room">The
+      virus in the room</a>
     * <a rel="external" href="#about-this-review-approval">Approval</a>
     * <a rel="external" href="#about-this-review-workout-obfuscation">Workout obfuscation</a>
     * <a rel="external" href="#about-this-review-data">Data</a>
@@ -50,18 +53,61 @@ if you wish to improve your cardiovascular capacity.
 
 * <a rel="external" href="#objective-results">Objective Results</a>
 
-    * <a rel="external" href="#objective-results-10-minute-air-bike">10:00.0 Air Bike time trial</a>
-    * <a rel="external" href="#objective-results-3x2,000m/3:00r-rower">3x2,000m/3:00r rower</a>
-    * <a rel="external" href="#objective-results-acid-bath">Acid Bath</a>
+    * <a rel="external" href="#objective-results-10-minute-rower">10:00.0 Rower time trial</a>
+    * <a rel="external" href="#objective-results-improved-steady-state">Steady state performance</a>
+
+* <a rel="external" href="#program-review">Program review</a>
+
+    * <a rel="external" href="#program-review-program-structure">Program structure</a>
+    * <a rel="external" href="#program-review-workout-intensity">Workout intensity</a>
+    * <a rel="external" href="#program-review-pacing-off-a-time-trial">Pacing off
+      a time trial</a>
+    * <a rel="external" href="#program-review-time-commitment">Time commitment</a>
+    * <a rel="external" href="#program-review-varied-not-random">Varied, not
+      random</a>
+    * <a rel="external" href="#program-review-mental-fortitude">Mental fortitude</a>
+
+* <a rel="external" href="#supplementary-notes">Supplementary notes</a>
+
+    * <a rel="external" href="#supplementary-notes-concept2-pm">Concept2 Performance Monitor issues</a>
+    * <a rel="external"
+      href="#supplementary-notes-comparing-bikerg-and-airdyne">Comparing the BikeErg
+      and AirDyne</a>
+
+* <a rel="external" href="#summary">Summary</a>
+* <a rel="external" href="#recommendations">Recommendations</a>
 
 ### <a name="about-this-review">About this review</a>
 
-This review of Year 2 follows on from [year 1](/recreation/yoe-year1-review).
+This review of Year 2 follows on from [Year 1](/recreation/yoe-year1-review).
 
-<p class="self">
+<div class="self">
     A box like this describes a decision, experience or an observation that I
     made while on the program.
-</p>
+</div>
+
+### <a name="about-this-review-the-virus-in-the-room">The virus in the room</a>
+
+I undertook this program during the <a
+href="https://en.wikipedia.org/wiki/COVID-19_pandemic">COVID-19 pandemic</a>. I
+am located in Australia, and the response from the federal and state governments
+has been largely effective at minimising cases and fatalities. To achieve this,
+many restrictions were instigated within my home state which introduced many
+stressors to day-to-day activities, including training:
+
+* inability to establish a consistent training schedule;
+* sacrificing recovery days for training, so as not to fall too far behind
+  schedule;
+* multiple days of no training due to fulfiling extra familial responsibilities;
+* alterations to diet and eating schedule;
+* interrupted sleep and an increase in overall stress.
+
+While the results presented here are accurate and complete, I have no idea how
+significantly the above issues impacted my training.
+
+<div class="self">
+    I'm thankful that I was able to complete Year 2 of the program.
+</div>
 
 ### <a name="about-this-review-disclosure">Disclosure</a>
 
@@ -93,7 +139,7 @@ is described in more detail <a rel="external" href="#program-workouts">below</a>
 The results and graphs presented in this review come directly from data
 collected throughout the program. Stroke data information for specific rower,
 SkiErg and BikeErg workouts were sourced from my account on the [Concept2
-Logbook](https://log.concept2.com); links are provided where referenced.
+Logbook](https://log.concept2.com).
 
 ### <a name="program">Program Overview</a>
 
@@ -145,7 +191,7 @@ next.
 
 ### <a name="program-tracks">Tracks</a>
 
-Unlike Year 1, Year 2 uses a single conditioning track.
+Year 2 uses a single track; there is no MetCon track like in Year 1.
 
 ### <a name="program-workouts">Workouts</a>
 
@@ -153,14 +199,6 @@ Workouts were received via email each month as a single .pdf file. Each file
 contains four weeks of workouts, each week having five workouts to complete.
 
 ### <a name="program-workout-types">Workout types</a>
-
-<!--
-<EChart
-    id="graph-workout-types"
-    theme={$theme}
-    option={charts.workoutTypes.workoutTypes()}
-/>
--->
 
 Each workout type is described below. As <a rel="external"
 href="#about-this-review-workout-obfuscation">mentioned above</a>, only a
@@ -272,8 +310,9 @@ workout descriptions are obfuscated according to the rules below.
         0:30 work, 0:30 rest<br />
         1:00 work, 0:30 rest<br />
         1:30 work, 0:30 rest<br />
+        ...<br />
         Continue until you reach 4:00<br />
-        Pace = time trial pace - 1cal</td>
+        Pace = time trial pace -1cal</td>
         <td>Cumulative work time and rest time</td>
         <td class="right"><strong>10:00/8:00r</strong></td>
     </tr>
@@ -282,7 +321,7 @@ workout descriptions are obfuscated according to the rules below.
         <td>Intervals with increasing work time but steady rest, then intervals
         with steady work time but decreasing rest, then a max time round. All
         intervals to be done at a variant of time trial pace.</td>
-        <td>@ time trial pace - 1cal:<br />
+        <td>@ time trial pace -1cal:<br />
         1:00 work, 1:00 rest<br />
         2:00 work, 1:00 rest<br />
         3:00 work, 1:00 rest<br />
@@ -310,8 +349,8 @@ Year of the Engine uses ergometers. The program as supplied gives options for:
   AirDyne or similar; and
 - Running.
 
-Each workout can be completed with a different apparatus. Scalings are
-supplied.
+Each workout can be completed with a different apparatus. Alternative apparatus
+for the workout are noted.
 
 ### <a name="program-additional-training">Additional Training</a>
 
@@ -324,10 +363,12 @@ Integration with other training is left to the athlete to manage.
 
 - Male, even later 40s than in Year 1, 182cm, 100kg.
 - Married, kids, desk-bound work. Normal day-to-day western-lifestyle stresses.
+  Also see <a rel="external" href="#about-this-review-the-virus-in-the-room">The
+  virus in the room</a>.
 - Basketball, mountain biking, road cycling, snowboarding, martial arts prior
   to 2012. CrossFit and running about after the kids since 2012.
 - Non-competitive exerciser. Training to stay healthy.
-- Less than an hour available to train each day.
+- Between 30 and 45 minutes available to train when free time is available.
 - Meat-and-three-veg diet. Dad-bod well in progress.
 
 ### <a name="methodology-scheduling">Scheduling</a>
@@ -340,24 +381,15 @@ The program deliberately allows you to move workouts around during the
 week in order to fit in with other training and life.
 
 <div class="self">
-    Due to the impact of restrictions in Australia as a result of the <a
-    href="https://en.wikipedia.org/wiki/COVID-19_pandemic">COVID-19
-    pandemic</a>, it became incredibly difficult to routinely schedule training
-    due to family responsibilities. Workouts were forced into gaps in my
-    timetable as they became available, unlike Year 1 which was more strictly
-    regimented.
-
     Rest days were also slotted haphazardly, which no doubt affected
     recovery and subsequent workouts.
 </div>
 
 ### <a name="methodology-additional-training">Additional Training</a>
 
-<div class="self">
-    No additional training was undertaken during Year 2, due to time
-    constraints as <a rel="external" href="#methodology-scheduling">described
-    above</a>.
+No additional training was undertaken during Year 2.
 
+<div class="self">
     All other exercise was incidental, mostly just playing with my kids.
 </div>
 
@@ -418,7 +450,7 @@ I chose:
     </div>
 
     <div class="apparatus">
-        <img src="/yoe-year-2-review/bikeerg.jpeg" alt="Concept2 BikeErg" title="Concept2 BikeErg" />
+        <img src="/yoe-year-2-review/IMG_2054.jpeg" alt="Concept2 BikeErg" title="Concept2 BikeErg" />
         Concept2 BikeErg
     </div>
 </div>
@@ -432,12 +464,11 @@ space available to write results. Matt suggests printing out each sheet and
 recording directly on the sheet.
 
 <div class="self">
-    On the rower and SkiErg I used Concept2's <a
+    On the rower, SkiErg and BikeErg I used Concept2's <a
     href="https://concept2.com/ergdata">ErgData</a> to record each session,
     which were then uploaded to the <a href="https://log.concept2.com">Concept2
-    Logbook</a>. Workout information,
-    including stroke data, was extracted using the <a
-    href="https://log.concept2.com/developers/documentation/">Concept2
+    Logbook</a>. Workout information, including stroke data, was extracted using
+    the <a href="https://log.concept2.com/developers/documentation/">Concept2
     developer API</a>).
 
     The AirDyne lacks automated recording, so I took a photo of the
@@ -447,11 +478,11 @@ recording directly on the sheet.
 
 ### <a name="methodology-execution">Execution</a>
 
-I started the program on Monday 17th September 2020, and finished on **TODO**
+I started the program on Thursday 17th September 2020, and finished on Thursday
+30th September, 2021.
 
-<!--
-Workouts, and their phases, were completed
-as below.
+{#if !dev}
+Workouts, and their phases, were completed as below.
 
 <EChart
     id="graph-execution-summary"
@@ -459,102 +490,427 @@ as below.
     height="170"
     option={charts.execution.summary()}
 />
--->
+{/if}
 
 ## <a name="objective-results">Objective results</a>
 
-The following workouts are presented as evidence of performance changes both
-during and after Year 2 of the Year of the Engine program. The results are
-mine alone (<i>n</i> = 1).
+The following workouts are presented as evidence of performance changes during
+Year 2 of the Year of the Engine program. The results are mine alone (<i>n</i> =
+1).
 
-These workouts have been chosen to match the same workouts as detailed in
-from the Year 1 review. Detail about these workouts will not be repeated
-here; check [Year 1](/recreation/yoe-year1-review) for that.
+### <a name="objective-results-10-minute-rower">10:00.0 Rower time trial</a>
 
-### <a name="objective-results-10-minute-air-bike">10:00.0 Air Bike time trial</a>
+The 10:00.0 time trial is scheduled at the start of phase 3 (week 27) and at the
+start of phase 4 (week 41). These tests are not placed outside of the workout
+schedule; they are included as part of training. No special preparation was
+taken for these tests.
 
-There are two 10:00 time trials in Year 2 (weeks 28, 40). I chose to do these
-two trials on the rower instead of the air bike during the training period;
-however I did complete a 10:00 time trial on the AirDyne after finishing Year 2
-to ensure consistency from Year 1.
-
-<!--
 <EChart
-    id="graph-tt-airdyne"
+    id="graph-tt-rower"
     theme={$theme}
-    option={charts.timeTrial.ttAirDyne()}
+    height={150}
+    option={charts.timeTrials()}
 />
--->
 
-<div class="self">
-    Increase of **TODO** cals from the last test in Year 1.
-</div>
+There was a 1% increase in both calories and distance recorded between the two
+trials. This small an increase requires further investigation.
 
-### <a name="objective-results-3x2,000m/3:00r-rower">3x2,000m/3:00r rower</a>
+Let's compare splits first:
 
-3x2,000m/3:00r rower (3 intervals of 2,000m with 3:00 rest in between)
-is scheduled once in Year 1 (week 12). I performed attempt 2 at the end of
-Year 1, and chose to perform it again at the end of Year 2.
-
-<!--
 <EChart
-    id="graph-repeated-3_2000_300"
-    theme={$theme}
-    option={charts.timeTrial.repeated32000300()}
-/>
--->
-
-<div class="self">
-    **TODO**
-</div>
-
-### <a name="objective-results-acid-bath">Acid Bath</a>
-
-&ldquo;Acid Bath&rdquo; was the 6th individual workout programmed for the <a
-target="_blank" href="https://dubaicrossfitchampionship.com/schedule.html">2018
-Dubai CrossFit Championship</a>. It is one variant of the <a target="_blank"
-href="https://www.concept2.com/news/introducing-ergathlon">Concept2 Ergathlon
-Super Sprint</a>:
-
-<blockquote>
-For time:
-
-* 500m Concept2 SkiErg
-* 500m Concept2 rower
-* 1000m Concept2 BikeErg
-
-7:00 time cap (women)  
-6:00 time cap (men)
-</blockquote>
-
-I clocked 5:18 on this workout just after finishing Year 1. After Year 2, it took
-me **TODO**:
-
-<!--
-<EChart
-    id="graph-acidbath-timeline"
+    id="graph-tt-split-comparison"
     theme={$theme}
     height="250"
-    option={charts.acidBath.timeline()}
+    option={charts.compareSplits([52817150,55235950])}
 />
--->
 
-See [Year 1](/recreation/yoe-year1-review) for information about the results of
-this workout.
+Test 2 showed small, consistent increases in distance at each split over test 1,
+with a large increase in the final split. Similarly, the variance in pace between the
+tests was consistent, and splits were negative after the 1st in both.
+
+Instantaneous pace per stroke:
+
+<EChart
+    id="graph-tt-strokedata-pace"
+    theme={$theme}
+    option={charts.compareStrokedata(
+        [52817150,55235950],
+        {
+            dataZoom: [{
+                startValue: 5,
+            }],
+        },
+        'p',
+    )}
+/>
+
+In test 1, pace was consistent until a sharp increase at 9:30.
+
+In test 2, pace was consistent until a sharp increase at 8:00, then a small
+reduction at 8:30, then resumption at higher pace at 9:14.
 
 <div class="self">
-    It's still not part of the program, but is fun to do.
-    **TODO**
+    The change in pace in test 1 was an "everything is going good; let's sprint the
+    last 0:30."
+
+    The change in pace in test 2 was an over optimistic "sprint the last
+    split... nope, started too early, let's back off a bit, try to sprint the
+    very last bit."
 </div>
 
+A more interesting observation is the instantaneous stroke rate:
 
+<EChart
+    id="graph-tt-strokedata-strokerate"
+    theme={$theme}
+    option={charts.compareStrokedata(
+        [52817150,55235950],
+        {
+            dataZoom: [{
+                startValue: 5,
+            }],
+        },
+        'sr'
+    )}
+/>
+
+The stroke rate in test 1 sharply increased during the sprint, however in test
+2, while the stroke rate did increase by a point, it was not nearly as high as
+in test 1.
+
+We can confirm a tighter grouping of stroke rate in test 2 by counting the
+number of strokes at each stroke rate:
+
+<EChart
+    id="graph-tt-strokedata-strokecount"
+    theme={$theme}
+    height="300"
+    option={charts.compareStrokeFrequency([52817150,55235950])}
+/>
+
+Test 1 stroke rate varied from 24 to 30, while test 2 stayed between 25 and 27,
+straying outside the range for a total of 4 strokes out of 254.
+
+We can say that **a higher level of power was generated at the same stroke rate
+during the sprint in test 2**.
+
+<div class="self">
+    An aside: 2,000m (2km) is a competition distance in the rowing community,
+    for both on-the-water and indoor apparatus. I comfortably hit 2km at 7:19.7
+    in test 1 and 7:18.7 in test 2. I don't believe the 0:01 difference is
+    significant, but it does indicate how closely I paced both tests.
+</div>
+
+It is difficult to conclude there was a significant improvement in performance
+based on these results.
+
+<div class="self">
+    Both tests felt RPE 7-8 at 2km, RPE 8-9 at the end of the sprints. I think
+    an improved pacing strategy across the entire piece, rather than trying to
+    sprint the last split, may be more productive.
+
+    It is interesting that the pace error in test 2 was not only recoverable but
+    did not affect the finish.  A coach's interpretation here would be quite
+    useful.
+</div>
+
+### <a name="objective-results-improved-steady-state">Steady state performance</a>
+
+In Year 1, steady state (Endurance) workouts range from 20:00 to 60:00, while in
+Year 2, Endurance is prescribed as 45:00 however the athlete may choose anywhere
+from 30:00 to 60:00.
+
+Below are all my steady state workouts, shown as speed (workout distance divided
+by workout time) against date. The red shading are workouts from Year 1, the
+green shading are workouts from Year 2:
+
+<EChart
+    id="graph-steady-state"
+    theme={$theme}
+    height="250"
+    option={charts.steadyState()}
+/>
+
+<div class="self">
+    I chose too fast a pace in the first half of Year 1, as these workouts were
+    a shorter duration and I reasoned I could get away with it. My results in
+    the second half of Year 1 showed I did not have a good base, and paid for it
+    with haphazard results, albeit improving at the end of the year.
+
+    A better result can be seen in Year 2 against a dedicated time of 45:00.
+    The pace was slightly slower but far more consistent, with an upward trend
+    as the year progressed.
+</div>
+
+## <a name="program-review">Program review</a>
+
+<div class="self">
+    From here on is entirely my opinion. Data is from my results.
+    <a href="https://reddit.com/u/angrytongan">Feel free to disagree</a>.
+</div>
+
+### <a name="program-review-program-structure">Program Structure</a>
+
+The structuring of Year 2 is the same as Year 1:
+
+- 5 workouts per week.
+- 4 weeks supplied at the start of the month.
+- 3 months per phase.
+- 4 phases over the entire year.
+- Move workouts around to suit your schedule.
+- Standalone or integrate with your existing training.
+- Ergometer or feet required.
+- Workouts are unambiguously described.
+
+### <a name="program-review-workout-intensity">Workout intensity</a>
+
+Like Year 1, the intensity of each workout type is described at the start of
+each 3-month phase. The first 2 phases of Year 2 run like Year 1, where the
+athlete works at a pace sustainable across the entire workout, or as a
+percentage of the athlete's endurance pace that was determined in Year 1. Here,
+the athlete's goal in approaching all workouts remains unchanged: [maximise the
+average, minimise the range](https://www.thegainslab.com/interval-training).
+
+The latter 2 phases of Year 2 (Devour and Infinity) incorporate new workout
+types where pacing for these workouts is given as a variation of a **time-trial
+pace**. At the start of month 7 (Devour phase) and month 10 (Infinity phase),
+the athlete completes a 10:00 time trial on their chosen apparatus to determine
+this pace.
+
+### <a name="program-review-pacing-off-a-time-trial">Pacing off a time trial</a>
+
+At the completion of each time trial, the number of calories accumulated on the
+apparatus' monitor is divided by 10 to yield a target **pace per minute** value.
+This value is referenced as **TT**, and the required pace in a workout is
+specified as a variation of this value. For example, TT-1 means 1 second
+*slower* than TT pace, TT&plus;2 means 2 seconds *faster* than TT pace).
+
+This value is used in Devour and Infinity workout types. For example,
+
+- 8 rounds total
+  - 0:30 work, 0:30 rest
+  - 1:00 work, 0:30 rest
+  - 1:30 work, 0:30 rest
+  - ...
+- Continue until you reach 4:00
+- Pace = **TT&minus;1**
+
+This workout is 8 rounds long. Each work period per round extends by 0:30, the
+rest period does not change, and it is to be performed at the athlete's time
+trial pace minus one (1).
+
+Pace varies from TT&minus;4 to TT&plus;4 in Devour and Infinity workouts.
+
+<div class="self">
+    I found it easier to program TT by converting from <em>calories per
+    minute</em> to <em>pace</em> which is useful for machines that do not
+    display calories per minute.
+
+    For Concept2 machines, the conversion can be done using <a
+    href="https://www.concept2.com/indoor-rowers/training/calculators/pace-calculator">Concept2's
+    calculators</a>, the PM5 itself using the pace option, or by referencing
+    this chart:
+</div>
+
+<EChart
+    id="graph-tt-conversion-chart"
+    theme={$theme}
+    height="250"
+    option={charts.ttConversionChart()}
+/>
+
+<div class="self">
+    I found the Devour and Infinity workouts to be very difficult, and
+    failed quite a few. I classified the workout as failed if I was unable to
+    sustain the prescribed pace in any interval.
+
+    In the Devour phase, after failing multiple workouts, I chose to drop my TT
+    until I reached a pace that allowed me to get to the end of these workouts.
+    The downside was workouts specified slower than TT were not challenging.
+
+    In the Infinity phase, I chose to remain at my calculated TT, instead
+    working to failure on any given interval, taking the remaining time as rest,
+    then repeating this for the remaining intervals. Workouts that had a
+    max-out round at the end were done at least 1 TT point higher than
+    prescribed in order to &ldquo;make up&rdquo; for the fails (it made sense in
+    my head at the time).
+</div>
+
+### <a name="program-review-time-commitment">Time commitment</a>
+
+Similarly to Year 1, workout length in Year 2 varies from medium to long:
+
+<EChart
+    id="graph-time-commitment"
+    theme={$theme}
+    height="250"
+    option={charts.timeCommitment()}
+/>
+
+Different workout types vary in length, just like Year 1:
+
+<EChart
+    id="graph-time-workout-type"
+    theme={$theme}
+    height="250"
+    option={charts.timeWorkoutDistribution()}
+/>
+
+Most workouts in Year 2 are around 30:00, with the exception of Endurance and
+Polarisation which can be up to 60:00.
+
+### <a name="program-review-varied-not-random">Varied, not random</a>
+
+Just like Year 1, new workout types are introduced as the program progresses:
+
+<EChart
+    id="graph-variation-workout-by-date"
+    theme={$theme}
+    height="250"
+    option={charts.variationWorkoutByDate()}
+/>
+
+In Year 1, each phase had at least 3, and at most 4, different workout types. In
+Year 2, each phase mixes the new workout types with previously seen ones. This
+leads to a greater variety of workouts, although there is still a dominant theme
+in each phase:
+
+<EChart
+    id="graph-variation-workout-by-phase"
+    theme={$theme}
+    height="250"
+    option={charts.variationWorkoutByPhase()}
+/>
+
+### <a name="program-review-mental-fortitude">Mental fortitude</a>
+
+The Devour and Infinity phases of Year 2 will do more than test your ability to
+&ldquo;embrace the suck&rdquo;. Operating at multiple steps above your 10:00
+time trial pace, even though at shorter intervals, is very mentally taxing.
+Matt advises to back off the intensity of the other workout types a little, as
+the TT&plus; workouts very much give your brain a beating.
+
+<div class="self">
+    I found phase 4 to be a bit disheartening, as it was clear I would not be
+    able to successfully complete all rounds of many of the Infinity workouts
+    without failing.
+
+    In comparison, the other interval workout types feel easier, although they
+    are still solid work. Endurance and Polarisation workouts feel like a breeze
+    against Devour and Infinity workouts.
+</div>
+
+## <a name="supplementary-notes">Supplementary notes</a>
+
+### <a name="supplementary-notes-concept2-pm">Concept2 Performance Monitor Issues</a>
+
+Devour and Infinity phases use interval workouts where the work period changes,
+the rest period changes, or some combination of both. On the Concept2 rower,
+SkiErg or BikeErg, these can be setup as [Variable Interval
+Workouts](https://www.concept2.com/service/monitors/pm5/how-to-use/setting-variable-interval-workout)
+using the Performance Monitor (PM5). This makes executing the workout easier, as
+once set, the athlete just follows the timing on the PM5. A pace boat / skier /
+bike can also be set.
+
+However, about half of the workouts I did that used variable intervals were not
+recorded properly by the PM5, due to:
+
+* the PM5 dropping out of the workout to the main menu;
+* the PM5 display stopping randomly;
+* the PM5 display stopping randomly, but the workout timer continued;
+* the PM5 showing an error message, and stopping the workout;
+* losing the connection to ErgData, and dropping the workout;
+* ErgData crashing;
+* or a combination of the above.
+
+Broken workouts appeared the PM5 history either truncated, or as garbage:
+
+<div style="display: flex; justify-content: space-around;">
+    <img
+        src="/yoe-year-2-review/IMG_2063.jpeg"
+        alt="Broken recorded workout in PM5"
+        title="Broken recorded workout in PM5"
+        />
+</div>
+
+Ugh.
+
+<div class="self">
+    Troubleshooting didn't get anywhere. Old batteries, new batteries, with
+    ErgData, without ErgData, latest firmware, move the ergs to different
+    locations - there was no reliable way to reproduce the behaviour or mitigate
+    it's frequency.
+
+    A simple backup would be to write out the workout and timestamps on a
+    whiteboard, and use an external clock just in case the monitor dumps in the
+    middle of the workout. It became quite frustrating to try and program the
+    remainder of a workout into the device part way through.
+</div>
+
+### <a name="supplementary-notes-comparing-bikerg-and-airdyne">Comparing the BikeErg and AirDyne</a>
+
+A common question on the [CrossFit subreddit](https://reddit.com/r/crossfit)
+is how to equate the metrics of the Concept2 BikeErg, the Rogue Echo Bike, the
+Assault AirBike, the Schwinn AirDyne and other bike ergometers. Workouts targets
+for one type of machine will differ for others, and athletes may not have access
+to the device specified in the workout but want to equate their performance.
+
+No manufacturer makes available the exact specifictions for calculating their
+metrics on their machines (the [Physics of
+Ergometers](http://eodg.atm.ox.ac.uk/user/dudhia/rowing/physics/ergometer.html)
+makes a good case for Concept2 devices). Various formulas for converting between
+some bikes exist on the Internet, all of which are unverified and supported by
+anecdotal evidence only.
+
+[Here are a few
+graphs](https://ergarcade.com/articles/airbike-rpm-speed-power.html) that equate
+speed, RPM and power between the BikeErg, Schwinn AirDyne6 and the Assault bike.
+Note that this **does not equate your effort on the machine**, only the
+values displayed on the monitors.
+
+<div class="self">
+    I was fortunate enough to have access to both a Schwinn AirDyne6 and a
+    Concept2 BikeErg during Year 2. Below are my 45:00 steady-state endurance
+    workouts, done on either AirDyne6 or BikeErg (drag factor 80 to 82), held at
+    my steady state pace of approxmately 30km/h. Note that the BikeErg
+    accumulated more calories than the AirDyne at what I perceived to be the
+    same effort.
+</div>
+
+<EChart
+    id="graph-tt-airdyne-bikeerg"
+    theme={$theme}
+    height="150"
+    option={charts.bikeergAirdyne()}
+/>
+
+## <a name="summary">Summary</a>
+
+The Year of the Engine continues at full speed in Year 2. New workout types are
+introduced, keeping variability high, whilst still remaining true to the core
+work introduced in Year 1.
+
+The guides, introduced at the start of each phase, remain clear and easy to
+understand.
+
+It should be noted that the difficulty of some workouts increases, particularly
+in the second half of the year.
+
+## <a name="recommendations">Recommendations</a>
+
+<div class="self">
+    I thoroughly enjoyed the challenges presented in Year 2. Even though I had
+    difficulty in the latter part of the program, I believe that I am fitter at
+    the end of Year 2 compared to the end of Year 1, even with all the
+    distractions that life presented.
+
+    My consistency has improved, in both interval and time trials, and I have
+    made some progress with longer steady state workouts.
+
+    Overall, I am very happy, and I look forward to starting Year 3.
+</div>
 
 <style>
-    blockquote {
-        padding-top: 0;
-        padding-bottom: 0;
-        font-size: 100%;
-    }
     .images {
         display: flex;
     }
@@ -566,12 +922,9 @@ this workout.
         color: #eee;
         background: #06a;
         padding: 1em;
+        margin-bottom: 1em;
     }
     .self a {
         color: white;
-    }
-    img.centre {
-        display: block;
-        margin: 0 auto;
     }
 </style>

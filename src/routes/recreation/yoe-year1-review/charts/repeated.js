@@ -1025,6 +1025,10 @@ export const calcStandardDeviation = (vals, mean) => {
 };
 
 export const calcStandardNormalDistribution = (mean, standardDeviation) => {
+    if (standardDeviation === 0) {
+        return [];
+    }
+
     const step = standardDeviation / 3;
     const numDeviations = 3;
     const range = [ mean - numDeviations * standardDeviation, mean + numDeviations * standardDeviation ];
