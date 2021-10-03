@@ -636,8 +636,8 @@ green shading are workouts from Year 2:
     with haphazard results, albeit improving at the end of the year.
 
     A better result can be seen in Year 2 against a dedicated time of 45:00.
-    The pace was slightly slower but far more consistent, and increasing as
-    Year 2 progressed.
+    The pace was slightly slower but far more consistent, with an upward trend
+    as the year progressed.
 </div>
 
 ## <a name="program-review">Program review</a>
@@ -697,7 +697,7 @@ This workout is 8 rounds long. Each work period per round extends by 0:30, the
 rest period does not change, and it is to be performed at the athlete's time
 trial pace minus one (1).
 
-Devour and Infinity workouts vary in pacing from TT&minus;4 to TT&plus;4.
+Pace varies from TT&minus;4 to TT&plus;4 in Devour and Infinity workouts.
 
 <div class="self">
     I found it easier to program TT by converting from <em>calories per
@@ -718,21 +718,20 @@ Devour and Infinity workouts vary in pacing from TT&minus;4 to TT&plus;4.
 />
 
 <div class="self">
-    I found the Devour and Infinity workouts to be exceedingly difficult, and
-    failed more of these than passed. I classified the workout as failed if I
-    was unable to sustain the prescribed pace at any time (ie. I
-    &ldquo;bonked&rdquo).
+    I found the Devour and Infinity workouts to be very difficult, and
+    failed quite a few. I classified the workout as failed if I was unable to
+    sustain the prescribed pace at any time.
 
-    In the Devour phase, after failing multiple workouts, I chose to drop
-    my TT on three separate occasions until I reached a pace that allowed me to
-    get to the end of these workouts. The downside was workouts specified slower
-    than TT were not challenging.
+    In the Devour phase, after failing multiple workouts, I chose to drop my TT
+    until I reached a pace that allowed me to get to the end of these workouts.
+    The downside was workouts specified slower than TT were not challenging.
 
-    During the Infinity phase, I chose to remain at my calculated TT, instead
+    In the Infinity phase, I chose to remain at my calculated TT, instead
     working to failure on any given interval, taking the remaining time as rest,
-    then repeating this for the remaining intervals. For Infinity workouts, I
-    did the max-out round at least 1 TT point higher than prescribed in order to
-    &ldquo;make up&rdquo; for the fails (it made sense in my head at the time).
+    then repeating this for the remaining intervals. Workouts that had a
+    max-out round at the end were done at least 1 TT point higher than
+    prescribed in order to &ldquo;make up&rdquo; for the fails (it made sense in
+    my head at the time).
 </div>
 
 ### <a name="program-review-time-commitment">Time commitment</a>
@@ -746,8 +745,18 @@ Similarly to Year 1, workout length in Year 2 varies from medium to long:
     option={charts.timeCommitment()}
 />
 
-Expect to set aside 30:00 on interval days, and between 20:00 to 55:00 on
-Polarisation days. Endurance work is prescribed at 45:00.
+And again like Year 1, workout types change duration over the course of the
+program:
+
+<EChart
+    id="graph-time-workout-type"
+    theme={$theme}
+    height="250"
+    option={charts.timeWorkoutDistribution()}
+/>
+
+Workout length is predominantly sub-30:00, with the exception of Endurance and
+Polarisation which are between 30:00 and 60:00.
 
 ### <a name="program-review-mental-fortitude">Mental fortitude</a>
 
@@ -867,12 +876,14 @@ in the second half of the year.
 
 <div class="self">
     I thoroughly enjoyed the challenges presented in Year 2. Even though I had
-    substantial difficulty in the Devour and Infinity phases, I believe that I
-    am fitter at the end of Year 2 compared to the end of Year 1, even with all
-    the distractions that life threw my way. My consistency has improved and I
-    have addressed some steady state issues. Overall, I am very happy.
+    difficulty in the latter part of the program, I believe that I am fitter at
+    the end of Year 2 compared to the end of Year 1, even with all the
+    distractions that life presented.
 
-    I look forward to starting Year 3.
+    My consistency has improved, in both interval and time trials, and I have
+    made some progress with longer steady state workouts.
+
+    Overall, I am very happy. I look forward to starting Year 3.
 </div>
 
 <style>

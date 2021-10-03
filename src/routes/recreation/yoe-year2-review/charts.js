@@ -4,7 +4,7 @@ import { compareStrokedata, compareStrokeFrequency } from './charts/compare-stro
 import { compareSplits } from './charts/compare-splits.js';
 import { bikeergAirdyne } from './charts/bikeerg-airdyne.js';
 import { steadyState } from './charts/steady-state.js';
-import { timeCommitment } from './charts/time-commitment.js';
+import { timeCommitment, timeWorkoutDistribution } from './charts/time-commitment.js';
 
 export {
     execution,
@@ -16,4 +16,5 @@ export {
     bikeergAirdyne,
     steadyState,
     timeCommitment,
+    timeWorkoutDistribution,
 };

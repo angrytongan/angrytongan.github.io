@@ -6,8 +6,8 @@
 </script>
 
 <EChart
-    id="graph-time-commitment"
+    id="graph-time-workout-type"
     theme={$theme}
     height="250"
-    option={charts.timeCommitment()}
+    option={charts.timeWorkoutDistribution()}
 />
