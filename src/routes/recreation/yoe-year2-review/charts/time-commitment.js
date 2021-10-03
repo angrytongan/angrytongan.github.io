@@ -22,9 +22,10 @@ export const timeCommitment = () => {
         trigger: 'axis',
         formatter: (params) => {
             if (params.length > 0) {
-                return `${params[0].data.date}<br />` + dateTime.secs2mmss(params.reduce((acc, val) => {
-                    return acc + val.data[val.seriesName];
-                }, 0));
+                return `${params[0].data.date}<br />${params[0].data.type}<br />` +
+                    dateTime.secs2mmss(params.reduce((acc, val) => {
+                        return acc + val.data[val.seriesName];
+                    }, 0));
             }
 
             return '';

@@ -6,8 +6,8 @@
 </script>
 
 <EChart
-    id="graph-time-workout-type"
+    id="graph-variation-workout-by-phase"
     theme={$theme}
     height="250"
-    option={charts.timeWorkoutDistribution()}
+    option={charts.variationWorkoutByPhase()}
 />

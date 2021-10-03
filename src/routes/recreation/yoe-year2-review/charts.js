@@ -5,6 +5,7 @@ import { compareSplits } from './charts/compare-splits.js';
 import { bikeergAirdyne } from './charts/bikeerg-airdyne.js';
 import { steadyState } from './charts/steady-state.js';
 import { timeCommitment, timeWorkoutDistribution } from './charts/time-commitment.js';
+import { variationWorkoutByDate, variationWorkoutByPhase } from './charts/variation.js';
 
 export {
     execution,
@@ -17,4 +18,6 @@ export {
     steadyState,
     timeCommitment,
     timeWorkoutDistribution,
+    variationWorkoutByDate,
+    variationWorkoutByPhase,
 };

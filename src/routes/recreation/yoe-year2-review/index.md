@@ -20,7 +20,7 @@ I completed the second year of [The Gains Lab](https://thegainslab.com) [Year of
 the Engine](https://thegainslab.com/engine) capacity program by [Matt
 Wiebke](https://www.instagram.com/thegainslab1/). The results of each workout
 were recorded. Some evidence of continued improvement from Year 1 is
-demonstrated, although external factors significantly impacted training efforts.
+demonstrated, although external factors significantly hampered training efforts.
 Program difficulty level increased substantially. I continue to recommend the
 program if you wish to improve your cardiovascular capacity.
 
@@ -63,6 +63,8 @@ program if you wish to improve your cardiovascular capacity.
     * <a rel="external" href="#program-review-pacing-off-a-time-trial">Pacing off
       a time trial</a>
     * <a rel="external" href="#program-review-time-commitment">Time commitment</a>
+    * <a rel="external" href="#program-review-varied-not-random">Varied, not
+      random</a>
     * <a rel="external" href="#program-review-mental-fortitude">Mental fortitude</a>
 
 * <a rel="external" href="#supplementary-notes">Supplementary notes</a>
@@ -90,8 +92,8 @@ I undertook this program during the <a
 href="https://en.wikipedia.org/wiki/COVID-19_pandemic">COVID-19 pandemic</a>. I
 am located in Australia, and the response from the federal and state governments
 has been largely effective at minimising cases and fatalities. To achieve this,
-many restrictions were instigated in my home state which introduced many
-stressors to day-to-day activities including training:
+many restrictions were instigated within my home state which introduced many
+stressors to day-to-day activities, including training:
 
 * inability to establish a consistent training schedule;
 * sacrificing recovery days for training, so as not to fall too far behind
@@ -720,7 +722,7 @@ Pace varies from TT&minus;4 to TT&plus;4 in Devour and Infinity workouts.
 <div class="self">
     I found the Devour and Infinity workouts to be very difficult, and
     failed quite a few. I classified the workout as failed if I was unable to
-    sustain the prescribed pace at any time.
+    sustain the prescribed pace in any interval.
 
     In the Devour phase, after failing multiple workouts, I chose to drop my TT
     until I reached a pace that allowed me to get to the end of these workouts.
@@ -745,8 +747,7 @@ Similarly to Year 1, workout length in Year 2 varies from medium to long:
     option={charts.timeCommitment()}
 />
 
-And again like Year 1, workout types change duration over the course of the
-program:
+Different workout types vary in length, just like Year 1:
 
 <EChart
     id="graph-time-workout-type"
@@ -755,8 +756,31 @@ program:
     option={charts.timeWorkoutDistribution()}
 />
 
-Workout length is predominantly sub-30:00, with the exception of Endurance and
+Most workouts are around the 30:00 mark, with the exception of Endurance and
 Polarisation which are between 30:00 and 60:00.
+
+### <a name="program-review-varied-not-random">Varied, not random</a>
+
+Just like Year 1, new workout types are introduced as the program progresses:
+
+<EChart
+    id="graph-variation-workout-by-date"
+    theme={$theme}
+    height="250"
+    option={charts.variationWorkoutByDate()}
+/>
+
+In Year 1, each phase had at least 3, and at most 4, different workout types. In
+Year 2, each phase mixes the new workout types with previously seen ones. This
+leads to a greater variety of workouts, although there is still a dominant theme
+in each phase:
+
+<EChart
+    id="graph-variation-workout-by-phase"
+    theme={$theme}
+    height="250"
+    option={charts.variationWorkoutByPhase()}
+/>
 
 ### <a name="program-review-mental-fortitude">Mental fortitude</a>
 
@@ -780,7 +804,7 @@ the TT&plus; workouts very much give your brain a beating.
 
 ### <a name="supplementary-notes-concept2-pm">Concept2 Performance Monitor Issues</a>
 
-Devour and Infinity phases use interval workokuts where the work period changes,
+Devour and Infinity phases use interval workouts where the work period changes,
 the rest period changes, or some combination of both. On the Concept2 rower,
 SkiErg or BikeErg, these can be setup as [Variable Interval
 Workouts](https://www.concept2.com/service/monitors/pm5/how-to-use/setting-variable-interval-workout)
@@ -883,7 +907,7 @@ in the second half of the year.
     My consistency has improved, in both interval and time trials, and I have
     made some progress with longer steady state workouts.
 
-    Overall, I am very happy. I look forward to starting Year 3.
+    Overall, I am very happy, and I look forward to starting Year 3.
 </div>
 
 <style>
