@@ -2,7 +2,7 @@
     export const prerender = true;
 </script>
 
-I'm a software engineer based in [Brisbane,
+I'm a programmer based in [Brisbane,
 Australia](https://en.wikipedia.org/wiki/Brisbane).  Here you'll find things I
 think are interesting; perhaps you'll find them interesting too.
 

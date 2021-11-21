@@ -14,6 +14,11 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
 
 ### Presentations
 
+* **[Transforming data to and from storage areas using Svelte custom
+  stores](https://youtu.be/1Df-9EKvZr0?t=6195)**  
+  Author, presenter  
+  [Svelte Summit](https://sveltesummit.com) Fall 2021  
+
 * **Porting OpenBSD to the Motorola ColdFire**  
   Author, co-presenter  
   BSDCon 2000, San Mateo, California  
@@ -30,6 +35,13 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
   Circular calendar chain productivity tracker.
 
 ### Employment history
+
+* **Shorthand**  
+  Software Engineer  
+  Remote  
+  October 2021 to present
+
+  Backend engineer working on business systems and user analytics.
 
 * **Branch Merge Tag**  
   Owner  

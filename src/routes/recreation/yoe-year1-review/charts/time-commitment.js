@@ -9,7 +9,7 @@ import {
 import { workouts } from './data.js';
 import { time } from 'echarts';
 
-const summary = (filter = {}) => {
+const summary = () => {
     const title = [];
     const series = [];
     const dataset = [];
@@ -30,16 +30,10 @@ const summary = (filter = {}) => {
         restTime: 'Total rest time',
     };
 
-    title.push({
-        text: filter.type || '',
-        left: 'middle',
-        textAlign: 'center',
-    });
-
     xAxis.push({
         type: 'time',
         name: 'Date',
-        nameGap: 40,
+        nameGap: 30,
         nameLocation: 'middle',
         data: workouts.map((d) => d.date).sort(),
         min: '2019-09-16',
@@ -65,7 +59,7 @@ const summary = (filter = {}) => {
     });
 
     legend.push({
-        top: '5%',
+        top: '0%',
         type: 'scroll',
     });
 
