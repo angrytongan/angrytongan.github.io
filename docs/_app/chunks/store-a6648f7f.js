@@ -1,1 +1,0 @@
-import{C as t}from"./vendor-f2bba630.js";const e=((e,s)=>{let r;r=localStorage.getItem(e),r?r=JSON.parse(r):(localStorage.setItem(e,JSON.stringify(s)),r=s);const{subscribe:o,set:a}=t(r);return{subscribe:o,set:t=>(localStorage.setItem(e,JSON.stringify(t)),a(t))}})("theme","light");export{e as t};
