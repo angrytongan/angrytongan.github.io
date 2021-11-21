@@ -9,17 +9,17 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-60aa6b20.js">
+		<link rel="modulepreload" href="/_app/start-2e721f10.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-f2bba630.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-43f32a3d.js">
-		<link rel="modulepreload" href="/_app/chunks/store-a6648f7f.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-8efe9e57.js">
+		<link rel="modulepreload" href="/_app/chunks/store-47ccc41d.js">
 		<link rel="modulepreload" href="/_app/pages/technical/__layout.md-6f85347c.js">
-		<link rel="modulepreload" href="/_app/pages/technical/index.md-715c9e57.js">
+		<link rel="modulepreload" href="/_app/pages/technical/index.md-fd7e2fb3.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-597b9002.css">
 
 		<script type="module">
-			import { start } from "/_app/start-60aa6b20.js";
+			import { start } from "/_app/start-2e721f10.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"","assets":""},
@@ -32,9 +32,9 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-43f32a3d.js"),
+						import("/_app/pages/__layout.svelte-8efe9e57.js"),
 						import("/_app/pages/technical/__layout.md-6f85347c.js"),
-						import("/_app/pages/technical/index.md-715c9e57.js")
+						import("/_app/pages/technical/index.md-fd7e2fb3.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -60,10 +60,14 @@
 
             <hr></div>
 
-        <ul><li><a href="/technical/svelte">Svelte examples</a> - <a href="http://svelte.dev" rel="nofollow">Svelte</a> is a user
+        <ul><li><p><a href="https://youtu.be/1Df-9EKvZr0?t=6195" rel="nofollow">Transforming data to and from storage areas using Svelte custom
+stores</a> - A lightning talk for <a href="https://sveltesummit.com" rel="nofollow">Svelte Summit
+2021</a> where a simple mechanism is presented for
+transforming data to and from storage areas using a custom Svelte store.</p></li>
+<li><p><a href="/technical/svelte">Svelte examples</a> - <a href="http://svelte.dev" rel="nofollow">Svelte</a> is a user
 interface toolkit for web applications that greatly improves the developer
 experience. Here you’ll find a few articles, as well as quite a bit of code,
-demonstrating how to use Svelte and SvelteKit.</li></ul></main>
+demonstrating how to use Svelte and SvelteKit.</p></li></ul></main>
 
     <footer class="svelte-b74kam"><hr>
         <p>Want to say g&#39;day? Drop me an <a href="mailto:dean@df.id.au">email</a>.
@@ -79,9 +83,11 @@ demonstrating how to use Svelte and SvelteKit.</li></ul></main>
     <script>
         window.goatcounter = { no_onload: true };
         window.addEventListener('sveltekit:navigation-end', (event) => {
-            window.goatcounter.count({
-                path: location.pathname + location.search + location.hash,
-            });
+            if (window?.goatcounter?.count) {
+                window.goatcounter.count({
+                    path: location.pathname + location.search + location.hash,
+                });
+            }
         });
     </script>
     <script data-goatcounter="https://angrytongan.goatcounter.com/count"

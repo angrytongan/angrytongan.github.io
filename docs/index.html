@@ -9,16 +9,16 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-60aa6b20.js">
+		<link rel="modulepreload" href="/_app/start-2e721f10.js">
 		<link rel="modulepreload" href="/_app/chunks/vendor-f2bba630.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-43f32a3d.js">
-		<link rel="modulepreload" href="/_app/chunks/store-a6648f7f.js">
-		<link rel="modulepreload" href="/_app/pages/index.md-afe8f1d5.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-8efe9e57.js">
+		<link rel="modulepreload" href="/_app/chunks/store-47ccc41d.js">
+		<link rel="modulepreload" href="/_app/pages/index.md-8cc685aa.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-597b9002.css">
 
 		<script type="module">
-			import { start } from "/_app/start-60aa6b20.js";
+			import { start } from "/_app/start-2e721f10.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"","assets":""},
@@ -31,8 +31,8 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-43f32a3d.js"),
-						import("/_app/pages/index.md-afe8f1d5.js")
+						import("/_app/pages/__layout.svelte-8efe9e57.js"),
+						import("/_app/pages/index.md-8cc685aa.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -58,7 +58,7 @@
 
             <hr></div>
 
-        <p>I’m a software engineer based in <a href="https://en.wikipedia.org/wiki/Brisbane" rel="nofollow">Brisbane,
+        <p>I’m a programmer based in <a href="https://en.wikipedia.org/wiki/Brisbane" rel="nofollow">Brisbane,
 Australia</a>.  Here you’ll find things I
 think are interesting; perhaps you’ll find them interesting too.</p>
 <hr>
@@ -81,9 +81,11 @@ think are interesting; perhaps you’ll find them interesting too.</p>
     <script>
         window.goatcounter = { no_onload: true };
         window.addEventListener('sveltekit:navigation-end', (event) => {
-            window.goatcounter.count({
-                path: location.pathname + location.search + location.hash,
-            });
+            if (window?.goatcounter?.count) {
+                window.goatcounter.count({
+                    path: location.pathname + location.search + location.hash,
+                });
+            }
         });
     </script>
     <script data-goatcounter="https://angrytongan.goatcounter.com/count"

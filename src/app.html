@@ -14,9 +14,11 @@
     <script>
         window.goatcounter = { no_onload: true };
         window.addEventListener('sveltekit:navigation-end', (event) => {
-            window.goatcounter.count({
-                path: location.pathname + location.search + location.hash,
-            });
+            if (window?.goatcounter?.count) {
+                window.goatcounter.count({
+                    path: location.pathname + location.search + location.hash,
+                });
+            }
         });
     </script>
     <script data-goatcounter="https://angrytongan.goatcounter.com/count"

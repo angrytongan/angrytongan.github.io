@@ -1,6 +1,5 @@
 import { time } from 'echarts';
 import { workouts } from './data.js';
-import { dateTime } from '../../yoe-year1-review/datetime.js';
 
 export const variationWorkoutByDate = () => {
     const grid = [];
