@@ -1,39 +1,26 @@
-<script context="module">
-    export const load = ({ page }) => {
-        return {
-            props: {
-                path: page.path,
-            }
-        }
-    };
-</script>
-
 <script lang="ts">
     import Theme from '$lib/components/Theme.svelte';
     import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-    export let path: string;
+    import { page } from '$app/stores';
 </script>
 
 <svelte:head>
-    <title>df.id.au - {path}</title>
+    <title>df.id.au - {$page.path}</title>
 </svelte:head>
 
 <div class="wrapper">
     <main>
         <div class="header">
-            <img
-                src="/13109002_223898111320684_484395489_n.jpg"
-                alt="Dean Fogarty"
-            />
+            <img src="/13109002_223898111320684_484395489_n.jpg" alt="Dean Fogarty" />
             <span class="theme"><Theme /></span>
             <h1>df.id.au</h1>
             <h4>Dean Fogarty</h4>
-            <Breadcrumb {path} />
+            <Breadcrumb path={$page.path} />
 
             <hr />
         </div>
 
-        <slot></slot>
+        <slot />
     </main>
 
     <footer>
@@ -48,7 +35,8 @@
 </div>
 
 <style>
-    h1, h4 {
+    h1,
+    h4 {
         margin: 0;
     }
     img {
@@ -57,7 +45,8 @@
         float: left;
         margin-right: 1em;
     }
-    .right, .theme {
+    .right,
+    .theme {
         float: right;
     }
     .wrapper {
@@ -68,7 +57,8 @@
     }
 
     @media print {
-        .header, footer {
+        .header,
+        footer {
             display: none;
         }
     }

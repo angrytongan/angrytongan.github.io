@@ -37,7 +37,7 @@
 </script>
 
 {#each crumbs as c, i}
-    {#if i == crumbs.length-1}
+    {#if i == crumbs.length - 1}
         / {c.label}
     {:else}
         / <a href={c.href}>{c.label}</a>&nbsp;
