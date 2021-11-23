@@ -1,5 +1,5 @@
 A quick and dirty way to add breadcrumbs to your
-[SvelteKit](https://kit.svelte.dev) application using ```load()```.
+[SvelteKit](https://kit.svelte.dev) application.
 
 ---
 
@@ -19,17 +19,17 @@ must update every time the user moves to a different page.
 
 ## Method
 
-SvelteKit uses a filesystem-based router. Files named ```__layout.svelte```
-determine the layout for the current, page and pages below itself in the
-file hierarchy. We can use use SvelteKit's ```load``` function to determine
-what the current page is, and pass that location to a breadcrumb component
-which we add to the layout.
+SvelteKit uses a filesystem-based router. Files named `__layout.svelte`
+determine the layout for the current page and pages below itself in the file
+hierarchy. We can use use SvelteKit's store `page` to determine what the current
+path is, and pass that location to a breadcrumb component which we add to the
+layout.
 
 ### The breadcrumb component
 
 Our breadcrumb component is a normal Svelte component, accepting the current
 path as a prop, and displays some variation of it as a breadcrumb (say
-```$lib/components/readcrumb.svelte```):
+`$lib/components/breadcrumb.svelte`):
 
 ```js
 <script>
@@ -63,46 +63,19 @@ path as a prop, and displays some variation of it as a breadcrumb (say
 {/each}
 ```
 
-### The ```load``` function
+### `__layout.svelte`
 
-If exported from a page or layout, ```load()``` will run before the component
-is created. ```load()``` is defined as:
-
-```js
-export async function load({ page, fetch, session, context })
-```
-
-```page.path``` is the full path to the component. This is the string that will
-be passed to the breadcrumb component for rendering.
-
-### ```__layout.svelte```
-
-In ```src/routes/__layout.svelte```, we pull out the path and pass it to the
-layout as a prop. Note that ```load()``` runs in ```module``` context:
+In `src/routes/__layout.svelte`, we pull out the page from `$app/stores`, and
+pass the path store to the breadcrumb component as a prop:
 
 ```js
-<script context="module">
-    export const load = ({ page }) => {
-        return {
-            props: {
-                path: page.path
-            },
-        };
-    };
-</script>
-
 <script>
     import Breadcrumb from '$lib/components/Breadcrumb.svelte';
-    export let path;
+    import { page } from '$app/stores';
 </script>
 
-<Breadcrumb {path} />
+<Breadcrumb path={$page.path} />
 ```
-
-As per [the manual](https://kit.svelte.dev/docs#loading-input), ```load()``` is
-reactive, and will run whenever ```page.path``` changes. This allows our
-breadcrumb to update automatically.
-
 
 An implementation can be seen on this website, at the top of the page.
 
@@ -115,12 +88,11 @@ the breadcrumb, and it will act accordingly.
 
 ### Improvements
 
-- Our example solution above only shows elements from the path. Real
-  applications may want to change these to use language more contextually
-  correct. One way would be to map each path token to a dictionary; this
-  would require maintaining the dictionary every time a new page is added.
+-   Our example solution above only shows elements from the path. Real
+    applications may want to change these to use language more contextually
+    correct. One way would be to map each path token to a dictionary; this
+    would require maintaining the dictionary every time a new page is added.
 
 ## More information
 
-- [SvelteKit](https://kit.svelte.dev)
-- [SvelteKit Loading](https://kit.svelte.dev/docs#loading) and the ```load()``` function
+-   [SvelteKit](https://kit.svelte.dev)

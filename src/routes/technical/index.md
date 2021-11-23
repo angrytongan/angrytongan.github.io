@@ -6,6 +6,7 @@
   stores](https://youtu.be/1Df-9EKvZr0?t=6195) - A lightning talk for [Svelte Summit
   2021](https://sveltesummit.com) where a simple mechanism is presented for
   transforming data to and from storage areas using a custom Svelte store.
+  [Source and transcript](https://github.com/angrytongan/svelte-summit-2021)
 
 - [Svelte examples](/technical/svelte) - [Svelte](http://svelte.dev) is a user
   interface toolkit for web applications that greatly improves the developer
