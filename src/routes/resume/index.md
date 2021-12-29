@@ -7,6 +7,11 @@
 
 Flexible, multi-discipline software engineer and team leader with a strong work ethic. Automation advocate. Happy working solo or in a team as a member or leader. Enjoys learning, being challenged and getting things done.
 
+### GitHub
+
+* [https://github.com/angrytongan](https://github.com/angrytongan)
+* [https://github.com/ergarcade](https://github.com/ergarcade)
+
 ### Certifications
 
 * **Bachelor of Computer Science**  
