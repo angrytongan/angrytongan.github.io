@@ -48,6 +48,8 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
 
   Backend engineer working on business systems and user analytics.
 
+  JavaScript / TypeScript / git / cypress / Svelte / CRMs / SAAS platforms / Segment
+
 * **Branch Merge Tag**  
   Owner  
   Brisbane, Australia  
