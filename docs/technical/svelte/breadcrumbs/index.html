@@ -9,20 +9,20 @@
 
 		
 
-		<link rel="modulepreload" href="/./_app/start-20c17206.js">
-		<link rel="modulepreload" href="/./_app/chunks/vendor-2320dfb5.js">
-		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-3193df0d.js">
-		<link rel="modulepreload" href="/./_app/chunks/store-d1634e7f.js">
-		<link rel="modulepreload" href="/./_app/pages/technical/__layout.md-ab8150f2.js">
-		<link rel="modulepreload" href="/./_app/pages/technical/svelte/breadcrumbs.md-c776fcea.js">
-		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
-		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-63a21b01.css">
+		<link rel="modulepreload" href="/_app/start-1b1d74f8.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-5fde3abd.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-9fd7b591.js">
+		<link rel="modulepreload" href="/_app/chunks/store-8f9f78b2.js">
+		<link rel="modulepreload" href="/_app/pages/technical/__layout.md-6d1ecd13.js">
+		<link rel="modulepreload" href="/_app/pages/technical/svelte/breadcrumbs.md-3ca749b3.js">
+		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-bcd90a02.css">
 
 		<script type="module">
-			import { start } from "/./_app/start-20c17206.js";
+			import { start } from "/_app/start-1b1d74f8.js";
 			start({
 				target: document.querySelector("#svelte"),
-				paths: {"base":"","assets":"/."},
+				paths: {"base":"","assets":""},
 				session: {},
 				host: location.host,
 				route: true,
@@ -32,9 +32,9 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/./_app/pages/__layout.svelte-3193df0d.js"),
-						import("/./_app/pages/technical/__layout.md-ab8150f2.js"),
-						import("/./_app/pages/technical/svelte/breadcrumbs.md-c776fcea.js")
+						import("/_app/pages/__layout.svelte-9fd7b591.js"),
+						import("/_app/pages/technical/__layout.md-6d1ecd13.js"),
+						import("/_app/pages/technical/svelte/breadcrumbs.md-3ca749b3.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -86,7 +86,7 @@ path as a prop, and displays some variation of it as a breadcrumb (say
 <pre class="language-js"><!-- HTML_TAG_START --><code class="language-js"><span class="token operator">&lt;</span>script<span class="token operator">></span>
     <span class="token keyword">export</span> <span class="token keyword">let</span> path<span class="token punctuation">;</span>
 
-    $<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token literal-property property">$</span><span class="token operator">:</span> <span class="token punctuation">&#123;</span>
         <span class="token comment">// Remove zero-length tokens.</span>
         <span class="token keyword">const</span> tokens <span class="token operator">=</span> path<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">t</span><span class="token punctuation">)</span> <span class="token operator">=></span> t <span class="token operator">!==</span> <span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
@@ -95,13 +95,13 @@ path as a prop, and displays some variation of it as a breadcrumb (say
         crumbs <span class="token operator">=</span> tokens<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">t</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
             tokenPath <span class="token operator">+=</span> <span class="token string">'/'</span> <span class="token operator">+</span> t<span class="token punctuation">;</span>
             <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
-                label<span class="token operator">:</span> t<span class="token punctuation">,</span>
-                href<span class="token operator">:</span> tokenPath<span class="token punctuation">,</span>
+                <span class="token literal-property property">label</span><span class="token operator">:</span> t<span class="token punctuation">,</span>
+                <span class="token literal-property property">href</span><span class="token operator">:</span> tokenPath<span class="token punctuation">,</span>
             <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
         <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
         <span class="token comment">// Add a way to get home too.</span>
-        crumbs<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> label<span class="token operator">:</span> <span class="token string">'home'</span><span class="token punctuation">,</span> href<span class="token operator">:</span> <span class="token string">'/'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        crumbs<span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span> <span class="token literal-property property">label</span><span class="token operator">:</span> <span class="token string">'home'</span><span class="token punctuation">,</span> <span class="token literal-property property">href</span><span class="token operator">:</span> <span class="token string">'/'</span> <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">&#125;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
 
@@ -142,8 +142,8 @@ would require maintaining the dictionary every time a new page is added.</li></u
 
 
 
-	
-</div>
+			
+		</div>
 	</body>
 
     <script>

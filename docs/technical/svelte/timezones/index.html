@@ -9,20 +9,20 @@
 
 		
 
-		<link rel="modulepreload" href="/./_app/start-20c17206.js">
-		<link rel="modulepreload" href="/./_app/chunks/vendor-2320dfb5.js">
-		<link rel="modulepreload" href="/./_app/pages/__layout.svelte-3193df0d.js">
-		<link rel="modulepreload" href="/./_app/chunks/store-d1634e7f.js">
-		<link rel="modulepreload" href="/./_app/pages/technical/__layout.md-ab8150f2.js">
-		<link rel="modulepreload" href="/./_app/pages/technical/svelte/timezones.md-c3cb416d.js">
-		<link rel="stylesheet" href="/./_app/assets/start-a8cd1609.css">
-		<link rel="stylesheet" href="/./_app/assets/pages/__layout.svelte-63a21b01.css">
+		<link rel="modulepreload" href="/_app/start-1b1d74f8.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-5fde3abd.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-9fd7b591.js">
+		<link rel="modulepreload" href="/_app/chunks/store-8f9f78b2.js">
+		<link rel="modulepreload" href="/_app/pages/technical/__layout.md-6d1ecd13.js">
+		<link rel="modulepreload" href="/_app/pages/technical/svelte/timezones.md-b3674bdb.js">
+		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-bcd90a02.css">
 
 		<script type="module">
-			import { start } from "/./_app/start-20c17206.js";
+			import { start } from "/_app/start-1b1d74f8.js";
 			start({
 				target: document.querySelector("#svelte"),
-				paths: {"base":"","assets":"/."},
+				paths: {"base":"","assets":""},
 				session: {},
 				host: location.host,
 				route: true,
@@ -32,9 +32,9 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/./_app/pages/__layout.svelte-3193df0d.js"),
-						import("/./_app/pages/technical/__layout.md-ab8150f2.js"),
-						import("/./_app/pages/technical/svelte/timezones.md-c3cb416d.js")
+						import("/_app/pages/__layout.svelte-9fd7b591.js"),
+						import("/_app/pages/technical/__layout.md-6d1ecd13.js"),
+						import("/_app/pages/technical/svelte/timezones.md-b3674bdb.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -66,13 +66,13 @@
 <p>We want to display the current time for a number of locations around the world
 as a table:</p>
 <table><tr><td>America/New_York</td>
-            <td>Wednesday, December 29, 2021, 15:51:33</td>
+            <td>Thursday, March 24, 2022, 22:57:44</td>
         </tr><tr><td>Europe/London</td>
-            <td>Wednesday, December 29, 2021, 20:51:33</td>
+            <td>Friday, March 25, 2022, 02:57:44</td>
         </tr><tr><td>Asia/Tokyo</td>
-            <td>Thursday, December 30, 2021, 05:51:33</td>
+            <td>Friday, March 25, 2022, 11:57:44</td>
         </tr><tr><td>Australia/Brisbane</td>
-            <td>Thursday, December 30, 2021, 06:51:33</td>
+            <td>Friday, March 25, 2022, 12:57:44</td>
         </tr></table>
 <h2>Method</h2>
 <p>Create a component that periodically uses <code>Date().toLocaleString()</code> to
@@ -115,7 +115,7 @@ update a reactive varible, which will redraw the table when changed.</p>
     <span class="token punctuation">&#123;</span>#each timezones <span class="token keyword">as</span> z<span class="token punctuation">&#125;</span>
         <span class="token operator">&lt;</span>tr<span class="token operator">></span>
             <span class="token operator">&lt;</span>td<span class="token operator">></span><span class="token punctuation">&#123;</span>z<span class="token punctuation">&#125;</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">></span>
-            <span class="token operator">&lt;</span>td<span class="token operator">></span><span class="token punctuation">&#123;</span>now<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span>locale<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> timeZone<span class="token operator">:</span> z <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">></span>
+            <span class="token operator">&lt;</span>td<span class="token operator">></span><span class="token punctuation">&#123;</span>now<span class="token punctuation">.</span><span class="token function">toLocaleString</span><span class="token punctuation">(</span>locale<span class="token punctuation">,</span> <span class="token punctuation">&#123;</span> <span class="token literal-property property">timeZone</span><span class="token operator">:</span> z <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token operator">/</span>td<span class="token operator">></span>
         <span class="token operator">&lt;</span><span class="token operator">/</span>tr<span class="token operator">></span>
     <span class="token punctuation">&#123;</span><span class="token operator">/</span>each<span class="token punctuation">&#125;</span>
 <span class="token operator">&lt;</span><span class="token operator">/</span>table<span class="token operator">></span></code><!-- HTML_TAG_END --></pre>
@@ -139,8 +139,8 @@ around the world.</p>
 
 
 
-	
-</div>
+			
+		</div>
 	</body>
 
     <script>
