@@ -44,7 +44,7 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
 * **Shorthand**  
   Software Engineer  
   Remote  
-  October 2021 to present
+  October 2021 to January 2022
 
   Backend engineer working on business systems and user analytics.
 
