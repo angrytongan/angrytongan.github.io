@@ -42,13 +42,13 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
 ### Employment history
 
 * **Shorthand**  
-  Software Engineer  
+  Software Engineer - Growth team  
   Remote  
   October 2021 to January 2022
 
-  Backend engineer working on business systems and user analytics.
+  Full-stack engineer on business systems and user analytics. Prototyping ideas for front-end application to new use-cases and business opportunities. CRM integration work across multiple platforms.
 
-  JavaScript / TypeScript / git / cypress / Svelte / CRMs / SAAS platforms / Segment
+  JavaScript / TypeScript / git / cypress / Svelte / Segment / Google Analytics / ChurnZero / PlanHat / Amplitude
 
 * **Branch Merge Tag**  
   Owner  
