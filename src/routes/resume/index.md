@@ -41,6 +41,15 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
 
 ### Employment history
 
+* **Ray White**  
+  Developer  
+  Remote  
+  August 2022 to present
+
+  Full stack developer on internal tooling and projects.
+
+  Javascript / Typescript / git / Svelte / node.js / web dev
+
 * **Shorthand**  
   Software Engineer - Growth team  
   Remote  
