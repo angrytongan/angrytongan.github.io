@@ -9,17 +9,18 @@
 
 		
 
-		<link rel="modulepreload" href="/_app/start-ead8c571.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-3a28259b.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-76cdeedf.js">
-		<link rel="modulepreload" href="/_app/chunks/store-a7f9cedd.js">
-		<link rel="modulepreload" href="/_app/pages/technical/__layout.md-3828ab0e.js">
-		<link rel="modulepreload" href="/_app/pages/technical/svelte/timezones.md-647ccf89.js">
+		<link rel="modulepreload" href="/_app/start-e8f7c293.js">
+		<link rel="modulepreload" href="/_app/chunks/index-077af1fa.js">
+		<link rel="modulepreload" href="/_app/chunks/index-e236dd7c.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-afe0ba68.js">
+		<link rel="modulepreload" href="/_app/chunks/store-ca82981d.js">
+		<link rel="modulepreload" href="/_app/pages/technical/__layout.md-76f8bd09.js">
+		<link rel="modulepreload" href="/_app/pages/technical/svelte/timezones.md-c5eed6c6.js">
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
 		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-bcd90a02.css">
 
 		<script type="module">
-			import { start } from "/_app/start-ead8c571.js";
+			import { start } from "/_app/start-e8f7c293.js";
 			start({
 				target: document.querySelector("#svelte"),
 				paths: {"base":"","assets":""},
@@ -32,9 +33,9 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-76cdeedf.js"),
-						import("/_app/pages/technical/__layout.md-3828ab0e.js"),
-						import("/_app/pages/technical/svelte/timezones.md-647ccf89.js")
+						import("/_app/pages/__layout.svelte-afe0ba68.js"),
+						import("/_app/pages/technical/__layout.md-76f8bd09.js"),
+						import("/_app/pages/technical/svelte/timezones.md-c5eed6c6.js")
 					],
 					page: {
 						host: location.host, // TODO this is redundant
@@ -66,13 +67,13 @@
 <p>We want to display the current time for a number of locations around the world
 as a table:</p>
 <table><tr><td>America/New_York</td>
-            <td>Friday, September 30, 2022 at 24:12:06</td>
+            <td>Friday, September 30, 2022 at 24:26:47</td>
         </tr><tr><td>Europe/London</td>
-            <td>Friday, September 30, 2022 at 05:12:06</td>
+            <td>Friday, September 30, 2022 at 05:26:47</td>
         </tr><tr><td>Asia/Tokyo</td>
-            <td>Friday, September 30, 2022 at 13:12:06</td>
+            <td>Friday, September 30, 2022 at 13:26:47</td>
         </tr><tr><td>Australia/Brisbane</td>
-            <td>Friday, September 30, 2022 at 14:12:06</td>
+            <td>Friday, September 30, 2022 at 14:26:47</td>
         </tr></table>
 <h2>Method</h2>
 <p>Create a component that periodically uses <code>Date().toLocaleString()</code> to
