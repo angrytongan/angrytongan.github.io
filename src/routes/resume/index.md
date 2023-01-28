@@ -48,7 +48,7 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
 
   Full stack developer on internal tooling and projects.
 
-  Javascript / Typescript / git / Svelte / node.js / web dev
+  Javascript / Typescript / git / Svelte / node.js / web dev / Google Cloud
 
 * **Shorthand**  
   Software Engineer - Growth team  
