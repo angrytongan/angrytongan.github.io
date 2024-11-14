@@ -1,5 +1,15 @@
 # Year of the Engine Program Review - Year 1
 
+```js
+import * as charts from "./charts.js";
+
+// Apply any visual fixes to our charts.
+const fixChart = (o) => ({
+  backgroundColor: "rgba(0, 0, 0, 0)", // Set background transparent.
+  ...o,
+});
+```
+
 ---
 
 Please note this is a review of the **_1st year_**. [Go here for the 2nd
@@ -74,12 +84,13 @@ thread](https://www.reddit.com/r/crossfit/comments/i86gqh/year_of_the_engine_dat
 
 ### Phases
 
-<EChart
-    id="graph-phases"
-    theme={$theme}
-    height="50"
-    option={charts.programPhases.phasesOptions()}
-/>
+```js
+const graphPhases = echarts.init(
+  display(html`<div style="max-width: 640px; height: 50px;"></div>`),
+  "dark"
+);
+graphPhases.setOption(fixChart(charts.programPhases.phasesOptions()));
+```
 
 The program has four phases. Each phase builds on the work from the
 previous phase, necessitating completing each one before starting the
@@ -102,12 +113,13 @@ tracks that you can choose from:
   multi-movement patterns with varying equipment (eg. barbells, dumbbells,
   wallballs, jump rope, etc)
 
-<EChart
-    id="graph-tracks"
-    theme={$theme}
-    height="75"
-    option={charts.programPhases.tracksOptions()}
-/>
+```js
+const tracksOptions = echarts.init(
+  display(html`<div style="max-width: 640px; height: 75px;"></div>`),
+  "dark"
+);
+tracksOptions.setOption(fixChart(charts.programPhases.tracksOptions()));
+```
 
 It is possible to mix and match between tracks, and change tracks
 between phases.
@@ -123,11 +135,13 @@ which the fifth workout in each week is optional.
 
 ### Workout types
 
-<EChart
-    id="graph-workout-types"
-    theme={$theme}
-    option={charts.workoutTypes.workoutTypes()}
-/>
+```js
+const workoutTypes = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+workoutTypes.setOption(fixChart(charts.workoutTypes.workoutTypes()));
+```
 
 Each workout type is described below. As <a rel="external"
 href="#about-this-review-workout-obfuscation">mentioned above</a>, only a
@@ -386,12 +400,13 @@ Sunday 13th September, 2020.
 
 Workouts, and their phases, were completed as below.
 
-<EChart
-    id="graph-execution-summary"
-    theme={$theme}
-    height="170"
-    option={charts.execution.summary()}
-/>
+```js
+const summary = echarts.init(
+  display(html`<div style="max-width: 640px; height: 170px;"></div>`),
+  "dark"
+);
+summary.setOption(fixChart(charts.execution.summary()));
+```
 
 ## Objective results
 
@@ -406,15 +421,18 @@ results.
 
 ### 10:00.0 Air Bike time trial
 
-The 10:00.0 air bike test is scheduled three times in phase 1 (weeks 4, 8, 12) and three times in phase 3 (weeks 25, 29, 33). These tests are not
-placed ouside of the workout schedule; they are included as part of
-training. No special preparation was taken for these tests.
+The 10:00.0 air bike test is scheduled three times in phase 1 (weeks 4, 8, 12)
+and three times in phase 3 (weeks 25, 29, 33). These tests are not placed
+ouside of the workout schedule; they are included as part of training. No
+special preparation was taken for these tests.
 
-<EChart
-    id="graph-tt-airdyne"
-    theme={$theme}
-    option={charts.timeTrial.ttAirDyne()}
-/>
+```js
+const ttAirDyne = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+ttAirDyne.setOption(fixChart(charts.timeTrial.ttAirDyne()));
+```
 
 There was 11.2% increase in calories recorded by the AirDyne monitor
 between the first and last test.
@@ -442,11 +460,13 @@ The 20:00.0 rower test is scheduled three times in phase 3 (weeks 27,
 they are included as part of training. No special preparation was taken
 for these tests.
 
-<EChart
-    id="graph-tt-rower"
-    theme={$theme}
-    option={charts.timeTrial.ttRower()}
-/>
+```js
+const ttRower = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+ttRower.setOption(fixChart(charts.timeTrial.ttRower()));
+```
 
 Logbook data:
 [Attempt 1](https://log.concept2.com/profile/1063564/log/43117686)
@@ -467,21 +487,27 @@ tests 1 and 2, but only 0.1s/500m between tests 2 and 3.
 	<p>
 </div>
 
-<EChart
-    id="graph-strokedata-tt20"
-    theme={$theme}
-    option={charts.strokedata.tt20()}
-/>
+```js
+const tt20 = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+tt20.setOption(fixChart(charts.strokedata.tt20()));
+```
 
 Attempts at the 20:00.0 rower time trial prior to the Year of the Engine
 are shown below, along with the three tests from above. Year of the
 Engine programming period is shaded.
 
-<EChart
-    id="graph-tt-rower-2000-full-history"
-    theme={$theme}
-    option={charts.timeTrial.ttRower2000FullHistory()}
-/>
+```js
+const ttRower2000FullHistory = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+ttRower2000FullHistory.setOption(
+  fixChart(charts.timeTrial.ttRower2000FullHistory())
+);
+```
 
 ### 24x0:30/0:30r rower
 
@@ -490,11 +516,13 @@ scheduled once each in phases 1, 3 and 4 (weeks 11, 27, 45). I
 completed the 1st and 3rd workout on the rower, and the second on the
 SkiErg. Here we will examine the rower workouts.
 
-<EChart
-    id="graph-repeated-24_30_30"
-    theme={$theme}
-    option={charts.timeTrial.repeated243030()}
-/>
+```js
+const repeated243030 = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated243030.setOption(fixChart(charts.timeTrial.repeated243030()));
+```
 
 A cursory glance indicates a worse result at attempt 2. A closer
 examination is required.
@@ -567,11 +595,15 @@ Let's start with stroke count, as it sticks out the most. Attempt 2
 recorded 16 fewer strokes. We can see where this happened by looking at
 the number of strokes per interval:
 
-<EChart
-    id="graph-repeated-24_30_30-strokesPerInterval"
-    theme={$theme}
-    option={charts.repeated.interval_24_30_30.strokesPerInterval()}
-/>
+```js
+const repeated243030_spi = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated243030_spi.setOption(
+  fixChart(charts.repeated.interval_24_30_30.strokesPerInterval())
+);
+```
 
 Attempt 2 had one less stroke in 16 of the 24 intervals
 compared to the attempt 1. We know the attempt 2 covered further
@@ -581,11 +613,15 @@ increased</u>.
 What is the impact of one fewer stroke per interval over the same
 distance? We can examine distance each interval, and graph by stroke:
 
-<EChart
-    id="graph-repeated-24_30_30-distancePerIntervalAllStrokes"
-    theme={$theme}
-    option={charts.repeated.interval_24_30_30.distancePerIntervalAllStrokes()}
-/>
+```js
+const repeated243030_dpi_all = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated243030_dpi_all.setOption(
+  fixChart(charts.repeated.interval_24_30_30.distancePerIntervalAllStrokes())
+);
+```
 
 As attempt 2 drops strokes compared to attempt 1, it's graph
 &ldquo;shifts left&rdquo;, until it is 16 strokes ahead of attempt 1.
@@ -597,22 +633,30 @@ So how far apart, in distance, are the attempts each interval? Using
 attempt 1 as a baseline, we can graph attempt 2's increase or decrease
 in distance per interval:
 
-<EChart
-    id="graph-repeated-24_30_30-distanceDeltaPerInterval"
-    theme={$theme}
-    option={charts.repeated.interval_24_30_30.distanceDeltaPerInterval()}
-/>
+```js
+const repeated243030_dpi_delta = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated243030_dpi_delta.setOption(
+  fixChart(charts.repeated.interval_24_30_30.distanceDeltaPerInterval())
+);
+```
 
 We can see that compared to attempt 1, attempt 2 started out with a
 large lead in interval 1, continued building through to interval 15,
 then recorded reduced distance in intervals 17 to 24. We can visualise
 the &ldquo;lead&rdquo; by accumulating this difference each interval:
 
-<EChart
-    id="graph-repeated-24_30_30-bankedDistanceByInterval"
-    theme={$theme}
-    option={charts.repeated.interval_24_30_30.bankedDistanceByInterval()}
-/>
+```js
+const repeated243030_dpi_banked = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated243030_dpi_banked.setOption(
+  fixChart(charts.repeated.interval_24_30_30.bankedDistanceByInterval())
+);
+```
 
 By interval 15, attempt 2 has accumulated a lead of 29m over attempt 1.
 This gain is eroded as the workout continues. The distance remaining in
@@ -623,49 +667,69 @@ However, we have yet to determine <i>why</i> the distance discrepancy
 appears. Was attempt 1 slow opening then sped up? Did attempt 2 do the
 opposite? Let's look at pace in each interval.
 
-<EChart
-    id="graph-repeated-24_30_30-pacePerInterval"
-    theme={$theme}
-    option={charts.repeated.interval_24_30_30.pacePerInterval()}
-/>
+```js
+const repeated243030_ppi = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated243030_ppi.setOption(
+  fixChart(charts.repeated.interval_24_30_30.pacePerInterval())
+);
+```
 
 The points representing pace for attempt 1 appear to vary more than
 attempt 2. We can look at the distribution of pace for both attempts to
 verify:
 
-<EChart
-    id="graph-repeated-24_30_30-normalDistributionPace"
-    theme={$theme}
-    option={charts.repeated.interval_24_30_30.normalDistributionPace()}
-/>
+```js
+const repeated243030_ndp = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated243030_ndp.setOption(
+  fixChart(charts.repeated.interval_24_30_30.normalDistributionPace())
+);
+```
 
 By grouping the intervals' pace from each attempt, we can see that the range of
 attempt 2 is tighter than attempt 1, demonstrating the principle of
 [maximising the average, minimising the range](https://www.thegainslab.com/interval-training):
 
-<EChart
-    id="graph-repeated-24_30_30-rangePace"
-    theme={$theme}
-    option={charts.repeated.interval_24_30_30.rangePace()}
-/>
+```js
+const repeated243030_rp = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated243030_rp.setOption(
+  fixChart(charts.repeated.interval_24_30_30.rangePace())
+);
+```
 
 Attempt 2 held a <u>more consistent pace</u> per interval than attempt 1.
 
 One last thing to look at is power per stroke:
 
-<EChart
-    id="graph-repeated-24_30_30-wattsPerStroke"
-    theme={$theme}
-    option={charts.repeated.interval_24_30_30.wattsPerStroke()}
-/>
+```js
+const repeated243030_wps = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated243030_wps.setOption(
+  fixChart(charts.repeated.interval_24_30_30.wattsPerStroke())
+);
+```
 
 The distribution balances out the spikes:
 
-<EChart
-    id="graph-repeated-24_30_30-normalDistributionWatts"
-    theme={$theme}
-    option={charts.repeated.interval_24_30_30.normalDistributionWatts()}
-/>
+```js
+const repeated243030_ndw = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated243030_ndw.setOption(
+  fixChart(charts.repeated.interval_24_30_30.normalDistributionWatts())
+);
+```
 
 Attempt 2 generated marginally <u>more power per stroke</u> than attempt
 1, with a slightly improved consistency.
@@ -1574,6 +1638,7 @@ the program is available for those doing the program.
 
 <style>
     .self {
+        max-width: 640px;
         border: 1px solid #0af;
         color: #eee;
         background: #06a;

@@ -1,6 +1,6 @@
 'use strict';
 
-import { DateTime, Duration } from 'luxon';
+import { DateTime, Duration } from 'npm:luxon';
 
 export const dateTime = {
     thisYear: () => DateTime.local().year,

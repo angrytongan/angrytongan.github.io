@@ -1,6 +1,6 @@
 'use strict';
 
-import { time } from 'echarts';
+import { time } from 'npm:echarts';
 
 import { workouts } from './data.js';
 
