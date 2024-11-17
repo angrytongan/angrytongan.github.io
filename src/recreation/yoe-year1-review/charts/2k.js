@@ -1,7 +1,7 @@
 'use strict';
 
 import { dateTime } from '../datetime.js';
-import { time } from 'echarts';
+import { time } from 'npm:echarts';
 
 const summary = () => {
     const xAxis = [];

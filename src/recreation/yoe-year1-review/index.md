@@ -796,11 +796,13 @@ consistent pace**.
 is scheduled once in phase 1 (week 12). Attempt 2 was done after the end
 of the program. Year of the Engine programming period is shaded.
 
-<EChart
-    id="graph-repeated-3_2000_300"
-    theme={$theme}
-    option={charts.timeTrial.repeated32000300()}
-/>
+```js
+const repeated32000300 = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated32000300.setOption(fixChart(charts.timeTrial.repeated32000300()));
+```
 
 <table class="data">
     <tr>
@@ -869,42 +871,58 @@ Let's compare interval pace. The fastest interval in attempt 1 was
 slower than the slowest interval in attempt 2; the fastest interval in
 attempt 2 beat the fastest in attempt 1 by 11 seconds:
 
-<EChart
-    id="graph-repeated-3_2000_300-rangePace"
-    theme={$theme}
-    option={charts.repeated.interval_3_2000_300.rangePace()}
-/>
+```js
+const repeated32000300_rp = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated32000300_rp.setOption(
+  fixChart(charts.repeated.interval_3_2000_300.rangePace())
+);
+```
 
 Comparing each interval by pace shows more consistency and a bigger
 finish in attempt 2:
 
-<EChart
-    id="graph-repeated-3_2000_300-interval-strokedata"
-    theme={$theme}
-    option={charts.repeated.interval_3_2000_300.intervalStrokedata()}
-/>
+```js
+const repeated32000300_is = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated32000300_is.setOption(
+  fixChart(charts.repeated.interval_3_2000_300.intervalStrokedata())
+);
+```
 
 This is backed up by examining the normal distribution of pace for each
 interval. The lack of consistency in the third interval of attempt 2 is
 because of the sprint finish, much faster than attempt 1 but with a
 larger range:
 
-<EChart
-    id="graph-repeated-3_2000_300-interval-normal-distribution"
-    theme={$theme}
-    option={charts.repeated.interval_3_2000_300.intervalNormalDistribution()}
-/>
+```js
+const repeated32000300_ind = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated32000300_ind.setOption(
+  fixChart(charts.repeated.interval_3_2000_300.intervalNormalDistribution())
+);
+```
 
 The stroke rate of attempt 2 was lower than attempt 1 across all
 intervals (excluding the sprint finish). This is reflected in our tabled
 data of 46 fewer strokes over the whole workout, and 2 fewer strokes per
 minute:
 
-<EChart
-    id="graph-repeated-3_2000_300-interval-strokedata-spm"
-    theme={$theme}
-    option={charts.repeated.interval_3_2000_300.intervalStrokedataSPM()}
-/>
+```js
+const repeated32000300_spm = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+repeated32000300_spm.setOption(
+  fixChart(charts.repeated.interval_3_2000_300.intervalStrokedataSPM())
+);
+```
 
 <div class="self">
     <p>
@@ -942,12 +960,13 @@ For time:
 
 The workout took me 5:18. Compared to some others:
 
-<EChart
-    id="graph-acidbath-timeline"
-    theme={$theme}
-    height="250"
-    option={charts.acidBath.timeline()}
-/>
+```js
+const acidBath = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+acidBath.setOption(fixChart(charts.acidBath.timeline()));
+```
 
 Roman Khrennikov and Mat Fraser's approximate times taken from the clock on the
 [event video](https://youtu.be/RwPwuMUZYHE?t=22702). Marston Sawyers and Heber
@@ -994,21 +1013,25 @@ While completing phase 1, I started to notice that many of my interval results
 were following a similar pattern: the last interval was usually at a higher
 pace than the previous intervals, with a kick toward the end, like below:
 
-<EChart
-    id="graph-interval.workout_40553854"
-    theme={$theme}
-    option={charts.intervalGraph.workout_40553854()}
-/>
+```js
+const fastfinishes = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+fastfinishes.setOption(fixChart(charts.intervalGraph.workout_40553854()));
+```
 
 Sometimes I couldn't hold the kick all the way to the end of the
 interval, but inexplicibly, my pace stayed above the average for
 that interval, like below:
 
-<EChart
-    id="graph-interval.workout_41335805"
-    theme={$theme}
-    option={charts.intervalGraph.workout_41335805()}
-/>
+```js
+const fastfinishes_2 = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+fastfinishes_2.setOption(fixChart(charts.intervalGraph.workout_41335805()));
+```
 
 It's not negative splits, I didn't feel that I sandbagged these
 workouts, and I had chosen paces that I knew I could hold across all
@@ -1053,11 +1076,12 @@ The SkiErg remains a mystery.
 
 ### Donating plasma
 
+![Blood sucking overload](./images/IMG_1225.jpeg)
+
 Part of a post I made on <a target="_blank"
 href="https://www.reddit.com/r/crossfit/comments/fqf4h9/blood_donations_exercise_and_recovery_periods/">/r/crossfit</a>
 in early 2020:
 
-> ![Blood sucking overload](./images/IMG_1225.jpeg)
 > Up until end of last year, I would donate plasma on a Saturday
 > morning after a workout, then rest until late Sunday afternoon to do
 > my next workout - averaging between 30 and 33 hours of rest.
@@ -1196,11 +1220,13 @@ insight into performance changes. For comparison, below are my previous
 single 2k times along with each interval of both 3x2,000m/3:00r
 attempts. Year of the Engine programming period is shaded in red.
 
-<EChart
-    id="graph-twok-summary"
-    theme={$theme}
-    option={charts.twok.summary()}
-/>
+```js
+const twok_summary = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+twok_summary.setOption(fixChart(charts.twok.summary()));
+```
 
 <div class="self">
     <p>
@@ -1236,12 +1262,13 @@ I record bodyweight, haemoglobin count, blood pressure and resting heart rate
 as part of regular <a href="#subjective-observations-donating-plasma">plasma
 donation protocol</a> and not as specific training metrics:
 
-<EChart
-    id="graph-biological-summary"
-    theme={$theme}
-    height="300"
-    option={charts.biological.summary()}
-/>
+```js
+const bio_summary = echarts.init(
+  display(html`<div style="max-width: 640px; height: 300px;"></div>`),
+  "dark"
+);
+bio_summary.setOption(fixChart(charts.biological.summary()));
+```
 
 <div class="self">
 	<p>
@@ -1257,11 +1284,13 @@ donation protocol</a> and not as specific training metrics:
 
 Bodyweight, resting heart rate and haemoglobin count remained level:
 
-<EChart
-    id="graph-biological-distribution"
-    theme={$theme}
-    option={charts.biological.distribution()}
-/>
+```js
+const bio_dist = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+bio_dist.setOption(fixChart(charts.biological.distribution()));
+```
 
 ## Program review
 
@@ -1356,11 +1385,13 @@ workouts are &ldquo;for distance&rdquo;, as the goal is to maintain or
 maximise distance in a given time frame. High <u>sustainable</u> effort
 yields reward here.
 
-<EChart
-    id="graph-workout-duration"
-    theme={$theme}
-    option={charts.workoutDuration.workoutDuration()}
-/>
+```js
+const workout_duration = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+workout_duration.setOption(fixChart(charts.workoutDuration.workoutDuration()));
+```
 
 &ldquo;For distance&rdquo; workouts specify the workout duration
 in the description, so scheduling is easy. &ldquo;For time&rdquo;
@@ -1418,11 +1449,13 @@ href="https://www.thegainslab.com/conditioning">More information here</a>.
 The length of a workout depends on the workout type and workout
 specifics for that day.
 
-<EChart
-    id="graph-time-commitment-summary"
-    theme={$theme}
-    option={charts.timeCommitment.summary()}
-/>
+```js
+const time_summary = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+time_summary.setOption(fixChart(charts.timeCommitment.summary()));
+```
 
 Daily workout duration changes over the course of the program.
 Time trials were 20:00 or less, Intervals and FLUX remained around
@@ -1652,5 +1685,10 @@ the program is available for those doing the program.
     img.centre {
         display: block;
         margin: 0 auto;
+    }
+    blockquote {
+        border-left: 1px solid #fff;
+        padding-left: 1em;
+        font-style: italic;
     }
 </style>

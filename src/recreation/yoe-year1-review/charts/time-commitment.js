@@ -7,7 +7,7 @@ import {
     calcStandardNormalDistribution 
 } from './repeated.js';
 import { workouts } from './data.js';
-import { time } from 'echarts';
+import { time } from 'npm:echarts';
 
 const summary = () => {
     const title = [];
