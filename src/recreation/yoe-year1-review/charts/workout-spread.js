@@ -1,7 +1,7 @@
 'use strict';
 
 import { workouts } from './data.js';
-import { time } from 'echarts';
+import { time } from 'npm:echarts';
 
 const scatter = () => {
     const series = [];

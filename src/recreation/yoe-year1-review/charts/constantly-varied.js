@@ -2,7 +2,7 @@
 
 import { dateTime } from '../datetime.js';
 import { workouts } from './data.js';
-import { time } from 'echarts';
+import { time } from 'npm:echarts';
 
 const apparatus = () => {
     const title = [];

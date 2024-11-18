@@ -386,11 +386,10 @@ sheet and recording directly on the sheet.
     </p>
 </div>
 
-<div class="images">
-    <img
-        src="./images/AD6-post-workout.jpg"
-        alt="AD6 post workout gallery" />
-</div>
+<img class="centre"
+    src="./images/AD6-post-workout.jpg"
+    alt="AD6 post workout gallery" />
+
 A sample of the air bike post-workout gallery.
 
 ### Execution
@@ -1076,7 +1075,10 @@ The SkiErg remains a mystery.
 
 ### Donating plasma
 
-![Blood sucking overload](./images/IMG_1225.jpeg)
+<img class="centre"
+     src="./images/IMG_1225.jpeg"
+     alt="Blood sucking overload"
+/>
 
 Part of a post I made on <a target="_blank"
 href="https://www.reddit.com/r/crossfit/comments/fqf4h9/blood_donations_exercise_and_recovery_periods/">/r/crossfit</a>
@@ -1462,11 +1464,13 @@ Time trials were 20:00 or less, Intervals and FLUX remained around
 30:00, Endurance and Polarisation workouts gradually increased, capping
 at an hour.
 
-<EChart
-    id="graph-time-commitment-sd-by-type"
-    theme={$theme}
-    option={charts.timeCommitment.sdByType()}
-/>
+```js
+const time_commitment_type = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+time_commitment_type.setOption(fixChart(charts.timeCommitment.sdByType()));
+```
 
 ### Constantly varied?
 
@@ -1484,12 +1488,13 @@ of max effort, and so on. As such, while each workout changes in it's
 fine details, the theme of each type of workout remains consistent. We
 can chart workout type across the program to see how they are spread:
 
-<EChart
-    id="graph-workout-spread-scatter"
-    theme={$theme}
-    height="200"
-    option={charts.workoutSpread.scatter()}
-/>
+```js
+const workout_spread_scatter = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+workout_spread_scatter.setOption(fixChart(charts.workoutSpread.scatter()));
+```
 
 The last workout type from the previous week may start the new week off.
 Overall the workout types are spread well, and as mentioned previously,
@@ -1500,20 +1505,26 @@ them with the introduction of Polarisation and steady Endurance work.
 Phase 3 maintains Intervals, reduces Polarisation and slighly increases
 Endurance. The program ends in phase 4 with emphasis on FLUX workouts.
 
-<EChart
-    id="graph-workout-spread-pies"
-    theme={$theme}
-    option={charts.workoutSpread.pies()}
-/>
+```js
+const workout_spread_pies = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+workout_spread_pies.setOption(fixChart(charts.workoutSpread.pies()));
+```
 
 Apparatus choice is a variable in the program. Here are my chosen
 apparatus against workout duration:
 
-<EChart
-    id="graph-constantly-varied-apparatus"
-    theme={$theme}
-    option={charts.constantlyVaried.apparatus()}
-/>
+```js
+const constantly_varied_apparatus = echarts.init(
+  display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+  "dark"
+);
+constantly_varied_apparatus.setOption(
+  fixChart(charts.constantlyVaried.apparatus())
+);
+```
 
 At times the program felt <i>grindy</i> - a lot of time, a lot of
 sweat, with the only difference between like-themed workouts being a
