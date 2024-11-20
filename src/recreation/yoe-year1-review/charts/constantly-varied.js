@@ -75,7 +75,7 @@ const apparatus = () => {
         series.push({
             type: 'bar',
             name: a,
-            stack: 'single',
+            //stack: 'single',
             tooltip: {
                 formatter: (params) => {
                     return dateTime.secs2mmss(params.value.workoutTime);
@@ -87,7 +87,7 @@ const apparatus = () => {
             },
             animation: false,
             //barMaxWidth: 2,
-            barCategoryGap: -1,  // XXX hmm, figure this out
+            //barCategoryGap: -1,  // XXX hmm, figure this out
 
             datasetIndex: i,
             gridIndex: 0,
