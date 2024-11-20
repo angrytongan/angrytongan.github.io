@@ -17,7 +17,7 @@ export default {
   // ],
   pages: [
     {
-      name: 'Projects',
+      name: 'Spare time projects',
       open: false,
       pages: [
         {name: 'CalendarArc', path: 'https://angrytongan.github.io/calendararc' },
@@ -31,13 +31,6 @@ export default {
         { name: 'The gym', path: '/recreation/the-gym' },
         { name: 'Year of the Engine - year 1', path: '/recreation/yoe-year1-review/' },
         { name: 'Year of the Engine - year 2', path: '/recreation/yoe-year2-review/' },
-      ],
-    },
-    {
-      name: 'Technical',
-      open: false,
-      pages: [
-        { name: 'Go', path: '/technical/go' },
       ],
     },
     {

@@ -13,7 +13,7 @@ const fixChart = (o) => ({
 ---
 
 Please note this is a review of the **_1st year_**. [Go here for the 2nd
-year](/recreation/yoe-year2-review).
+year](/recreation/yoe-year2-review/).
 
 ---
 

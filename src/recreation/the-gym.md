@@ -18,13 +18,13 @@ sides of the slab. A spoon drain is present on the southern side.
 The ceiling is fully insulated with ...tbd... The walls insulation is a work in
 progress, using 10mm FoilBoard.
 
-4 x 20W LED batten lights are installed on the ceiling joists.
+4 x 20W LED batten lights are installed on the ceiling.
 
 ## Airflow
 
-- 1 x 6m x 3m facing north;
-- 1 x 3m x 2.5m facing north;
-- 1 x 3m x 2.5m facing east.
+- 1 x 6m x 3m garage door facing north;
+- 1 x 3m x 2.5m garage door facing north;
+- 1 x 3m x 2.5m garage door facing east; and
 - 1 x 2m x 1m sliding window facing west.
 
 A solar powered extraction fan is located in the centre of the roof, which
@@ -38,12 +38,12 @@ southern wall. Equipment is stored on the west and eastern walls.
 ## Equipment
 
 - Gymnastics rig:
-  - 4 pull-up bars, varied heights.
-  - 1 high-set gymnastic rings.
-  - 3 low-set relocatable gymnastics rings of variable heights.
-  - 1 wallball target (9' and 10').
-  - 1 2.5m punching bag.
-- Yoke, 80kg empty.
+  - 4 x pull-up bars, varied heights.
+  - 1 x high-set gymnastic rings.
+  - 3 x low-set relocatable gymnastics rings of variable heights.
+  - 1 x wallball target (9' and 10').
+  - 1 x 2.5m punching bag.
+- Yoke, 80kg unloaded.
 - 20kg Olympic bar.
 - 150kg bumper plates.
 - Dumbbells:
@@ -60,8 +60,8 @@ southern wall. Equipment is stored on the west and eastern walls.
 - 3 x 20-24-30" plyometric boxes.
 - Sand bags:
   - 1 x 40kg.
-  - 2 x 20kg, which can be combind to make 1 x 40kg.
+  - 2 x 20kg, which can be combined to make 1 x 40kg.
 - 6m climbing rope.
-- Crossover symmetry set.
+- Crossover symmetry.
 - [Exergenie](https://www.exergenie.com).
 - Multiple whiteboards.

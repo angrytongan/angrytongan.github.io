@@ -6,7 +6,9 @@ title: Resume
 
 <dean@df.id.au>
 
-Flexible, multi-discipline software engineer and team leader with a strong work ethic. Automation advocate. Happy working solo or in a team as a member or leader. Enjoys learning, being challenged and getting things done.
+Flexible, multi-discipline software engineer and team leader with a strong work
+ethic. Automation advocate. Happy working solo or in a team as a member or
+leader. Enjoys learning, being challenged and getting things done.
 
 ## GitHub
 
@@ -85,7 +87,7 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
 
   Web and system administrator. Deployment and management of internal and public websites. Automation, continuous integration and new systems management and allocation.
 
-  AWS / WSH / Linux / Jenkins / sh / git / JIRA / Release management
+  AWS / WSH / Linux / Jenkins / git / JIRA / Release management
 
 - **Melbourne IT**  
   Solutions Engineer (contract)  
@@ -103,7 +105,7 @@ Flexible, multi-discipline software engineer and team leader with a strong work 
 
   Business analyst and support on QUT’s HRM systems. Pickup programmer and consultant for integration projects. Team leader (short term).
 
-  Alseco / SQL / PHP / git / svn
+  Alseco / Oracle / LAMP / git / svn
 
 - **Flight Centre - Healthwise**  
   Team Leader; Solutions Engineer  
