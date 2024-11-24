@@ -1128,6 +1128,8 @@ in early 2020:
   the way and I might miss a few days in a row. I feel if I had tried to stick
   hard to a schedule, I would have missed a lot more training days.
 
+<a name="reflection-what-i-got-wrong"></a>
+
 ### What I know got wrong
 
 - **Insufficient attention to recovery**. During phase 2, I started getting a
@@ -1346,6 +1348,8 @@ mentioned in the past athletes choosing swimming for some workouts.
 
 If you have access to a gym, or are able to run, you will have access to
 at least one form of activity suited to the program.
+
+<a name="program-review-workout-description"></a>
 
 ### Workout description
 

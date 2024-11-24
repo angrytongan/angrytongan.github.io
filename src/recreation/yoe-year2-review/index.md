@@ -13,7 +13,7 @@ const fixChart = (o) => ({
 ---
 
 Please note this is a review of the **_2nd year_**. [Go here for the 1st
-year](/recreation/yoe-year1-review/).
+year](../yoe-year1-review/).
 
 ---
 
@@ -29,7 +29,7 @@ program if you wish to improve your cardiovascular capacity.
 
 ### About this review
 
-This review of Year 2 follows on from [Year 1](/recreation/yoe-year1-review).
+This review of Year 2 follows on from [Year 1](../yoe-year1-review/).
 
 <div class="self">
     <p>
@@ -98,7 +98,7 @@ Logbook](https://log.concept2.com).
 ### Program Overview
 
 A broad overview of the program can be found in the [Year 1
-review](/recreation/yoe-year1-review). More detail is available on [The Gains
+review](../yoe-year1-review/). More detail is available on [The Gains
 Lab Engine](https://thegainslab.com/engine) page. Matt also gives a good
 summary [on this /r/crossfit
 thread](https://www.reddit.com/r/crossfit/comments/i86gqh/year_of_the_engine_data_from_a_almost_complete/g19kg1f/).
