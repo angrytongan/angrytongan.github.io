@@ -1,4 +1,4 @@
-import { splits } from './splits';
+import { splits } from './splits.js';
 import { dateTime } from '../../yoe-year1-review/datetime.js';
 
 const compareSplits = (ids) => {

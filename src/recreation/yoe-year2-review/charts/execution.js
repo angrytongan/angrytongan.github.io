@@ -1,6 +1,5 @@
 'use strict';
 
-import { dev } from '$app/env';
 import { workouts } from './data.js';
 
 const summary = () => {
@@ -58,16 +57,6 @@ const summary = () => {
             };
         }),
     };
-
-    /*
-     * V5 needs a visualmap to link against while in dev; reported in
-     * https://github.com/apache/echarts/issues/15098
-     */
-    if (dev) {
-        out['visualMap'] = {
-            show: false,
-        };
-    }
 
     return out;
 };

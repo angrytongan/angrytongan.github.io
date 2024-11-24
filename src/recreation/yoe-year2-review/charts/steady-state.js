@@ -1,4 +1,4 @@
-import { time } from 'echarts';
+import { time } from 'npm:echarts';
 import { workouts as year1 } from '../../yoe-year1-review/charts/data.js';
 import { workouts as year2 } from './data.js';
 import { dateTime } from '../../yoe-year1-review/datetime.js';

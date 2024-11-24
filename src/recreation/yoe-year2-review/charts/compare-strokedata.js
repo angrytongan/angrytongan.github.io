@@ -1,4 +1,4 @@
-import { strokedata } from './strokedata';
+import { strokedata } from './strokedata.js';
 import { dateTime } from '../../yoe-year1-review/datetime.js';
 
 const fieldMap = new Map([

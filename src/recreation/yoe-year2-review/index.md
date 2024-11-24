@@ -420,16 +420,16 @@ recording directly on the sheet.
 I started the program on Thursday 17th September 2020, and finished on Thursday
 30th September, 2021.
 
-{#if !dev}
 Workouts, and their phases, were completed as below.
 
-<EChart
-    id="graph-execution-summary"
-    theme={$theme}
-    height="170"
-    option={charts.execution.summary()}
-/>
-{/if}
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+    "dark"
+  )
+  .setOption(fixChart(charts.execution.summary()));
+```
 
 ## Objective results
 
@@ -444,24 +444,28 @@ start of phase 4 (week 41). These tests are not placed outside of the workout
 schedule; they are included as part of training. No special preparation was
 taken for these tests.
 
-<EChart
-    id="graph-tt-rower"
-    theme={$theme}
-    height={150}
-    option={charts.timeTrials()}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+    "dark"
+  )
+  .setOption(fixChart(charts.timeTrials()));
+```
 
 There was a 1% increase in both calories and distance recorded between the two
 trials. This small an increase requires further investigation.
 
 Let's compare splits first:
 
-<EChart
-    id="graph-tt-split-comparison"
-    theme={$theme}
-    height="250"
-    option={charts.compareSplits([52817150,55235950])}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 250px;"></div>`),
+    "dark"
+  )
+  .setOption(fixChart(charts.compareSplits([52817150, 55235950])));
+```
 
 Test 2 showed small, consistent increases in distance at each split over test 1,
 with a large increase in the final split. Similarly, the variance in pace between the
@@ -469,19 +473,22 @@ tests was consistent, and splits were negative after the 1st in both.
 
 Instantaneous pace per stroke:
 
-<EChart
-id="graph-tt-strokedata-pace"
-theme={$theme}
-option={charts.compareStrokedata(
-[52817150,55235950],
-{
-dataZoom: [{
-startValue: 5,
-}],
-},
-'p',
-)}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 250px;"></div>`),
+    "dark"
+  )
+  .setOption(
+    fixChart(
+      charts.compareStrokedata(
+        [52817150, 55235950],
+        { dataZoom: [{ startValue: 5 }] },
+        "p"
+      )
+    )
+  );
+```
 
 In test 1, pace was consistent until a sharp increase at 9:30.
 
@@ -502,19 +509,28 @@ reduction at 8:30, then resumption at higher pace at 9:14.
 
 A more interesting observation is the instantaneous stroke rate:
 
-<EChart
-id="graph-tt-strokedata-strokerate"
-theme={$theme}
-option={charts.compareStrokedata(
-[52817150,55235950],
-{
-dataZoom: [{
-startValue: 5,
-}],
-},
-'sr'
-)}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+    "dark"
+  )
+  .setOption(
+    fixChart(
+      charts.compareStrokedata(
+        [52817150, 55235950],
+        {
+          dataZoom: [
+            {
+              startValue: 5,
+            },
+          ],
+        },
+        "sr"
+      )
+    )
+  );
+```
 
 The stroke rate in test 1 sharply increased during the sprint, however in test
 2, while the stroke rate did increase by a point, it was not nearly as high as
@@ -523,12 +539,14 @@ in test 1.
 We can confirm a tighter grouping of stroke rate in test 2 by counting the
 number of strokes at each stroke rate:
 
-<EChart
-    id="graph-tt-strokedata-strokecount"
-    theme={$theme}
-    height="300"
-    option={charts.compareStrokeFrequency([52817150,55235950])}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 300px;"></div>`),
+    "dark"
+  )
+  .setOption(fixChart(charts.compareStrokeFrequency([52817150, 55235950])));
+```
 
 Test 1 stroke rate varied from 24 to 30, while test 2 stayed between 25 and 27,
 straying outside the range for a total of 4 strokes out of 254.
@@ -571,12 +589,14 @@ Below are all my steady state workouts, shown as speed (workout distance divided
 by workout time) against date. The red shading are workouts from Year 1, the
 green shading are workouts from Year 2:
 
-<EChart
-    id="graph-steady-state"
-    theme={$theme}
-    height="250"
-    option={charts.steadyState()}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+    "dark"
+  )
+  .setOption(fixChart(charts.steadyState()));
+```
 
 <div class="self">
     <p>
@@ -667,12 +687,14 @@ Pace varies from TT&minus;4 to TT&plus;4 in Devour and Infinity workouts.
     </p>
 </div>
 
-<EChart
-    id="graph-tt-conversion-chart"
-    theme={$theme}
-    height="250"
-    option={charts.ttConversionChart()}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 250px;"></div>`),
+    "dark"
+  )
+  .setOption(fixChart(charts.ttConversionChart()));
+```
 
 <div class="self">
     <p>
@@ -699,21 +721,25 @@ Pace varies from TT&minus;4 to TT&plus;4 in Devour and Infinity workouts.
 
 Similarly to Year 1, workout length in Year 2 varies from medium to long:
 
-<EChart
-    id="graph-time-commitment"
-    theme={$theme}
-    height="250"
-    option={charts.timeCommitment()}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 250px;"></div>`),
+    "dark"
+  )
+  .setOption(fixChart(charts.timeCommitment()));
+```
 
 Different workout types vary in length, just like Year 1:
 
-<EChart
-    id="graph-time-workout-type"
-    theme={$theme}
-    height="250"
-    option={charts.timeWorkoutDistribution()}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 250px;"></div>`),
+    "dark"
+  )
+  .setOption(fixChart(charts.timeWorkoutDistribution()));
+```
 
 Most workouts in Year 2 are around 30:00, with the exception of Endurance and
 Polarisation which can be up to 60:00.
@@ -722,24 +748,28 @@ Polarisation which can be up to 60:00.
 
 Just like Year 1, new workout types are introduced as the program progresses:
 
-<EChart
-    id="graph-variation-workout-by-date"
-    theme={$theme}
-    height="250"
-    option={charts.variationWorkoutByDate()}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 200px;"></div>`),
+    "dark"
+  )
+  .setOption(fixChart(charts.variationWorkoutByDate()));
+```
 
 In Year 1, each phase had at least 3, and at most 4, different workout types. In
 Year 2, each phase mixes the new workout types with previously seen ones. This
 leads to a greater variety of workouts, although there is still a dominant theme
 in each phase:
 
-<EChart
-    id="graph-variation-workout-by-phase"
-    theme={$theme}
-    height="250"
-    option={charts.variationWorkoutByPhase()}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 250px;"></div>`),
+    "dark"
+  )
+  .setOption(fixChart(charts.variationWorkoutByPhase()));
+```
 
 ### Mental fortitude
 
@@ -844,12 +874,14 @@ values displayed on the monitors.
     </p>
 </div>
 
-<EChart
-    id="graph-tt-airdyne-bikeerg"
-    theme={$theme}
-    height="150"
-    option={charts.bikeergAirdyne()}
-/>
+```js
+echarts
+  .init(
+    display(html`<div style="max-width: 640px; height: 150px;"></div>`),
+    "dark"
+  )
+  .setOption(fixChart(charts.bikeergAirdyne()));
+```
 
 ## Summary
 
