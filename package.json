@@ -1,4 +1,24 @@
 {
+<<<<<<< HEAD
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "clean": "rimraf src/.observablehq/cache",
+    "build": "rimraf docs && observable build",
+    "dev": "observable preview",
+    "deploy": "observable deploy",
+    "observable": "observable"
+  },
+  "dependencies": {
+    "@observablehq/framework": "^1.12.0"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+=======
 	"name": "~TODO~",
 	"version": "0.0.1",
 	"scripts": {
@@ -33,4 +53,5 @@
 		"echarts": "^5.1.2",
 		"luxon": "^2.0.2"
 	}
+>>>>>>> origin/master
 }

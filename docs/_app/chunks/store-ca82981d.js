@@ -1,1 +1,0 @@
-import{w as n}from"./index-e236dd7c.js";const u=(t,r,s=[],a=[])=>{{const e=localStorage.getItem(t);e&&(r=a.reduce((o,c)=>c(o),e))}const{subscribe:l,set:g}=n(r);return{subscribe:l,set:e=>(localStorage.setItem(t,s.reduce((o,c)=>c(o),e)),g(e))}},m=(t,r)=>u(t,r),i=m("theme","light");export{i as t};
