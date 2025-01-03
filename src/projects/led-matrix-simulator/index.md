@@ -24,6 +24,8 @@ const MAX_ANIM_TIMEOUT = 1000;
 const DEFAULT_ANIM_TIMEOUT = 100;
 const STEP_ANIM_TIMEOUT = 50;
 
+const STATS_MAX_SAMPLES = 100;
+
 const effects = new Map([
     ["blink", { init: blink.init, tick: blink.tick }],
     ["equalizer", { init: equalizer.init, tick: equalizer.tick }],
@@ -32,8 +34,8 @@ const effects = new Map([
 ```
 
 ```js
-const LEDMatrix = (width, ctx, data) => {
-    const p = Plot.plot({
+const LEDMatrix = (width, ctx, data) =>
+    Plot.plot({
         width,
         aspectRatio: true,
         x: {
@@ -54,45 +56,20 @@ const LEDMatrix = (width, ctx, data) => {
         ],
     });
 
+const amperagePlot = (width, data) => {
+    const p = Plot.plot({
+        width,
+        height: 100,
+        title: "Amperage draw",
+        x: {
+            domain: d3.range(0, STATS_MAX_SAMPLES),
+            axis: null,
+        },
+        marks: [Plot.barY(data)],
+    });
+
     return p;
 };
-```
-
-<div class="grid grid-cols-2">
-    <div class="card">
-
-```js
-const animate = view(Inputs.toggle({ label: "Animate", value: false }));
-const animInterval = view(
-    Inputs.range([MIN_ANIM_TIMEOUT, MAX_ANIM_TIMEOUT], {
-        step: STEP_ANIM_TIMEOUT,
-        label: "Animation timeout",
-        value: DEFAULT_ANIM_TIMEOUT,
-    })
-);
-const rows = view(
-    Inputs.range([MIN_ROWS, MAX_ROWS], {
-        step: 1,
-        label: "Rows",
-        value: DEFAULT_ROWS,
-    })
-);
-const cols = view(
-    Inputs.range([MIN_COLS, MAX_COLS], {
-        step: 1,
-        label: "Columns",
-        value: DEFAULT_COLS,
-    })
-);
-
-const effect = view(
-    Inputs.select(
-        [...effects].map((k) => k[0]),
-        {
-            label: "Effect",
-        }
-    )
-);
 ```
 
 ```js
@@ -140,9 +117,35 @@ const setObservablePlotData = (grid) => {
 ```
 
 ```js
+const amperage = Mutable([]);
+const updateStats = (grid) => {
+    if (amperage.value.length === STATS_MAX_SAMPLES - 1) {
+        amperage.value.shift();
+    }
+
+    let amps = 0;
+    for (let y = 0; y < grid.length; y++) {
+        for (let x = 0; x < grid[y].length; x++) {
+            for (let i = 0; i < 3; i++) {
+                // rgb
+                amps += grid[y][x][i] > 0 ? 0.02 : 0.001; // TODO tie these back to controls
+            }
+        }
+    }
+
+    amperage.value.push(amps);
+
+    amperage.value = amperage.value;
+};
+```
+
+```js
 const tick = () => {
-    // Run effect. Contents are rgb triple.
+    // Run effect.
     const grid = context.effect.tick(context.ctx);
+
+    // push stats
+    updateStats(grid);
 
     // send to proxy
 
@@ -172,10 +175,51 @@ if (animate) {
 }
 ```
 
+<div class="grid grid-cols-2">
+    <div class="card">
+
+```js
+const animate = view(Inputs.toggle({ label: "Animate", value: false }));
+const animInterval = view(
+    Inputs.range([MIN_ANIM_TIMEOUT, MAX_ANIM_TIMEOUT], {
+        step: STEP_ANIM_TIMEOUT,
+        label: "Animation timeout",
+        value: DEFAULT_ANIM_TIMEOUT,
+    })
+);
+const rows = view(
+    Inputs.range([MIN_ROWS, MAX_ROWS], {
+        step: 1,
+        label: "Rows",
+        value: DEFAULT_ROWS,
+    })
+);
+const cols = view(
+    Inputs.range([MIN_COLS, MAX_COLS], {
+        step: 1,
+        label: "Columns",
+        value: DEFAULT_COLS,
+    })
+);
+const effect = view(
+    Inputs.select(
+        [...effects].map((k) => k[0]),
+        {
+            label: "Effect",
+        }
+    )
+);
+```
+
 </div>
     <div class="card">
         ${resize((width) => LEDMatrix(width, context.ctx, data))}
     </div>
+</div>
+
+<!-- stats -->
+<div class="card">
+    ${resize((width) => amperagePlot(width, amperage))}
 </div>
 
 <div class="grid grid-cols-4">
