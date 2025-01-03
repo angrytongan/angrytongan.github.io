@@ -21,9 +21,9 @@ export const tick = (ctx) => {
         const y = randomInt(0, ctx.rows);
         const x = randomInt(0, ctx.cols);
         ctx.grid[y][x] = [
-            randomInt(0, 255), // red
+            ctx.matrixGreen ? 0 : randomInt(0, 255), // red
             randomInt(0, 255), // green
-            randomInt(0, 255), // blue
+            ctx.matrixGreen ? 0 : randomInt(0, 255), // blue
         ];
     }
 
@@ -41,6 +41,7 @@ export const init = (rows, cols, opts) => {
         grid,
         fadeStep: opts.blink.fadeStep,
         newLights: opts.blink.newLights,
+        matrixGreen: opts.blink.matrixGreen,   // Only use green pixels.
     };
 
     return ctx;
@@ -48,5 +49,10 @@ export const init = (rows, cols, opts) => {
 
 export const MIN_FADESTEP = 5;
 export const MAX_FADESTEP = 64;
+export const DEFAULT_FADESTEP = 10;
+
 export const MIN_NEWLIGHTS = 5;
 export const MAX_NEWLIGHTS = 20;
+export const DEFAULT_NEWLIGHTS = 10;
+
+export const DEFAULT_MATRIX_GREEN = false;

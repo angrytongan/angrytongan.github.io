@@ -40,14 +40,13 @@ const LEDMatrix = (width, ctx, data) =>
         aspectRatio: true,
         x: {
             domain: d3.range(0, ctx.cols),
+            axis: null,
         },
         y: {
             domain: d3.range(0, ctx.rows),
+            axis: null,
         },
         marks: [
-            Plot.axisX({}),
-            Plot.axisY({}),
-            Plot.frame({}),
             Plot.cell(data, {
                 x: "x",
                 y: "y",
@@ -159,6 +158,12 @@ initContext(effect, rows, cols, {
     blink: {
         fadeStep: blinkFadeStep,
         newLights: blinkNewLights,
+        matrixGreen: blinkMatrixGreen,
+    },
+    matrix: {
+        fadeStep: matrixFadeStep,
+        newLights: matrixNewLights,
+        matrixGreen: matrixMatrixGreen,
     },
 });
 ```
@@ -206,6 +211,7 @@ const effect = view(
         [...effects].map((k) => k[0]),
         {
             label: "Effect",
+            value: "matrix",
         }
     )
 );
@@ -229,17 +235,20 @@ const effect = view(
 ```js
 const blinkFadeStep = view(
     Inputs.range([blink.MIN_FADESTEP, blink.MAX_FADESTEP], {
-        value: blink.MIN_FADESTEP,
+        value: blink.DEFAULT_FADESTEP,
         label: "Fade step",
         step: 1,
     })
 );
 const blinkNewLights = view(
     Inputs.range([blink.MIN_NEWLIGHTS, blink.MAX_NEWLIGHTS], {
-        value: blink.NEWLIGHTS,
+        value: blink.DEFAULT_NEWLIGHTS,
         label: "New lights",
         step: 1,
     })
+);
+const blinkMatrixGreen = view(
+    Inputs.toggle({ label: "Matrix green", value: blink.DEFAULT_MATRIX_GREEN })
 );
 ```
 
@@ -249,5 +258,27 @@ const blinkNewLights = view(
     </div>
     <div class="card">
         <h2>Matrix</h2>
-    </div>
+
+```js
+const matrixFadeStep = view(
+    Inputs.range([matrix.MIN_FADESTEP, matrix.MAX_FADESTEP], {
+        value: matrix.DEFAULT_FADESTEP,
+        label: "Fade step",
+        step: 1,
+    })
+);
+const matrixNewLights = view(
+    Inputs.range([matrix.MIN_NEWLIGHTS, matrix.MAX_NEWLIGHTS], {
+        value: matrix.DEFAULT_NEWLIGHTS,
+        label: "New lights",
+        step: 1,
+    })
+);
+const matrixMatrixGreen = view(
+    Inputs.toggle({ label: "Matrix green", value: matrix.DEFAULT_MATRIX_GREEN })
+);
+```
+
+</div>
+
 </div>
