@@ -38,6 +38,7 @@ const LEDMatrix = (width, ctx, data) =>
     Plot.plot({
         width,
         aspectRatio: true,
+        margin: 0,
         x: {
             domain: d3.range(0, ctx.cols),
             axis: null,
