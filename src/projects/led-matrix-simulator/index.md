@@ -15,14 +15,25 @@ const MIN_COLS = 1;
 const MAX_COLS = 256;
 const DEFAULT_COLS = 28;
 
-const MIN_BRIGHTNESS = 1;
-const MAX_BRIGHTNESS = 256;
-const DEFAULT_BRIGHTNESS = 128;
-
 const MIN_ANIM_TIMEOUT = 50;
 const MAX_ANIM_TIMEOUT = 1000;
 const DEFAULT_ANIM_TIMEOUT = 100;
 const STEP_ANIM_TIMEOUT = 50;
+
+const MIN_LED_DRAW = 0.01;
+const MAX_LED_DRAW = 0.05;
+const STEP_LED_DRAW = 0.01;
+const DEFAULT_LED_DRAW = 0.02;
+
+const MIN_IDLE_DRAW = 0.0;
+const MAX_IDLE_DRAW = 0.005;
+const STEP_IDLE_DRAW = 0.001;
+const DEFAULT_IDLE_DRAW = 0.001;
+
+const MIN_BRIGHTNESS = 0;
+const MAX_BRIGHTNESS = 1;
+const STEP_BRIGHTNESS = 0.1;
+const DEFAULT_BRIGHTNESS = 0.5;
 
 const STATS_MAX_SAMPLES = 100;
 
@@ -57,6 +68,11 @@ const LEDMatrix = (width, ctx, data) =>
     });
 
 const amperagePlot = (width, data) => {
+    const sampleMinAmperage = d3.minIndex(data);
+    const sampleMaxAmperage = d3.maxIndex(data);
+    const maxAmperage = data[sampleMaxAmperage];
+    const minAmperage = data[sampleMinAmperage];
+
     const p = Plot.plot({
         width,
         height: 100,
@@ -65,10 +81,43 @@ const amperagePlot = (width, data) => {
             domain: d3.range(0, STATS_MAX_SAMPLES),
             axis: null,
         },
-        marks: [Plot.barY(data)],
+        marks: [
+            Plot.barY(data),
+            Plot.tip([`Min ${minAmperage.toFixed(1)}A`], {
+                x: sampleMinAmperage,
+                y: data[sampleMinAmperage],
+            }),
+            Plot.tip([`Max ${maxAmperage.toFixed(1)}A`], {
+                x: sampleMaxAmperage,
+                y: data[sampleMaxAmperage],
+            }),
+        ],
     });
 
     return p;
+};
+
+const litPixelPlot = (width, rows, cols, numPixelsLit) => {
+    const totalPixels = rows * cols;
+    const percentageLit = numPixelsLit / totalPixels;
+
+    return Plot.plot({
+        width,
+        height: 100,
+        title: `Lit pixels (${numPixelsLit} of ${totalPixels})`,
+        x: {
+            percent: true,
+            domain: [0, 100],
+        },
+        marks: [
+            Plot.barX([percentageLit]),
+            Plot.tip([`${(percentageLit * 100).toFixed(0)}%`], {
+                x: percentageLit,
+                y: 0,
+                anchor: "right",
+            }),
+        ],
+    });
 };
 ```
 
@@ -118,22 +167,28 @@ const setObservablePlotData = (grid) => {
 
 ```js
 const amperage = Mutable([]);
+const litPixels = Mutable(0);
 const updateStats = (grid) => {
     if (amperage.value.length === STATS_MAX_SAMPLES - 1) {
         amperage.value.shift();
     }
 
     let amps = 0;
+    let numLit = 0;
     for (let y = 0; y < grid.length; y++) {
         for (let x = 0; x < grid[y].length; x++) {
+            let pixelAmperage = 0;
             for (let i = 0; i < 3; i++) {
-                // rgb
-                amps += grid[y][x][i] > 0 ? 0.02 : 0.001; // TODO tie these back to controls
+                pixelAmperage += grid[y][x][i] > 0 ? ledDraw : 0;
             }
+
+            amps += pixelAmperage > 0 ? pixelAmperage : idleLEDDraw;
+            numLit += pixelAmperage > 0 ? 1 : 0;
         }
     }
 
-    amperage.value.push(amps);
+    amperage.value.push(amps * brightness); // assuming linear adjustment for brightness :shrug:
+    litPixels.value = numLit;
 
     amperage.value = amperage.value;
 };
@@ -174,14 +229,14 @@ if (animate) {
     console.log("setting animate");
     clearTickInterval();
     setTickInterval(tick, animInterval);
-    tick();
 } else {
     console.log("clearing animate");
     clearTickInterval();
 }
+tick();
 ```
 
-<div class="grid grid-cols-2">
+<div class="grid grid-cols-4">
     <div class="card">
 
 ```js
@@ -220,13 +275,45 @@ const effect = view(
 
 </div>
     <div class="card">
+
+```js
+const ledDraw = view(
+    Inputs.range([MIN_LED_DRAW, MAX_LED_DRAW], {
+        label: "LED colour draw",
+        value: DEFAULT_LED_DRAW,
+        step: STEP_LED_DRAW,
+    })
+);
+const idleLEDDraw = view(
+    Inputs.range([MIN_IDLE_DRAW, MAX_IDLE_DRAW], {
+        label: "Idle draw",
+        value: DEFAULT_IDLE_DRAW,
+        step: STEP_IDLE_DRAW,
+    })
+);
+const brightness = view(
+    Inputs.range([MIN_BRIGHTNESS, MAX_BRIGHTNESS], {
+        label: "Brightness",
+        value: DEFAULT_BRIGHTNESS,
+        step: STEP_BRIGHTNESS,
+    })
+);
+```
+
+</div>
+    <div class="card grid-colspan-2">
         ${resize((width) => LEDMatrix(width, context.ctx, data))}
     </div>
 </div>
 
 <!-- stats -->
-<div class="card">
-    ${resize((width) => amperagePlot(width, amperage))}
+<div class="grid grid-cols-4">
+    <div class="card">
+        ${resize((width) => amperagePlot(width, amperage))}
+    </div>
+    <div class="card">
+        ${resize((width) => litPixelPlot(width, context.ctx.rows, context.ctx.cols, litPixels))}
+    </div>
 </div>
 
 <div class="grid grid-cols-4">
