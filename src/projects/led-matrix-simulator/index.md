@@ -83,6 +83,16 @@ const amperagePlot = (width, data) => {
         },
         marks: [
             Plot.barY(data),
+            Plot.line(
+                data,
+                Plot.windowY(7, {
+                    x: (d, i) => i,
+                    y: (d) => d,
+                    stroke: "red",
+                    strokeWidth: 1,
+                    strokeOpacity: 0.8,
+                })
+            ),
             Plot.tip([`Min ${minAmperage.toFixed(1)}A`], {
                 x: sampleMinAmperage,
                 y: data[sampleMinAmperage],
