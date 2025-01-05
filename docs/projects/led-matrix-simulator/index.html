@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.0">
+<title>LED matrix simulator | df.id.au</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="../../_observablehq/theme-air,near-midnight,alt,wide.db1cdf55.css">
+<link rel="preload" as="style" href="../../_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="../../_observablehq/theme-air,near-midnight,alt,wide.db1cdf55.css">
+<link rel="stylesheet" type="text/css" href="../../_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="../../_observablehq/client.7b1a8d19.js">
+<link rel="modulepreload" href="../../_observablehq/runtime.9393ab6d.js">
+<link rel="modulepreload" href="../../_observablehq/stdlib.3ac83553.js">
+<link rel="modulepreload" href="../../_import/projects/led-matrix-simulator/effects/index.7d45a142.js">
+<link rel="modulepreload" href="../../_npm/d3@7.9.0/74407efb.js">
+<link rel="modulepreload" href="../../_observablehq/stdlib/inputs.3e4c82b9.js">
+<link rel="modulepreload" href="../../_npm/@observablehq/plot@0.6.16/181829af.js">
+<link rel="modulepreload" href="../../_import/projects/led-matrix-simulator/effects/matrix.54826db7.js">
+<link rel="modulepreload" href="../../_import/projects/led-matrix-simulator/effects/blink.172cdc75.js">
+<link rel="modulepreload" href="../../_import/projects/led-matrix-simulator/effects/equalizer.0afdb646.js">
+<link rel="modulepreload" href="../../_import/projects/led-matrix-simulator/effects/colours.3a61e014.js">
+<link rel="modulepreload" href="../../_import/projects/led-matrix-simulator/effects/math.54451539.js">
+<link rel="modulepreload" href="../../_npm/htl@0.3.1/063eb405.js">
+<link rel="modulepreload" href="../../_npm/isoformat@0.2.1/c68fbd73.js">
+<link rel="modulepreload" href="../../_npm/d3-array@3.2.4/37839b6a.js">
+<link rel="modulepreload" href="../../_npm/d3-axis@3.0.0/bd0afa17.js">
+<link rel="modulepreload" href="../../_npm/d3-brush@3.0.0/5830b12a.js">
+<link rel="modulepreload" href="../../_npm/d3-chord@3.0.1/84d7b8e9.js">
+<link rel="modulepreload" href="../../_npm/d3-color@3.1.0/2c0cdfa2.js">
+<link rel="modulepreload" href="../../_npm/d3-contour@4.0.2/d496a3b3.js">
+<link rel="modulepreload" href="../../_npm/d3-delaunay@6.0.4/00c41b5d.js">
+<link rel="modulepreload" href="../../_npm/d3-dispatch@3.0.1/b5f7cdc6.js">
+<link rel="modulepreload" href="../../_npm/d3-drag@3.0.0/b22c5864.js">
+<link rel="modulepreload" href="../../_npm/d3-dsv@3.0.1/407f7a1f.js">
+<link rel="modulepreload" href="../../_npm/d3-ease@3.0.1/6f15f633.js">
+<link rel="modulepreload" href="../../_npm/d3-fetch@3.0.1/35880c2a.js">
+<link rel="modulepreload" href="../../_npm/d3-force@3.0.0/5e1ff060.js">
+<link rel="modulepreload" href="../../_npm/d3-format@3.1.0/33fb7288.js">
+<link rel="modulepreload" href="../../_npm/d3-geo@3.1.1/5e427f4b.js">
+<link rel="modulepreload" href="../../_npm/d3-hierarchy@3.1.2/f1db2593.js">
+<link rel="modulepreload" href="../../_npm/d3-interpolate@3.0.1/034b7bcb.js">
+<link rel="modulepreload" href="../../_npm/d3-path@3.1.0/4bb53638.js">
+<link rel="modulepreload" href="../../_npm/d3-polygon@3.0.1/bbafde58.js">
+<link rel="modulepreload" href="../../_npm/d3-quadtree@3.0.1/aa5b35a8.js">
+<link rel="modulepreload" href="../../_npm/d3-random@3.0.1/32c7fec2.js">
+<link rel="modulepreload" href="../../_npm/d3-scale@4.0.2/4143aac9.js">
+<link rel="modulepreload" href="../../_npm/d3-scale-chromatic@3.1.0/b6952b03.js">
+<link rel="modulepreload" href="../../_npm/d3-selection@3.0.0/5dcd62f4.js">
+<link rel="modulepreload" href="../../_npm/d3-shape@3.2.0/be692bd9.js">
+<link rel="modulepreload" href="../../_npm/d3-time@3.1.0/3a9ac1c1.js">
+<link rel="modulepreload" href="../../_npm/d3-time-format@4.1.0/28d1ef76.js">
+<link rel="modulepreload" href="../../_npm/d3-timer@3.0.1/f31b5398.js">
+<link rel="modulepreload" href="../../_npm/d3-transition@3.0.1/8debb4ba.js">
+<link rel="modulepreload" href="../../_npm/d3-zoom@3.0.0/4b0cc581.js">
+<link rel="modulepreload" href="../../_npm/interval-tree-1d@1.0.4/a62ae5ce.js">
+<link rel="modulepreload" href="../../_npm/internmap@2.0.3/5eed35fd.js">
+<link rel="modulepreload" href="../../_npm/delaunator@5.0.1/e67acb27.js">
+<link rel="modulepreload" href="../../_npm/binary-search-bounds@2.0.5/1ee6c50d.js">
+<link rel="modulepreload" href="../../_npm/robust-predicates@3.0.2/8ac9039b.js">
+
+    <link rel="icon" href="../../_file/observable.1af93621.png" type="image/png" sizes="32x32">
+    <script data-goatcounter="https://angrytongan.goatcounter.com/count" src="../../_import/components/count.628d73ee.js"></script>
+    <script src="../../_import/components/analytics.e0581a97.js"></script>
+  
+<script type="module">
+
+import {define} from "../../_observablehq/client.7b1a8d19.js";
+
+define({id: "9b104dc2", outputs: ["matrix","blink","equalizer","rgb2hex","MIN_ROWS","MAX_ROWS","DEFAULT_ROWS","MIN_COLS","MAX_COLS","DEFAULT_COLS","MIN_ANIM_TIMEOUT","MAX_ANIM_TIMEOUT","DEFAULT_ANIM_TIMEOUT","STEP_ANIM_TIMEOUT","MIN_LED_DRAW","MAX_LED_DRAW","STEP_LED_DRAW","DEFAULT_LED_DRAW","MIN_IDLE_DRAW","MAX_IDLE_DRAW","STEP_IDLE_DRAW","DEFAULT_IDLE_DRAW","MIN_BRIGHTNESS","MAX_BRIGHTNESS","STEP_BRIGHTNESS","DEFAULT_BRIGHTNESS","STATS_MAX_SAMPLES","DEFAULT_EFFECT","effects"], body: async () => {
+const {matrix, blink, equalizer, rgb2hex} = await import("../../_import/projects/led-matrix-simulator/effects/index.7d45a142.js");
+
+const MIN_ROWS = 1;
+const MAX_ROWS = 256;
+const DEFAULT_ROWS = 5;
+
+const MIN_COLS = 1;
+const MAX_COLS = 256;
+const DEFAULT_COLS = 28;
+
+const MIN_ANIM_TIMEOUT = 50;
+const MAX_ANIM_TIMEOUT = 1000;
+const DEFAULT_ANIM_TIMEOUT = 100;
+const STEP_ANIM_TIMEOUT = 50;
+
+const MIN_LED_DRAW = 0.01;
+const MAX_LED_DRAW = 0.05;
+const STEP_LED_DRAW = 0.01;
+const DEFAULT_LED_DRAW = 0.02;
+
+const MIN_IDLE_DRAW = 0.0;
+const MAX_IDLE_DRAW = 0.005;
+const STEP_IDLE_DRAW = 0.001;
+const DEFAULT_IDLE_DRAW = 0.001;
+
+const MIN_BRIGHTNESS = 0;
+const MAX_BRIGHTNESS = 1;
+const STEP_BRIGHTNESS = 0.1;
+const DEFAULT_BRIGHTNESS = 0.5;
+
+const STATS_MAX_SAMPLES = 100;
+
+const DEFAULT_EFFECT = "blink";
+const effects = new Map([
+    ["blink", { init: blink.init, tick: blink.tick }],
+    ["equalizer", { init: equalizer.init, tick: equalizer.tick }],
+    ["matrix", { init: matrix.init, tick: matrix.tick }],
+]);
+return {matrix,blink,equalizer,rgb2hex,MIN_ROWS,MAX_ROWS,DEFAULT_ROWS,MIN_COLS,MAX_COLS,DEFAULT_COLS,MIN_ANIM_TIMEOUT,MAX_ANIM_TIMEOUT,DEFAULT_ANIM_TIMEOUT,STEP_ANIM_TIMEOUT,MIN_LED_DRAW,MAX_LED_DRAW,STEP_LED_DRAW,DEFAULT_LED_DRAW,MIN_IDLE_DRAW,MAX_IDLE_DRAW,STEP_IDLE_DRAW,DEFAULT_IDLE_DRAW,MIN_BRIGHTNESS,MAX_BRIGHTNESS,STEP_BRIGHTNESS,DEFAULT_BRIGHTNESS,STATS_MAX_SAMPLES,DEFAULT_EFFECT,effects};
+}});
+
+define({id: "39f5e84d", inputs: ["Plot","d3","STATS_MAX_SAMPLES"], outputs: ["LEDMatrix","amperagePlot","litPixelPlot"], body: (Plot,d3,STATS_MAX_SAMPLES) => {
+const LEDMatrix = (width, ctx, data) =>
+    Plot.plot({
+        width,
+        aspectRatio: true,
+        margin: 0,
+        x: {
+            domain: d3.range(0, ctx.cols),
+            axis: null,
+        },
+        y: {
+            domain: d3.range(0, ctx.rows),
+            axis: null,
+        },
+        marks: [
+            Plot.cell(data, {
+                x: "x",
+                y: "y",
+                fill: "value",
+            }),
+        ],
+    });
+
+const amperagePlot = (width, data) => {
+    const sampleMinAmperage = d3.minIndex(data);
+    const sampleMaxAmperage = d3.maxIndex(data);
+    const maxAmperage = data[sampleMaxAmperage];
+    const minAmperage = data[sampleMinAmperage];
+
+    const p = Plot.plot({
+        width,
+        height: 100,
+        title: "Amperage draw",
+        x: {
+            domain: d3.range(0, STATS_MAX_SAMPLES),
+            axis: null,
+        },
+        marks: [
+            Plot.barY(data),
+            Plot.line(
+                data,
+                Plot.windowY(7, {
+                    x: (d, i) => i,
+                    y: (d) => d,
+                    stroke: "red",
+                    strokeWidth: 1,
+                    strokeOpacity: 0.8,
+                })
+            ),
+            Plot.tip([`Min ${minAmperage.toFixed(1)}A`], {
+                x: sampleMinAmperage,
+                y: data[sampleMinAmperage],
+            }),
+            Plot.tip([`Max ${maxAmperage.toFixed(1)}A`], {
+                x: sampleMaxAmperage,
+                y: data[sampleMaxAmperage],
+            }),
+        ],
+    });
+
+    return p;
+};
+
+const litPixelPlot = (width, rows, cols, numPixelsLit) => {
+    const totalPixels = rows * cols;
+    const percentageLit = numPixelsLit / totalPixels;
+
+    return Plot.plot({
+        width,
+        height: 100,
+        title: `Lit pixels (${numPixelsLit} of ${totalPixels})`,
+        x: {
+            percent: true,
+            domain: [0, 100],
+        },
+        marks: [
+            Plot.barX([percentageLit]),
+            Plot.tip([`${(percentageLit * 100).toFixed(0)}%`], {
+                x: percentageLit,
+                y: 0,
+                anchor: "right",
+            }),
+        ],
+    });
+};
+return {LEDMatrix,amperagePlot,litPixelPlot};
+}});
+
+define({id: "e1a8be41", inputs: ["Mutable","invalidation"], outputs: ["tickInterval","setTickInterval","clearTickInterval"], body: (Mutable,invalidation) => {
+const tickInterval = Mutable(0);
+const setTickInterval = (fn, tm) => {
+    if (tickInterval.value) {
+        clearInterval(tickInterval.value);
+    }
+    tickInterval.value = setInterval(fn, tm);
+};
+const clearTickInterval = () => {
+    if (tickInterval.value) {
+        clearInterval(tickInterval.value);
+    }
+};
+invalidation.then(() => {
+    if (tickInterval.value) {
+        clearInterval(tickInterval.value);
+    }
+});
+return {tickInterval,setTickInterval,clearTickInterval};
+}});
+
+define({id: "41d84656", inputs: ["Mutable","effects"], outputs: ["context","initContext"], body: (Mutable,effects) => {
+const context = Mutable({});
+const initContext = (effect, rows, cols, opts) => {
+    const e = effects.get(effect);
+    context.value = { effect: e, ctx: e.init(rows, cols, opts) };
+};
+return {context,initContext};
+}});
+
+define({id: "6f10f0ae", inputs: ["Mutable","context","rgb2hex"], outputs: ["data","setObservablePlotData"], body: (Mutable,context,rgb2hex) => {
+const data = Mutable([]);
+const setObservablePlotData = (grid) => {
+    data.value = [];
+    for (let y = 0; y < context.ctx.rows; y++) {
+        for (let x = 0; x < context.ctx.cols; x++) {
+            data.value.push({
+                x,
+                y,
+                value: rgb2hex(grid[y][x]),
+            });
+        }
+    }
+};
+return {data,setObservablePlotData};
+}});
+
+define({id: "04b41abd", inputs: ["Mutable","STATS_MAX_SAMPLES","ledDraw","idleLEDDraw","brightness"], outputs: ["amperage","litPixels","updateStats"], body: (Mutable,STATS_MAX_SAMPLES,ledDraw,idleLEDDraw,brightness) => {
+const amperage = Mutable([]);
+const litPixels = Mutable(0);
+const updateStats = (grid) => {
+    if (amperage.value.length === STATS_MAX_SAMPLES - 1) {
+        amperage.value.shift();
+    }
+
+    let amps = 0;
+    let numLit = 0;
+    for (let y = 0; y < grid.length; y++) {
+        for (let x = 0; x < grid[y].length; x++) {
+            let pixelAmperage = 0;
+            for (let i = 0; i < 3; i++) {
+                pixelAmperage += grid[y][x][i] > 0 ? ledDraw : 0;
+            }
+
+            amps += pixelAmperage > 0 ? pixelAmperage : idleLEDDraw;
+            numLit += pixelAmperage > 0 ? 1 : 0;
+        }
+    }
+
+    amperage.value.push(amps * brightness); // assuming linear adjustment for brightness :shrug:
+    litPixels.value = numLit;
+
+    amperage.value = amperage.value;
+};
+return {amperage,litPixels,updateStats};
+}});
+
+define({id: "897f0b15", inputs: ["context","updateStats","setObservablePlotData"], outputs: ["tick"], body: (context,updateStats,setObservablePlotData) => {
+const tick = () => {
+    if (context.effect) {
+        // Run effect.
+        const grid = context.effect.tick(context.ctx);
+
+        // push stats
+        updateStats(grid);
+
+        // send to proxy
+
+        // convert grid to observable format
+        setObservablePlotData(grid);
+    }
+};
+return {tick};
+}});
+
+define({id: "2b34ed56", inputs: ["initContext","effect","rows","cols","blinkFadeStep","blinkNewLights","blinkMatrixGreen","equalizerNewLights","matrixFadeStep","matrixNewLights","matrixMatrixGreen"], body: (initContext,effect,rows,cols,blinkFadeStep,blinkNewLights,blinkMatrixGreen,equalizerNewLights,matrixFadeStep,matrixNewLights,matrixMatrixGreen) => {
+initContext(effect, rows, cols, {
+    blink: {
+        fadeStep: blinkFadeStep,
+        newLights: blinkNewLights,
+        matrixGreen: blinkMatrixGreen,
+    },
+    equalizer: {
+        newLights: equalizerNewLights,
+    },
+    matrix: {
+        fadeStep: matrixFadeStep,
+        newLights: matrixNewLights,
+        matrixGreen: matrixMatrixGreen,
+    },
+});
+}});
+
+define({id: "2da9d661", inputs: ["animate","clearTickInterval","setTickInterval","tick","animInterval"], body: (animate,clearTickInterval,setTickInterval,tick,animInterval) => {
+if (animate) {
+    console.log("setting animate");
+    clearTickInterval();
+    setTickInterval(tick, animInterval);
+} else {
+    console.log("clearing animate");
+    clearTickInterval();
+}
+tick();
+}});
+
+define({id: "664fec03", inputs: ["view","Inputs","MIN_ANIM_TIMEOUT","MAX_ANIM_TIMEOUT","STEP_ANIM_TIMEOUT","DEFAULT_ANIM_TIMEOUT","MIN_ROWS","MAX_ROWS","DEFAULT_ROWS","MIN_COLS","MAX_COLS","DEFAULT_COLS","effects","DEFAULT_EFFECT"], outputs: ["animate","animInterval","rows","cols","effect"], body: (view,Inputs,MIN_ANIM_TIMEOUT,MAX_ANIM_TIMEOUT,STEP_ANIM_TIMEOUT,DEFAULT_ANIM_TIMEOUT,MIN_ROWS,MAX_ROWS,DEFAULT_ROWS,MIN_COLS,MAX_COLS,DEFAULT_COLS,effects,DEFAULT_EFFECT) => {
+const animate = view(Inputs.toggle({ label: "Animate", value: false }));
+const animInterval = view(
+    Inputs.range([MIN_ANIM_TIMEOUT, MAX_ANIM_TIMEOUT], {
+        step: STEP_ANIM_TIMEOUT,
+        label: "Animation timeout",
+        value: DEFAULT_ANIM_TIMEOUT,
+    })
+);
+const rows = view(
+    Inputs.range([MIN_ROWS, MAX_ROWS], {
+        step: 1,
+        label: "Rows",
+        value: DEFAULT_ROWS,
+    })
+);
+const cols = view(
+    Inputs.range([MIN_COLS, MAX_COLS], {
+        step: 1,
+        label: "Columns",
+        value: DEFAULT_COLS,
+    })
+);
+const effect = view(
+    Inputs.select(
+        [...effects].map((k) => k[0]),
+        {
+            label: "Effect",
+            value: DEFAULT_EFFECT,
+        }
+    )
+);
+return {animate,animInterval,rows,cols,effect};
+}});
+
+define({id: "871b57aa", inputs: ["view","Inputs","MIN_LED_DRAW","MAX_LED_DRAW","DEFAULT_LED_DRAW","STEP_LED_DRAW","MIN_IDLE_DRAW","MAX_IDLE_DRAW","DEFAULT_IDLE_DRAW","STEP_IDLE_DRAW","MIN_BRIGHTNESS","MAX_BRIGHTNESS","DEFAULT_BRIGHTNESS","STEP_BRIGHTNESS"], outputs: ["ledDraw","idleLEDDraw","brightness"], body: (view,Inputs,MIN_LED_DRAW,MAX_LED_DRAW,DEFAULT_LED_DRAW,STEP_LED_DRAW,MIN_IDLE_DRAW,MAX_IDLE_DRAW,DEFAULT_IDLE_DRAW,STEP_IDLE_DRAW,MIN_BRIGHTNESS,MAX_BRIGHTNESS,DEFAULT_BRIGHTNESS,STEP_BRIGHTNESS) => {
+const ledDraw = view(
+    Inputs.range([MIN_LED_DRAW, MAX_LED_DRAW], {
+        label: "LED colour draw (A)",
+        value: DEFAULT_LED_DRAW,
+        step: STEP_LED_DRAW,
+    })
+);
+const idleLEDDraw = view(
+    Inputs.range([MIN_IDLE_DRAW, MAX_IDLE_DRAW], {
+        label: "Idle draw (A)",
+        value: DEFAULT_IDLE_DRAW,
+        step: STEP_IDLE_DRAW,
+    })
+);
+const brightness = view(
+    Inputs.range([MIN_BRIGHTNESS, MAX_BRIGHTNESS], {
+        label: "Brightness",
+        value: DEFAULT_BRIGHTNESS,
+        step: STEP_BRIGHTNESS,
+    })
+);
+return {ledDraw,idleLEDDraw,brightness};
+}});
+
+define({id: "c261d5e8", mode: "inline", inputs: ["resize","LEDMatrix","context","data","display"], body: async (resize,LEDMatrix,context,data,display) => {
+display(await(
+resize((width) => LEDMatrix(width, context.ctx, data))
+))
+}});
+
+define({id: "15896c49", mode: "inline", inputs: ["resize","amperagePlot","amperage","display"], body: async (resize,amperagePlot,amperage,display) => {
+display(await(
+resize((width) => amperagePlot(width, amperage))
+))
+}});
+
+define({id: "7ef28144", mode: "inline", inputs: ["resize","litPixelPlot","context","litPixels","display"], body: async (resize,litPixelPlot,context,litPixels,display) => {
+display(await(
+resize((width) => litPixelPlot(width, context.ctx.rows, context.ctx.cols, litPixels))
+))
+}});
+
+define({id: "48d8b2da", inputs: ["view","Inputs","blink"], outputs: ["blinkFadeStep","blinkNewLights","blinkMatrixGreen"], body: (view,Inputs,blink) => {
+const blinkFadeStep = view(
+    Inputs.range([blink.MIN_FADESTEP, blink.MAX_FADESTEP], {
+        value: blink.DEFAULT_FADESTEP,
+        label: "Fade step",
+        step: 1,
+    })
+);
+const blinkNewLights = view(
+    Inputs.range([blink.MIN_NEWLIGHTS, blink.MAX_NEWLIGHTS], {
+        value: blink.DEFAULT_NEWLIGHTS,
+        label: "New lights",
+        step: 1,
+    })
+);
+const blinkMatrixGreen = view(
+    Inputs.toggle({ label: "Matrix green", value: blink.DEFAULT_MATRIX_GREEN })
+);
+return {blinkFadeStep,blinkNewLights,blinkMatrixGreen};
+}});
+
+define({id: "718b5c32", inputs: ["view","Inputs","equalizer"], outputs: ["equalizerNewLights"], body: (view,Inputs,equalizer) => {
+const equalizerNewLights = view(
+    Inputs.range([equalizer.MIN_NEWLIGHTS, equalizer.MAX_NEWLIGHTS], {
+        value: equalizer.DEFAULT_NEWLIGHTS,
+        label: "New lights",
+        step: 1,
+    })
+);
+return {equalizerNewLights};
+}});
+
+define({id: "35fc757f", inputs: ["view","Inputs","matrix"], outputs: ["matrixFadeStep","matrixNewLights","matrixMatrixGreen"], body: (view,Inputs,matrix) => {
+const matrixFadeStep = view(
+    Inputs.range([matrix.MIN_FADESTEP, matrix.MAX_FADESTEP], {
+        value: matrix.DEFAULT_FADESTEP,
+        label: "Fade step",
+        step: 1,
+    })
+);
+const matrixNewLights = view(
+    Inputs.range([matrix.MIN_NEWLIGHTS, matrix.MAX_NEWLIGHTS], {
+        value: matrix.DEFAULT_NEWLIGHTS,
+        label: "New lights",
+        step: 1,
+    })
+);
+const matrixMatrixGreen = view(
+    Inputs.toggle({ label: "Matrix green", value: matrix.DEFAULT_MATRIX_GREEN })
+);
+return {matrixFadeStep,matrixNewLights,matrixMatrixGreen};
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="../../">df.id.au</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("../../_observablehq/search.b7eb4f24.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const c=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(c.checked?t.focus():(c.click(),t.focus(),c.click()),t.select(),e.preventDefault())});}</script>
+  <details open class="observablehq-section-active">
+    <summary>Spare time projects</summary>
+    <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./">LED matrix simulator</a></li>
+    <li class="observablehq-link"><a href="https://ergarcade.com" target="_blank"><span>The Erg Arcade!</span></a></li>
+    <li class="observablehq-link"><a href="https://angrytongan.github.io/calendararc" target="_blank"><span>CalendarArc</span></a></li>
+    </ol>
+  </details>
+  <details>
+    <summary>Recreation</summary>
+    <ol>
+    <li class="observablehq-link"><a href="../../recreation/the-gym">The gym</a></li>
+    <li class="observablehq-link"><a href="../../recreation/yoe-year1-review/">Year of the Engine - year 1</a></li>
+    <li class="observablehq-link"><a href="../../recreation/yoe-year2-review/">Year of the Engine - year 2</a></li>
+    </ol>
+  </details>
+  <ol>
+    <li class="observablehq-link"><a href="../../resume">Resume</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),t=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?t.checked=r==="true":t.indeterminate=!0;for(const o of document.querySelectorAll("#observablehq-sidebar summary")){const s=o.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${o.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<header id="observablehq-header">
+<a href="../../"><img src="../../_file/images/head.dbd8539f.jpeg" alt="me" style="height: 2rem; border-radius: 50%"></a><a href="../../">df.id.au</a>
+</header>
+<main id="observablehq-main" class="observablehq">
+<h1 id="led-matrix-simulator" tabindex="-1"><a class="observablehq-header-anchor" href="#led-matrix-simulator">LED matrix simulator</a></h1>
+<div class="observablehq observablehq--block"><!--:9b104dc2:--></div>
+<div class="observablehq observablehq--block"><!--:39f5e84d:--></div>
+<div class="observablehq observablehq--block"><!--:e1a8be41:--></div>
+<div class="observablehq observablehq--block"><!--:41d84656:--></div>
+<div class="observablehq observablehq--block"><!--:6f10f0ae:--></div>
+<div class="observablehq observablehq--block"><!--:04b41abd:--></div>
+<div class="observablehq observablehq--block"><!--:897f0b15:--></div>
+<div class="observablehq observablehq--block"><!--:2b34ed56:--></div>
+<div class="observablehq observablehq--block"><!--:2da9d661:--></div>
+<div class="grid grid-cols-4">
+    <div class="card">
+<div class="observablehq observablehq--block"><!--:664fec03:--></div>
+</div>
+    <div class="card">
+<div class="observablehq observablehq--block"><!--:871b57aa:--></div>
+</div>
+    <div class="card grid-colspan-2">
+        <observablehq-loading></observablehq-loading><!--:c261d5e8:-->
+    </div>
+</div>
+<!-- stats -->
+<div class="grid grid-cols-4">
+    <div class="card">
+        <observablehq-loading></observablehq-loading><!--:15896c49:-->
+    </div>
+    <div class="card">
+        <observablehq-loading></observablehq-loading><!--:7ef28144:-->
+    </div>
+</div>
+<div class="grid grid-cols-4">
+    <div class="card">
+        <h2>Blink</h2>
+<div class="observablehq observablehq--block"><!--:48d8b2da:--></div>
+</div>
+    <div class="card">
+        <h2>Equalizer</h2>
+<div class="observablehq observablehq--block"><!--:718b5c32:--></div>
+</div>
+    <div class="card">
+        <h2>Matrix</h2>
+<div class="observablehq observablehq--block"><!--:35fc757f:--></div>
+</div>
+</div>
+</main>
+<footer id="observablehq-footer">
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-01-05T19:09:07">Jan 5, 2025</a>.</div>
+</footer>
+</div>
+</body>
+</html>
