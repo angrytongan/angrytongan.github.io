@@ -1,3 +1,4 @@
+// vim: ts=2 sw=2
 // See https://observablehq.com/framework/config for documentation.
 export default {
   // The project’s title; used in the sidebar and webpage titles.
@@ -20,8 +21,9 @@ export default {
       name: 'Spare time projects',
       open: false,
       pages: [
-        {name: 'CalendarArc', path: 'https://angrytongan.github.io/calendararc' },
+        {name: 'LED matrix simulator', path: '/projects/led-matrix-simulator/' },
         {name: 'The Erg Arcade!', path: 'https://ergarcade.com' },
+        {name: 'CalendarArc', path: 'https://angrytongan.github.io/calendararc' },
       ],
     },
     {
