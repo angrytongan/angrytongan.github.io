@@ -293,14 +293,14 @@ const effect = view(
 ```js
 const ledDraw = view(
     Inputs.range([MIN_LED_DRAW, MAX_LED_DRAW], {
-        label: "LED colour draw",
+        label: "LED colour draw (A)",
         value: DEFAULT_LED_DRAW,
         step: STEP_LED_DRAW,
     })
 );
 const idleLEDDraw = view(
     Inputs.range([MIN_IDLE_DRAW, MAX_IDLE_DRAW], {
-        label: "Idle draw",
+        label: "Idle draw (A)",
         value: DEFAULT_IDLE_DRAW,
         step: STEP_IDLE_DRAW,
     })
