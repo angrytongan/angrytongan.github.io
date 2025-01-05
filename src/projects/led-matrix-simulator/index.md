@@ -37,6 +37,7 @@ const DEFAULT_BRIGHTNESS = 0.5;
 
 const STATS_MAX_SAMPLES = 100;
 
+const DEFAULT_EFFECT = "blink";
 const effects = new Map([
     ["blink", { init: blink.init, tick: blink.tick }],
     ["equalizer", { init: equalizer.init, tick: equalizer.tick }],
@@ -226,6 +227,9 @@ initContext(effect, rows, cols, {
         newLights: blinkNewLights,
         matrixGreen: blinkMatrixGreen,
     },
+    equalizer: {
+        newLights: equalizerNewLights,
+    },
     matrix: {
         fadeStep: matrixFadeStep,
         newLights: matrixNewLights,
@@ -277,7 +281,7 @@ const effect = view(
         [...effects].map((k) => k[0]),
         {
             label: "Effect",
-            value: "matrix",
+            value: DEFAULT_EFFECT,
         }
     )
 );
@@ -353,7 +357,18 @@ const blinkMatrixGreen = view(
 </div>
     <div class="card">
         <h2>Equalizer</h2>
-    </div>
+
+```js
+const equalizerNewLights = view(
+    Inputs.range([equalizer.MIN_NEWLIGHTS, equalizer.MAX_NEWLIGHTS], {
+        value: equalizer.DEFAULT_NEWLIGHTS,
+        label: "New lights",
+        step: 1,
+    })
+);
+```
+
+</div>
     <div class="card">
         <h2>Matrix</h2>
 
