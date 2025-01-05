@@ -36,6 +36,13 @@ export default {
       ],
     },
     {
+      name: 'Experiments',
+      open: false,
+      pages: [
+        { name: 'Web Serial', path: '/experiments/web-serial/' },
+      ],
+    },
+    {
       name: 'Resume',
       path: '/resume',
     },
