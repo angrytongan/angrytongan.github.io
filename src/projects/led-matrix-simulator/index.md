@@ -207,16 +207,18 @@ const updateStats = (grid) => {
 
 ```js
 const tick = () => {
-    // Run effect.
-    const grid = context.effect.tick(context.ctx);
+    if (context.effect) {
+        // Run effect.
+        const grid = context.effect.tick(context.ctx);
 
-    // push stats
-    updateStats(grid);
+        // push stats
+        updateStats(grid);
 
-    // send to proxy
+        // send to proxy
 
-    // convert grid to observable format
-    setObservablePlotData(grid);
+        // convert grid to observable format
+        setObservablePlotData(grid);
+    }
 };
 ```
 
