@@ -51,7 +51,7 @@ leader. Enjoys learning, being challenged and getting things done.
 
   Full stack developer on internal tooling and projects.
 
-  Javascript / Typescript / git / Svelte / Go / GCP / Observable
+  Javascript / Typescript / git / Svelte / Go / GCP / Observable / deck.gl
 
 - **Shorthand**  
   Software Engineer - Growth team  

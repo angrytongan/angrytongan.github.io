@@ -2,7 +2,7 @@
 
 /* XXX make this generic */
 
-import { dateTime } from "../datetime.22c1d16f.js";
+import { dateTime } from "../datetime.857764ac.js";
 
 const results = [
     { id: 43117686, date: '2020-04-01' },
