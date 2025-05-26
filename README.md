@@ -21,5 +21,5 @@
 ```shell
 % git checkout develop
 % gh pr create --fill --base master
-% gh pr merge --sqush
+% gh pr merge --merge
 ```
