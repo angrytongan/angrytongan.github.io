@@ -1,17 +1,17 @@
 import programPhases from "./charts/phases.c0ec9038.js";
 import workoutTypes from "./charts/workout-types.727710aa.js";
 import execution from "./charts/execution.a68fa478.js";
-import timeTrial from "./charts/time-trial.46ce6c54.js";
+import timeTrial from "./charts/time-trial.602d15c6.js";
 import strokedata from "./charts/strokedata.6057ac94.js";
-import repeated from "./charts/repeated.78a60aae.js";
+import repeated from "./charts/repeated.dd211be6.js";
 import acidBath from "./charts/acid-bath.ad84ff20.js";
 import intervalGraph from "./charts/interval-graph.f901bdb5.js";
-import twok from "./charts/2k.4ad816e6.js";
-import biological from "./charts/biological.c730707b.js";
+import twok from "./charts/2k.bf6c6b95.js";
+import biological from "./charts/biological.11641bd1.js";
 import workoutDuration from "./charts/workout-duration.6c25cb51.js";
-import timeCommitment from "./charts/time-commitment.4bf5eb9b.js";
-import workoutSpread from "./charts/workout-spread.4954aaee.js";
-import constantlyVaried from "./charts/constantly-varied.2a241f8c.js";
+import timeCommitment from "./charts/time-commitment.6481450e.js";
+import workoutSpread from "./charts/workout-spread.d0e0f176.js";
+import constantlyVaried from "./charts/constantly-varied.cbcfc984.js";
 
 export {
     programPhases,
