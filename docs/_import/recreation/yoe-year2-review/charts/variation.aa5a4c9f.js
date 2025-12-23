@@ -1,4 +1,4 @@
-import { time } from "../../../../_npm/echarts@5.6.0/dist/echarts.esm.min.js.43ee27f9.js";
+import { time } from "../../../../_npm/echarts@6.0.0/dist/echarts.esm.min.js.77ac2793.js";
 import { workouts } from "./data.761dd875.js";
 
 export const variationWorkoutByDate = () => {
