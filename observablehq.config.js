@@ -33,6 +33,7 @@ export default {
         { name: 'The gym', path: '/recreation/the-gym' },
         { name: 'Year of the Engine - year 1', path: '/recreation/yoe-year1-review/' },
         { name: 'Year of the Engine - year 2', path: '/recreation/yoe-year2-review/' },
+        { name: 'Ergometer Volume Testing', path: '/recreation/ergometer-volume-testing/' },
       ],
     },
     {
