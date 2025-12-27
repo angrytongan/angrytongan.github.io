@@ -65,11 +65,8 @@ wall.
 
 Each ergometer was placed in the middle of the shed for each run of experiments.
 The ergomenters were positioned such that an athlete operating the ergometer
-would be facing the northern wall.
-
-The flywheel of air resistance ergomenters can be considered to be the loudest
-part of the entire appartus. The axle of the flywheel was placed over the centre
-of the shed.
+would be facing the northern wall. The axle of the flywheel was placed over the
+centre of the shed.
 
 ### Measuring positions
 
@@ -108,14 +105,15 @@ of the shed. No intentional sounds were made during the control measurement.
 
 ### Other baselines
 
-To give a real-world comparison of volume, some common household apparatus were
-used in place of an ergometer:
+To give a real-world comparison of volume, measurements were also done against
+some common household apparatus:
 
--   boiling jug;
 -   domestic vacuum cleaner;
 -   Apple HomePod Mini playing Tchaikovsky's 1812 overture, volume setting x;
 -   Apple HomePod Mini playing Tchaikovsky's 1812 overture, volume setting y;
     and
 -   Apple HomePod Mini playing Tchaikovsky's 1812 overture, volume setting z.
+
+In all these baselines, the apparatus was placed at the centre of the shed.
 
 ## Results
