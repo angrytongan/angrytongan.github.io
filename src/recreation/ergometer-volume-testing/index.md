@@ -83,8 +83,8 @@ ergometer, yielding 16 different measurement points:
 -   4 distances as measured from the bounding box of the ergometer and athlete:
     -   10cm;
     -   1m;
-    -   2.5m; and
-    -   5m.
+    -   2m; and
+    -   3m.
 
 <div class="note">
 "Bounding box" refers to a tight-fitting, imaginary box that encloses both the
@@ -95,13 +95,14 @@ box is more practical and should not dramatically affect the results.
 </div>
 
 In all measuring positions, the digital sound level meter microphone was oriented
-vertically at a distance of 1.5m from the floor mats.
+vertically at a height of <...> from the floor mats.
 
 ### Control
 
-The control measures were taken in the absence of any ergometer, at 4 angles
-previously noted, and distances as previously noted but measured from the centre
-of the shed. No intentional sounds were made during the control measurement.
+The control measures of 0:20 were taken in the absence of any ergometer, at 4
+angles previously noted, and distances as previously noted but measured from the
+centre of the shed. No intentional sounds were made during the control
+measurement.
 
 ### Other baselines
 
@@ -115,5 +116,24 @@ some common household apparatus:
 -   Apple HomePod Mini playing Tchaikovsky's 1812 overture, volume setting z.
 
 In all these baselines, the apparatus was placed at the centre of the shed.
+
+### Procedure
+
+1.  The ergometer being tested was placed with the axle of the flywheel
+    positioned over the centre of the shed. The ergometer was positioned such
+    that when an athlete is using it, the athlete is facing north.
+2.  The digital sound level meter was placed at a distance of 10cm from the
+    front of the ergometer / athlete bounding box.
+3.  The digital sound level meter started recording.
+4.  The athlete ran a gamut of tests. For apparatus with a damper:
+    1.  Damper closed at a pace of 2:00 for 0:20.
+    2.  Damper open half-way at a pace of 2:00 for 0:20.
+    3.  Damper open full at a pace of 2:00 for 0:20.
+    For apparatus without a damper:
+    1.  Pace of 2:00 for 0:20.
+5.  Step 4 was repeated with the digital sound level meter positioned 1m, 2m and
+    3m from bounding box.
+6.  Steps 2 through 5 were repeated at 90° clockwise, 90° counter-clockwise, and
+    directly behind the ergometer.
 
 ## Results
