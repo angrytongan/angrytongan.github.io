@@ -7,4 +7,6 @@ toc: false
 
 I'm very fortunate to have the space for a gym at home.
 
-![the gym](/images/IMG_0290.jpeg)
+<div>
+<img src="/images/IMG_0290.jpeg" alt="the gym" />
+</div>
