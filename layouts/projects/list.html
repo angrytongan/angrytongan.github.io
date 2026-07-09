@@ -8,9 +8,9 @@
   {{- end }}
 </header>
 
+{{- $page := . }}
 {{- range .Params.projects }}
-{{- $image := "" }}
-{{- with .thumbnail }}{{ $image = . | relURL }}{{ end }}
+{{- $image := partial "resolve-image.html" (dict "page" $page "name" .thumbnail) }}
 {{- partial "entry-card.html" (dict "title" .title "description" .description "href" .url "label" .title "image" $image) }}
 {{- end }}
 

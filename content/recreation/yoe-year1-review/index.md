@@ -3,6 +3,7 @@ title: Year of the Engine Program Review - Year 1
 weight: 2
 aliases:
   - "/yoe-year1-review.html"
+thumbnail: thumbnail.png
 ---
 
 <script src="/vendor/echarts/echarts.min.js"></script>
