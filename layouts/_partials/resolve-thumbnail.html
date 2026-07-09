@@ -1,0 +1,15 @@
+{{- /* Expects a Page. Resolves its `thumbnail` front-matter param to a URL,
+     or "" if unset. Leading "/" -> static-root path. Otherwise -> filename
+     matched against the page bundle's own resources (e.g. its images/ dir). */}}
+{{- $page := . }}
+{{- $image := "" }}
+{{- with $page.Params.thumbnail }}
+  {{- if strings.HasPrefix . "/" }}
+    {{- $image = . | relURL }}
+  {{- else }}
+    {{- with $page.Resources.GetMatch (printf "**/%s" .) }}
+      {{- $image = .RelPermalink }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- return $image }}

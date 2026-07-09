@@ -9,15 +9,9 @@
 </header>
 
 {{- range .Params.projects }}
-<article class="post-entry">
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">{{ .title }}</h2>
-  </header>
-  <div class="entry-content">
-    <p>{{ .description }}</p>
-  </div>
-  <a class="entry-link" aria-label="post link to {{ .title }}" href="{{ .url }}"></a>
-</article>
+{{- $image := "" }}
+{{- with .thumbnail }}{{ $image = . | relURL }}{{ end }}
+{{- partial "entry-card.html" (dict "title" .title "description" .description "href" .url "label" .title "image" $image) }}
 {{- end }}
 
 {{- end }}
