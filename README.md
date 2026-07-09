@@ -1,3 +1,5 @@
+[![Deploy Hugo site to Pages](https://github.com/angrytongan/angrytongan.github.io/actions/workflows/hugo.yaml/badge.svg)](https://github.com/angrytongan/angrytongan.github.io/actions/workflows/hugo.yaml)
+
 # angrytongan.github.io
 
 Personal site (df.id.au), built with [Hugo](https://gohugo.io) and the
