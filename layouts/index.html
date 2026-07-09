@@ -8,7 +8,7 @@
 </div>
 {{- end }}
 
-{{- range (slice "/projects" "/recreation" "/resume") }}
+{{- range (slice "/projects" "/recreation") }}
 {{- with (site.GetPage .) }}
 {{- partial "entry-card.html" (dict "title" .Title "description" .Description "href" .Permalink "label" (.Title | plainify) "image" (partial "resolve-thumbnail.html" .)) }}
 {{- end }}
