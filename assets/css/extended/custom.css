@@ -1,0 +1,10 @@
+.post-entry {
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.post-entry:hover,
+.post-entry:focus-within {
+    transform: none;
+    border-color: rgb(90, 169, 230);
+    box-shadow: 0 0 8px 2px rgba(90, 169, 230, 0.5);
+}
