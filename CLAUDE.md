@@ -23,6 +23,30 @@ commands.
   external links, not child pages.
 - `layouts/_partials/extend_head.html` — PaperMod's head-injection override
   point; carries the GoatCounter analytics script tags.
+- `layouts/_partials/entry-card.html` — shared card markup (title,
+  description, thumbnail, link). Used by the home page, `/projects/`, and
+  the generic `layouts/list.html` (which overrides PaperMod's own list
+  template for any plain section, e.g. `/recreation/`) so all card grids
+  look identical. Card hover/layout CSS lives in
+  `assets/css/extended/custom.css` under `.card-entry`.
+
+### Card thumbnails
+
+Cards show a placeholder box until a thumbnail is set:
+
+- **Page-backed cards** (home page's Projects/Recreation/Resume links,
+  and any page listed via `layouts/list.html`, e.g. `/recreation/*`): add
+  `thumbnail: <filename>` to that page's front matter. The filename is
+  matched against the page bundle's own resources at any depth (e.g.
+  `content/recreation/the-gym/images/IMG_0290.jpeg` is found via
+  `thumbnail: IMG_0290.jpeg`). Resolution logic is in
+  `layouts/_partials/resolve-thumbnail.html`.
+- **`/projects/` entries** (external links defined in the `projects:`
+  array in `content/projects/_index.md`): these aren't page bundles, so
+  add `thumbnail: /images/whatever.png` as a static-root path (a file
+  under `static/`) instead.
+- Either form works with a leading `/` (treated as a static-root path) —
+  the bundle-lookup only happens for bare filenames.
 
 ## Notes
 
