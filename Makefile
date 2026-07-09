@@ -1,14 +1,16 @@
 .PHONY: help \
-	docs \
+	server \
+	build \
 	clean
 
 help: # me
 	@grep '^[a-z]' Makefile | sed -e 's/^\(.*\): .*# \(.*\)/\1: \2/'
 
-docs: # setup distribution directory for Github pages.
-	npm run build
-	touch docs/.nojekyll
-	echo "df.id.au" > docs/CNAME
+server: # run the local Hugo dev server.
+	hugo server
 
-clean: # clear out dist directory.
-	npm run clean
+build: # build the site into public/ (deployment itself is handled by GitHub Actions).
+	hugo --gc --minify
+
+clean: # clear out build directory.
+	rm -rf public resources
