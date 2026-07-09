@@ -2,10 +2,10 @@ name: Deploy Hugo site to Pages
 
 on:
   push:
-    # NOTE: triggers on the current default branch (develop). If you later
-    # collapse the develop/master split now that CI does the building,
-    # update this to whatever branch replaces it.
-    branches: ["develop"]
+    # Deploys only happen on master. develop is the integration branch;
+    # feature branches merge there, and merging develop -> master is what
+    # ships to production.
+    branches: ["master"]
   workflow_dispatch:
 
 permissions:
