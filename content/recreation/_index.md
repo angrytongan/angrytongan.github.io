@@ -1,5 +1,4 @@
 ---
 title: Recreation
-BookCollapseSection: true
-weight: 2
+description: How I like to spend my time outside of work.
 ---

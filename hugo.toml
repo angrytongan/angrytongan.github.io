@@ -1,6 +1,6 @@
 baseURL = 'https://df.id.au/'
 title = 'df.id.au'
-theme = 'hugo-book'
+theme = 'PaperMod'
 
 # Not used anywhere in this site's content.
 disableKinds = ['taxonomy', 'term']
@@ -10,9 +10,17 @@ disableKinds = ['taxonomy', 'term']
   unsafe = true
 
 [params]
-  # Render the whole content tree as the sidebar, not just a single "docs" section.
-  BookSection = '*'
-  BookSearch = false
-  BookComments = false
-  BookFavicon = 'favicon.png'
-  BookLogo = 'images/head.jpeg'
+  env = 'production'
+  defaultTheme = 'dark'
+  ShowToc = true
+  ShowBreadCrumbs = true
+  ShowShareButtons = false
+
+  [params.assets]
+    favicon = 'favicon.png'
+    favicon16x16 = 'favicon.png'
+    favicon32x32 = 'favicon.png'
+    apple_touch_icon = 'favicon.png'
+
+  [params.label]
+    icon = 'images/head.jpeg'

@@ -3,8 +3,6 @@ title: Year of the Engine Program Review - Year 2
 weight: 3
 ---
 
-# Year of the Engine Program Review - Year 2
-
 <script src="/vendor/echarts/echarts.min.js"></script>
 
 ---

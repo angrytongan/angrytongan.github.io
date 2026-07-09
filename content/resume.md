@@ -1,6 +1,8 @@
 ---
 title: Resume
 weight: 3
+description: Where I've worked and what I've worked on.
+ShowToc: false
 ---
 
 # Dean Fogarty

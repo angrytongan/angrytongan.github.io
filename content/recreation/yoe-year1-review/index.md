@@ -5,8 +5,6 @@ aliases:
   - "/yoe-year1-review.html"
 ---
 
-# Year of the Engine Program Review - Year 1
-
 <script src="/vendor/echarts/echarts.min.js"></script>
 
 ---
