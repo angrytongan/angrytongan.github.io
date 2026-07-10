@@ -1,15 +1,14 @@
-{{- /* Expects a Page. Resolves its `thumbnail` front-matter param to a URL,
-     or "" if unset. Leading "/" -> static-root path. Otherwise -> filename
-     matched against the page bundle's own resources (e.g. its images/ dir). */}}
+{{- /* Expects a Page. Resolves its `thumbnail` front-matter param via
+     resolve-image.html, or "" if unset.
+
+     If a section page has no thumbnail of its own, falls back to its
+     first regular page's thumbnail, so e.g. the home page's Recreation
+     card mirrors whatever The gym uses, no duplicate image needed. */}}
 {{- $page := . }}
-{{- $image := "" }}
-{{- with $page.Params.thumbnail }}
-  {{- if strings.HasPrefix . "/" }}
-    {{- $image = . | relURL }}
-  {{- else }}
-    {{- with $page.Resources.GetMatch (printf "**/%s" .) }}
-      {{- $image = .RelPermalink }}
-    {{- end }}
+{{- $image := partial "resolve-image.html" (dict "page" $page "name" $page.Params.thumbnail) }}
+{{- if not $image }}
+  {{- with index $page.RegularPages 0 }}
+    {{- $image = partial "resolve-thumbnail.html" . }}
   {{- end }}
 {{- end }}
 {{- return $image }}
