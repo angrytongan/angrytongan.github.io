@@ -8,19 +8,9 @@
 </div>
 {{- end }}
 
-{{- range (slice "/projects" "/recreation" "/resume") }}
+{{- range (slice "/projects" "/recreation") }}
 {{- with (site.GetPage .) }}
-<article class="post-entry">
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">{{ .Title }}</h2>
-  </header>
-  {{- with .Description }}
-  <div class="entry-content">
-    <p>{{ . }}</p>
-  </div>
-  {{- end }}
-  <a class="entry-link" aria-label="post link to {{ .Title | plainify }}" href="{{ .Permalink }}"></a>
-</article>
+{{- partial "entry-card.html" (dict "title" .Title "description" .Description "href" .Permalink "label" (.Title | plainify) "image" (partial "resolve-thumbnail.html" .)) }}
 {{- end }}
 {{- end }}
 

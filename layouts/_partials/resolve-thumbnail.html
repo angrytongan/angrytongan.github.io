@@ -1,0 +1,14 @@
+{{- /* Expects a Page. Resolves its `thumbnail` front-matter param via
+     resolve-image.html, or "" if unset.
+
+     If a section page has no thumbnail of its own, falls back to its
+     first regular page's thumbnail, so e.g. the home page's Recreation
+     card mirrors whatever The gym uses, no duplicate image needed. */}}
+{{- $page := . }}
+{{- $image := partial "resolve-image.html" (dict "page" $page "name" $page.Params.thumbnail) }}
+{{- if not $image }}
+  {{- with index $page.RegularPages 0 }}
+    {{- $image = partial "resolve-thumbnail.html" . }}
+  {{- end }}
+{{- end }}
+{{- return $image }}
