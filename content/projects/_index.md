@@ -7,6 +7,10 @@ projects:
     url: https://ergarcade.com
     description: Concept2 ergometer utilities, tools, visualisations, games.
     thumbnail: ergarcade.png
+  - title: Half pipe
+    url: https://angrytongan.github.io/half-pipe
+    description: 3D skate ramp/half pipe builder with configurable dimensions.
+    thumbnail: half-pipe.png
   - title: MakeTrail
     url: https://angrytongan.github.io/maketrail
     description: A mountain bike trail construction kit.
