@@ -1,0 +1,39 @@
+.post-entry {
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card-entry {
+    display: flex;
+    align-items: stretch;
+    gap: var(--gap);
+    padding: 0;
+    overflow: hidden;
+}
+
+.card-entry .entry-text {
+    flex: 1;
+    min-width: 0;
+    padding: var(--gap) 0 var(--gap) var(--gap);
+}
+
+.card-entry .entry-thumb {
+    flex-shrink: 0;
+    width: 192px;
+    background: var(--code-bg);
+    border-left: 1px dashed var(--border);
+    border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.card-entry .entry-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-entry:hover,
+.post-entry:focus-within {
+    transform: none;
+    border-color: rgb(90, 169, 230);
+    box-shadow: 0 0 8px 2px rgba(90, 169, 230, 0.5);
+}

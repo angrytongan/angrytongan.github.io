@@ -1,0 +1,17 @@
+{{- define "main" }}
+
+<header class="page-header">
+  {{- partial "breadcrumbs.html" . }}
+  <h1>{{ .Title }}</h1>
+  {{- if .Description }}
+  <div class="post-description">{{ .Description | markdownify }}</div>
+  {{- end }}
+</header>
+
+{{- $page := . }}
+{{- range .Params.projects }}
+{{- $image := partial "resolve-image.html" (dict "page" $page "name" .thumbnail) }}
+{{- partial "entry-card.html" (dict "title" .title "description" .description "href" .url "label" .title "image" $image) }}
+{{- end }}
+
+{{- end }}

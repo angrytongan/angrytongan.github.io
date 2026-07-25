@@ -1,0 +1,12 @@
+---
+title: The gym
+ShowToc: false
+weight: 1
+thumbnail: IMG_0290.jpeg
+---
+
+I'm very fortunate to have the space for a gym at home.
+
+<div>
+<img src="./images/IMG_0290.jpeg" alt="the gym" />
+</div>

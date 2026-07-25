@@ -1,0 +1,5 @@
+.DS_Store
+public/
+resources/
+hugo_stats.json
+.hugo_build.lock

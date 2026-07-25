@@ -1,0 +1,18 @@
+{{- /* Expects a dict: page (Page whose bundle to search), name (filename
+     or leading-"/" static path, e.g. from front matter). Returns a
+     resolved image URL, or "" if name is empty/unmatched. Leading "/" ->
+     static-root path (served as-is, no resize). Otherwise -> filename
+     matched against page's own bundle resources at any depth, resized to
+     fit the card's thumbnail box. */}}
+{{- $page := .page }}
+{{- $image := "" }}
+{{- with .name }}
+  {{- if strings.HasPrefix . "/" }}
+    {{- $image = . | relURL }}
+  {{- else }}
+    {{- with $page.Resources.GetMatch (printf "**/%s" .) }}
+      {{- $image = (.Fill "400x350").RelPermalink }}
+    {{- end }}
+  {{- end }}
+{{- end }}
+{{- return $image }}

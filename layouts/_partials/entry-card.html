@@ -1,0 +1,19 @@
+{{- /* Expects a dict: title, description, href, label, image (optional URL) */}}
+<article class="post-entry card-entry">
+  <div class="entry-text">
+    <header class="entry-header">
+      <h2 class="entry-hint-parent">{{ .title }}</h2>
+    </header>
+    {{- with .description }}
+    <div class="entry-content">
+      <p>{{ . }}</p>
+    </div>
+    {{- end }}
+  </div>
+  <div class="entry-thumb" aria-hidden="true">
+    {{- with .image }}
+    <img src="{{ . }}" alt="" loading="lazy">
+    {{- end }}
+  </div>
+  <a class="entry-link" aria-label="post link to {{ .label }}" href="{{ .href }}"></a>
+</article>
