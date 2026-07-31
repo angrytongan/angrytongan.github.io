@@ -11,6 +11,10 @@ projects:
     url: https://angrytongan.github.io/half-pipe
     description: 3D skate ramp/half pipe builder with configurable dimensions.
     thumbnail: half-pipe.png
+  - title: Kicker
+    url: https://angrytongan.github.io/kicker
+    description: 3D kicker (jump ramp) builder with configurable dimensions.
+    thumbnail: kicker.png
   # not ready for publish
   # - title: MakeTrail
   #   url: https://angrytongan.github.io/maketrail
