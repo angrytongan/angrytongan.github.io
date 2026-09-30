@@ -7,6 +7,10 @@ projects:
     url: https://ergarcade.com
     description: Concept2 ergometer utilities, tools, visualisations, games.
     thumbnail: ergarcade.png
+  - title: Home weather
+    url: https://ha.df.au
+    description: Weather conditions at my home in Australia.
+    thumbnail: ha-df.png
   - title: Half pipe
     url: https://angrytongan.github.io/half-pipe
     description: 3D skate ramp/half pipe builder with configurable dimensions.

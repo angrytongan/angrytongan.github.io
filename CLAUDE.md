@@ -42,9 +42,10 @@ Cards show a placeholder box until a thumbnail is set:
   `thumbnail: IMG_0290.jpeg`). Resolution logic is in
   `layouts/_partials/resolve-thumbnail.html`.
 - **`/projects/` entries** (external links defined in the `projects:`
-  array in `content/projects/_index.md`): these aren't page bundles, so
-  add `thumbnail: /images/whatever.png` as a static-root path (a file
-  under `static/`) instead.
+  array in `content/projects/_index.md`): drop the image in
+  `content/projects/images/` and set `thumbnail: <filename>` on the
+  entry. It's matched against the `projects` section bundle via
+  `layouts/_partials/resolve-image.html`.
 - Either form works with a leading `/` (treated as a static-root path) —
   the bundle-lookup only happens for bare filenames.
 
