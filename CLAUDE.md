@@ -1,7 +1,7 @@
 # angrytongan.github.io
 
 Personal site (df.id.au). Hugo static site, PaperMod theme, deployed to
-GitHub Pages via GitHub Actions on push to `develop`. See README.md for
+GitHub Pages via GitHub Actions on push to `master`. See README.md for
 commands.
 
 ## Structure
