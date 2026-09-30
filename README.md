@@ -22,8 +22,7 @@ The theme lives at `themes/PaperMod` as a git submodule, so clone with:
 
 ## Deploy
 
-`develop` is the integration branch — feature branches merge there. Pushing
-to `master` triggers `.github/workflows/hugo.yaml`, which builds the site
-with Hugo and deploys `public/` to GitHub Pages, so merge `develop` into
-`master` when you want to ship. There's no manual build or `docs/` commit
-step — CI handles it.
+Feature branches merge straight into `master`. Pushing to `master` triggers
+`.github/workflows/hugo.yaml`, which builds the site with Hugo and deploys
+`public/` to GitHub Pages. There's no manual build or `docs/` commit step —
+CI handles it.

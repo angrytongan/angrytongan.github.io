@@ -2,9 +2,7 @@ name: Deploy Hugo site to Pages
 
 on:
   push:
-    # Deploys only happen on master. develop is the integration branch;
-    # feature branches merge there, and merging develop -> master is what
-    # ships to production.
+    # Deploys only happen on master; feature branches merge straight there.
     branches: ["master"]
   workflow_dispatch:
 
